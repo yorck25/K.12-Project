@@ -37,7 +37,8 @@ namespace WindowsFormsApp1
         private void butLoginReg_Click(object sender, EventArgs e)
         {
            Registrieren registrieren= new Registrieren();
-            registrieren.Show();
+           this.Close(); 
+           registrieren.Show();
         }
     }
 }

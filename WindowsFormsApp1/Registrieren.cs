@@ -31,5 +31,12 @@ namespace WindowsFormsApp1
         {
 
         }
+
+        private void herfRegVorhanden_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Login login = new Login();
+            this.Close();
+            login.Show();
+        }
     }
 }

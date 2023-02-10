@@ -43,8 +43,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.butRegErstellen = new System.Windows.Forms.Button();
-            this.butRegVorhanden = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
+            this.herfRegVorhanden = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // tBoxRegName
@@ -162,26 +162,12 @@
             // 
             // butRegErstellen
             // 
-            this.butRegErstellen.Location = new System.Drawing.Point(12, 239);
+            this.butRegErstellen.Location = new System.Drawing.Point(12, 250);
             this.butRegErstellen.Name = "butRegErstellen";
             this.butRegErstellen.Size = new System.Drawing.Size(97, 34);
             this.butRegErstellen.TabIndex = 18;
             this.butRegErstellen.Text = "Konto erstellen";
             this.butRegErstellen.UseVisualStyleBackColor = true;
-            // 
-            // butRegVorhanden
-            // 
-            this.butRegVorhanden.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.butRegVorhanden.FlatAppearance.BorderSize = 0;
-            this.butRegVorhanden.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.butRegVorhanden.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.butRegVorhanden.Location = new System.Drawing.Point(116, 218);
-            this.butRegVorhanden.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
-            this.butRegVorhanden.Name = "butRegVorhanden";
-            this.butRegVorhanden.Size = new System.Drawing.Size(97, 23);
-            this.butRegVorhanden.TabIndex = 19;
-            this.butRegVorhanden.Text = "Anmelden";
-            this.butRegVorhanden.UseVisualStyleBackColor = false;
             // 
             // label8
             // 
@@ -192,14 +178,26 @@
             this.label8.TabIndex = 20;
             this.label8.Text = "Du hast bereits ein Konto?";
             // 
+            // herfRegVorhanden
+            // 
+            this.herfRegVorhanden.AutoSize = true;
+            this.herfRegVorhanden.LinkColor = System.Drawing.SystemColors.Highlight;
+            this.herfRegVorhanden.Location = new System.Drawing.Point(147, 223);
+            this.herfRegVorhanden.Name = "herfRegVorhanden";
+            this.herfRegVorhanden.Size = new System.Drawing.Size(57, 13);
+            this.herfRegVorhanden.TabIndex = 21;
+            this.herfRegVorhanden.TabStop = true;
+            this.herfRegVorhanden.Text = "Zum Login";
+            this.herfRegVorhanden.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.herfRegVorhanden_LinkClicked);
+            // 
             // Registrieren
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.ClientSize = new System.Drawing.Size(373, 415);
+            this.Controls.Add(this.herfRegVorhanden);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.butRegVorhanden);
             this.Controls.Add(this.butRegErstellen);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -240,7 +238,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button butRegErstellen;
-        private System.Windows.Forms.Button butRegVorhanden;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.LinkLabel herfRegVorhanden;
     }
 }
