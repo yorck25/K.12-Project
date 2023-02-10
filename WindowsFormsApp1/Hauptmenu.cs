@@ -20,6 +20,8 @@ namespace WindowsFormsApp1
         private void hauptmenuÖffnenSidebar_Click(object sender, EventArgs e)
         {
             hmenuNavElemente.Visible =! hmenuNavElemente.Visible; 
+            Login login = new Login();
+            login.Show();
         }
 
         private void button1hauptmenuÖffnenAcc_Click(object sender, EventArgs e)

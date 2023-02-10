@@ -189,7 +189,7 @@
             // 
             this.butHauptmenuÖffnenNachrichten.Location = new System.Drawing.Point(691, 12);
             this.butHauptmenuÖffnenNachrichten.Name = "butHauptmenuÖffnenNachrichten";
-            this.butHauptmenuÖffnenNachrichten.Size = new System.Drawing.Size(57, 37);
+            this.butHauptmenuÖffnenNachrichten.Size = new System.Drawing.Size(65, 37);
             this.butHauptmenuÖffnenNachrichten.TabIndex = 4;
             this.butHauptmenuÖffnenNachrichten.Text = "Benachrichtigungen";
             this.butHauptmenuÖffnenNachrichten.UseVisualStyleBackColor = true;
