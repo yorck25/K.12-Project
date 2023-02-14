@@ -16,5 +16,15 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
         }
+
+        private void lBoxMverMitarbeiter_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            MverDetailMitarbeiter.Visible= true;
+        }
+
+        private void butMverDetailSchließen_Click(object sender, EventArgs e)
+        {
+            MverDetailMitarbeiter.Visible = false;
+        }
     }
 }

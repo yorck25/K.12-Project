@@ -89,6 +89,7 @@
             this.butLoginAnmelden.TabIndex = 5;
             this.butLoginAnmelden.Text = "Anmelden";
             this.butLoginAnmelden.UseVisualStyleBackColor = true;
+            this.butLoginAnmelden.Click += new System.EventHandler(this.butLoginAnmelden_Click);
             // 
             // butLoginReg
             // 

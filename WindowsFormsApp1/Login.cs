@@ -41,6 +41,13 @@ namespace WindowsFormsApp1
            Registrieren registrieren= new Registrieren();
            this.Close(); 
            registrieren.Show();
+           
+        }
+
+        private void butLoginAnmelden_Click(object sender, EventArgs e)
+        {
+            Datenbank d = new Datenbank();
+            d.Save();
         }
     }
 }
