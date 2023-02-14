@@ -119,6 +119,7 @@
             this.butHmenuMitarbeiter.TabIndex = 3;
             this.butHmenuMitarbeiter.Text = "MItarbeiterverwaltung";
             this.butHmenuMitarbeiter.UseVisualStyleBackColor = true;
+            this.butHmenuMitarbeiter.Click += new System.EventHandler(this.butHmenuMitarbeiter_Click);
             // 
             // butHmenuLieferant
             // 
@@ -174,6 +175,7 @@
             this.butHmenuAbmelden.TabIndex = 1;
             this.butHmenuAbmelden.Text = "Abmelden";
             this.butHmenuAbmelden.UseVisualStyleBackColor = true;
+            this.butHmenuAbmelden.Click += new System.EventHandler(this.butHmenuAbmelden_Click);
             // 
             // butHauptmenuÖffnenAcc
             // 

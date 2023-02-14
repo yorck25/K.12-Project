@@ -48,5 +48,17 @@ namespace WindowsFormsApp1
         {
             hmenuDetailABestand.Visible = false;
         }
+
+        private void butHmenuAbmelden_Click(object sender, EventArgs e)
+        {
+            Login login = new Login();
+            login.Show();
+        }
+
+        private void butHmenuMitarbeiter_Click(object sender, EventArgs e)
+        {
+            Mitarbeiterverwaltung mitarbeiterverwaltung = new Mitarbeiterverwaltung();
+            mitarbeiterverwaltung.Show();
+        }
     }
 }

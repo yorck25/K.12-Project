@@ -31,6 +31,8 @@ namespace WindowsFormsApp1
 
         private void Login_Load(object sender, EventArgs e)
         {
+            tBoxLoginEmail.Clear();
+            tBoxLoginPas.Clear();
             tBoxLoginPas.PasswordChar = '*';
         }
 
