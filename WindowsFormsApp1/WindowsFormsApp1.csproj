@@ -108,12 +108,24 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abteilung.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Abteilung.Designer.cs">
+      <DependentUpon>Abteilung.cs</DependentUpon>
+    </Compile>
     <Compile Include="Datenbank.cs" />
     <Compile Include="Hauptmenu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Hauptmenu.Designer.cs">
       <DependentUpon>Hauptmenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kostenstelle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kostenstelle.Designer.cs">
+      <DependentUpon>Kostenstelle.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -135,8 +147,14 @@
     <Compile Include="Registrieren.Designer.cs">
       <DependentUpon>Registrieren.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Abteilung.resx">
+      <DependentUpon>Abteilung.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Hauptmenu.resx">
       <DependentUpon>Hauptmenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kostenstelle.resx">
+      <DependentUpon>Kostenstelle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

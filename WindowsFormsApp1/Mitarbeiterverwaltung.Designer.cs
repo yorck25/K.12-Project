@@ -30,27 +30,27 @@
         {
             this.lBoxMverMitarbeiter = new System.Windows.Forms.ListBox();
             this.MverDetailMitarbeiter = new System.Windows.Forms.Panel();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.cBoxMitFunk = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cBoxMitRolle = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cBoxMitAbt = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.butMverDetailSchließen = new System.Windows.Forms.Button();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.tBoxMitGeb = new System.Windows.Forms.TextBox();
+            this.tBoxMiAdresse = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tBoxMitName = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.tBoxMitVname = new System.Windows.Forms.TextBox();
+            this.butMitAbt = new System.Windows.Forms.Button();
+            this.butMitRolle = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.MverDetailMitarbeiter.SuspendLayout();
             this.SuspendLayout();
@@ -69,38 +69,38 @@
             // 
             // MverDetailMitarbeiter
             // 
-            this.MverDetailMitarbeiter.Controls.Add(this.comboBox3);
+            this.MverDetailMitarbeiter.Controls.Add(this.cBoxMitFunk);
             this.MverDetailMitarbeiter.Controls.Add(this.label9);
-            this.MverDetailMitarbeiter.Controls.Add(this.comboBox2);
+            this.MverDetailMitarbeiter.Controls.Add(this.cBoxMitRolle);
             this.MverDetailMitarbeiter.Controls.Add(this.label8);
-            this.MverDetailMitarbeiter.Controls.Add(this.comboBox1);
+            this.MverDetailMitarbeiter.Controls.Add(this.cBoxMitAbt);
             this.MverDetailMitarbeiter.Controls.Add(this.label7);
             this.MverDetailMitarbeiter.Controls.Add(this.butMverDetailSchließen);
             this.MverDetailMitarbeiter.Controls.Add(this.textBox6);
             this.MverDetailMitarbeiter.Controls.Add(this.textBox5);
-            this.MverDetailMitarbeiter.Controls.Add(this.textBox4);
-            this.MverDetailMitarbeiter.Controls.Add(this.textBox3);
+            this.MverDetailMitarbeiter.Controls.Add(this.tBoxMitGeb);
+            this.MverDetailMitarbeiter.Controls.Add(this.tBoxMiAdresse);
             this.MverDetailMitarbeiter.Controls.Add(this.label6);
-            this.MverDetailMitarbeiter.Controls.Add(this.textBox2);
+            this.MverDetailMitarbeiter.Controls.Add(this.tBoxMitName);
             this.MverDetailMitarbeiter.Controls.Add(this.label5);
             this.MverDetailMitarbeiter.Controls.Add(this.label4);
             this.MverDetailMitarbeiter.Controls.Add(this.label3);
             this.MverDetailMitarbeiter.Controls.Add(this.label2);
             this.MverDetailMitarbeiter.Controls.Add(this.label1);
-            this.MverDetailMitarbeiter.Controls.Add(this.textBox1);
+            this.MverDetailMitarbeiter.Controls.Add(this.tBoxMitVname);
             this.MverDetailMitarbeiter.Location = new System.Drawing.Point(184, 25);
             this.MverDetailMitarbeiter.Name = "MverDetailMitarbeiter";
             this.MverDetailMitarbeiter.Size = new System.Drawing.Size(266, 355);
             this.MverDetailMitarbeiter.TabIndex = 1;
             this.MverDetailMitarbeiter.Visible = false;
             // 
-            // comboBox3
+            // cBoxMitFunk
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(26, 210);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(100, 21);
-            this.comboBox3.TabIndex = 18;
+            this.cBoxMitFunk.FormattingEnabled = true;
+            this.cBoxMitFunk.Location = new System.Drawing.Point(26, 210);
+            this.cBoxMitFunk.Name = "cBoxMitFunk";
+            this.cBoxMitFunk.Size = new System.Drawing.Size(100, 21);
+            this.cBoxMitFunk.TabIndex = 18;
             // 
             // label9
             // 
@@ -111,13 +111,13 @@
             this.label9.TabIndex = 17;
             this.label9.Text = "Funtion:";
             // 
-            // comboBox2
+            // cBoxMitRolle
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(142, 162);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(100, 21);
-            this.comboBox2.TabIndex = 16;
+            this.cBoxMitRolle.FormattingEnabled = true;
+            this.cBoxMitRolle.Location = new System.Drawing.Point(142, 162);
+            this.cBoxMitRolle.Name = "cBoxMitRolle";
+            this.cBoxMitRolle.Size = new System.Drawing.Size(100, 21);
+            this.cBoxMitRolle.TabIndex = 16;
             // 
             // label8
             // 
@@ -128,13 +128,13 @@
             this.label8.TabIndex = 15;
             this.label8.Text = "Rolle:";
             // 
-            // comboBox1
+            // cBoxMitAbt
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(26, 162);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(100, 21);
-            this.comboBox1.TabIndex = 14;
+            this.cBoxMitAbt.FormattingEnabled = true;
+            this.cBoxMitAbt.Location = new System.Drawing.Point(26, 162);
+            this.cBoxMitAbt.Name = "cBoxMitAbt";
+            this.cBoxMitAbt.Size = new System.Drawing.Size(100, 21);
+            this.cBoxMitAbt.TabIndex = 14;
             // 
             // label7
             // 
@@ -169,19 +169,19 @@
             this.textBox5.Size = new System.Drawing.Size(100, 20);
             this.textBox5.TabIndex = 10;
             // 
-            // textBox4
+            // tBoxMitGeb
             // 
-            this.textBox4.Location = new System.Drawing.Point(142, 63);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 9;
+            this.tBoxMitGeb.Location = new System.Drawing.Point(142, 63);
+            this.tBoxMitGeb.Name = "tBoxMitGeb";
+            this.tBoxMitGeb.Size = new System.Drawing.Size(100, 20);
+            this.tBoxMitGeb.TabIndex = 9;
             // 
-            // textBox3
+            // tBoxMiAdresse
             // 
-            this.textBox3.Location = new System.Drawing.Point(26, 63);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 8;
+            this.tBoxMiAdresse.Location = new System.Drawing.Point(26, 63);
+            this.tBoxMiAdresse.Name = "tBoxMiAdresse";
+            this.tBoxMiAdresse.Size = new System.Drawing.Size(100, 20);
+            this.tBoxMiAdresse.TabIndex = 8;
             // 
             // label6
             // 
@@ -192,12 +192,12 @@
             this.label6.TabIndex = 7;
             this.label6.Text = "User Name:";
             // 
-            // textBox2
+            // tBoxMitName
             // 
-            this.textBox2.Location = new System.Drawing.Point(142, 18);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 6;
+            this.tBoxMitName.Location = new System.Drawing.Point(142, 18);
+            this.tBoxMitName.Name = "tBoxMitName";
+            this.tBoxMitName.Size = new System.Drawing.Size(100, 20);
+            this.tBoxMitName.TabIndex = 6;
             // 
             // label5
             // 
@@ -244,30 +244,31 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Vorname:";
             // 
-            // textBox1
+            // tBoxMitVname
             // 
-            this.textBox1.Location = new System.Drawing.Point(26, 18);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 0;
+            this.tBoxMitVname.Location = new System.Drawing.Point(26, 18);
+            this.tBoxMitVname.Name = "tBoxMitVname";
+            this.tBoxMitVname.Size = new System.Drawing.Size(100, 20);
+            this.tBoxMitVname.TabIndex = 0;
             // 
-            // button1
+            // butMitAbt
             // 
-            this.button1.Location = new System.Drawing.Point(675, 43);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(81, 36);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Abteilung hinzufühgen";
-            this.button1.UseVisualStyleBackColor = true;
+            this.butMitAbt.Location = new System.Drawing.Point(675, 43);
+            this.butMitAbt.Name = "butMitAbt";
+            this.butMitAbt.Size = new System.Drawing.Size(81, 36);
+            this.butMitAbt.TabIndex = 2;
+            this.butMitAbt.Text = "Abteilung hinzufühgen";
+            this.butMitAbt.UseVisualStyleBackColor = true;
+            this.butMitAbt.Click += new System.EventHandler(this.butMitAbt_Click);
             // 
-            // button2
+            // butMitRolle
             // 
-            this.button2.Location = new System.Drawing.Point(675, 85);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(81, 36);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Rolle hinzufühgen";
-            this.button2.UseVisualStyleBackColor = true;
+            this.butMitRolle.Location = new System.Drawing.Point(675, 85);
+            this.butMitRolle.Name = "butMitRolle";
+            this.butMitRolle.Size = new System.Drawing.Size(81, 36);
+            this.butMitRolle.TabIndex = 3;
+            this.butMitRolle.Text = "Rolle hinzufühgen";
+            this.butMitRolle.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
@@ -284,8 +285,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(768, 413);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.butMitRolle);
+            this.Controls.Add(this.butMitAbt);
             this.Controls.Add(this.MverDetailMitarbeiter);
             this.Controls.Add(this.lBoxMverMitarbeiter);
             this.Name = "Mitarbeiterverwaltung";
@@ -305,22 +306,22 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tBoxMitVname;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox tBoxMitGeb;
+        private System.Windows.Forms.TextBox tBoxMiAdresse;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tBoxMitName;
         private System.Windows.Forms.Button butMverDetailSchließen;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox cBoxMitFunk;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cBoxMitRolle;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cBoxMitAbt;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button butMitAbt;
+        private System.Windows.Forms.Button butMitRolle;
         private System.Windows.Forms.Button button3;
     }
 }

@@ -166,6 +166,7 @@
             this.butHmenuÄndern.TabIndex = 2;
             this.butHmenuÄndern.Text = "Details ändern";
             this.butHmenuÄndern.UseVisualStyleBackColor = true;
+            this.butHmenuÄndern.Click += new System.EventHandler(this.butHmenuÄndern_Click);
             // 
             // butHmenuAbmelden
             // 

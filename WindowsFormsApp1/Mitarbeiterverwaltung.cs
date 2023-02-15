@@ -26,5 +26,11 @@ namespace WindowsFormsApp1
         {
             MverDetailMitarbeiter.Visible = false;
         }
+
+        private void butMitAbt_Click(object sender, EventArgs e)
+        {
+            Abteilung abteilung= new Abteilung();
+            abteilung.Show();
+        }
     }
 }
