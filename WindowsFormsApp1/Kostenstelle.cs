@@ -35,7 +35,8 @@ namespace WindowsFormsApp1
 
         private void butKstSpeichern_Click(object sender, EventArgs e)
         {
-
+            cKostenstelle k = new cKostenstelle();
+            k.Spiechern();
         }
     }
 }
