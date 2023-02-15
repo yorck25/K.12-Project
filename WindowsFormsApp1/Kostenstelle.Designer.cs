@@ -38,12 +38,14 @@
             this.tBoxKstBez = new System.Windows.Forms.TextBox();
             this.herfKstLöschen = new System.Windows.Forms.LinkLabel();
             this.lBoxKst = new System.Windows.Forms.ListBox();
+            this.butKstSpeichern = new System.Windows.Forms.Button();
             this.KstDetail.SuspendLayout();
             this.AbtMitProAbt.SuspendLayout();
             this.SuspendLayout();
             // 
             // KstDetail
             // 
+            this.KstDetail.Controls.Add(this.butKstSpeichern);
             this.KstDetail.Controls.Add(this.butKstBearbeiten);
             this.KstDetail.Controls.Add(this.AbtMitProAbt);
             this.KstDetail.Controls.Add(this.label1);
@@ -144,6 +146,16 @@
             this.lBoxKst.TabIndex = 11;
             this.lBoxKst.SelectedIndexChanged += new System.EventHandler(this.lBoxKst_SelectedIndexChanged);
             // 
+            // butKstSpeichern
+            // 
+            this.butKstSpeichern.Location = new System.Drawing.Point(104, 64);
+            this.butKstSpeichern.Name = "butKstSpeichern";
+            this.butKstSpeichern.Size = new System.Drawing.Size(81, 32);
+            this.butKstSpeichern.TabIndex = 10;
+            this.butKstSpeichern.Text = "Speichern";
+            this.butKstSpeichern.UseVisualStyleBackColor = true;
+            this.butKstSpeichern.Click += new System.EventHandler(this.butKstSpeichern_Click);
+            // 
             // Kostenstelle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -175,5 +187,6 @@
         private System.Windows.Forms.TextBox tBoxKstBez;
         private System.Windows.Forms.LinkLabel herfKstLöschen;
         private System.Windows.Forms.ListBox lBoxKst;
+        private System.Windows.Forms.Button butKstSpeichern;
     }
 }

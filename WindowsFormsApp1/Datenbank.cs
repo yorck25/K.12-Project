@@ -11,8 +11,10 @@ namespace WindowsFormsApp1
     internal class Datenbank
     {
 
-        public void Save()
+        public void verbinden()
         {
+            /*
+            //Connection String für SqlGuru
             string connectionString = "server=dedi1778.your-server.de;user=sqlguru_5;database=sqlguru_db5;port=3306;password=t5Z3s4Z7uqig2bwJ";
             MySqlConnection conn = new MySqlConnection(connectionString);
 
@@ -25,6 +27,7 @@ namespace WindowsFormsApp1
             {
                 Console.WriteLine("not open" + ex.Message);
             }
+            */
         }
     }
 }
