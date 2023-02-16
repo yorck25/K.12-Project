@@ -39,7 +39,7 @@ namespace WindowsFormsApp1
 
         private void herfAbtKst_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Kostenstelle kostenstelle= new Kostenstelle();
+            Kostenstelle kostenstelle= new Kostenstelle(new cKostenstelle());
             kostenstelle.Show();
         }
     }

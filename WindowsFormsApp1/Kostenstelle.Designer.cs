@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.KstDetail = new System.Windows.Forms.Panel();
+            this.butKstSpeichern = new System.Windows.Forms.Button();
             this.butKstBearbeiten = new System.Windows.Forms.Button();
             this.AbtMitProAbt = new System.Windows.Forms.Panel();
             this.herfKstAbt = new System.Windows.Forms.LinkLabel();
@@ -38,7 +39,6 @@
             this.tBoxKstBez = new System.Windows.Forms.TextBox();
             this.herfKstLöschen = new System.Windows.Forms.LinkLabel();
             this.lBoxKst = new System.Windows.Forms.ListBox();
-            this.butKstSpeichern = new System.Windows.Forms.Button();
             this.KstDetail.SuspendLayout();
             this.AbtMitProAbt.SuspendLayout();
             this.SuspendLayout();
@@ -55,10 +55,21 @@
             this.KstDetail.Size = new System.Drawing.Size(413, 329);
             this.KstDetail.TabIndex = 13;
             this.KstDetail.Visible = false;
+            this.KstDetail.Paint += new System.Windows.Forms.PaintEventHandler(this.KstDetail_Paint);
+            // 
+            // butKstSpeichern
+            // 
+            this.butKstSpeichern.Location = new System.Drawing.Point(17, 64);
+            this.butKstSpeichern.Name = "butKstSpeichern";
+            this.butKstSpeichern.Size = new System.Drawing.Size(81, 32);
+            this.butKstSpeichern.TabIndex = 10;
+            this.butKstSpeichern.Text = "Speichern";
+            this.butKstSpeichern.UseVisualStyleBackColor = true;
+            this.butKstSpeichern.Click += new System.EventHandler(this.butKstSpeichern_Click);
             // 
             // butKstBearbeiten
             // 
-            this.butKstBearbeiten.Location = new System.Drawing.Point(17, 64);
+            this.butKstBearbeiten.Location = new System.Drawing.Point(20, 230);
             this.butKstBearbeiten.Name = "butKstBearbeiten";
             this.butKstBearbeiten.Size = new System.Drawing.Size(81, 32);
             this.butKstBearbeiten.TabIndex = 9;
@@ -123,6 +134,7 @@
             this.tBoxKstBez.Name = "tBoxKstBez";
             this.tBoxKstBez.Size = new System.Drawing.Size(151, 20);
             this.tBoxKstBez.TabIndex = 1;
+            this.tBoxKstBez.TextChanged += new System.EventHandler(this.tBoxKstBez_TextChanged);
             // 
             // herfKstLöschen
             // 
@@ -145,16 +157,6 @@
             this.lBoxKst.Size = new System.Drawing.Size(120, 303);
             this.lBoxKst.TabIndex = 11;
             this.lBoxKst.SelectedIndexChanged += new System.EventHandler(this.lBoxKst_SelectedIndexChanged);
-            // 
-            // butKstSpeichern
-            // 
-            this.butKstSpeichern.Location = new System.Drawing.Point(104, 64);
-            this.butKstSpeichern.Name = "butKstSpeichern";
-            this.butKstSpeichern.Size = new System.Drawing.Size(81, 32);
-            this.butKstSpeichern.TabIndex = 10;
-            this.butKstSpeichern.Text = "Speichern";
-            this.butKstSpeichern.UseVisualStyleBackColor = true;
-            this.butKstSpeichern.Click += new System.EventHandler(this.butKstSpeichern_Click);
             // 
             // Kostenstelle
             // 

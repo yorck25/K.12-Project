@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,8 +13,10 @@ namespace WindowsFormsApp1
 {
     public partial class Kostenstelle : Form
     {
-        public Kostenstelle()
+        cKostenstelle kst;
+        public Kostenstelle(cKostenstelle kst)
         {
+            this.kst = kst;
             InitializeComponent();
         }
 
@@ -35,8 +38,26 @@ namespace WindowsFormsApp1
 
         private void butKstSpeichern_Click(object sender, EventArgs e)
         {
-            cKostenstelle k = new cKostenstelle();
-            k.Spiechern();
+            kst.Kst_Bez = tBoxKstBez.Text;
+            try
+            {
+                kst.Spiechern();
+                Console.WriteLine("Kst wird gespeichert");
+            }
+            catch(MySqlException ex)
+            {
+                Console.WriteLine("KSt Speichern Fehler: " + ex);
+            }
+        }
+
+        private void tBoxKstBez_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void KstDetail_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

@@ -46,8 +46,6 @@ namespace WindowsFormsApp1
 
         private void butLoginAnmelden_Click(object sender, EventArgs e)
         {
-            Datenbank d = new Datenbank();
-            d.verbinden();
         }
     }
 }
