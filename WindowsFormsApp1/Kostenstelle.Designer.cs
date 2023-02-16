@@ -31,14 +31,15 @@
             this.KstDetail = new System.Windows.Forms.Panel();
             this.butKstSpeichern = new System.Windows.Forms.Button();
             this.butKstBearbeiten = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tBoxKstBez = new System.Windows.Forms.TextBox();
             this.AbtMitProAbt = new System.Windows.Forms.Panel();
             this.herfKstAbt = new System.Windows.Forms.LinkLabel();
             this.label3 = new System.Windows.Forms.Label();
             this.lBoxKstAbt = new System.Windows.Forms.ListBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.tBoxKstBez = new System.Windows.Forms.TextBox();
             this.herfKstLöschen = new System.Windows.Forms.LinkLabel();
             this.lBoxKst = new System.Windows.Forms.ListBox();
+            this.herfKstNew = new System.Windows.Forms.LinkLabel();
             this.KstDetail.SuspendLayout();
             this.AbtMitProAbt.SuspendLayout();
             this.SuspendLayout();
@@ -47,12 +48,11 @@
             // 
             this.KstDetail.Controls.Add(this.butKstSpeichern);
             this.KstDetail.Controls.Add(this.butKstBearbeiten);
-            this.KstDetail.Controls.Add(this.AbtMitProAbt);
             this.KstDetail.Controls.Add(this.label1);
             this.KstDetail.Controls.Add(this.tBoxKstBez);
             this.KstDetail.Location = new System.Drawing.Point(138, 8);
             this.KstDetail.Name = "KstDetail";
-            this.KstDetail.Size = new System.Drawing.Size(413, 329);
+            this.KstDetail.Size = new System.Drawing.Size(194, 329);
             this.KstDetail.TabIndex = 13;
             this.KstDetail.Visible = false;
             this.KstDetail.Paint += new System.Windows.Forms.PaintEventHandler(this.KstDetail_Paint);
@@ -76,15 +76,34 @@
             this.butKstBearbeiten.Text = "Bearbeiten";
             this.butKstBearbeiten.UseVisualStyleBackColor = true;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(17, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(72, 13);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Bezeichnung:";
+            // 
+            // tBoxKstBez
+            // 
+            this.tBoxKstBez.Location = new System.Drawing.Point(17, 38);
+            this.tBoxKstBez.Name = "tBoxKstBez";
+            this.tBoxKstBez.Size = new System.Drawing.Size(151, 20);
+            this.tBoxKstBez.TabIndex = 1;
+            this.tBoxKstBez.TextChanged += new System.EventHandler(this.tBoxKstBez_TextChanged);
+            // 
             // AbtMitProAbt
             // 
             this.AbtMitProAbt.Controls.Add(this.herfKstAbt);
             this.AbtMitProAbt.Controls.Add(this.label3);
             this.AbtMitProAbt.Controls.Add(this.lBoxKstAbt);
-            this.AbtMitProAbt.Location = new System.Drawing.Point(202, 9);
+            this.AbtMitProAbt.Location = new System.Drawing.Point(347, 8);
             this.AbtMitProAbt.Name = "AbtMitProAbt";
             this.AbtMitProAbt.Size = new System.Drawing.Size(200, 239);
             this.AbtMitProAbt.TabIndex = 7;
+            this.AbtMitProAbt.Visible = false;
+            this.AbtMitProAbt.Paint += new System.Windows.Forms.PaintEventHandler(this.AbtMitProAbt_Paint);
             // 
             // herfKstAbt
             // 
@@ -119,23 +138,6 @@
             this.lBoxKstAbt.TabIndex = 0;
             this.lBoxKstAbt.SelectedIndexChanged += new System.EventHandler(this.lBoxKstAbt_SelectedIndexChanged);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(17, 19);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Bezeichnung:";
-            // 
-            // tBoxKstBez
-            // 
-            this.tBoxKstBez.Location = new System.Drawing.Point(17, 38);
-            this.tBoxKstBez.Name = "tBoxKstBez";
-            this.tBoxKstBez.Size = new System.Drawing.Size(151, 20);
-            this.tBoxKstBez.TabIndex = 1;
-            this.tBoxKstBez.TextChanged += new System.EventHandler(this.tBoxKstBez_TextChanged);
-            // 
             // herfKstLöschen
             // 
             this.herfKstLöschen.AutoSize = true;
@@ -158,12 +160,25 @@
             this.lBoxKst.TabIndex = 11;
             this.lBoxKst.SelectedIndexChanged += new System.EventHandler(this.lBoxKst_SelectedIndexChanged);
             // 
+            // herfKstNew
+            // 
+            this.herfKstNew.AutoSize = true;
+            this.herfKstNew.LinkColor = System.Drawing.SystemColors.Highlight;
+            this.herfKstNew.Location = new System.Drawing.Point(36, 8);
+            this.herfKstNew.Name = "herfKstNew";
+            this.herfKstNew.Size = new System.Drawing.Size(96, 13);
+            this.herfKstNew.TabIndex = 14;
+            this.herfKstNew.TabStop = true;
+            this.herfKstNew.Text = "Neu Kostenstelle...";
+            // 
             // Kostenstelle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(596, 367);
+            this.Controls.Add(this.herfKstNew);
             this.Controls.Add(this.KstDetail);
+            this.Controls.Add(this.AbtMitProAbt);
             this.Controls.Add(this.herfKstLöschen);
             this.Controls.Add(this.lBoxKst);
             this.Name = "Kostenstelle";
@@ -190,5 +205,6 @@
         private System.Windows.Forms.LinkLabel herfKstLöschen;
         private System.Windows.Forms.ListBox lBoxKst;
         private System.Windows.Forms.Button butKstSpeichern;
+        private System.Windows.Forms.LinkLabel herfKstNew;
     }
 }

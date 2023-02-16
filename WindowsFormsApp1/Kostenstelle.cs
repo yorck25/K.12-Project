@@ -22,7 +22,8 @@ namespace WindowsFormsApp1
 
         private void lBoxKst_SelectedIndexChanged(object sender, EventArgs e)
         {
-            KstDetail.Visible= true;
+                KstDetail.Visible= true;
+                AbtMitProAbt.Visible= true;
         }
 
         private void herfKstAbt_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -39,10 +40,26 @@ namespace WindowsFormsApp1
         private void butKstSpeichern_Click(object sender, EventArgs e)
         {
             kst.Kst_Bez = tBoxKstBez.Text;
+
             try
             {
+
+                if(string.IsNullOrEmpty(tBoxKstBez.Text))
+                {
+                    Console.WriteLine("Keine Eingabe");
+                    return;
+                }
+                else
+                {
                 kst.Spiechern();
                 Console.WriteLine("Kst wird gespeichert");
+                tBoxKstBez.Clear();
+                KstDetail.Visible= false;
+                AbtMitProAbt.Visible= false;
+
+                
+                return;
+                }
             }
             catch(MySqlException ex)
             {
@@ -56,6 +73,11 @@ namespace WindowsFormsApp1
         }
 
         private void KstDetail_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void AbtMitProAbt_Paint(object sender, PaintEventArgs e)
         {
 
         }

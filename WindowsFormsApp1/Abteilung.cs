@@ -34,7 +34,7 @@ namespace WindowsFormsApp1
 
         private void lBoxAbtMit_SelectedIndexChanged(object sender, EventArgs e)
         {
-            herfAbtMitarebiter.Visible= true; 
+            herfAbtMitarebiter.Visible= true;
         }
 
         private void herfAbtKst_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
