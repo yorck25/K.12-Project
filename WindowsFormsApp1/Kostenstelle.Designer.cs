@@ -150,6 +150,7 @@
             this.herfKstLöschen.TabIndex = 12;
             this.herfKstLöschen.TabStop = true;
             this.herfKstLöschen.Text = "Kostenstelle Löschen...";
+            this.herfKstLöschen.Visible = false;
             // 
             // lBoxKst
             // 
@@ -187,6 +188,7 @@
             this.Controls.Add(this.lBoxKst);
             this.Name = "Kostenstelle";
             this.Text = "Kostenstelle";
+            this.Load += new System.EventHandler(this.Kostenstelle_Load);
             this.KstDetail.ResumeLayout(false);
             this.KstDetail.PerformLayout();
             this.AbtMitProAbt.ResumeLayout(false);

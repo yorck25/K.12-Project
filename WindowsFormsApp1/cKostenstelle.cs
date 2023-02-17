@@ -62,6 +62,7 @@ namespace WindowsFormsApp1
                 cKostenstelle.liste.Add(this);
             }
             conn.Close();
+            return;
 
 
             /*

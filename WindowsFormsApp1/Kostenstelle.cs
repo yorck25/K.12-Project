@@ -24,6 +24,7 @@ namespace WindowsFormsApp1
         {
                 KstDetail.Visible= true;
                 AbtMitProAbt.Visible= true;
+                herfKstLöschen.Visible= true;
         }
 
         private void herfKstAbt_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -35,6 +36,28 @@ namespace WindowsFormsApp1
         private void lBoxKstAbt_SelectedIndexChanged(object sender, EventArgs e)
         {
             herfKstAbt.Visible= true;
+        }
+
+        public void Listaufbauen(bool NeuLaden)
+        {
+            if (NeuLaden)
+            {
+                // Ja, sollen wir
+                try
+                {
+                    cKostenstelle.AlleLaden();
+                }
+                catch (MySqlException ex){ 
+                
+                    Console.WriteLine("Fehler beim Laden: "+ex.Message);
+                }
+            }
+            // Liste in der Form neu laden
+            lBoxKst.Items.Clear();
+            foreach (cKostenstelle kst in cKostenstelle.liste)
+            {
+                lBoxKst.Items.Add(kst);
+            }
         }
 
         private void butKstSpeichern_Click(object sender, EventArgs e)
@@ -81,6 +104,11 @@ namespace WindowsFormsApp1
         private void herfKstNew_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             KstDetail.Visible= true;
+        }
+
+        private void Kostenstelle_Load(object sender, EventArgs e)
+        {
+            Listaufbauen(true);
         }
     }
 }
