@@ -14,6 +14,7 @@ namespace WindowsFormsApp1
     public partial class Kostenstelle : Form
     {
         cKostenstelle kst;
+
         public Kostenstelle(cKostenstelle kst)
         {
             this.kst = kst;
@@ -27,9 +28,9 @@ namespace WindowsFormsApp1
                 herfKstLöschen.Visible= true;
         }
 
-        private void herfKstAbt_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        public void herfKstAbt_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Abteilung abteilung = new Abteilung();
+            Abteilung abteilung = new Abteilung(new cAbteilung());
             abteilung.Show();
         }
 
@@ -40,19 +41,18 @@ namespace WindowsFormsApp1
 
         public void Listaufbauen(bool NeuLaden)
         {
-            if (NeuLaden)
+            if(NeuLaden)
             {
-                // Ja, sollen wir
                 try
                 {
                     cKostenstelle.AlleLaden();
                 }
-                catch (MySqlException ex){ 
-                
-                    Console.WriteLine("Fehler beim Laden: "+ex.Message);
+                catch (MySqlException ex)
+                {
+
+                    Console.WriteLine("Fehler beim Laden: " + ex.Message);
                 }
             }
-            // Liste in der Form neu laden
             lBoxKst.Items.Clear();
             foreach (cKostenstelle kst in cKostenstelle.liste)
             {

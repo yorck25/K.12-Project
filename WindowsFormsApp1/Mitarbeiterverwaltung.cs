@@ -29,7 +29,7 @@ namespace WindowsFormsApp1
 
         private void butMitAbt_Click(object sender, EventArgs e)
         {
-            Abteilung abteilung= new Abteilung();
+            Abteilung abteilung= new Abteilung(new cAbteilung());
             abteilung.Show();
         }
     }

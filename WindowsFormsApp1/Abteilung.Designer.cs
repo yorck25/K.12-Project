@@ -83,6 +83,7 @@
             // 
             // cBoxAbtKst
             // 
+            this.cBoxAbtKst.DisplayMember = "AbteilungsListe";
             this.cBoxAbtKst.FormattingEnabled = true;
             this.cBoxAbtKst.Location = new System.Drawing.Point(17, 96);
             this.cBoxAbtKst.Name = "cBoxAbtKst";
@@ -151,6 +152,7 @@
             this.butAbtBearbeiten.TabIndex = 9;
             this.butAbtBearbeiten.Text = "Bearbeiten";
             this.butAbtBearbeiten.UseVisualStyleBackColor = true;
+            this.butAbtBearbeiten.Click += new System.EventHandler(this.butAbtBearbeiten_Click);
             // 
             // AbtDetail
             // 
@@ -189,6 +191,7 @@
             this.Controls.Add(this.lBoxAbt);
             this.Name = "Abteilung";
             this.Text = "Abteilung";
+            this.Load += new System.EventHandler(this.Abteilung_Load);
             this.AbtMitProAbt.ResumeLayout(false);
             this.AbtMitProAbt.PerformLayout();
             this.AbtDetail.ResumeLayout(false);

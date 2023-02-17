@@ -16,7 +16,7 @@ namespace WindowsFormsApp1
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Kostenstelle(new cKostenstelle()));
+            Application.Run(new Abteilung(new cAbteilung()));
         }
     }
 }

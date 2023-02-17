@@ -123,6 +123,7 @@
     <Compile Include="Abteilung.Designer.cs">
       <DependentUpon>Abteilung.cs</DependentUpon>
     </Compile>
+    <Compile Include="cAbteilung.cs" />
     <Compile Include="cKostenstelle.cs" />
     <Compile Include="Hauptmenu.cs">
       <SubType>Form</SubType>
