@@ -15,6 +15,8 @@ namespace WindowsFormsApp1
         public long? Kst_ID { get; set; } = null;
         public string Kst_Bez { get; set; }
 
+        public string KostenstelleListe => Kst_ID + ": " + Kst_Bez;
+
         public static void AlleLaden()
         {
             string sql = "SELECT * FROM kostenstelle";

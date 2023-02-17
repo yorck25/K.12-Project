@@ -41,13 +41,10 @@ namespace WindowsFormsApp1
         {
             kst.Kst_Bez = tBoxKstBez.Text;
 
-            try
-            {
-
                 if(string.IsNullOrEmpty(tBoxKstBez.Text))
                 {
                     Console.WriteLine("Keine Eingabe");
-                    return;
+                    KstFehlereingabe.Visible= true; 
                 }
                 else
                 {
@@ -56,15 +53,14 @@ namespace WindowsFormsApp1
                 tBoxKstBez.Clear();
                 KstDetail.Visible= false;
                 AbtMitProAbt.Visible= false;
+                KstFehlereingabe.Visible = false;
 
-                
-                return;
+                    lBoxKst.Items.Clear();
+                    foreach (cKostenstelle k in cKostenstelle.liste)
+                    {
+                        lBoxKst.Items.Add(k);
+                    }
                 }
-            }
-            catch(MySqlException ex)
-            {
-                Console.WriteLine("KSt Speichern Fehler: " + ex);
-            }
         }
 
         private void tBoxKstBez_TextChanged(object sender, EventArgs e)
@@ -80,6 +76,11 @@ namespace WindowsFormsApp1
         private void AbtMitProAbt_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void herfKstNew_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            KstDetail.Visible= true;
         }
     }
 }

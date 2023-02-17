@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.KstDetail = new System.Windows.Forms.Panel();
+            this.KstFehlereingabe = new System.Windows.Forms.Label();
             this.butKstSpeichern = new System.Windows.Forms.Button();
-            this.butKstBearbeiten = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.tBoxKstBez = new System.Windows.Forms.TextBox();
             this.AbtMitProAbt = new System.Windows.Forms.Panel();
@@ -46,16 +46,27 @@
             // 
             // KstDetail
             // 
+            this.KstDetail.Controls.Add(this.KstFehlereingabe);
             this.KstDetail.Controls.Add(this.butKstSpeichern);
-            this.KstDetail.Controls.Add(this.butKstBearbeiten);
             this.KstDetail.Controls.Add(this.label1);
             this.KstDetail.Controls.Add(this.tBoxKstBez);
             this.KstDetail.Location = new System.Drawing.Point(138, 8);
             this.KstDetail.Name = "KstDetail";
-            this.KstDetail.Size = new System.Drawing.Size(194, 329);
+            this.KstDetail.Size = new System.Drawing.Size(194, 118);
             this.KstDetail.TabIndex = 13;
             this.KstDetail.Visible = false;
             this.KstDetail.Paint += new System.Windows.Forms.PaintEventHandler(this.KstDetail_Paint);
+            // 
+            // KstFehlereingabe
+            // 
+            this.KstFehlereingabe.AutoSize = true;
+            this.KstFehlereingabe.ForeColor = System.Drawing.Color.Red;
+            this.KstFehlereingabe.Location = new System.Drawing.Point(95, 19);
+            this.KstFehlereingabe.Name = "KstFehlereingabe";
+            this.KstFehlereingabe.Size = new System.Drawing.Size(76, 13);
+            this.KstFehlereingabe.TabIndex = 11;
+            this.KstFehlereingabe.Text = "Keine Eingabe";
+            this.KstFehlereingabe.Visible = false;
             // 
             // butKstSpeichern
             // 
@@ -66,15 +77,6 @@
             this.butKstSpeichern.Text = "Speichern";
             this.butKstSpeichern.UseVisualStyleBackColor = true;
             this.butKstSpeichern.Click += new System.EventHandler(this.butKstSpeichern_Click);
-            // 
-            // butKstBearbeiten
-            // 
-            this.butKstBearbeiten.Location = new System.Drawing.Point(20, 230);
-            this.butKstBearbeiten.Name = "butKstBearbeiten";
-            this.butKstBearbeiten.Size = new System.Drawing.Size(81, 32);
-            this.butKstBearbeiten.TabIndex = 9;
-            this.butKstBearbeiten.Text = "Bearbeiten";
-            this.butKstBearbeiten.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -151,6 +153,7 @@
             // 
             // lBoxKst
             // 
+            this.lBoxKst.DisplayMember = "KostenstelleListe";
             this.lBoxKst.FormattingEnabled = true;
             this.lBoxKst.Items.AddRange(new object[] {
             "TEst"});
@@ -170,6 +173,7 @@
             this.herfKstNew.TabIndex = 14;
             this.herfKstNew.TabStop = true;
             this.herfKstNew.Text = "Neu Kostenstelle...";
+            this.herfKstNew.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.herfKstNew_LinkClicked);
             // 
             // Kostenstelle
             // 
@@ -195,7 +199,6 @@
         #endregion
 
         private System.Windows.Forms.Panel KstDetail;
-        private System.Windows.Forms.Button butKstBearbeiten;
         private System.Windows.Forms.Panel AbtMitProAbt;
         private System.Windows.Forms.LinkLabel herfKstAbt;
         private System.Windows.Forms.Label label3;
@@ -206,5 +209,6 @@
         private System.Windows.Forms.ListBox lBoxKst;
         private System.Windows.Forms.Button butKstSpeichern;
         private System.Windows.Forms.LinkLabel herfKstNew;
+        private System.Windows.Forms.Label KstFehlereingabe;
     }
 }
