@@ -269,6 +269,7 @@
             this.butMitRolle.TabIndex = 3;
             this.butMitRolle.Text = "Rolle hinzufühgen";
             this.butMitRolle.UseVisualStyleBackColor = true;
+            this.butMitRolle.Click += new System.EventHandler(this.butMitRolle_Click);
             // 
             // button3
             // 
@@ -278,6 +279,7 @@
             this.button3.TabIndex = 4;
             this.button3.Text = "Funktion hinzufühgen";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // Mitarbeiterverwaltung
             // 

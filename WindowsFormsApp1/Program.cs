@@ -16,7 +16,8 @@ namespace WindowsFormsApp1
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Abteilung(new cAbteilung()));
+            //Application.Run(new Abteilung(new cAbteilung()));
+            Application.Run(new Mitarbeiterverwaltung());
         }
     }
 }

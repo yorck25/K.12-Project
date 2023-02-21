@@ -124,7 +124,15 @@
       <DependentUpon>Abteilung.cs</DependentUpon>
     </Compile>
     <Compile Include="cAbteilung.cs" />
+    <Compile Include="cFunktion.cs" />
     <Compile Include="cKostenstelle.cs" />
+    <Compile Include="cRolle.cs" />
+    <Compile Include="Funktion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Funktion.Designer.cs">
+      <DependentUpon>Funktion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Hauptmenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,8 +165,17 @@
     <Compile Include="Registrieren.Designer.cs">
       <DependentUpon>Registrieren.cs</DependentUpon>
     </Compile>
+    <Compile Include="Rolle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rolle.Designer.cs">
+      <DependentUpon>Rolle.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Abteilung.resx">
       <DependentUpon>Abteilung.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Funktion.resx">
+      <DependentUpon>Funktion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Hauptmenu.resx">
       <DependentUpon>Hauptmenu.cs</DependentUpon>
@@ -183,6 +200,9 @@
     </Compile>
     <EmbeddedResource Include="Registrieren.resx">
       <DependentUpon>Registrieren.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rolle.resx">
+      <DependentUpon>Rolle.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

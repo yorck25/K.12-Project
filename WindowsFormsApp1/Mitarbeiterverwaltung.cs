@@ -32,5 +32,17 @@ namespace WindowsFormsApp1
             Abteilung abteilung= new Abteilung(new cAbteilung());
             abteilung.Show();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Funktion funktion = new Funktion(new cFunktion());
+            funktion.Show();
+        }
+
+        private void butMitRolle_Click(object sender, EventArgs e)
+        {
+            Rolle rolle = new Rolle(new cRolle());
+            rolle.Show();
+        }
     }
 }
