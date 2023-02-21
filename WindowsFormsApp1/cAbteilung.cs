@@ -15,7 +15,7 @@ namespace WindowsFormsApp1
 
         public long? Abt_ID { get; set; } = null;
         public string Abt_Bez { get; set; }
-        public string Abt_Kst_ID { get; set; }
+        public int Abt_Kst_ID { get; set; }
 
         public string AbteilungsListe => Abt_ID + ": " + Abt_Bez;
 
@@ -76,7 +76,7 @@ namespace WindowsFormsApp1
             }
             else
             {
-                string sql = "INSERT INTO abteilung (Abt_Bez) VALUES (@Abt_Bez)";
+                string sql = "INSERT INTO abteilung (Abt_Bez, Abt_KST_ID) VALUES (@Abt_Bez, @Abt_KST_ID)";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 this.AbteilungSpeichern(cmd);
                 cmd.ExecuteNonQuery();
@@ -108,7 +108,7 @@ namespace WindowsFormsApp1
         {
             cmd.Parameters.AddWithValue("@Abt_Bez", this.Abt_Bez);
             cmd.Parameters.AddWithValue("@Abt_ID", this.Abt_ID);
-            //cmd.Parameters.AddWithValue("@Abt_Kst_ID", this.Abt_Kst_ID);
+            cmd.Parameters.AddWithValue("@Abt_Kst_ID", this.Abt_Kst_ID);
         }
 
     }

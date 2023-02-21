@@ -41,12 +41,14 @@
             this.butAbtBearbeiten = new System.Windows.Forms.Button();
             this.AbtDetail = new System.Windows.Forms.Panel();
             this.herfAbtKst = new System.Windows.Forms.LinkLabel();
+            this.herfAbtNeu = new System.Windows.Forms.LinkLabel();
             this.AbtMitProAbt.SuspendLayout();
             this.AbtDetail.SuspendLayout();
             this.SuspendLayout();
             // 
             // lBoxAbt
             // 
+            this.lBoxAbt.DisplayMember = "AbteilungsListe";
             this.lBoxAbt.FormattingEnabled = true;
             this.lBoxAbt.Items.AddRange(new object[] {
             "TEst"});
@@ -83,12 +85,13 @@
             // 
             // cBoxAbtKst
             // 
-            this.cBoxAbtKst.DisplayMember = "AbteilungsListe";
+            this.cBoxAbtKst.DisplayMember = "KostenstelleListe";
             this.cBoxAbtKst.FormattingEnabled = true;
             this.cBoxAbtKst.Location = new System.Drawing.Point(17, 96);
             this.cBoxAbtKst.Name = "cBoxAbtKst";
             this.cBoxAbtKst.Size = new System.Drawing.Size(151, 21);
             this.cBoxAbtKst.TabIndex = 5;
+            this.cBoxAbtKst.SelectedIndexChanged += new System.EventHandler(this.cBoxAbtKst_SelectedIndexChanged);
             // 
             // herfAbtLöschen
             // 
@@ -181,11 +184,24 @@
             this.herfAbtKst.Text = "Neue Kostenstelle...";
             this.herfAbtKst.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.herfAbtKst_LinkClicked);
             // 
+            // herfAbtNeu
+            // 
+            this.herfAbtNeu.AutoSize = true;
+            this.herfAbtNeu.LinkColor = System.Drawing.SystemColors.Highlight;
+            this.herfAbtNeu.Location = new System.Drawing.Point(62, 14);
+            this.herfAbtNeu.Name = "herfAbtNeu";
+            this.herfAbtNeu.Size = new System.Drawing.Size(83, 13);
+            this.herfAbtNeu.TabIndex = 15;
+            this.herfAbtNeu.TabStop = true;
+            this.herfAbtNeu.Text = "Neu Abteilung...";
+            this.herfAbtNeu.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.herfAbtNeu_LinkClicked);
+            // 
             // Abteilung
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(560, 363);
+            this.Controls.Add(this.herfAbtNeu);
             this.Controls.Add(this.AbtDetail);
             this.Controls.Add(this.herfAbtLöschen);
             this.Controls.Add(this.lBoxAbt);
@@ -216,5 +232,6 @@
         private System.Windows.Forms.Button butAbtBearbeiten;
         private System.Windows.Forms.Panel AbtDetail;
         private System.Windows.Forms.LinkLabel herfAbtKst;
+        private System.Windows.Forms.LinkLabel herfAbtNeu;
     }
 }

@@ -24,6 +24,7 @@ namespace WindowsFormsApp1
         private void lBoxAbt_SelectedIndexChanged(object sender, EventArgs e)
         {
             AbtDetail.Visible= true;
+            tBoxAbtBez.Text = lBoxAbt.SelectedIndex.ToString();
         }
 
         private void herfAbtMitarebiter_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -61,13 +62,34 @@ namespace WindowsFormsApp1
             foreach (cKostenstelle kst in cKostenstelle.liste)
             {
                 cBoxAbtKst.Items.Add(kst);
-                cBoxAbtKst.DisplayMember = kst.Kst_Bez;
             }
         }
 
         public void Abteilung_Load(object sender, EventArgs e)
         {
             AbtComKstNeuLaden(true);
+            lBoxAbtNeuLaden(true);
+        }
+
+        public void lBoxAbtNeuLaden(bool lBoxAbtNeuladen)
+        {
+            if (lBoxAbtNeuladen)
+            {
+                try
+                {
+                    abt.AbteilungLaden();
+                }
+                catch (MySqlException ex)
+                {
+
+                    Console.WriteLine("Fehler beim Laden: " + ex.Message);
+                }
+            }
+            lBoxAbt.Items.Clear();
+            foreach (cAbteilung abt in cAbteilung.Abtliste)
+            {
+                lBoxAbt.Items.Add(abt);
+            }
         }
 
         public void butAbtBearbeiten_Click(object sender, EventArgs e)
@@ -80,10 +102,22 @@ namespace WindowsFormsApp1
             else
             {
                 abt.Abt_Bez = tBoxAbtBez.Text;
+                abt.Abt_Kst_ID = Convert.ToInt32(cBoxAbtKst.SelectedIndex + 1);
+                Console.WriteLine(abt.Abt_Kst_ID);
                 abt.Spiechern();
                 Console.WriteLine("Abteilung wird gespeichert");
             }
 
+        }
+
+        private void cBoxAbtKst_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void herfAbtNeu_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            AbtDetail.Visible = true;
         }
     }
 }
