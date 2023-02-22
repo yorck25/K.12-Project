@@ -297,7 +297,7 @@
             // 
             // DateReg
             // 
-            this.DateReg.Location = new System.Drawing.Point(12, 142);
+            this.DateReg.Location = new System.Drawing.Point(11, 146);
             this.DateReg.Name = "DateReg";
             this.DateReg.Size = new System.Drawing.Size(96, 20);
             this.DateReg.TabIndex = 48;

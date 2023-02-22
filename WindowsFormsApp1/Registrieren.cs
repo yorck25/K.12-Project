@@ -49,7 +49,7 @@ namespace WindowsFormsApp1
             Mit.Mit_Name = tBoxRegName.Text;
             Mit.Mit_Straße = tBoxRegStraße.Text;
             Mit.Mit_HausNr = tBoxRegHausNr.Text;
-            //Mit.Mit_PLZ = Convert.ToInt16(tBoxRegPLZ.Text);
+            Mit.Mit_PLZ = Convert.ToInt16(tBoxRegPLZ.Text);
             Mit.Mit_Ort = tBoxRegOrt.Text;
             Mit.Mit_GDat = DateReg.Value;
 
