@@ -36,7 +36,7 @@ namespace WindowsFormsApp1
 
         private void Funktion_Load(object sender, EventArgs e)
         {
-            f.FunktionLaden();
+            cFunktion.FunktionLaden();
             FunktionListeLaden(true);
         }
 

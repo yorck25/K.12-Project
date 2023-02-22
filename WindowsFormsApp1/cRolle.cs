@@ -17,7 +17,7 @@ namespace WindowsFormsApp1
 
         public string RolleListe => R_ID + ": " + R_Bez;
 
-        public void RolleLaden()
+        public static void RolleLaden()
         {
             string sql = "SELECT * FROM rolle";
             MySqlConnection conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["localsql"].ConnectionString);

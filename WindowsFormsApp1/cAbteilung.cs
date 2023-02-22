@@ -19,7 +19,7 @@ namespace WindowsFormsApp1
 
         public string AbteilungsListe => Abt_ID + ": " + Abt_Bez;
 
-        public void AbteilungLaden()
+        public static void AbteilungLaden()
         {
             string sql = "SELECT * FROM abteilung";
             MySqlConnection conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["localsql"].ConnectionString);
@@ -39,7 +39,7 @@ namespace WindowsFormsApp1
             }
             rdr.Close();
         }
-        public static void KostenstelleLaden()
+        public void KostenstelleLaden()
         {
             string sql = "SELECT * FROM kostenstelle";
             MySqlConnection conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["localsql"].ConnectionString);

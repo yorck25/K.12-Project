@@ -23,7 +23,7 @@ namespace WindowsFormsApp1
 
         private void Rolle_Load(object sender, EventArgs e)
         {
-            r.RolleLaden();
+            cRolle.RolleLaden();
             RolleListeLaden(true);
         }
 
@@ -82,6 +82,12 @@ namespace WindowsFormsApp1
         {
             RDetail.Visible = true;
             RMitProAbt.Visible = true;
+        }
+
+        private void herfRMit_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Mitarbeiterverwaltung mitarbeiterverwaltung = new Mitarbeiterverwaltung(new cMitarbeiter());
+            mitarbeiterverwaltung.Show();
         }
     }
 }

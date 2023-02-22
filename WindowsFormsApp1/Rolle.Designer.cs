@@ -97,16 +97,16 @@
             this.herfRMit.TabIndex = 2;
             this.herfRMit.TabStop = true;
             this.herfRMit.Text = "Mitarbeiter bearbeiten...";
-            this.herfRMit.Visible = false;
+            this.herfRMit.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.herfRMit_LinkClicked);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(3, 10);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(132, 13);
+            this.label3.Size = new System.Drawing.Size(115, 13);
             this.label3.TabIndex = 1;
-            this.label3.Text = "Mitarbeiter in der Funktion:";
+            this.label3.Text = "Mitarbeiter in der Rolle:";
             // 
             // lBoxRMit
             // 

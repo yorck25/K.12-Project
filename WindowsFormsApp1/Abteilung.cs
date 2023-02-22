@@ -31,12 +31,13 @@ namespace WindowsFormsApp1
             else
             {
                 AbtDetail.Visible= true;
+                AbtMitProAbt.Visible = true;
             }
         }
 
         private void herfAbtMitarebiter_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Mitarbeiterverwaltung mitarbeiterverwaltung = new Mitarbeiterverwaltung();
+            Mitarbeiterverwaltung mitarbeiterverwaltung = new Mitarbeiterverwaltung(new cMitarbeiter());
             mitarbeiterverwaltung.Show();
         }
 
@@ -84,7 +85,7 @@ namespace WindowsFormsApp1
             {
                 try
                 {
-                    abt.AbteilungLaden();
+                    cAbteilung.AbteilungLaden();
                 }
                 catch (MySqlException ex)
                 {
@@ -125,6 +126,7 @@ namespace WindowsFormsApp1
         private void herfAbtNeu_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             AbtDetail.Visible = true;
+            AbtMitProAbt.Visible = false;
         }
     }
 }

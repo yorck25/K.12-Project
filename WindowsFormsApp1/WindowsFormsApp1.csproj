@@ -126,6 +126,7 @@
     <Compile Include="cAbteilung.cs" />
     <Compile Include="cFunktion.cs" />
     <Compile Include="cKostenstelle.cs" />
+    <Compile Include="cMitarbeiter.cs" />
     <Compile Include="cRolle.cs" />
     <Compile Include="Funktion.cs">
       <SubType>Form</SubType>

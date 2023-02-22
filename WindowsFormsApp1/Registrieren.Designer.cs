@@ -39,8 +39,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.tBoxRegUname = new System.Windows.Forms.TextBox();
             this.tBoxRegEmail = new System.Windows.Forms.TextBox();
-            this.tBoxRegGeb = new System.Windows.Forms.TextBox();
-            this.tBoxRegAdresse = new System.Windows.Forms.TextBox();
+            this.tBoxRegOrt = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.tBoxRegName = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -49,21 +48,31 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.tBoxRegVname = new System.Windows.Forms.TextBox();
+            this.cBoxRegAbr = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.tBoxRegStraße = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.tBoxRegPLZ = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.tBoxRegHausNr = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.DateReg = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // butRegErstellen
             // 
-            this.butRegErstellen.Location = new System.Drawing.Point(12, 260);
+            this.butRegErstellen.Location = new System.Drawing.Point(11, 332);
             this.butRegErstellen.Name = "butRegErstellen";
             this.butRegErstellen.Size = new System.Drawing.Size(97, 34);
             this.butRegErstellen.TabIndex = 18;
             this.butRegErstellen.Text = "Konto erstellen";
             this.butRegErstellen.UseVisualStyleBackColor = true;
+            this.butRegErstellen.Click += new System.EventHandler(this.butRegErstellen_Click);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(12, 244);
+            this.label8.Location = new System.Drawing.Point(9, 316);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(132, 13);
             this.label8.TabIndex = 20;
@@ -73,7 +82,7 @@
             // 
             this.herfRegVorhanden.AutoSize = true;
             this.herfRegVorhanden.LinkColor = System.Drawing.SystemColors.Highlight;
-            this.herfRegVorhanden.Location = new System.Drawing.Point(146, 244);
+            this.herfRegVorhanden.Location = new System.Drawing.Point(147, 316);
             this.herfRegVorhanden.Name = "herfRegVorhanden";
             this.herfRegVorhanden.Size = new System.Drawing.Size(57, 13);
             this.herfRegVorhanden.TabIndex = 21;
@@ -84,7 +93,7 @@
             // cBoxRegFunk
             // 
             this.cBoxRegFunk.FormattingEnabled = true;
-            this.cBoxRegFunk.Location = new System.Drawing.Point(12, 220);
+            this.cBoxRegFunk.Location = new System.Drawing.Point(12, 282);
             this.cBoxRegFunk.Name = "cBoxRegFunk";
             this.cBoxRegFunk.Size = new System.Drawing.Size(100, 21);
             this.cBoxRegFunk.TabIndex = 39;
@@ -92,7 +101,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(9, 203);
+            this.label9.Location = new System.Drawing.Point(9, 265);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(45, 13);
             this.label9.TabIndex = 38;
@@ -101,7 +110,7 @@
             // cBoxRegRolle
             // 
             this.cBoxRegRolle.FormattingEnabled = true;
-            this.cBoxRegRolle.Location = new System.Drawing.Point(128, 172);
+            this.cBoxRegRolle.Location = new System.Drawing.Point(128, 234);
             this.cBoxRegRolle.Name = "cBoxRegRolle";
             this.cBoxRegRolle.Size = new System.Drawing.Size(100, 21);
             this.cBoxRegRolle.TabIndex = 37;
@@ -109,7 +118,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(125, 155);
+            this.label1.Location = new System.Drawing.Point(125, 217);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(34, 13);
             this.label1.TabIndex = 36;
@@ -118,7 +127,7 @@
             // cBoxRegAbt
             // 
             this.cBoxRegAbt.FormattingEnabled = true;
-            this.cBoxRegAbt.Location = new System.Drawing.Point(12, 172);
+            this.cBoxRegAbt.Location = new System.Drawing.Point(12, 234);
             this.cBoxRegAbt.Name = "cBoxRegAbt";
             this.cBoxRegAbt.Size = new System.Drawing.Size(100, 21);
             this.cBoxRegAbt.TabIndex = 35;
@@ -126,7 +135,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(9, 155);
+            this.label7.Location = new System.Drawing.Point(9, 217);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(54, 13);
             this.label7.TabIndex = 34;
@@ -134,36 +143,29 @@
             // 
             // tBoxRegUname
             // 
-            this.tBoxRegUname.Location = new System.Drawing.Point(128, 121);
+            this.tBoxRegUname.Location = new System.Drawing.Point(128, 145);
             this.tBoxRegUname.Name = "tBoxRegUname";
             this.tBoxRegUname.Size = new System.Drawing.Size(100, 20);
             this.tBoxRegUname.TabIndex = 33;
             // 
             // tBoxRegEmail
             // 
-            this.tBoxRegEmail.Location = new System.Drawing.Point(12, 121);
+            this.tBoxRegEmail.Location = new System.Drawing.Point(12, 185);
             this.tBoxRegEmail.Name = "tBoxRegEmail";
             this.tBoxRegEmail.Size = new System.Drawing.Size(100, 20);
             this.tBoxRegEmail.TabIndex = 32;
             // 
-            // tBoxRegGeb
+            // tBoxRegOrt
             // 
-            this.tBoxRegGeb.Location = new System.Drawing.Point(128, 73);
-            this.tBoxRegGeb.Name = "tBoxRegGeb";
-            this.tBoxRegGeb.Size = new System.Drawing.Size(100, 20);
-            this.tBoxRegGeb.TabIndex = 31;
-            // 
-            // tBoxRegAdresse
-            // 
-            this.tBoxRegAdresse.Location = new System.Drawing.Point(12, 73);
-            this.tBoxRegAdresse.Name = "tBoxRegAdresse";
-            this.tBoxRegAdresse.Size = new System.Drawing.Size(100, 20);
-            this.tBoxRegAdresse.TabIndex = 30;
+            this.tBoxRegOrt.Location = new System.Drawing.Point(128, 106);
+            this.tBoxRegOrt.Name = "tBoxRegOrt";
+            this.tBoxRegOrt.Size = new System.Drawing.Size(100, 20);
+            this.tBoxRegOrt.TabIndex = 30;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(124, 105);
+            this.label6.Location = new System.Drawing.Point(124, 129);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(63, 13);
             this.label6.TabIndex = 29;
@@ -179,7 +181,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(8, 105);
+            this.label5.Location = new System.Drawing.Point(9, 169);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(39, 13);
             this.label5.TabIndex = 27;
@@ -188,7 +190,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(125, 57);
+            this.label4.Location = new System.Drawing.Point(9, 129);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(101, 13);
             this.label4.TabIndex = 26;
@@ -197,11 +199,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(9, 57);
+            this.label3.Location = new System.Drawing.Point(125, 90);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(48, 13);
+            this.label3.Size = new System.Drawing.Size(24, 13);
             this.label3.TabIndex = 25;
-            this.label3.Text = "Adresse:";
+            this.label3.Text = "Ort:";
             // 
             // label2
             // 
@@ -228,12 +230,93 @@
             this.tBoxRegVname.Size = new System.Drawing.Size(100, 20);
             this.tBoxRegVname.TabIndex = 22;
             // 
+            // cBoxRegAbr
+            // 
+            this.cBoxRegAbr.FormattingEnabled = true;
+            this.cBoxRegAbr.Location = new System.Drawing.Point(128, 282);
+            this.cBoxRegAbr.Name = "cBoxRegAbr";
+            this.cBoxRegAbr.Size = new System.Drawing.Size(100, 21);
+            this.cBoxRegAbr.TabIndex = 40;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(125, 265);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(110, 13);
+            this.label11.TabIndex = 41;
+            this.label11.Text = "Abrechnungsnummer:";
+            // 
+            // tBoxRegStraße
+            // 
+            this.tBoxRegStraße.Location = new System.Drawing.Point(12, 69);
+            this.tBoxRegStraße.Name = "tBoxRegStraße";
+            this.tBoxRegStraße.Size = new System.Drawing.Size(100, 20);
+            this.tBoxRegStraße.TabIndex = 43;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(9, 53);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(41, 13);
+            this.label12.TabIndex = 42;
+            this.label12.Text = "Straße:";
+            // 
+            // tBoxRegPLZ
+            // 
+            this.tBoxRegPLZ.Location = new System.Drawing.Point(128, 69);
+            this.tBoxRegPLZ.Name = "tBoxRegPLZ";
+            this.tBoxRegPLZ.Size = new System.Drawing.Size(100, 20);
+            this.tBoxRegPLZ.TabIndex = 45;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(125, 53);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(30, 13);
+            this.label13.TabIndex = 44;
+            this.label13.Text = "PLZ:";
+            // 
+            // tBoxRegHausNr
+            // 
+            this.tBoxRegHausNr.Location = new System.Drawing.Point(11, 106);
+            this.tBoxRegHausNr.Name = "tBoxRegHausNr";
+            this.tBoxRegHausNr.Size = new System.Drawing.Size(100, 20);
+            this.tBoxRegHausNr.TabIndex = 47;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(9, 90);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(72, 13);
+            this.label14.TabIndex = 46;
+            this.label14.Text = "Hausnummer:";
+            // 
+            // DateReg
+            // 
+            this.DateReg.Location = new System.Drawing.Point(12, 142);
+            this.DateReg.Name = "DateReg";
+            this.DateReg.Size = new System.Drawing.Size(96, 20);
+            this.DateReg.TabIndex = 48;
+            // 
             // Registrieren
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.ClientSize = new System.Drawing.Size(373, 415);
+            this.Controls.Add(this.DateReg);
+            this.Controls.Add(this.tBoxRegHausNr);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.tBoxRegPLZ);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.tBoxRegStraße);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.cBoxRegAbr);
             this.Controls.Add(this.cBoxRegFunk);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.cBoxRegRolle);
@@ -242,8 +325,7 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.tBoxRegUname);
             this.Controls.Add(this.tBoxRegEmail);
-            this.Controls.Add(this.tBoxRegGeb);
-            this.Controls.Add(this.tBoxRegAdresse);
+            this.Controls.Add(this.tBoxRegOrt);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.tBoxRegName);
             this.Controls.Add(this.label5);
@@ -275,8 +357,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox tBoxRegUname;
         private System.Windows.Forms.TextBox tBoxRegEmail;
-        private System.Windows.Forms.TextBox tBoxRegGeb;
-        private System.Windows.Forms.TextBox tBoxRegAdresse;
+        private System.Windows.Forms.TextBox tBoxRegOrt;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox tBoxRegName;
         private System.Windows.Forms.Label label5;
@@ -285,5 +366,14 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox tBoxRegVname;
+        private System.Windows.Forms.ComboBox cBoxRegAbr;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox tBoxRegStraße;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox tBoxRegPLZ;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox tBoxRegHausNr;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.DateTimePicker DateReg;
     }
 }

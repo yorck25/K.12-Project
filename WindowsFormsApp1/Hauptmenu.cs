@@ -55,13 +55,13 @@ namespace WindowsFormsApp1
 
         private void butHmenuMitarbeiter_Click(object sender, EventArgs e)
         {
-            Mitarbeiterverwaltung mitarbeiterverwaltung = new Mitarbeiterverwaltung();
+            Mitarbeiterverwaltung mitarbeiterverwaltung = new Mitarbeiterverwaltung(new cMitarbeiter());
             mitarbeiterverwaltung.Show();
         }
 
         private void butHmenuÄndern_Click(object sender, EventArgs e)
         {
-            Mitarbeiterverwaltung mitarbeiterverwaltung = new Mitarbeiterverwaltung();
+            Mitarbeiterverwaltung mitarbeiterverwaltung = new Mitarbeiterverwaltung(new cMitarbeiter());
             mitarbeiterverwaltung.Show();
         }
     }

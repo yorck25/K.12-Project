@@ -96,6 +96,7 @@
             // 
             // cBoxMitFunk
             // 
+            this.cBoxMitFunk.DisplayMember = "FunktionListe";
             this.cBoxMitFunk.FormattingEnabled = true;
             this.cBoxMitFunk.Location = new System.Drawing.Point(26, 210);
             this.cBoxMitFunk.Name = "cBoxMitFunk";
@@ -113,6 +114,7 @@
             // 
             // cBoxMitRolle
             // 
+            this.cBoxMitRolle.DisplayMember = "RolleListe";
             this.cBoxMitRolle.FormattingEnabled = true;
             this.cBoxMitRolle.Location = new System.Drawing.Point(142, 162);
             this.cBoxMitRolle.Name = "cBoxMitRolle";
@@ -130,6 +132,7 @@
             // 
             // cBoxMitAbt
             // 
+            this.cBoxMitAbt.DisplayMember = "AbteilungsListe";
             this.cBoxMitAbt.FormattingEnabled = true;
             this.cBoxMitAbt.Location = new System.Drawing.Point(26, 162);
             this.cBoxMitAbt.Name = "cBoxMitAbt";
@@ -293,6 +296,7 @@
             this.Controls.Add(this.lBoxMverMitarbeiter);
             this.Name = "Mitarbeiterverwaltung";
             this.Text = "Mitarbeiterverwaltung";
+            this.Load += new System.EventHandler(this.Mitarbeiterverwaltung_Load);
             this.MverDetailMitarbeiter.ResumeLayout(false);
             this.MverDetailMitarbeiter.PerformLayout();
             this.ResumeLayout(false);

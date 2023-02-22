@@ -17,7 +17,7 @@ namespace WindowsFormsApp1
 
         public string FunktionListe => F_ID + ": " + F_Bez;
 
-        public void FunktionLaden()
+        public static void FunktionLaden()
         {
             string sql = "SELECT * FROM funktion";
             MySqlConnection conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["localsql"].ConnectionString);

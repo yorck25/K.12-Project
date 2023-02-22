@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ComponentFactory.Krypton.Toolkit;
+using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +14,11 @@ namespace WindowsFormsApp1
 {
     public partial class Mitarbeiterverwaltung : Form
     {
-        public Mitarbeiterverwaltung()
+        cMitarbeiter Mit;
+        public Mitarbeiterverwaltung(cMitarbeiter mit)
         {
             InitializeComponent();
+            this.Mit = mit;
         }
 
         private void lBoxMverMitarbeiter_SelectedIndexChanged(object sender, EventArgs e)
@@ -25,6 +29,19 @@ namespace WindowsFormsApp1
         private void butMverDetailSchließen_Click(object sender, EventArgs e)
         {
             MverDetailMitarbeiter.Visible = false;
+            Mit.Mit_Name = tBoxMitName.Text;
+
+            if (string.IsNullOrEmpty(tBoxMitName.Text))
+            {
+                Console.WriteLine("Keine Eingabe");
+            }
+            else
+            {
+                Mit.MitarbeiterSpeichern();
+                Console.WriteLine("Kst wird gespeichert");
+                tBoxMitName.Clear();
+
+            }
         }
 
         private void butMitAbt_Click(object sender, EventArgs e)
@@ -43,6 +60,77 @@ namespace WindowsFormsApp1
         {
             Rolle rolle = new Rolle(new cRolle());
             rolle.Show();
+        }
+
+        public void Mitarbeiterverwaltung_Load(object sender, EventArgs e)
+        {
+            CBoxMitAbtNeuLaden(true);
+            CBoxMitRNeuLaden(true);
+            CBoxMitFNeuLaden(true);
+            
+        }
+
+        public void CBoxMitFNeuLaden(bool FNeuLaden)
+        {
+            if (FNeuLaden)
+            {
+                try
+                {
+                   cFunktion.FunktionLaden();
+                }
+                catch (MySqlException ex)
+                {
+
+                    Console.WriteLine("Fehler beim Laden: " + ex.Message);
+                }
+            }
+            cBoxMitFunk.Items.Clear();
+            foreach (cFunktion f in cFunktion.FListe)
+            {
+                cBoxMitFunk.Items.Add(f);
+            }
+        }
+
+        public void CBoxMitAbtNeuLaden(bool AbtNeuLaden)
+        {
+            if (AbtNeuLaden)
+            {
+                try
+                {
+                   cAbteilung.AbteilungLaden();
+                }
+                catch (MySqlException ex)
+                {
+
+                    Console.WriteLine("Fehler beim Laden: " + ex.Message);
+                }
+            }
+            cBoxMitAbt.Items.Clear();
+            foreach (cAbteilung abt in cAbteilung.Abtliste)
+            {
+                cBoxMitAbt.Items.Add(abt);
+            }
+        }
+
+        public void CBoxMitRNeuLaden(bool RNeuLaden)
+        {
+            if (RNeuLaden)
+            {
+                try
+                {
+                    cRolle.RolleLaden();
+                }
+                catch (MySqlException ex)
+                {
+
+                    Console.WriteLine("Fehler beim Laden: " + ex.Message);
+                }
+            }
+            cBoxMitRolle.Items.Clear();
+            foreach (cRolle r in cRolle.RListe)
+            {
+                cBoxMitRolle.Items.Add(r);
+            }
         }
     }
 }
