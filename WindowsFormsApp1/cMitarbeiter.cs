@@ -50,25 +50,26 @@ namespace WindowsFormsApp1
                     " Mit_Mail = @Mit_Mail," +
                     " Mit_Benutzer = @Mit_Benutzer," +
                     " Mit_Pw = @Mit_Pw," +
-                    " Mit_Abt_ID = @Mit_ABAbt_ID," +
+                    " Mit_Abt_ID = @Mit_Abt_ID," +
                     " Mit_F_ID = @Mit_F_ID," +
                     " Mit_R_ID =  @Mit_R_ID," +
                     " Mit_Abr_ID =  @Mit_Abr_ID  "
-                    + "WHERE Mit_ID = @Mit_ID";
+                    + "WHERE @Mit_ID = Mit_ID";
                 Console.WriteLine("ID:" + this.Mit_ID);
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 this.MitarbeiterWerte(cmd);
                 cmd.ExecuteNonQuery();
             }
-            else
+            /*else
             {
-                string sql = "INSERT INTO mitarbeiter (Mit_Name) VALUES (@Mit_Name)";
+                string sql = "INSERT INTO mitarbeiter (Mit_Name, Mit_VName, Mit_Strasse, Mit_HausNr, Mit_PLZ, Mit_Ort, Mit_GDat, Mit_Mail, Mit_Benutzer, Mit_Pw, Mit_Abt_ID, Mit_F_ID, Mit_R_ID, Mit_Abr_ID)" +
+                    " VALUES (@Mit_Name, @Mit_VName, @Mit_Strasse, @Mit_HausNr, @Mit_PLZ, @Mit_Ort, @Mit_GDat, @Mit_Mail, @Mit_Benutzer, @Mit_Pw, @Mit_Abt_ID, @Mit_F_ID, @Mit_R_ID, @Mit_Abr_ID)";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 this.MitarbeiterWerte(cmd);
                 cmd.ExecuteNonQuery();
                 this.Mit_ID = cmd.LastInsertedId;
                 cMitarbeiter.MitListe.Add(this);
-            }
+            }*/
             conn.Close();
             return;
         }
@@ -78,7 +79,7 @@ namespace WindowsFormsApp1
             cmd.Parameters.AddWithValue("@Mit_ID", this.Mit_ID);
             cmd.Parameters.AddWithValue("@Mit_Name", this.Mit_Name);
             cmd.Parameters.AddWithValue("@Mit_VName", this.Mit_VName);
-            cmd.Parameters.AddWithValue("@Mit_Straße", this.Mit_Straße);
+            cmd.Parameters.AddWithValue("@Mit_Strasse", this.Mit_Straße);
             cmd.Parameters.AddWithValue("@Mit_HausNr", this.Mit_HausNr);
             cmd.Parameters.AddWithValue("@Mit_PLZ", this.Mit_PLZ);
             cmd.Parameters.AddWithValue("@Mit_Ort", this.Mit_Ort);
@@ -92,23 +93,36 @@ namespace WindowsFormsApp1
             cmd.Parameters.AddWithValue("@Mit_Abr_ID", this.Mit_Abr_ID);
         }
 
-        public void MitarbeiterLaden()
+        public static void MitarbeiterLaden()
         {
-            string sql = "SELECT * FROM rolle";
+            string sql = "SELECT * FROM mitarbeiter";
             MySqlConnection conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["localsql"].ConnectionString);
 
             conn.Open();
             MySqlCommand cmd = new MySqlCommand(sql, conn);
             MySqlDataReader rdr = cmd.ExecuteReader();
 
-            cRolle.RListe = new List<cRolle>();
+            cMitarbeiter.MitListe = new List<cMitarbeiter>();
 
             while (rdr.Read())
             {
-                cRolle r = new cRolle();
-                r.R_ID = rdr.GetInt64("R_ID");
-                r.R_Bez = rdr.GetString("R_Bez");
-                cRolle.RListe.Add(r);
+                cMitarbeiter mit = new cMitarbeiter();
+                mit.Mit_ID = rdr.GetInt64("Mit_ID");
+                mit.Mit_VName = rdr.GetString("Mit_VName");
+                mit.Mit_Name = rdr.GetString("Mit_Name");
+                mit.Mit_Straße = rdr.GetString("Mit_Strasse");
+                mit.Mit_HausNr = rdr.GetString("Mit_HausNr");
+                mit.Mit_PLZ = rdr.GetInt16("Mit_PLZ");
+                mit.Mit_Ort = rdr.GetString("Mit_Ort");
+                //mit.Mit_VName = rdr.GetString("Mit_GDat");
+                mit.Mit_Mail = rdr.GetString("Mit_Mail");
+                mit.Mit_Benutzer = rdr.GetString("Mit_Benutzer");
+                mit.Mit_Pw = rdr.GetString("Mit_Pw");
+                mit.Mit_Abt_ID = rdr.GetInt16("Mit_Abt_ID");
+                mit.Mit_R_ID = rdr.GetInt16("Mit_R_ID");
+                mit.Mit_F_ID = rdr.GetInt16("Mit_F_ID");
+                mit.Mit_Abr_ID = rdr.GetInt16("Mit_Abr_ID");
+                cMitarbeiter.MitListe.Add(mit);
             }
             rdr.Close();
         }

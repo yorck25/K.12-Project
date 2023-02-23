@@ -30,33 +30,44 @@
         {
             this.lBoxMverMitarbeiter = new System.Windows.Forms.ListBox();
             this.MverDetailMitarbeiter = new System.Windows.Forms.Panel();
+            this.butMverDetailSchließen = new System.Windows.Forms.Button();
+            this.butMitAbt = new System.Windows.Forms.Button();
+            this.butMitRolle = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.DateMit = new System.Windows.Forms.DateTimePicker();
+            this.tBoxMitHausNr = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.tBoxMitPLZ = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.tBoxMitStraße = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.cBoxMitAbr = new System.Windows.Forms.ComboBox();
             this.cBoxMitFunk = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.cBoxMitRolle = new System.Windows.Forms.ComboBox();
-            this.label8 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.cBoxMitAbt = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.butMverDetailSchließen = new System.Windows.Forms.Button();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.tBoxMitGeb = new System.Windows.Forms.TextBox();
-            this.tBoxMiAdresse = new System.Windows.Forms.TextBox();
+            this.tBoxMitBenutzer = new System.Windows.Forms.TextBox();
+            this.tBoxMitEmail = new System.Windows.Forms.TextBox();
+            this.tBoxMitOrt = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.tBoxMitName = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.tBoxMitVname = new System.Windows.Forms.TextBox();
-            this.butMitAbt = new System.Windows.Forms.Button();
-            this.butMitRolle = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.tBoxMitVName = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.tBoxMitPw = new System.Windows.Forms.TextBox();
             this.MverDetailMitarbeiter.SuspendLayout();
             this.SuspendLayout();
             // 
             // lBoxMverMitarbeiter
             // 
+            this.lBoxMverMitarbeiter.DisplayMember = "MitarbeiterListe";
             this.lBoxMverMitarbeiter.FormattingEnabled = true;
             this.lBoxMverMitarbeiter.Items.AddRange(new object[] {
             "Yorck",
@@ -69,190 +80,50 @@
             // 
             // MverDetailMitarbeiter
             // 
+            this.MverDetailMitarbeiter.Controls.Add(this.label15);
+            this.MverDetailMitarbeiter.Controls.Add(this.tBoxMitPw);
+            this.MverDetailMitarbeiter.Controls.Add(this.DateMit);
+            this.MverDetailMitarbeiter.Controls.Add(this.tBoxMitHausNr);
+            this.MverDetailMitarbeiter.Controls.Add(this.label14);
+            this.MverDetailMitarbeiter.Controls.Add(this.tBoxMitPLZ);
+            this.MverDetailMitarbeiter.Controls.Add(this.label13);
+            this.MverDetailMitarbeiter.Controls.Add(this.tBoxMitStraße);
+            this.MverDetailMitarbeiter.Controls.Add(this.label12);
+            this.MverDetailMitarbeiter.Controls.Add(this.label11);
+            this.MverDetailMitarbeiter.Controls.Add(this.cBoxMitAbr);
             this.MverDetailMitarbeiter.Controls.Add(this.cBoxMitFunk);
             this.MverDetailMitarbeiter.Controls.Add(this.label9);
             this.MverDetailMitarbeiter.Controls.Add(this.cBoxMitRolle);
-            this.MverDetailMitarbeiter.Controls.Add(this.label8);
+            this.MverDetailMitarbeiter.Controls.Add(this.label1);
             this.MverDetailMitarbeiter.Controls.Add(this.cBoxMitAbt);
             this.MverDetailMitarbeiter.Controls.Add(this.label7);
-            this.MverDetailMitarbeiter.Controls.Add(this.butMverDetailSchließen);
-            this.MverDetailMitarbeiter.Controls.Add(this.textBox6);
-            this.MverDetailMitarbeiter.Controls.Add(this.textBox5);
-            this.MverDetailMitarbeiter.Controls.Add(this.tBoxMitGeb);
-            this.MverDetailMitarbeiter.Controls.Add(this.tBoxMiAdresse);
+            this.MverDetailMitarbeiter.Controls.Add(this.tBoxMitBenutzer);
+            this.MverDetailMitarbeiter.Controls.Add(this.tBoxMitEmail);
+            this.MverDetailMitarbeiter.Controls.Add(this.tBoxMitOrt);
             this.MverDetailMitarbeiter.Controls.Add(this.label6);
             this.MverDetailMitarbeiter.Controls.Add(this.tBoxMitName);
             this.MverDetailMitarbeiter.Controls.Add(this.label5);
             this.MverDetailMitarbeiter.Controls.Add(this.label4);
             this.MverDetailMitarbeiter.Controls.Add(this.label3);
             this.MverDetailMitarbeiter.Controls.Add(this.label2);
-            this.MverDetailMitarbeiter.Controls.Add(this.label1);
-            this.MverDetailMitarbeiter.Controls.Add(this.tBoxMitVname);
+            this.MverDetailMitarbeiter.Controls.Add(this.label10);
+            this.MverDetailMitarbeiter.Controls.Add(this.tBoxMitVName);
+            this.MverDetailMitarbeiter.Controls.Add(this.butMverDetailSchließen);
             this.MverDetailMitarbeiter.Location = new System.Drawing.Point(184, 25);
             this.MverDetailMitarbeiter.Name = "MverDetailMitarbeiter";
             this.MverDetailMitarbeiter.Size = new System.Drawing.Size(266, 355);
             this.MverDetailMitarbeiter.TabIndex = 1;
             this.MverDetailMitarbeiter.Visible = false;
             // 
-            // cBoxMitFunk
-            // 
-            this.cBoxMitFunk.DisplayMember = "FunktionListe";
-            this.cBoxMitFunk.FormattingEnabled = true;
-            this.cBoxMitFunk.Location = new System.Drawing.Point(26, 210);
-            this.cBoxMitFunk.Name = "cBoxMitFunk";
-            this.cBoxMitFunk.Size = new System.Drawing.Size(100, 21);
-            this.cBoxMitFunk.TabIndex = 18;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(23, 193);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(45, 13);
-            this.label9.TabIndex = 17;
-            this.label9.Text = "Funtion:";
-            // 
-            // cBoxMitRolle
-            // 
-            this.cBoxMitRolle.DisplayMember = "RolleListe";
-            this.cBoxMitRolle.FormattingEnabled = true;
-            this.cBoxMitRolle.Location = new System.Drawing.Point(142, 162);
-            this.cBoxMitRolle.Name = "cBoxMitRolle";
-            this.cBoxMitRolle.Size = new System.Drawing.Size(100, 21);
-            this.cBoxMitRolle.TabIndex = 16;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(139, 145);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(34, 13);
-            this.label8.TabIndex = 15;
-            this.label8.Text = "Rolle:";
-            // 
-            // cBoxMitAbt
-            // 
-            this.cBoxMitAbt.DisplayMember = "AbteilungsListe";
-            this.cBoxMitAbt.FormattingEnabled = true;
-            this.cBoxMitAbt.Location = new System.Drawing.Point(26, 162);
-            this.cBoxMitAbt.Name = "cBoxMitAbt";
-            this.cBoxMitAbt.Size = new System.Drawing.Size(100, 21);
-            this.cBoxMitAbt.TabIndex = 14;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(23, 145);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(54, 13);
-            this.label7.TabIndex = 13;
-            this.label7.Text = "Abteilung:";
-            // 
             // butMverDetailSchließen
             // 
-            this.butMverDetailSchließen.Location = new System.Drawing.Point(26, 302);
+            this.butMverDetailSchließen.Location = new System.Drawing.Point(11, 308);
             this.butMverDetailSchließen.Name = "butMverDetailSchließen";
             this.butMverDetailSchließen.Size = new System.Drawing.Size(89, 32);
             this.butMverDetailSchließen.TabIndex = 12;
             this.butMverDetailSchließen.Text = "Schließen";
             this.butMverDetailSchließen.UseVisualStyleBackColor = true;
             this.butMverDetailSchließen.Click += new System.EventHandler(this.butMverDetailSchließen_Click);
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(142, 111);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 11;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(26, 111);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 10;
-            // 
-            // tBoxMitGeb
-            // 
-            this.tBoxMitGeb.Location = new System.Drawing.Point(142, 63);
-            this.tBoxMitGeb.Name = "tBoxMitGeb";
-            this.tBoxMitGeb.Size = new System.Drawing.Size(100, 20);
-            this.tBoxMitGeb.TabIndex = 9;
-            // 
-            // tBoxMiAdresse
-            // 
-            this.tBoxMiAdresse.Location = new System.Drawing.Point(26, 63);
-            this.tBoxMiAdresse.Name = "tBoxMiAdresse";
-            this.tBoxMiAdresse.Size = new System.Drawing.Size(100, 20);
-            this.tBoxMiAdresse.TabIndex = 8;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(138, 95);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(63, 13);
-            this.label6.TabIndex = 7;
-            this.label6.Text = "User Name:";
-            // 
-            // tBoxMitName
-            // 
-            this.tBoxMitName.Location = new System.Drawing.Point(142, 18);
-            this.tBoxMitName.Name = "tBoxMitName";
-            this.tBoxMitName.Size = new System.Drawing.Size(100, 20);
-            this.tBoxMitName.TabIndex = 6;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(22, 95);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(39, 13);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "E-Mail:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(139, 47);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(101, 13);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Geburtstags Datum:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(23, 47);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(48, 13);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Adresse:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(139, 2);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(62, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Nachname:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(23, 2);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(52, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Vorname:";
-            // 
-            // tBoxMitVname
-            // 
-            this.tBoxMitVname.Location = new System.Drawing.Point(26, 18);
-            this.tBoxMitVname.Name = "tBoxMitVname";
-            this.tBoxMitVname.Size = new System.Drawing.Size(100, 20);
-            this.tBoxMitVname.TabIndex = 0;
             // 
             // butMitAbt
             // 
@@ -284,6 +155,234 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // DateMit
+            // 
+            this.DateMit.Location = new System.Drawing.Point(10, 145);
+            this.DateMit.Name = "DateMit";
+            this.DateMit.Size = new System.Drawing.Size(96, 20);
+            this.DateMit.TabIndex = 74;
+            // 
+            // tBoxMitHausNr
+            // 
+            this.tBoxMitHausNr.Location = new System.Drawing.Point(10, 105);
+            this.tBoxMitHausNr.Name = "tBoxMitHausNr";
+            this.tBoxMitHausNr.Size = new System.Drawing.Size(100, 20);
+            this.tBoxMitHausNr.TabIndex = 73;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(8, 89);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(72, 13);
+            this.label14.TabIndex = 72;
+            this.label14.Text = "Hausnummer:";
+            // 
+            // tBoxMitPLZ
+            // 
+            this.tBoxMitPLZ.Location = new System.Drawing.Point(127, 68);
+            this.tBoxMitPLZ.Name = "tBoxMitPLZ";
+            this.tBoxMitPLZ.Size = new System.Drawing.Size(100, 20);
+            this.tBoxMitPLZ.TabIndex = 71;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(124, 52);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(30, 13);
+            this.label13.TabIndex = 70;
+            this.label13.Text = "PLZ:";
+            // 
+            // tBoxMitStraße
+            // 
+            this.tBoxMitStraße.Location = new System.Drawing.Point(11, 68);
+            this.tBoxMitStraße.Name = "tBoxMitStraße";
+            this.tBoxMitStraße.Size = new System.Drawing.Size(100, 20);
+            this.tBoxMitStraße.TabIndex = 69;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(8, 52);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(41, 13);
+            this.label12.TabIndex = 68;
+            this.label12.Text = "Straße:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(124, 264);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(110, 13);
+            this.label11.TabIndex = 67;
+            this.label11.Text = "Abrechnungsnummer:";
+            // 
+            // cBoxMitAbr
+            // 
+            this.cBoxMitAbr.FormattingEnabled = true;
+            this.cBoxMitAbr.Location = new System.Drawing.Point(127, 281);
+            this.cBoxMitAbr.Name = "cBoxMitAbr";
+            this.cBoxMitAbr.Size = new System.Drawing.Size(100, 21);
+            this.cBoxMitAbr.TabIndex = 66;
+            // 
+            // cBoxMitFunk
+            // 
+            this.cBoxMitFunk.FormattingEnabled = true;
+            this.cBoxMitFunk.Location = new System.Drawing.Point(11, 281);
+            this.cBoxMitFunk.Name = "cBoxMitFunk";
+            this.cBoxMitFunk.Size = new System.Drawing.Size(100, 21);
+            this.cBoxMitFunk.TabIndex = 65;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(8, 264);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(45, 13);
+            this.label9.TabIndex = 64;
+            this.label9.Text = "Funtion:";
+            // 
+            // cBoxMitRolle
+            // 
+            this.cBoxMitRolle.FormattingEnabled = true;
+            this.cBoxMitRolle.Location = new System.Drawing.Point(127, 233);
+            this.cBoxMitRolle.Name = "cBoxMitRolle";
+            this.cBoxMitRolle.Size = new System.Drawing.Size(100, 21);
+            this.cBoxMitRolle.TabIndex = 63;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(124, 216);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(34, 13);
+            this.label1.TabIndex = 62;
+            this.label1.Text = "Rolle:";
+            // 
+            // cBoxMitAbt
+            // 
+            this.cBoxMitAbt.FormattingEnabled = true;
+            this.cBoxMitAbt.Location = new System.Drawing.Point(11, 233);
+            this.cBoxMitAbt.Name = "cBoxMitAbt";
+            this.cBoxMitAbt.Size = new System.Drawing.Size(100, 21);
+            this.cBoxMitAbt.TabIndex = 61;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(8, 216);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(54, 13);
+            this.label7.TabIndex = 60;
+            this.label7.Text = "Abteilung:";
+            // 
+            // tBoxMitBenutzer
+            // 
+            this.tBoxMitBenutzer.Location = new System.Drawing.Point(127, 144);
+            this.tBoxMitBenutzer.Name = "tBoxMitBenutzer";
+            this.tBoxMitBenutzer.Size = new System.Drawing.Size(100, 20);
+            this.tBoxMitBenutzer.TabIndex = 59;
+            // 
+            // tBoxMitEmail
+            // 
+            this.tBoxMitEmail.Location = new System.Drawing.Point(11, 184);
+            this.tBoxMitEmail.Name = "tBoxMitEmail";
+            this.tBoxMitEmail.Size = new System.Drawing.Size(100, 20);
+            this.tBoxMitEmail.TabIndex = 58;
+            // 
+            // tBoxMitOrt
+            // 
+            this.tBoxMitOrt.Location = new System.Drawing.Point(127, 105);
+            this.tBoxMitOrt.Name = "tBoxMitOrt";
+            this.tBoxMitOrt.Size = new System.Drawing.Size(100, 20);
+            this.tBoxMitOrt.TabIndex = 57;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(123, 128);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(81, 13);
+            this.label6.TabIndex = 56;
+            this.label6.Text = "Benutzername: ";
+            // 
+            // tBoxMitName
+            // 
+            this.tBoxMitName.Location = new System.Drawing.Point(127, 27);
+            this.tBoxMitName.Name = "tBoxMitName";
+            this.tBoxMitName.Size = new System.Drawing.Size(100, 20);
+            this.tBoxMitName.TabIndex = 55;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(8, 168);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(39, 13);
+            this.label5.TabIndex = 54;
+            this.label5.Text = "E-Mail:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(8, 128);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(101, 13);
+            this.label4.TabIndex = 53;
+            this.label4.Text = "Geburtstags Datum:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(124, 89);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(24, 13);
+            this.label3.TabIndex = 52;
+            this.label3.Text = "Ort:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(124, 11);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(62, 13);
+            this.label2.TabIndex = 51;
+            this.label2.Text = "Nachname:";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(8, 11);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(52, 13);
+            this.label10.TabIndex = 50;
+            this.label10.Text = "Vorname:";
+            // 
+            // tBoxMitVName
+            // 
+            this.tBoxMitVName.Location = new System.Drawing.Point(11, 27);
+            this.tBoxMitVName.Name = "tBoxMitVName";
+            this.tBoxMitVName.Size = new System.Drawing.Size(100, 20);
+            this.tBoxMitVName.TabIndex = 49;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(124, 168);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(50, 13);
+            this.label15.TabIndex = 76;
+            this.label15.Text = "Passwort";
+            // 
+            // tBoxMitPw
+            // 
+            this.tBoxMitPw.Location = new System.Drawing.Point(127, 184);
+            this.tBoxMitPw.Name = "tBoxMitPw";
+            this.tBoxMitPw.Size = new System.Drawing.Size(100, 20);
+            this.tBoxMitPw.TabIndex = 75;
+            // 
             // Mitarbeiterverwaltung
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -307,27 +406,37 @@
 
         private System.Windows.Forms.ListBox lBoxMverMitarbeiter;
         private System.Windows.Forms.Panel MverDetailMitarbeiter;
+        private System.Windows.Forms.Button butMverDetailSchließen;
+        private System.Windows.Forms.Button butMitAbt;
+        private System.Windows.Forms.Button butMitRolle;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.DateTimePicker DateMit;
+        private System.Windows.Forms.TextBox tBoxMitHausNr;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox tBoxMitPLZ;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox tBoxMitStraße;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.ComboBox cBoxMitAbr;
+        private System.Windows.Forms.ComboBox cBoxMitFunk;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox cBoxMitRolle;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cBoxMitAbt;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox tBoxMitBenutzer;
+        private System.Windows.Forms.TextBox tBoxMitEmail;
+        private System.Windows.Forms.TextBox tBoxMitOrt;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox tBoxMitName;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox tBoxMitVname;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox tBoxMitGeb;
-        private System.Windows.Forms.TextBox tBoxMiAdresse;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox tBoxMitName;
-        private System.Windows.Forms.Button butMverDetailSchließen;
-        private System.Windows.Forms.ComboBox cBoxMitFunk;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox cBoxMitRolle;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox cBoxMitAbt;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button butMitAbt;
-        private System.Windows.Forms.Button butMitRolle;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox tBoxMitVName;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox tBoxMitPw;
     }
 }

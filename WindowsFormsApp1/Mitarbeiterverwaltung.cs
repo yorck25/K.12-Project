@@ -21,9 +21,29 @@ namespace WindowsFormsApp1
             this.Mit = mit;
         }
 
-        private void lBoxMverMitarbeiter_SelectedIndexChanged(object sender, EventArgs e)
+        public void lBoxMverMitarbeiter_SelectedIndexChanged(object sender, EventArgs e)
         {
             MverDetailMitarbeiter.Visible= true;
+
+            cMitarbeiter mit = (cMitarbeiter)lBoxMverMitarbeiter.SelectedItem;
+            if(mit != null)
+            {
+                tBoxMitVName.Text = mit.Mit_VName;
+                tBoxMitName.Text = mit.Mit_Name;
+                tBoxMitStraße.Text = mit.Mit_Straße;
+                tBoxMitHausNr.Text = mit.Mit_HausNr;
+                tBoxMitPLZ.Text = Convert.ToString(mit.Mit_PLZ);
+                tBoxMitOrt.Text = mit.Mit_Ort;
+                //DateMit.Value = mit.Mit_GDat;
+                tBoxMitEmail.Text = mit.Mit_Mail;
+                tBoxMitBenutzer.Text = mit.Mit_Benutzer;
+                tBoxMitPw.Text = mit.Mit_Pw;
+                cBoxMitAbt.SelectedItem = mit.Mit_Abt_ID;
+            }
+            else
+            {
+                return;
+            }
         }
 
         private void butMverDetailSchließen_Click(object sender, EventArgs e)
@@ -67,7 +87,29 @@ namespace WindowsFormsApp1
             CBoxMitAbtNeuLaden(true);
             CBoxMitRNeuLaden(true);
             CBoxMitFNeuLaden(true);
-            
+            MitListeLaden(true);
+;            
+        }
+
+        public void MitListeLaden(bool MitNeuLaden)
+        {
+            if (MitNeuLaden)
+            {
+                try
+                {
+                    cMitarbeiter.MitarbeiterLaden();
+                }
+                catch (MySqlException ex)
+                {
+
+                    Console.WriteLine("Fehler beim Laden: " + ex.Message);
+                }
+            }
+            lBoxMverMitarbeiter.Items.Clear();
+            foreach (cMitarbeiter mit in cMitarbeiter.MitListe)
+            {
+                lBoxMverMitarbeiter.Items.Add(mit);
+            }
         }
 
         public void CBoxMitFNeuLaden(bool FNeuLaden)

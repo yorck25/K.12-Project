@@ -57,6 +57,8 @@
             this.tBoxRegHausNr = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.DateReg = new System.Windows.Forms.DateTimePicker();
+            this.tBoxRegPw = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // butRegErstellen
@@ -167,9 +169,9 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(124, 129);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(63, 13);
+            this.label6.Size = new System.Drawing.Size(78, 13);
             this.label6.TabIndex = 29;
-            this.label6.Text = "User Name:";
+            this.label6.Text = "Benutzername:";
             // 
             // tBoxRegName
             // 
@@ -302,12 +304,30 @@
             this.DateReg.Size = new System.Drawing.Size(96, 20);
             this.DateReg.TabIndex = 48;
             // 
+            // tBoxRegPw
+            // 
+            this.tBoxRegPw.Location = new System.Drawing.Point(128, 185);
+            this.tBoxRegPw.Name = "tBoxRegPw";
+            this.tBoxRegPw.Size = new System.Drawing.Size(100, 20);
+            this.tBoxRegPw.TabIndex = 49;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(125, 169);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(50, 13);
+            this.label15.TabIndex = 50;
+            this.label15.Text = "Passwort";
+            // 
             // Registrieren
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.ClientSize = new System.Drawing.Size(373, 415);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.tBoxRegPw);
             this.Controls.Add(this.DateReg);
             this.Controls.Add(this.tBoxRegHausNr);
             this.Controls.Add(this.label14);
@@ -375,5 +395,7 @@
         private System.Windows.Forms.TextBox tBoxRegHausNr;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.DateTimePicker DateReg;
+        private System.Windows.Forms.TextBox tBoxRegPw;
+        private System.Windows.Forms.Label label15;
     }
 }
