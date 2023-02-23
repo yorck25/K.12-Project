@@ -54,7 +54,7 @@ namespace WindowsFormsApp1
                     " Mit_F_ID = @Mit_F_ID," +
                     " Mit_R_ID =  @Mit_R_ID," +
                     " Mit_Abr_ID =  @Mit_Abr_ID  "
-                    + "WHERE @Mit_ID = Mit_ID";
+                    + "WHERE Mit_ID = @Mit_ID";
                 Console.WriteLine("ID:" + this.Mit_ID);
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 this.MitarbeiterWerte(cmd);
