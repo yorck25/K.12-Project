@@ -64,5 +64,11 @@ namespace WindowsFormsApp1
             Mitarbeiterverwaltung mitarbeiterverwaltung = new Mitarbeiterverwaltung(new cMitarbeiter());
             mitarbeiterverwaltung.Show();
         }
+
+        private void butHmenuArtikel_Click(object sender, EventArgs e)
+        {
+            Artikel artikel = new Artikel();
+            artikel.Show();
+        }
     }
 }

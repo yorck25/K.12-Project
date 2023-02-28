@@ -123,6 +123,12 @@
     <Compile Include="Abteilung.Designer.cs">
       <DependentUpon>Abteilung.cs</DependentUpon>
     </Compile>
+    <Compile Include="Artikel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Artikel.Designer.cs">
+      <DependentUpon>Artikel.cs</DependentUpon>
+    </Compile>
     <Compile Include="cAbteilung.cs" />
     <Compile Include="cFunktion.cs" />
     <Compile Include="cKostenstelle.cs" />
@@ -175,6 +181,9 @@
     </Compile>
     <EmbeddedResource Include="Abteilung.resx">
       <DependentUpon>Abteilung.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Artikel.resx">
+      <DependentUpon>Artikel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Funktion.resx">
       <DependentUpon>Funktion.cs</DependentUpon>

@@ -147,6 +147,7 @@
             this.butHmenuArtikel.TabIndex = 0;
             this.butHmenuArtikel.Text = "Artikelverwaltung";
             this.butHmenuArtikel.UseVisualStyleBackColor = true;
+            this.butHmenuArtikel.Click += new System.EventHandler(this.butHmenuArtikel_Click);
             // 
             // hmenuAccElemente
             // 
