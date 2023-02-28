@@ -31,7 +31,7 @@ namespace WindowsFormsApp1
                 tBoxMitVName.Text = mit.Mit_VName;
                 tBoxMitName.Text = mit.Mit_Name;
                 tBoxMitStraße.Text = mit.Mit_Straße;
-                tBoxMitHausNr.Text = mit.Mit_HausNr;
+                tBoxMitHausNr.Text = Convert.ToString(mit.Mit_HausNr);
                 tBoxMitPLZ.Text = Convert.ToString(mit.Mit_PLZ);
                 tBoxMitOrt.Text = mit.Mit_Ort;
                 //DateMit.Value = mit.Mit_GDat;

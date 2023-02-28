@@ -18,7 +18,7 @@ namespace WindowsFormsApp1
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Registrieren(new cMitarbeiter()));
             //Application.Run(new Hauptmenu());
-            Application.Run(new Login());
+            Application.Run(new Login(new cLogin()));
         }
     }
 }

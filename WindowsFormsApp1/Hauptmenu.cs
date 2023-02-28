@@ -49,7 +49,7 @@ namespace WindowsFormsApp1
 
         private void butHmenuAbmelden_Click(object sender, EventArgs e)
         {
-            Login login = new Login();
+            Login login = new Login(new cLogin());
             login.Show();
         }
 

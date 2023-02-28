@@ -37,7 +37,7 @@ namespace WindowsFormsApp1
 
         private void herfRegVorhanden_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Login login = new Login();
+            Login login = new Login(new cLogin());
             login.Show();
         }
 
@@ -48,13 +48,17 @@ namespace WindowsFormsApp1
             Mit.Mit_VName = tBoxRegVname.Text;
             Mit.Mit_Name = tBoxRegName.Text;
             Mit.Mit_Straße = tBoxRegStraße.Text;
-            Mit.Mit_HausNr = tBoxRegHausNr.Text;
+            Mit.Mit_HausNr = Convert.ToInt16(tBoxRegHausNr.Text);
             Mit.Mit_PLZ = Convert.ToInt16(tBoxRegPLZ.Text);
             Mit.Mit_Ort = tBoxRegOrt.Text;
             Mit.Mit_GDat = DateReg.Value;
-
-
-            Console.WriteLine(Mit.Mit_GDat);
+            Mit.Mit_Mail = tBoxRegEmail.Text;
+            Mit.Mit_Benutzer = tBoxRegUname.Text;
+            Mit.Mit_Pw = tBoxRegPw.Text;
+            Mit.Mit_Abt_ID = Convert.ToInt32(cBoxRegAbt.SelectedIndex + 1);
+            Mit.Mit_R_ID = Convert.ToInt32(cBoxRegRolle.SelectedIndex + 1);
+            Mit.Mit_F_ID = Convert.ToInt32(cBoxRegFunk.SelectedIndex + 1);
+            Mit.Mit_Abr_ID = Convert.ToInt32(cBoxRegAbr.SelectedIndex + 1);
 
             if (string.IsNullOrEmpty(tBoxRegName.Text))
             {
@@ -63,7 +67,7 @@ namespace WindowsFormsApp1
             else
             {
                 Mit.MitarbeiterSpeichern();
-                Console.WriteLine("Kst wird gespeichert");
+                Console.WriteLine("Mitarbeiter wird gespeichert");
                 tBoxRegName.Clear();
 
             }

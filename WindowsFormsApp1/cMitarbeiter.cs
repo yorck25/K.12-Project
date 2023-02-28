@@ -17,7 +17,7 @@ namespace WindowsFormsApp1
         public string Mit_Name { get; set; }
         public string Mit_VName { get; set; }
         public string Mit_Straße { get; set; }
-        public string Mit_HausNr { get; set; }
+        public int Mit_HausNr { get; set; }
         public int Mit_PLZ { get; set; }
         public string Mit_Ort { get; set; }
         public  DateTime Mit_GDat { get; set; }
@@ -60,7 +60,7 @@ namespace WindowsFormsApp1
                 this.MitarbeiterWerte(cmd);
                 cmd.ExecuteNonQuery();
             }
-            /*else
+            else
             {
                 string sql = "INSERT INTO mitarbeiter (Mit_Name, Mit_VName, Mit_Strasse, Mit_HausNr, Mit_PLZ, Mit_Ort, Mit_GDat, Mit_Mail, Mit_Benutzer, Mit_Pw, Mit_Abt_ID, Mit_F_ID, Mit_R_ID, Mit_Abr_ID)" +
                     " VALUES (@Mit_Name, @Mit_VName, @Mit_Strasse, @Mit_HausNr, @Mit_PLZ, @Mit_Ort, @Mit_GDat, @Mit_Mail, @Mit_Benutzer, @Mit_Pw, @Mit_Abt_ID, @Mit_F_ID, @Mit_R_ID, @Mit_Abr_ID)";
@@ -69,7 +69,7 @@ namespace WindowsFormsApp1
                 cmd.ExecuteNonQuery();
                 this.Mit_ID = cmd.LastInsertedId;
                 cMitarbeiter.MitListe.Add(this);
-            }*/
+            }
             conn.Close();
             return;
         }
@@ -111,7 +111,7 @@ namespace WindowsFormsApp1
                 mit.Mit_VName = rdr.GetString("Mit_VName");
                 mit.Mit_Name = rdr.GetString("Mit_Name");
                 mit.Mit_Straße = rdr.GetString("Mit_Strasse");
-                mit.Mit_HausNr = rdr.GetString("Mit_HausNr");
+                mit.Mit_HausNr = rdr.GetInt16("Mit_HausNr");
                 mit.Mit_PLZ = rdr.GetInt16("Mit_PLZ");
                 mit.Mit_Ort = rdr.GetString("Mit_Ort");
                 //mit.Mit_VName = rdr.GetString("Mit_GDat");
