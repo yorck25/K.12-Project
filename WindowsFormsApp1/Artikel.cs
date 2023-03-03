@@ -13,59 +13,23 @@ namespace WindowsFormsApp1
 {
     public partial class Artikel : Form
     {
-        public Artikel()
+        cArtikel art;
+        public Artikel(cArtikel art)
         {
             InitializeComponent();
+            this.art = art;
         }
 
-        public void ArtComEinNeuLaden(bool EinNeuLaden)
-        {
-            if (EinNeuLaden)
-            {
-                try
-                {
-                    cEinheit.EinheitLaden();
-                }
-                catch (MySqlException ex)
-                {
-
-                    Console.WriteLine("Fehler beim Laden: " + ex.Message);
-                }
-            }
-            cBoxAbtEinheit.Items.Clear();
-            foreach (cEinheit ein in cEinheit.EinListe)
-            {
-                cBoxAbtEinheit.Items.Add(ein);
-            }
-        }
-
-        public void ArtListelAden(bool ArtNeuLaden)
-        {
-            if (ArtNeuLaden)
-            {
-                try
-                {
-                    //cAritkel.ArtikelLaden();
-                }
-                catch (MySqlException ex)
-                {
-
-                    Console.WriteLine("Fehler beim Laden: " + ex.Message);
-                }
-            }
-            cBoxAbtEinheit.Items.Clear();
-            foreach (cEinheit ein in cEinheit.EinListe)
-            {
-                cBoxAbtEinheit.Items.Add(ein);
-            }
-        }
-        public void LVWListeLaden(bool LVWNeuLaden)
+        public void cBoxenLaden(bool LVWNeuLaden)
         {
             if (LVWNeuLaden)
             {
                 try
                 {
+                    cEinheit.EinheitLaden();
                     cLager.LagerLaden();
+                    cLieferant.LieferantLaden();
+                    cArtikel.ArtikelLaden();
                 }
                 catch (MySqlException ex)
                 {
@@ -73,40 +37,58 @@ namespace WindowsFormsApp1
                     Console.WriteLine("Fehler beim Laden: " + ex.Message);
                 }
             }
+            //Alle Boxen leeren
+            lBoxArt.Items.Clear();
             cBoxArtLager.Items.Clear();
-            foreach (cLager lvw in cLager.LVWListe)
-            {
-                cBoxArtLager.Items.Add(lvw);
-            }
-        }
-
-        public void LListeLaden(bool LNeuLaden)
-        {
-            if (LNeuLaden)
-            {
-                try
-                {
-                   cLieferant.LieferantLaden();
-                }
-                catch (MySqlException ex)
-                {
-
-                    Console.WriteLine("Fehler beim Laden: " + ex.Message);
-                }
-            }
             cBoxArtL.Items.Clear();
+            cBoxAbtEinheit.Items.Clear();
+
+            //ListBox Artikel neu Aufbauen
+            foreach (cArtikel art in cArtikel.ArtListe)
+            {
+                lBoxArt.Items.Add(art);
+            };
+            //ComoBox für Lager neu Aufbauen
+            foreach (cLager lager in  cLager.LVWListe)
+            {
+                cBoxArtLager.Items.Add(lager);
+            };
+            //ComoBox für Lieferanten neu Aufbauen
             foreach (cLieferant l in cLieferant.LListe)
             {
                 cBoxArtL.Items.Add(l);
+            };
+            //ComoBox für Einhaiten neu Aufbauen
+            foreach (cEinheit ein in cEinheit.EinListe)
+            {
+                cBoxAbtEinheit.Items.Add(ein);
             }
         }
 
         private void Artikel_Load(object sender, EventArgs e)
         {
-            ArtComEinNeuLaden(true);
-            LVWListeLaden(true);
-            LListeLaden(true);
+            cBoxenLaden(true);  
+           // LagerLaden(true);
         }
+
+        /*public void LagerLaden(bool LagerLaden)
+        {
+            if (LagerLaden)
+            {
+                try
+                {
+                    cLager.LagerLaden();
+                }
+                catch
+                {
+                    Console.WriteLine("fehler");
+                }
+            }
+            foreach (cLager lager in cLager.LVWListe)
+            {
+                cBoxArtLager.Items.Add(lager);
+            };
+        }*/
 
         private void lBoxArt_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -125,6 +107,25 @@ namespace WindowsFormsApp1
         private void butArtErstellen_Click(object sender, EventArgs e)
         {
             AbtneueAbteilung.Visible= false;
+
+            if (tBoxAbtBez.Text == null)
+            {
+                Console.WriteLine("Kein Wert");
+            }
+            else
+            {
+                art.Art_Bez = tBoxAbtBez.Text;
+                art.Art_Preis = Convert.ToInt32(tBoxArtPreis.Text);
+                art.Art_Bst = Convert.ToInt16(tBoxArtBst.Text);
+                art.Art_MinBst = Convert.ToInt16(tBoxArtMinBst.Text);
+                art.Art_MaxBst = Convert.ToInt16(tBoxArtMaxBst.Text);
+                art.Art_Einheit = Convert.ToInt32(cBoxAbtEinheit.SelectedIndex + 1);
+                art.Art_Lager = Convert.ToInt16(cBoxArtLager.SelectedIndex +1);
+                art.Art_Lieferant = Convert.ToInt32(cBoxArtL.SelectedIndex +1);
+                
+                art.ArtikelSpeichern();
+                Console.WriteLine("Artikel wird gespeichert");
+            }
         }
 
         private void butArtSpeichern_Click(object sender, EventArgs e)
@@ -148,6 +149,11 @@ namespace WindowsFormsApp1
         {
             Lieferant lieferant = new Lieferant(new cLieferant());
             lieferant.Show();
+        }
+
+        private void cBoxArtLager_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

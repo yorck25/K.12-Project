@@ -105,10 +105,11 @@
             this.butEinErstellen.Text = "Erstellen";
             this.butEinErstellen.UseVisualStyleBackColor = true;
             this.butEinErstellen.Visible = false;
+            this.butEinErstellen.Click += new System.EventHandler(this.butEinErstellen_Click);
             // 
             // butEinSpeichern
             // 
-            this.butEinSpeichern.Location = new System.Drawing.Point(3, 45);
+            this.butEinSpeichern.Location = new System.Drawing.Point(6, 63);
             this.butEinSpeichern.Name = "butEinSpeichern";
             this.butEinSpeichern.Size = new System.Drawing.Size(116, 23);
             this.butEinSpeichern.TabIndex = 6;

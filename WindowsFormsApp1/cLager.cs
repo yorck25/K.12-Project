@@ -39,7 +39,7 @@ namespace WindowsFormsApp1
                 lvw.LVW_Ort = rdr.GetString("LVW_Ort");
                 lvw.LVW_PLZ = rdr.GetString("LVW_PLZ");
                 lvw.LVW_Str = rdr.GetString("LVW_Str");
-                cLager.LVWListe.Add(lvw);
+                LVWListe.Add(lvw);
             }
             rdr.Close();
         }
@@ -50,12 +50,23 @@ namespace WindowsFormsApp1
 
             conn.Open();
 
+            if (LVW_ID.HasValue)
+            {
+                string sql = "UPDATE lagerverwaltung SET" + "R_Bez = @R_Bez" + "WHERE R_ID = @R_ID";
+                Console.WriteLine("ID:" + this.LVW_ID);
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                this.LagerWerteSpeichern(cmd);
+                cmd.ExecuteNonQuery();
+            }
+            else
+            {
                 string sql = "INSERT INTO lagerverwaltung (LVW_Bez, LVW_Ort, LVW_PLZ, LVW_Str) VALUES (@LVW_Bez, @LVW_Ort, @LVW_PLZ, @LVW_Str)";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 this.LagerWerteSpeichern(cmd);
                 cmd.ExecuteNonQuery();
                 this.LVW_ID = cmd.LastInsertedId;
                 cLager.LVWListe.Add(this);
+            }
             conn.Close();
             return;
         }

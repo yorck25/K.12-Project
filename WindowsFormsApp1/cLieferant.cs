@@ -58,7 +58,7 @@ namespace WindowsFormsApp1
                 l.L_Mail = rdr.GetString("L_Mail");
                 l.L_Durchwahl = rdr.GetInt16("L_Durchwahl");
                 l.L_Ntz = rdr.GetString("L_Ntz");
-                cLieferant.LListe.Add(l);
+                LListe.Add(l);
             }
             rdr.Close();
         }

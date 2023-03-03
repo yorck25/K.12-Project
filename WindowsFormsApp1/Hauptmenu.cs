@@ -67,7 +67,7 @@ namespace WindowsFormsApp1
 
         private void butHmenuArtikel_Click(object sender, EventArgs e)
         {
-            Artikel artikel = new Artikel();
+            Artikel artikel = new Artikel(new cArtikel());
             artikel.Show();
         }
     }

@@ -38,31 +38,29 @@ namespace WindowsFormsApp1
             rdr.Close();
         }
 
-        public void EinheitAktuell()
-        {
-            MySqlConnection conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["localsql"].ConnectionString);
-
-            conn.Open();
-
-            string sql = "UPDATE einheit SET" + "Ein_Bez = @Ein_Bez WHERE Ein_ID = @Ein_ID";
-            Console.WriteLine("ID:" + this.Ein_ID);
-            MySqlCommand cmd = new MySqlCommand(sql, conn);
-            this.EinheitWerteSpeichern(cmd);
-            cmd.ExecuteNonQuery();
-        }
-
         public void EinheitSpiechern()
         {
             MySqlConnection conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["localsql"].ConnectionString);
 
             conn.Open();
 
+            if (Ein_ID.HasValue)
+            {
+                string sql = "UPDATE einheit SET" + "Ein_Bez = @Ein_Bez WHERE Ein_ID = @Ein_ID";
+                Console.WriteLine("ID:" + this.Ein_ID);
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                this.EinheitWerteSpeichern(cmd);
+                cmd.ExecuteNonQuery();
+            }
+            else
+            {
                 string sql = "INSERT INTO einheit (Ein_Bez) VALUES (@Ein_Bez)";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 this.EinheitWerteSpeichern(cmd);
                 cmd.ExecuteNonQuery();
                 this.Ein_ID = cmd.LastInsertedId;
                 cEinheit.EinListe.Add(this);        
+            }
             conn.Close();
             return;
         }

@@ -33,17 +33,17 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tBoxAbtBez = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.tBoxAbtPreis = new System.Windows.Forms.TextBox();
+            this.tBoxArtPreis = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.cBoxAbtEinheit = new System.Windows.Forms.ComboBox();
             this.AbtneueAbteilung = new System.Windows.Forms.Panel();
             this.herfArtneueEinheit = new System.Windows.Forms.LinkLabel();
             this.butArtSpeichern = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.tBoxArtMaxBst = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tBoxArtMinBst = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tBoxArtBst = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.butArtErstellen = new System.Windows.Forms.Button();
             this.herfArtLöschen = new System.Windows.Forms.LinkLabel();
@@ -58,6 +58,7 @@
             // 
             // lBoxArt
             // 
+            this.lBoxArt.DisplayMember = "ArtikelListe";
             this.lBoxArt.FormattingEnabled = true;
             this.lBoxArt.Items.AddRange(new object[] {
             "Test",
@@ -108,12 +109,12 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Einheit";
             // 
-            // tBoxAbtPreis
+            // tBoxArtPreis
             // 
-            this.tBoxAbtPreis.Location = new System.Drawing.Point(6, 105);
-            this.tBoxAbtPreis.Name = "tBoxAbtPreis";
-            this.tBoxAbtPreis.Size = new System.Drawing.Size(97, 20);
-            this.tBoxAbtPreis.TabIndex = 7;
+            this.tBoxArtPreis.Location = new System.Drawing.Point(6, 105);
+            this.tBoxArtPreis.Name = "tBoxArtPreis";
+            this.tBoxArtPreis.Size = new System.Drawing.Size(97, 20);
+            this.tBoxArtPreis.TabIndex = 7;
             // 
             // label3
             // 
@@ -143,14 +144,14 @@
             this.AbtneueAbteilung.Controls.Add(this.cBoxArtL);
             this.AbtneueAbteilung.Controls.Add(this.herfArtneueEinheit);
             this.AbtneueAbteilung.Controls.Add(this.butArtSpeichern);
-            this.AbtneueAbteilung.Controls.Add(this.textBox3);
+            this.AbtneueAbteilung.Controls.Add(this.tBoxArtMaxBst);
             this.AbtneueAbteilung.Controls.Add(this.label6);
-            this.AbtneueAbteilung.Controls.Add(this.textBox2);
+            this.AbtneueAbteilung.Controls.Add(this.tBoxArtMinBst);
             this.AbtneueAbteilung.Controls.Add(this.label5);
-            this.AbtneueAbteilung.Controls.Add(this.textBox1);
+            this.AbtneueAbteilung.Controls.Add(this.tBoxArtBst);
             this.AbtneueAbteilung.Controls.Add(this.label4);
             this.AbtneueAbteilung.Controls.Add(this.butArtErstellen);
-            this.AbtneueAbteilung.Controls.Add(this.tBoxAbtPreis);
+            this.AbtneueAbteilung.Controls.Add(this.tBoxArtPreis);
             this.AbtneueAbteilung.Controls.Add(this.cBoxAbtEinheit);
             this.AbtneueAbteilung.Controls.Add(this.label1);
             this.AbtneueAbteilung.Controls.Add(this.tBoxAbtBez);
@@ -176,7 +177,7 @@
             // 
             // butArtSpeichern
             // 
-            this.butArtSpeichern.Location = new System.Drawing.Point(6, 170);
+            this.butArtSpeichern.Location = new System.Drawing.Point(87, 170);
             this.butArtSpeichern.Name = "butArtSpeichern";
             this.butArtSpeichern.Size = new System.Drawing.Size(119, 30);
             this.butArtSpeichern.TabIndex = 16;
@@ -185,12 +186,12 @@
             this.butArtSpeichern.Visible = false;
             this.butArtSpeichern.Click += new System.EventHandler(this.butArtSpeichern_Click);
             // 
-            // textBox3
+            // tBoxArtMaxBst
             // 
-            this.textBox3.Location = new System.Drawing.Point(121, 144);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(97, 20);
-            this.textBox3.TabIndex = 15;
+            this.tBoxArtMaxBst.Location = new System.Drawing.Point(121, 144);
+            this.tBoxArtMaxBst.Name = "tBoxArtMaxBst";
+            this.tBoxArtMaxBst.Size = new System.Drawing.Size(97, 20);
+            this.tBoxArtMaxBst.TabIndex = 15;
             // 
             // label6
             // 
@@ -201,12 +202,12 @@
             this.label6.TabIndex = 14;
             this.label6.Text = "Maximal Bestand:";
             // 
-            // textBox2
+            // tBoxArtMinBst
             // 
-            this.textBox2.Location = new System.Drawing.Point(6, 144);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(97, 20);
-            this.textBox2.TabIndex = 13;
+            this.tBoxArtMinBst.Location = new System.Drawing.Point(6, 144);
+            this.tBoxArtMinBst.Name = "tBoxArtMinBst";
+            this.tBoxArtMinBst.Size = new System.Drawing.Size(97, 20);
+            this.tBoxArtMinBst.TabIndex = 13;
             // 
             // label5
             // 
@@ -217,12 +218,12 @@
             this.label5.TabIndex = 12;
             this.label5.Text = "Mindest Bestand:";
             // 
-            // textBox1
+            // tBoxArtBst
             // 
-            this.textBox1.Location = new System.Drawing.Point(121, 105);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(97, 20);
-            this.textBox1.TabIndex = 11;
+            this.tBoxArtBst.Location = new System.Drawing.Point(121, 105);
+            this.tBoxArtBst.Name = "tBoxArtBst";
+            this.tBoxArtBst.Size = new System.Drawing.Size(97, 20);
+            this.tBoxArtBst.TabIndex = 11;
             // 
             // label4
             // 
@@ -272,6 +273,7 @@
             this.cBoxArtLager.Name = "cBoxArtLager";
             this.cBoxArtLager.Size = new System.Drawing.Size(97, 21);
             this.cBoxArtLager.TabIndex = 19;
+            this.cBoxArtLager.SelectedIndexChanged += new System.EventHandler(this.cBoxArtLager_SelectedIndexChanged);
             // 
             // label7
             // 
@@ -341,16 +343,16 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tBoxAbtBez;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox tBoxAbtPreis;
+        private System.Windows.Forms.TextBox tBoxArtPreis;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cBoxAbtEinheit;
         private System.Windows.Forms.Panel AbtneueAbteilung;
         private System.Windows.Forms.Button butArtErstellen;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox tBoxArtMaxBst;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tBoxArtMinBst;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tBoxArtBst;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.LinkLabel herfArtLöschen;
         private System.Windows.Forms.Button butArtSpeichern;

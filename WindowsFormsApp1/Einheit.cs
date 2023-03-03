@@ -74,6 +74,10 @@ namespace WindowsFormsApp1
 
         private void butEinSpeichern_Click(object sender, EventArgs e)
         {
+        }
+
+        private void butEinErstellen_Click(object sender, EventArgs e)
+        {
             ein.Ein_Bez = tBoxEinBez.Text;
 
             if (string.IsNullOrEmpty(tBoxEinBez.Text))
@@ -82,8 +86,8 @@ namespace WindowsFormsApp1
             }
             else
             {
-                ein.EinheitAktuell();
-                Console.WriteLine("Kst wird gespeichert");
+                ein.EinheitSpiechern();
+                Console.WriteLine("Einheit wird gespeichert");
                 tBoxEinBez.Clear();
                 EinDetail.Visible = false;
 
@@ -93,6 +97,7 @@ namespace WindowsFormsApp1
                     lBoxEinheit.Items.Add(ein);
                 }
             }
+
         }
     }
 }
