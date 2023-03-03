@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,9 +18,30 @@ namespace WindowsFormsApp1
             InitializeComponent();
         }
 
+        public void ArtComEinNeuLaden(bool EinNeuLaden)
+        {
+            if (EinNeuLaden)
+            {
+                try
+                {
+                    cEinheit.EinheitLaden();
+                }
+                catch (MySqlException ex)
+                {
+
+                    Console.WriteLine("Fehler beim Laden: " + ex.Message);
+                }
+            }
+            cBoxAbtEinheit.Items.Clear();
+            foreach (cEinheit ein in cEinheit.EinListe)
+            {
+                cBoxAbtEinheit.Items.Add(ein);
+            }
+        }
+
         private void Artikel_Load(object sender, EventArgs e)
         {
-
+            ArtComEinNeuLaden(true);
         }
 
         private void lBoxArt_SelectedIndexChanged(object sender, EventArgs e)
@@ -44,6 +66,12 @@ namespace WindowsFormsApp1
         private void butArtSpeichern_Click(object sender, EventArgs e)
         {
             AbtneueAbteilung.Visible = false;
+        }
+
+        private void herfArtneueEinheit_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Einheit einheit = new Einheit(new cEinheit());
+            einheit.Show();
         }
     }
 }

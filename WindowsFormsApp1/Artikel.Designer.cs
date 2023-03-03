@@ -37,6 +37,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.cBoxAbtEinheit = new System.Windows.Forms.ComboBox();
             this.AbtneueAbteilung = new System.Windows.Forms.Panel();
+            this.herfArtneueEinheit = new System.Windows.Forms.LinkLabel();
             this.butArtSpeichern = new System.Windows.Forms.Button();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -46,6 +47,12 @@
             this.label4 = new System.Windows.Forms.Label();
             this.butArtErstellen = new System.Windows.Forms.Button();
             this.herfArtLöschen = new System.Windows.Forms.LinkLabel();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.herfArtLgv = new System.Windows.Forms.LinkLabel();
+            this.herfArtLief = new System.Windows.Forms.LinkLabel();
             this.AbtneueAbteilung.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -95,7 +102,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(0, 55);
+            this.label2.Location = new System.Drawing.Point(0, 47);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(39, 13);
             this.label2.TabIndex = 4;
@@ -103,7 +110,7 @@
             // 
             // tBoxAbtPreis
             // 
-            this.tBoxAbtPreis.Location = new System.Drawing.Point(3, 120);
+            this.tBoxAbtPreis.Location = new System.Drawing.Point(6, 105);
             this.tBoxAbtPreis.Name = "tBoxAbtPreis";
             this.tBoxAbtPreis.Size = new System.Drawing.Size(97, 20);
             this.tBoxAbtPreis.TabIndex = 7;
@@ -111,7 +118,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(0, 103);
+            this.label3.Location = new System.Drawing.Point(3, 88);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(33, 13);
             this.label3.TabIndex = 6;
@@ -119,14 +126,22 @@
             // 
             // cBoxAbtEinheit
             // 
+            this.cBoxAbtEinheit.DisplayMember = "EinheitListe";
             this.cBoxAbtEinheit.FormattingEnabled = true;
-            this.cBoxAbtEinheit.Location = new System.Drawing.Point(3, 72);
+            this.cBoxAbtEinheit.Location = new System.Drawing.Point(3, 63);
             this.cBoxAbtEinheit.Name = "cBoxAbtEinheit";
             this.cBoxAbtEinheit.Size = new System.Drawing.Size(97, 21);
             this.cBoxAbtEinheit.TabIndex = 8;
             // 
             // AbtneueAbteilung
             // 
+            this.AbtneueAbteilung.Controls.Add(this.herfArtLief);
+            this.AbtneueAbteilung.Controls.Add(this.herfArtLgv);
+            this.AbtneueAbteilung.Controls.Add(this.label8);
+            this.AbtneueAbteilung.Controls.Add(this.label7);
+            this.AbtneueAbteilung.Controls.Add(this.comboBox2);
+            this.AbtneueAbteilung.Controls.Add(this.comboBox1);
+            this.AbtneueAbteilung.Controls.Add(this.herfArtneueEinheit);
             this.AbtneueAbteilung.Controls.Add(this.butArtSpeichern);
             this.AbtneueAbteilung.Controls.Add(this.textBox3);
             this.AbtneueAbteilung.Controls.Add(this.label6);
@@ -143,13 +158,25 @@
             this.AbtneueAbteilung.Controls.Add(this.label2);
             this.AbtneueAbteilung.Location = new System.Drawing.Point(171, 37);
             this.AbtneueAbteilung.Name = "AbtneueAbteilung";
-            this.AbtneueAbteilung.Size = new System.Drawing.Size(140, 311);
+            this.AbtneueAbteilung.Size = new System.Drawing.Size(258, 259);
             this.AbtneueAbteilung.TabIndex = 9;
             this.AbtneueAbteilung.Visible = false;
             // 
+            // herfArtneueEinheit
+            // 
+            this.herfArtneueEinheit.AutoSize = true;
+            this.herfArtneueEinheit.LinkColor = System.Drawing.SystemColors.Highlight;
+            this.herfArtneueEinheit.Location = new System.Drawing.Point(36, 47);
+            this.herfArtneueEinheit.Name = "herfArtneueEinheit";
+            this.herfArtneueEinheit.Size = new System.Drawing.Size(77, 13);
+            this.herfArtneueEinheit.TabIndex = 17;
+            this.herfArtneueEinheit.TabStop = true;
+            this.herfArtneueEinheit.Text = "Neue Einheit...";
+            this.herfArtneueEinheit.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.herfArtneueEinheit_LinkClicked);
+            // 
             // butArtSpeichern
             // 
-            this.butArtSpeichern.Location = new System.Drawing.Point(3, 274);
+            this.butArtSpeichern.Location = new System.Drawing.Point(6, 170);
             this.butArtSpeichern.Name = "butArtSpeichern";
             this.butArtSpeichern.Size = new System.Drawing.Size(119, 30);
             this.butArtSpeichern.TabIndex = 16;
@@ -160,7 +187,7 @@
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(3, 240);
+            this.textBox3.Location = new System.Drawing.Point(121, 144);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(97, 20);
             this.textBox3.TabIndex = 15;
@@ -168,7 +195,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(0, 223);
+            this.label6.Location = new System.Drawing.Point(121, 127);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(90, 13);
             this.label6.TabIndex = 14;
@@ -176,7 +203,7 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(3, 202);
+            this.textBox2.Location = new System.Drawing.Point(6, 144);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(97, 20);
             this.textBox2.TabIndex = 13;
@@ -184,7 +211,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(0, 185);
+            this.label5.Location = new System.Drawing.Point(6, 128);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(89, 13);
             this.label5.TabIndex = 12;
@@ -192,7 +219,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(3, 159);
+            this.textBox1.Location = new System.Drawing.Point(121, 105);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(97, 20);
             this.textBox1.TabIndex = 11;
@@ -200,7 +227,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(0, 142);
+            this.label4.Location = new System.Drawing.Point(121, 89);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(49, 13);
             this.label4.TabIndex = 10;
@@ -208,7 +235,7 @@
             // 
             // butArtErstellen
             // 
-            this.butArtErstellen.Location = new System.Drawing.Point(3, 266);
+            this.butArtErstellen.Location = new System.Drawing.Point(6, 170);
             this.butArtErstellen.Name = "butArtErstellen";
             this.butArtErstellen.Size = new System.Drawing.Size(75, 23);
             this.butArtErstellen.TabIndex = 9;
@@ -227,6 +254,62 @@
             this.herfArtLöschen.TabIndex = 10;
             this.herfArtLöschen.TabStop = true;
             this.herfArtLöschen.Text = "Artiekl löschen...";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(118, 63);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(97, 21);
+            this.comboBox1.TabIndex = 18;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(118, 25);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(97, 21);
+            this.comboBox2.TabIndex = 19;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(118, 6);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(49, 13);
+            this.label7.TabIndex = 20;
+            this.label7.Text = "Lagerort:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(118, 47);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(51, 13);
+            this.label8.TabIndex = 21;
+            this.label8.Text = "Lieferant:";
+            // 
+            // herfArtLgv
+            // 
+            this.herfArtLgv.AutoSize = true;
+            this.herfArtLgv.LinkColor = System.Drawing.SystemColors.Highlight;
+            this.herfArtLgv.Location = new System.Drawing.Point(168, 6);
+            this.herfArtLgv.Name = "herfArtLgv";
+            this.herfArtLgv.Size = new System.Drawing.Size(87, 13);
+            this.herfArtLgv.TabIndex = 22;
+            this.herfArtLgv.TabStop = true;
+            this.herfArtLgv.Text = "Neuer Lagerort...";
+            // 
+            // herfArtLief
+            // 
+            this.herfArtLief.AutoSize = true;
+            this.herfArtLief.LinkColor = System.Drawing.SystemColors.Highlight;
+            this.herfArtLief.Location = new System.Drawing.Point(168, 47);
+            this.herfArtLief.Name = "herfArtLief";
+            this.herfArtLief.Size = new System.Drawing.Size(89, 13);
+            this.herfArtLief.TabIndex = 23;
+            this.herfArtLief.TabStop = true;
+            this.herfArtLief.Text = "Neuer Lieferant...";
             // 
             // Artikel
             // 
@@ -267,5 +350,12 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.LinkLabel herfArtLöschen;
         private System.Windows.Forms.Button butArtSpeichern;
+        private System.Windows.Forms.LinkLabel herfArtneueEinheit;
+        private System.Windows.Forms.LinkLabel herfArtLief;
+        private System.Windows.Forms.LinkLabel herfArtLgv;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

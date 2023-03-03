@@ -130,11 +130,18 @@
       <DependentUpon>Artikel.cs</DependentUpon>
     </Compile>
     <Compile Include="cAbteilung.cs" />
+    <Compile Include="cEinheit.cs" />
     <Compile Include="cFunktion.cs" />
     <Compile Include="cKostenstelle.cs" />
     <Compile Include="cLogin.cs" />
     <Compile Include="cMitarbeiter.cs" />
     <Compile Include="cRolle.cs" />
+    <Compile Include="Einheit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Einheit.Designer.cs">
+      <DependentUpon>Einheit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Funktion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -184,6 +191,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Artikel.resx">
       <DependentUpon>Artikel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Einheit.resx">
+      <DependentUpon>Einheit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Funktion.resx">
       <DependentUpon>Funktion.cs</DependentUpon>
