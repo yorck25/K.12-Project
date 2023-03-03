@@ -48,6 +48,7 @@
             // LVWDetail
             // 
             this.LVWDetail.Controls.Add(this.label4);
+            this.LVWDetail.Controls.Add(this.butEinSpeichern);
             this.LVWDetail.Controls.Add(this.tBoxLVWStr);
             this.LVWDetail.Controls.Add(this.butLVWErstellen);
             this.LVWDetail.Controls.Add(this.label3);
@@ -73,7 +74,7 @@
             // 
             // butEinSpeichern
             // 
-            this.butEinSpeichern.Location = new System.Drawing.Point(138, 281);
+            this.butEinSpeichern.Location = new System.Drawing.Point(84, 180);
             this.butEinSpeichern.Name = "butEinSpeichern";
             this.butEinSpeichern.Size = new System.Drawing.Size(116, 23);
             this.butEinSpeichern.TabIndex = 6;
@@ -194,7 +195,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(658, 396);
             this.Controls.Add(this.LVWDetail);
-            this.Controls.Add(this.butEinSpeichern);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.herfLVWNeu);
             this.Controls.Add(this.lBoxLagerort);

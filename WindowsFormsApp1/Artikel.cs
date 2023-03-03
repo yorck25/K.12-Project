@@ -121,5 +121,11 @@ namespace WindowsFormsApp1
             Lager lager = new Lager(new cLager());
             lager.Show();
         }
+
+        private void herfArtLief_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Lieferant lieferant = new Lieferant();
+            lieferant.Show();
+        }
     }
 }

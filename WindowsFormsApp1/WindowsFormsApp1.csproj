@@ -168,6 +168,12 @@
     <Compile Include="Lager.Designer.cs">
       <DependentUpon>Lager.cs</DependentUpon>
     </Compile>
+    <Compile Include="Lieferant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lieferant.Designer.cs">
+      <DependentUpon>Lieferant.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -214,6 +220,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Lager.resx">
       <DependentUpon>Lager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lieferant.resx">
+      <DependentUpon>Lieferant.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

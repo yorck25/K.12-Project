@@ -312,6 +312,7 @@
             this.herfArtLief.TabIndex = 23;
             this.herfArtLief.TabStop = true;
             this.herfArtLief.Text = "Neuer Lieferant...";
+            this.herfArtLief.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.herfArtLief_LinkClicked);
             // 
             // Artikel
             // 
