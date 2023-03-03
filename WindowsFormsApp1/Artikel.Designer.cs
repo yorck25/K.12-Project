@@ -47,7 +47,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.butArtErstellen = new System.Windows.Forms.Button();
             this.herfArtLöschen = new System.Windows.Forms.LinkLabel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cBoxArtL = new System.Windows.Forms.ComboBox();
             this.cBoxArtLager = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -140,7 +140,7 @@
             this.AbtneueAbteilung.Controls.Add(this.label8);
             this.AbtneueAbteilung.Controls.Add(this.label7);
             this.AbtneueAbteilung.Controls.Add(this.cBoxArtLager);
-            this.AbtneueAbteilung.Controls.Add(this.comboBox1);
+            this.AbtneueAbteilung.Controls.Add(this.cBoxArtL);
             this.AbtneueAbteilung.Controls.Add(this.herfArtneueEinheit);
             this.AbtneueAbteilung.Controls.Add(this.butArtSpeichern);
             this.AbtneueAbteilung.Controls.Add(this.textBox3);
@@ -255,13 +255,14 @@
             this.herfArtLöschen.TabStop = true;
             this.herfArtLöschen.Text = "Artiekl löschen...";
             // 
-            // comboBox1
+            // cBoxArtL
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(118, 63);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(97, 21);
-            this.comboBox1.TabIndex = 18;
+            this.cBoxArtL.DisplayMember = "LiferantenListe";
+            this.cBoxArtL.FormattingEnabled = true;
+            this.cBoxArtL.Location = new System.Drawing.Point(118, 63);
+            this.cBoxArtL.Name = "cBoxArtL";
+            this.cBoxArtL.Size = new System.Drawing.Size(97, 21);
+            this.cBoxArtL.TabIndex = 18;
             // 
             // cBoxArtLager
             // 
@@ -359,6 +360,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox cBoxArtLager;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cBoxArtL;
     }
 }

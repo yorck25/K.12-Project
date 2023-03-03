@@ -135,6 +135,7 @@
     <Compile Include="cFunktion.cs" />
     <Compile Include="cKostenstelle.cs" />
     <Compile Include="cLager.cs" />
+    <Compile Include="cLieferant.cs" />
     <Compile Include="cLogin.cs" />
     <Compile Include="cMitarbeiter.cs" />
     <Compile Include="cRolle.cs" />

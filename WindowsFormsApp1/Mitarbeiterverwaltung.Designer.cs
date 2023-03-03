@@ -30,10 +30,8 @@
         {
             this.lBoxMverMitarbeiter = new System.Windows.Forms.ListBox();
             this.MverDetailMitarbeiter = new System.Windows.Forms.Panel();
-            this.butMverDetailSchließen = new System.Windows.Forms.Button();
-            this.butMitAbt = new System.Windows.Forms.Button();
-            this.butMitRolle = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.label15 = new System.Windows.Forms.Label();
+            this.tBoxMitPw = new System.Windows.Forms.TextBox();
             this.DateMit = new System.Windows.Forms.DateTimePicker();
             this.tBoxMitHausNr = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -60,8 +58,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.tBoxMitVName = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.tBoxMitPw = new System.Windows.Forms.TextBox();
+            this.butMverDetailSchließen = new System.Windows.Forms.Button();
+            this.butMitAbt = new System.Windows.Forms.Button();
+            this.butMitRolle = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.MverDetailMitarbeiter.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -114,46 +114,23 @@
             this.MverDetailMitarbeiter.Size = new System.Drawing.Size(266, 355);
             this.MverDetailMitarbeiter.TabIndex = 1;
             this.MverDetailMitarbeiter.Visible = false;
+            this.MverDetailMitarbeiter.Paint += new System.Windows.Forms.PaintEventHandler(this.MverDetailMitarbeiter_Paint);
             // 
-            // butMverDetailSchließen
+            // label15
             // 
-            this.butMverDetailSchließen.Location = new System.Drawing.Point(11, 308);
-            this.butMverDetailSchließen.Name = "butMverDetailSchließen";
-            this.butMverDetailSchließen.Size = new System.Drawing.Size(89, 32);
-            this.butMverDetailSchließen.TabIndex = 12;
-            this.butMverDetailSchließen.Text = "Schließen";
-            this.butMverDetailSchließen.UseVisualStyleBackColor = true;
-            this.butMverDetailSchließen.Click += new System.EventHandler(this.butMverDetailSchließen_Click);
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(124, 168);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(50, 13);
+            this.label15.TabIndex = 76;
+            this.label15.Text = "Passwort";
             // 
-            // butMitAbt
+            // tBoxMitPw
             // 
-            this.butMitAbt.Location = new System.Drawing.Point(675, 43);
-            this.butMitAbt.Name = "butMitAbt";
-            this.butMitAbt.Size = new System.Drawing.Size(81, 36);
-            this.butMitAbt.TabIndex = 2;
-            this.butMitAbt.Text = "Abteilung hinzufühgen";
-            this.butMitAbt.UseVisualStyleBackColor = true;
-            this.butMitAbt.Click += new System.EventHandler(this.butMitAbt_Click);
-            // 
-            // butMitRolle
-            // 
-            this.butMitRolle.Location = new System.Drawing.Point(675, 85);
-            this.butMitRolle.Name = "butMitRolle";
-            this.butMitRolle.Size = new System.Drawing.Size(81, 36);
-            this.butMitRolle.TabIndex = 3;
-            this.butMitRolle.Text = "Rolle hinzufühgen";
-            this.butMitRolle.UseVisualStyleBackColor = true;
-            this.butMitRolle.Click += new System.EventHandler(this.butMitRolle_Click);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(675, 128);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(81, 34);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "Funktion hinzufühgen";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.tBoxMitPw.Location = new System.Drawing.Point(127, 184);
+            this.tBoxMitPw.Name = "tBoxMitPw";
+            this.tBoxMitPw.Size = new System.Drawing.Size(100, 20);
+            this.tBoxMitPw.TabIndex = 75;
             // 
             // DateMit
             // 
@@ -367,21 +344,45 @@
             this.tBoxMitVName.Size = new System.Drawing.Size(100, 20);
             this.tBoxMitVName.TabIndex = 49;
             // 
-            // label15
+            // butMverDetailSchließen
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(124, 168);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(50, 13);
-            this.label15.TabIndex = 76;
-            this.label15.Text = "Passwort";
+            this.butMverDetailSchließen.Location = new System.Drawing.Point(11, 308);
+            this.butMverDetailSchließen.Name = "butMverDetailSchließen";
+            this.butMverDetailSchließen.Size = new System.Drawing.Size(89, 32);
+            this.butMverDetailSchließen.TabIndex = 12;
+            this.butMverDetailSchließen.Text = "Schließen";
+            this.butMverDetailSchließen.UseVisualStyleBackColor = true;
+            this.butMverDetailSchließen.Click += new System.EventHandler(this.butMverDetailSchließen_Click);
             // 
-            // tBoxMitPw
+            // butMitAbt
             // 
-            this.tBoxMitPw.Location = new System.Drawing.Point(127, 184);
-            this.tBoxMitPw.Name = "tBoxMitPw";
-            this.tBoxMitPw.Size = new System.Drawing.Size(100, 20);
-            this.tBoxMitPw.TabIndex = 75;
+            this.butMitAbt.Location = new System.Drawing.Point(675, 43);
+            this.butMitAbt.Name = "butMitAbt";
+            this.butMitAbt.Size = new System.Drawing.Size(81, 36);
+            this.butMitAbt.TabIndex = 2;
+            this.butMitAbt.Text = "Abteilung hinzufühgen";
+            this.butMitAbt.UseVisualStyleBackColor = true;
+            this.butMitAbt.Click += new System.EventHandler(this.butMitAbt_Click);
+            // 
+            // butMitRolle
+            // 
+            this.butMitRolle.Location = new System.Drawing.Point(675, 85);
+            this.butMitRolle.Name = "butMitRolle";
+            this.butMitRolle.Size = new System.Drawing.Size(81, 36);
+            this.butMitRolle.TabIndex = 3;
+            this.butMitRolle.Text = "Rolle hinzufühgen";
+            this.butMitRolle.UseVisualStyleBackColor = true;
+            this.butMitRolle.Click += new System.EventHandler(this.butMitRolle_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(675, 128);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(81, 34);
+            this.button3.TabIndex = 4;
+            this.button3.Text = "Funktion hinzufühgen";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // Mitarbeiterverwaltung
             // 

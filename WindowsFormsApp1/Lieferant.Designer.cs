@@ -115,7 +115,7 @@
             // 
             // lBoxLieferant
             // 
-            this.lBoxLieferant.DisplayMember = "MitarbeiterListe";
+            this.lBoxLieferant.DisplayMember = "LiferantenListe";
             this.lBoxLieferant.FormattingEnabled = true;
             this.lBoxLieferant.Items.AddRange(new object[] {
             "Yorck",
@@ -384,6 +384,7 @@
             this.butLErstellen.Text = "Erstellen";
             this.butLErstellen.UseVisualStyleBackColor = true;
             this.butLErstellen.Visible = false;
+            this.butLErstellen.Click += new System.EventHandler(this.butLErstellen_Click);
             // 
             // butLÄndern
             // 
@@ -406,6 +407,7 @@
             this.Controls.Add(this.lBoxLieferant);
             this.Name = "Lieferant";
             this.Text = "Lieferant";
+            this.Load += new System.EventHandler(this.Lieferant_Load);
             this.lDetail.ResumeLayout(false);
             this.lDetail.PerformLayout();
             this.ResumeLayout(false);

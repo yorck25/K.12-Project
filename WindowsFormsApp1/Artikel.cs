@@ -80,10 +80,32 @@ namespace WindowsFormsApp1
             }
         }
 
+        public void LListeLaden(bool LNeuLaden)
+        {
+            if (LNeuLaden)
+            {
+                try
+                {
+                   cLieferant.LieferantLaden();
+                }
+                catch (MySqlException ex)
+                {
+
+                    Console.WriteLine("Fehler beim Laden: " + ex.Message);
+                }
+            }
+            cBoxArtL.Items.Clear();
+            foreach (cLieferant l in cLieferant.LListe)
+            {
+                cBoxArtL.Items.Add(l);
+            }
+        }
+
         private void Artikel_Load(object sender, EventArgs e)
         {
             ArtComEinNeuLaden(true);
             LVWListeLaden(true);
+            LListeLaden(true);
         }
 
         private void lBoxArt_SelectedIndexChanged(object sender, EventArgs e)
@@ -124,7 +146,7 @@ namespace WindowsFormsApp1
 
         private void herfArtLief_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Lieferant lieferant = new Lieferant();
+            Lieferant lieferant = new Lieferant(new cLieferant());
             lieferant.Show();
         }
     }

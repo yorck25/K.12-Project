@@ -174,5 +174,10 @@ namespace WindowsFormsApp1
                 cBoxMitRolle.Items.Add(r);
             }
         }
+
+        private void MverDetailMitarbeiter_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
