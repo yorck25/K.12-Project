@@ -39,9 +39,51 @@ namespace WindowsFormsApp1
             }
         }
 
+        public void ArtListelAden(bool ArtNeuLaden)
+        {
+            if (ArtNeuLaden)
+            {
+                try
+                {
+                    //cAritkel.ArtikelLaden();
+                }
+                catch (MySqlException ex)
+                {
+
+                    Console.WriteLine("Fehler beim Laden: " + ex.Message);
+                }
+            }
+            cBoxAbtEinheit.Items.Clear();
+            foreach (cEinheit ein in cEinheit.EinListe)
+            {
+                cBoxAbtEinheit.Items.Add(ein);
+            }
+        }
+        public void LVWListeLaden(bool LVWNeuLaden)
+        {
+            if (LVWNeuLaden)
+            {
+                try
+                {
+                    cLager.LagerLaden();
+                }
+                catch (MySqlException ex)
+                {
+
+                    Console.WriteLine("Fehler beim Laden: " + ex.Message);
+                }
+            }
+            cBoxArtLager.Items.Clear();
+            foreach (cLager lvw in cLager.LVWListe)
+            {
+                cBoxArtLager.Items.Add(lvw);
+            }
+        }
+
         private void Artikel_Load(object sender, EventArgs e)
         {
             ArtComEinNeuLaden(true);
+            LVWListeLaden(true);
         }
 
         private void lBoxArt_SelectedIndexChanged(object sender, EventArgs e)
@@ -72,6 +114,12 @@ namespace WindowsFormsApp1
         {
             Einheit einheit = new Einheit(new cEinheit());
             einheit.Show();
+        }
+
+        private void herfArtLgv_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Lager lager = new Lager(new cLager());
+            lager.Show();
         }
     }
 }

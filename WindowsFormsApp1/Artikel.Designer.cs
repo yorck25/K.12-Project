@@ -48,7 +48,7 @@
             this.butArtErstellen = new System.Windows.Forms.Button();
             this.herfArtLöschen = new System.Windows.Forms.LinkLabel();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cBoxArtLager = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.herfArtLgv = new System.Windows.Forms.LinkLabel();
@@ -139,7 +139,7 @@
             this.AbtneueAbteilung.Controls.Add(this.herfArtLgv);
             this.AbtneueAbteilung.Controls.Add(this.label8);
             this.AbtneueAbteilung.Controls.Add(this.label7);
-            this.AbtneueAbteilung.Controls.Add(this.comboBox2);
+            this.AbtneueAbteilung.Controls.Add(this.cBoxArtLager);
             this.AbtneueAbteilung.Controls.Add(this.comboBox1);
             this.AbtneueAbteilung.Controls.Add(this.herfArtneueEinheit);
             this.AbtneueAbteilung.Controls.Add(this.butArtSpeichern);
@@ -263,13 +263,14 @@
             this.comboBox1.Size = new System.Drawing.Size(97, 21);
             this.comboBox1.TabIndex = 18;
             // 
-            // comboBox2
+            // cBoxArtLager
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(118, 25);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(97, 21);
-            this.comboBox2.TabIndex = 19;
+            this.cBoxArtLager.DisplayMember = "LagerortListe";
+            this.cBoxArtLager.FormattingEnabled = true;
+            this.cBoxArtLager.Location = new System.Drawing.Point(118, 25);
+            this.cBoxArtLager.Name = "cBoxArtLager";
+            this.cBoxArtLager.Size = new System.Drawing.Size(97, 21);
+            this.cBoxArtLager.TabIndex = 19;
             // 
             // label7
             // 
@@ -299,6 +300,7 @@
             this.herfArtLgv.TabIndex = 22;
             this.herfArtLgv.TabStop = true;
             this.herfArtLgv.Text = "Neuer Lagerort...";
+            this.herfArtLgv.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.herfArtLgv_LinkClicked);
             // 
             // herfArtLief
             // 
@@ -355,7 +357,7 @@
         private System.Windows.Forms.LinkLabel herfArtLgv;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cBoxArtLager;
         private System.Windows.Forms.ComboBox comboBox1;
     }
 }

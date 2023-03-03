@@ -51,29 +51,6 @@ namespace WindowsFormsApp1
             }
         }
 
-        public void butEinErstellen_Click(object sender, EventArgs e)
-        {
-            ein.Ein_Bez = tBoxEinBez.Text;
-
-            if (string.IsNullOrEmpty(tBoxEinBez.Text))
-            {
-                Console.WriteLine("Keine Eingabe");
-            }
-            else
-            {
-                ein.EinheitSpiechern();
-                Console.WriteLine("Kst wird gespeichert");
-                tBoxEinBez.Clear();
-                EinDetail.Visible = false;
-
-                lBoxEinheit.Items.Clear();
-                foreach (cEinheit ein in cEinheit.EinListe)
-                {
-                    lBoxEinheit.Items.Add(ein);
-                }
-            }
-        }
-
         public void EinheitListeLaden(bool FNeuLaden)
         {
             if (FNeuLaden)

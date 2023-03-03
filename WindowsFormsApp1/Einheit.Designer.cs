@@ -105,7 +105,6 @@
             this.butEinErstellen.Text = "Erstellen";
             this.butEinErstellen.UseVisualStyleBackColor = true;
             this.butEinErstellen.Visible = false;
-            this.butEinErstellen.Click += new System.EventHandler(this.butEinErstellen_Click);
             // 
             // butEinSpeichern
             // 
