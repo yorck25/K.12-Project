@@ -25,20 +25,20 @@ namespace WindowsFormsApp1
         {
             MverDetailMitarbeiter.Visible= true;
 
-            cMitarbeiter mit = (cMitarbeiter)lBoxMverMitarbeiter.SelectedItem;
-            if(mit != null)
+            Mit = (cMitarbeiter)lBoxMverMitarbeiter.SelectedItem;
+            if(Mit != null)
             {
-                tBoxMitVName.Text = mit.Mit_VName;
-                tBoxMitName.Text = mit.Mit_Name;
-                tBoxMitStraße.Text = mit.Mit_Straße;
-                tBoxMitHausNr.Text = Convert.ToString(mit.Mit_HausNr);
-                tBoxMitPLZ.Text = Convert.ToString(mit.Mit_PLZ);
-                tBoxMitOrt.Text = mit.Mit_Ort;
+                tBoxMitVName.Text = Mit.Mit_VName;
+                tBoxMitName.Text = Mit.Mit_Name;
+                tBoxMitStraße.Text = Mit.Mit_Straße;
+                tBoxMitHausNr.Text = Convert.ToString(Mit.Mit_HausNr);
+                tBoxMitPLZ.Text = Convert.ToString(Mit.Mit_PLZ);
+                tBoxMitOrt.Text = Mit.Mit_Ort;
                 //DateMit.Value = mit.Mit_GDat;
-                tBoxMitEmail.Text = mit.Mit_Mail;
-                tBoxMitBenutzer.Text = mit.Mit_Benutzer;
-                tBoxMitPw.Text = mit.Mit_Pw;
-                cBoxMitAbt.SelectedItem = mit.Mit_Abt_ID;
+                tBoxMitEmail.Text = Mit.Mit_Mail;
+                tBoxMitBenutzer.Text = Mit.Mit_Benutzer;
+                tBoxMitPw.Text = Mit.Mit_Pw;
+                cBoxMitAbt.SelectedItem = Mit.Mit_Abt_ID;
             }
             else
             {
@@ -50,17 +50,16 @@ namespace WindowsFormsApp1
         {
             MverDetailMitarbeiter.Visible = false;
             Mit.Mit_Name = tBoxMitName.Text;
+            Mit.Mit_VName = tBoxMitVName.Text;
+            Mit.Mit_Mail = tBoxMitEmail.Text;
+            Mit.Mit_Ort = tBoxMitOrt.Text;
+            //Mit.Mit_GDat = DatteMit.
+            Mit.Mit_HausNr = Convert.ToInt16(tBoxMitHausNr.Text);
 
-            if (string.IsNullOrEmpty(tBoxMitName.Text))
-            {
-                Console.WriteLine("Keine Eingabe");
-            }
-            else
+
+            try
             {
                 Mit.MitarbeiterSpeichern();
-                Console.WriteLine("Kst wird gespeichert");
-                tBoxMitName.Clear();
-
             }
         }
 

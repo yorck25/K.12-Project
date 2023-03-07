@@ -32,6 +32,15 @@ namespace WindowsFormsApp1
         {
             FDetail.Visible = true;
             FMitProAbt.Visible = true;
+            f = (cFunktion)lBoxF.SelectedItem;
+            if (f != null)
+            {
+                tBoxFBez.Text = f.F_Bez;
+            }
+            else
+            {
+                return;
+            }
         }
 
         private void Funktion_Load(object sender, EventArgs e)

@@ -23,16 +23,18 @@ namespace WindowsFormsApp1
 
         private void lBoxAbt_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(lBoxAbt.SelectedItem == null)
-            {
-                AbtDetail.Visible= false;
-                return;
-            }
-            else
-            {
+           
                 AbtDetail.Visible= true;
                 AbtMitProAbt.Visible = true;
-            }
+                abt = (cAbteilung)lBoxAbt.SelectedItem;
+                if (abt != null)
+                {
+                    tBoxAbtBez.Text = abt.Abt_Bez;
+                }
+                else
+                {
+                    return;
+                }
         }
 
         private void herfAbtMitarebiter_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

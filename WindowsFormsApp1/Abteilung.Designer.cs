@@ -153,7 +153,7 @@
             this.butAbtBearbeiten.Name = "butAbtBearbeiten";
             this.butAbtBearbeiten.Size = new System.Drawing.Size(81, 32);
             this.butAbtBearbeiten.TabIndex = 9;
-            this.butAbtBearbeiten.Text = "Bearbeiten";
+            this.butAbtBearbeiten.Text = "Speichern";
             this.butAbtBearbeiten.UseVisualStyleBackColor = true;
             this.butAbtBearbeiten.Click += new System.EventHandler(this.butAbtBearbeiten_Click);
             // 

@@ -68,7 +68,7 @@ namespace WindowsFormsApp1
 
             if (Abt_ID.HasValue)
             {
-                string sql = "UPDATE abteilung SET" + "Abt_Bez = @Abt_Bez" + "WHERE Abt_ID = @Abt_ID";
+                string sql = "UPDATE abteilung SET Abt_Bez = @Abt_Bez WHERE Abt_ID = @Abt_ID";
                 Console.WriteLine("ID:" + this.Abt_ID);
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 this.AbteilungSpeichern(cmd);

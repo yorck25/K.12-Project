@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -70,6 +71,7 @@ namespace WindowsFormsApp1
                     lBoxR.Items.Add(r);
                 }
             }
+            this.Close();
         }
 
         private void herfRNeue_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -82,6 +84,15 @@ namespace WindowsFormsApp1
         {
             RDetail.Visible = true;
             RMitProAbt.Visible = true;
+            r = (cRolle)lBoxR.SelectedItem;
+            if (r != null)
+            {
+                tBoxRBez.Text = r.R_Bez;
+            }
+            else
+            {
+                return;
+            }
         }
 
         private void herfRMit_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

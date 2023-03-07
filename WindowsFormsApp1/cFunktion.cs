@@ -46,7 +46,7 @@ namespace WindowsFormsApp1
 
             if (F_ID.HasValue)
             {
-                string sql = "UPDATE funktion SET" + "F_Bez = @F_Bez" + "WHERE F_ID = @F_ID";
+                string sql = "UPDATE funktion SET F_Bez = @F_Bez WHERE F_ID = @F_ID";
                 Console.WriteLine("ID:" + this.F_ID);
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 this.FunktionWerteSpeichern(cmd);

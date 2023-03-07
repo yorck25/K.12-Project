@@ -46,7 +46,7 @@ namespace WindowsFormsApp1
 
             if (R_ID.HasValue)
             {
-                string sql = "UPDATE rolle SET" + "R_Bez = @R_Bez" + "WHERE R_ID = @R_ID";
+                string sql = "UPDATE rolle SET R_Bez = @R_Bez WHERE R_ID = @R_ID";
                 Console.WriteLine("ID:" + this.R_ID);
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 this.RolleWerteSpeichern(cmd);
