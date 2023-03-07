@@ -129,8 +129,21 @@
     <Compile Include="Artikel.Designer.cs">
       <DependentUpon>Artikel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Bestellung.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bestellung.Designer.cs">
+      <DependentUpon>Bestellung.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BestellMenge.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BestellMenge.Designer.cs">
+      <DependentUpon>BestellMenge.cs</DependentUpon>
+    </Compile>
     <Compile Include="cAbteilung.cs" />
     <Compile Include="cArtikel.cs" />
+    <Compile Include="cBestellung.cs" />
     <Compile Include="cEinheit.cs" />
     <Compile Include="cFunktion.cs" />
     <Compile Include="cKostenstelle.cs" />
@@ -206,6 +219,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Artikel.resx">
       <DependentUpon>Artikel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bestellung.resx">
+      <DependentUpon>Bestellung.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Einheit.resx">
       <DependentUpon>Einheit.cs</DependentUpon>

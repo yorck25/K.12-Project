@@ -44,9 +44,9 @@ namespace WindowsFormsApp1
             
             conn.Open();
 
-            if(Kst_ID.HasValue)
+            if(this.Kst_ID.HasValue)
             {
-                string sql = "UPDATE kostenstelle SET" + "Kst_Bez = @Kst_Bez" + "WHERE Kst_ID = @Kst_ID";
+                string sql = "UPDATE kostenstelle SET Kst_Bez = @Kst_Bez WHERE Kst_ID = @Kst_ID";
                 Console.WriteLine("ID:" + this.Kst_ID);
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 this.WerteSpeichern(cmd);

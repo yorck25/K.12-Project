@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Google.Protobuf.WellKnownTypes;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Configuration;

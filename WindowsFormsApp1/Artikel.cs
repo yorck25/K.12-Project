@@ -68,27 +68,7 @@ namespace WindowsFormsApp1
         private void Artikel_Load(object sender, EventArgs e)
         {
             cBoxenLaden(true);  
-           // LagerLaden(true);
         }
-
-        /*public void LagerLaden(bool LagerLaden)
-        {
-            if (LagerLaden)
-            {
-                try
-                {
-                    cLager.LagerLaden();
-                }
-                catch
-                {
-                    Console.WriteLine("fehler");
-                }
-            }
-            foreach (cLager lager in cLager.LVWListe)
-            {
-                cBoxArtLager.Items.Add(lager);
-            };
-        }*/
 
         private void lBoxArt_SelectedIndexChanged(object sender, EventArgs e)
         {

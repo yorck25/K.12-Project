@@ -18,8 +18,8 @@ namespace WindowsFormsApp1
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Registrieren(new cMitarbeiter()));
             //Application.Run(new Hauptmenu());
-            Application.Run(new Artikel(new cArtikel()));
-            //Application.Run(new Einheit(new cEinheit()));
+            //Application.Run(new Artikel(new cArtikel()));
+            Application.Run(new Abteilung(new cAbteilung()));
             //Application.Run(new Login(new cLogin()));
         }
     }

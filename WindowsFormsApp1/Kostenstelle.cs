@@ -26,6 +26,16 @@ namespace WindowsFormsApp1
                 KstDetail.Visible= true;
                 AbtMitProAbt.Visible= true;
                 herfKstLöschen.Visible= true;
+
+            kst = (cKostenstelle)lBoxKst.SelectedItem;
+            if (kst != null)
+            {
+                tBoxKstBez.Text = kst.Kst_Bez;
+            }
+            else
+            {
+                return;
+            }
         }
 
         public void herfKstAbt_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -64,26 +74,20 @@ namespace WindowsFormsApp1
         {
             kst.Kst_Bez = tBoxKstBez.Text;
 
-                if(string.IsNullOrEmpty(tBoxKstBez.Text))
-                {
-                    Console.WriteLine("Keine Eingabe");
-                    KstFehlereingabe.Visible= true; 
-                }
-                else
-                {
+            try
+            {
                 kst.Spiechern();
                 Console.WriteLine("Kst wird gespeichert");
                 tBoxKstBez.Clear();
-                KstDetail.Visible= false;
-                AbtMitProAbt.Visible= false;
+                KstDetail.Visible = false;
+                AbtMitProAbt.Visible = false;
                 KstFehlereingabe.Visible = false;
-
-                    lBoxKst.Items.Clear();
-                    foreach (cKostenstelle k in cKostenstelle.liste)
-                    {
-                        lBoxKst.Items.Add(k);
-                    }
-                }
+            }
+            catch(MySqlException ex)
+            {
+                Console.WriteLine("fehler" + ex);
+            }
+              
         }
 
         private void tBoxKstBez_TextChanged(object sender, EventArgs e)
