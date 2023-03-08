@@ -62,6 +62,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.tBoxHmenuAName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.butHmenuBestellung = new System.Windows.Forms.Button();
             this.hmenuNavElemente.SuspendLayout();
             this.hmenuAccElemente.SuspendLayout();
             this.hmenuBenachrichtigungList.SuspendLayout();
@@ -81,6 +82,7 @@
             // 
             // hmenuNavElemente
             // 
+            this.hmenuNavElemente.Controls.Add(this.butHmenuBestellung);
             this.hmenuNavElemente.Controls.Add(this.butHmenuLieferschein);
             this.hmenuNavElemente.Controls.Add(this.butHmenuMaterial);
             this.hmenuNavElemente.Controls.Add(this.butHmenuMitarbeiter);
@@ -89,7 +91,7 @@
             this.hmenuNavElemente.Controls.Add(this.butHmenuArtikel);
             this.hmenuNavElemente.Location = new System.Drawing.Point(12, 55);
             this.hmenuNavElemente.Name = "hmenuNavElemente";
-            this.hmenuNavElemente.Size = new System.Drawing.Size(140, 365);
+            this.hmenuNavElemente.Size = new System.Drawing.Size(140, 431);
             this.hmenuNavElemente.TabIndex = 1;
             this.hmenuNavElemente.Visible = false;
             // 
@@ -129,6 +131,7 @@
             this.butHmenuLieferant.TabIndex = 2;
             this.butHmenuLieferant.Text = "Lieferantenveraltung";
             this.butHmenuLieferant.UseVisualStyleBackColor = true;
+            this.butHmenuLieferant.Click += new System.EventHandler(this.butHmenuLieferant_Click);
             // 
             // butHmenuLager
             // 
@@ -138,6 +141,7 @@
             this.butHmenuLager.TabIndex = 1;
             this.butHmenuLager.Text = "Lagerverwaltung";
             this.butHmenuLager.UseVisualStyleBackColor = true;
+            this.butHmenuLager.Click += new System.EventHandler(this.butHmenuLager_Click);
             // 
             // butHmenuArtikel
             // 
@@ -380,11 +384,21 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Artikel Name";
             // 
+            // butHmenuBestellung
+            // 
+            this.butHmenuBestellung.Location = new System.Drawing.Point(3, 375);
+            this.butHmenuBestellung.Name = "butHmenuBestellung";
+            this.butHmenuBestellung.Size = new System.Drawing.Size(125, 41);
+            this.butHmenuBestellung.TabIndex = 6;
+            this.butHmenuBestellung.Text = "Bestellverwaltung";
+            this.butHmenuBestellung.UseVisualStyleBackColor = true;
+            this.butHmenuBestellung.Click += new System.EventHandler(this.butHmenuBestellung_Click);
+            // 
             // Hauptmenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(921, 456);
+            this.ClientSize = new System.Drawing.Size(921, 498);
             this.Controls.Add(this.hmenuDetailABestand);
             this.Controls.Add(this.lBoxHmenuBestand);
             this.Controls.Add(this.hmenuDetailBenachrichtigung);
@@ -442,5 +456,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox tBoxHmenuAName;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button butHmenuBestellung;
     }
 }

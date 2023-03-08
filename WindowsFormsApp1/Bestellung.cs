@@ -13,9 +13,11 @@ namespace WindowsFormsApp1
 {
     public partial class Bestellung : Form
     {
-        public Bestellung()
+        cBestellung b;
+        public Bestellung(cBestellung b)
         {
             InitializeComponent();
+            this.b = b;
         }
 
         private void Bestellung_Load(object sender, EventArgs e)
@@ -53,6 +55,23 @@ namespace WindowsFormsApp1
             {
                 cBoxBMit.Items.Add(mit);
             };
+        }
+
+        public void butBArtikel_Click(object sender, EventArgs e)
+        {
+
+            if(cBoxBLager.SelectedItem == null && cBoxBMit.SelectedItem == null){
+                Console.WriteLine("Error");
+            }
+            else
+            {
+            b.B_Mitarbeiter = Convert.ToInt32(cBoxBMit.SelectedIndex + 1);
+            b.B_Lager = Convert.ToInt32(cBoxBLager.SelectedIndex + 1);
+            b.BestellungSpeichern();
+
+            BestellMenge bestellMenge = new BestellMenge(new cBestellMenge());
+            bestellMenge.ShowDialog();
+            }
         }
     }
 }

@@ -61,6 +61,10 @@ namespace WindowsFormsApp1
             {
                 Mit.MitarbeiterSpeichern();
             }
+            catch
+            {
+                return;
+            }
         }
 
         private void butMitAbt_Click(object sender, EventArgs e)

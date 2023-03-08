@@ -70,5 +70,23 @@ namespace WindowsFormsApp1
             Artikel artikel = new Artikel(new cArtikel());
             artikel.Show();
         }
+
+        private void butHmenuLieferant_Click(object sender, EventArgs e)
+        {
+            Lieferant lieferant = new Lieferant(new cLieferant());
+            lieferant.Show();
+        }
+
+        private void butHmenuLager_Click(object sender, EventArgs e)
+        {
+            Lager lager = new Lager(new cLager());
+            lager.Show();
+        }
+
+        private void butHmenuBestellung_Click(object sender, EventArgs e)
+        {
+            Bestellung bestellung = new Bestellung(new cBestellung());
+            bestellung.Show();
+        }
     }
 }

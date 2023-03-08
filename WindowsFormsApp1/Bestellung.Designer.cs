@@ -31,11 +31,11 @@
             this.lBoxBestellung = new System.Windows.Forms.ListBox();
             this.herfBNeu = new System.Windows.Forms.LinkLabel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.cBoxBLager = new System.Windows.Forms.ComboBox();
-            this.cBoxBMit = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.butBArtikel = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cBoxBMit = new System.Windows.Forms.ComboBox();
+            this.cBoxBLager = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -70,32 +70,15 @@
             this.panel1.Size = new System.Drawing.Size(142, 218);
             this.panel1.TabIndex = 3;
             // 
-            // cBoxBLager
+            // butBArtikel
             // 
-            this.cBoxBLager.DisplayMember = "LagerortListe";
-            this.cBoxBLager.FormattingEnabled = true;
-            this.cBoxBLager.Location = new System.Drawing.Point(3, 20);
-            this.cBoxBLager.Name = "cBoxBLager";
-            this.cBoxBLager.Size = new System.Drawing.Size(121, 21);
-            this.cBoxBLager.TabIndex = 3;
-            // 
-            // cBoxBMit
-            // 
-            this.cBoxBMit.DisplayMember = "MitarbeiterListe";
-            this.cBoxBMit.FormattingEnabled = true;
-            this.cBoxBMit.Location = new System.Drawing.Point(6, 72);
-            this.cBoxBMit.Name = "cBoxBMit";
-            this.cBoxBMit.Size = new System.Drawing.Size(121, 21);
-            this.cBoxBMit.TabIndex = 4;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 4);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 13);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Lagerort:";
+            this.butBArtikel.Location = new System.Drawing.Point(6, 112);
+            this.butBArtikel.Name = "butBArtikel";
+            this.butBArtikel.Size = new System.Drawing.Size(121, 35);
+            this.butBArtikel.TabIndex = 7;
+            this.butBArtikel.Text = "Artikel zu Bestellung hinzufügen...";
+            this.butBArtikel.UseVisualStyleBackColor = true;
+            this.butBArtikel.Click += new System.EventHandler(this.butBArtikel_Click);
             // 
             // label2
             // 
@@ -106,14 +89,32 @@
             this.label2.TabIndex = 6;
             this.label2.Text = "Mitarbeiter:";
             // 
-            // butBArtikel
+            // label1
             // 
-            this.butBArtikel.Location = new System.Drawing.Point(6, 112);
-            this.butBArtikel.Name = "butBArtikel";
-            this.butBArtikel.Size = new System.Drawing.Size(121, 35);
-            this.butBArtikel.TabIndex = 7;
-            this.butBArtikel.Text = "Artikel zu Bestellung hinzufügen...";
-            this.butBArtikel.UseVisualStyleBackColor = true;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(3, 4);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(49, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Lagerort:";
+            // 
+            // cBoxBMit
+            // 
+            this.cBoxBMit.DisplayMember = "MitarbeiterListe";
+            this.cBoxBMit.FormattingEnabled = true;
+            this.cBoxBMit.Location = new System.Drawing.Point(6, 72);
+            this.cBoxBMit.Name = "cBoxBMit";
+            this.cBoxBMit.Size = new System.Drawing.Size(121, 21);
+            this.cBoxBMit.TabIndex = 4;
+            // 
+            // cBoxBLager
+            // 
+            this.cBoxBLager.DisplayMember = "LagerortListe";
+            this.cBoxBLager.FormattingEnabled = true;
+            this.cBoxBLager.Location = new System.Drawing.Point(3, 20);
+            this.cBoxBLager.Name = "cBoxBLager";
+            this.cBoxBLager.Size = new System.Drawing.Size(121, 21);
+            this.cBoxBLager.TabIndex = 3;
             // 
             // Bestellung
             // 

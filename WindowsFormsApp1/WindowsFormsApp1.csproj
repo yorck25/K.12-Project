@@ -143,6 +143,7 @@
     </Compile>
     <Compile Include="cAbteilung.cs" />
     <Compile Include="cArtikel.cs" />
+    <Compile Include="cBestellMenge.cs" />
     <Compile Include="cBestellung.cs" />
     <Compile Include="cEinheit.cs" />
     <Compile Include="cFunktion.cs" />
@@ -219,6 +220,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Artikel.resx">
       <DependentUpon>Artikel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BestellMenge.resx">
+      <DependentUpon>BestellMenge.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Bestellung.resx">
       <DependentUpon>Bestellung.cs</DependentUpon>
