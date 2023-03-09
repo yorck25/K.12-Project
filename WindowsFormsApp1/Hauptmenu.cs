@@ -91,7 +91,7 @@ namespace WindowsFormsApp1
 
         private void butHmenuLieferschein_Click(object sender, EventArgs e)
         {
-            Lieferschein lieferschein = new Lieferschein();
+            Lieferschein lieferschein = new Lieferschein(new cLieferschein());
             lieferschein.Show();
         }
     }

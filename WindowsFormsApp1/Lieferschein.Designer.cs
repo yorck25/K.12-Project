@@ -32,10 +32,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.LsNeuLsanlegen = new System.Windows.Forms.Panel();
             this.tBoxLsBId = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.butLsNeu = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.tBoxLsbDatum = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.cBoxLsBearbeitetVon = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.LsNeuLsanlegen.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,8 +62,10 @@
             // 
             // LsNeuLsanlegen
             // 
+            this.LsNeuLsanlegen.Controls.Add(this.label4);
+            this.LsNeuLsanlegen.Controls.Add(this.cBoxLsBearbeitetVon);
             this.LsNeuLsanlegen.Controls.Add(this.tBoxLsBId);
-            this.LsNeuLsanlegen.Controls.Add(this.button2);
+            this.LsNeuLsanlegen.Controls.Add(this.butLsNeu);
             this.LsNeuLsanlegen.Controls.Add(this.label3);
             this.LsNeuLsanlegen.Controls.Add(this.tBoxLsbDatum);
             this.LsNeuLsanlegen.Controls.Add(this.label1);
@@ -74,18 +78,18 @@
             // 
             this.tBoxLsBId.Location = new System.Drawing.Point(6, 34);
             this.tBoxLsBId.Name = "tBoxLsBId";
-            this.tBoxLsBId.Size = new System.Drawing.Size(100, 20);
+            this.tBoxLsBId.Size = new System.Drawing.Size(123, 20);
             this.tBoxLsBId.TabIndex = 8;
             // 
-            // button2
+            // butLsNeu
             // 
-            this.button2.Location = new System.Drawing.Point(6, 126);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(131, 34);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Lieferschein ins System eintragen";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.butLsNeu.Location = new System.Drawing.Point(6, 152);
+            this.butLsNeu.Name = "butLsNeu";
+            this.butLsNeu.Size = new System.Drawing.Size(131, 34);
+            this.butLsNeu.TabIndex = 7;
+            this.butLsNeu.Text = "Lieferschein ins System eintragen";
+            this.butLsNeu.UseVisualStyleBackColor = true;
+            this.butLsNeu.Click += new System.EventHandler(this.butLsNeu_Click);
             // 
             // label3
             // 
@@ -100,7 +104,7 @@
             // 
             this.tBoxLsbDatum.Location = new System.Drawing.Point(6, 76);
             this.tBoxLsbDatum.Name = "tBoxLsbDatum";
-            this.tBoxLsbDatum.Size = new System.Drawing.Size(100, 20);
+            this.tBoxLsbDatum.Size = new System.Drawing.Size(123, 20);
             this.tBoxLsbDatum.TabIndex = 5;
             // 
             // label2
@@ -111,6 +115,24 @@
             this.label2.Size = new System.Drawing.Size(138, 13);
             this.label2.TabIndex = 5;
             this.label2.Text = "Bestellung die geliefert sind:";
+            // 
+            // cBoxLsBearbeitetVon
+            // 
+            this.cBoxLsBearbeitetVon.DisplayMember = "MitarbeiterListe";
+            this.cBoxLsBearbeitetVon.FormattingEnabled = true;
+            this.cBoxLsBearbeitetVon.Location = new System.Drawing.Point(6, 125);
+            this.cBoxLsBearbeitetVon.Name = "cBoxLsBearbeitetVon";
+            this.cBoxLsBearbeitetVon.Size = new System.Drawing.Size(121, 21);
+            this.cBoxLsBearbeitetVon.TabIndex = 9;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 109);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(80, 13);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "Bearbeitet Von:";
             // 
             // Lieferschein
             // 
@@ -135,10 +157,12 @@
         private System.Windows.Forms.ListBox lBoxLsBgeliefert;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel LsNeuLsanlegen;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button butLsNeu;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox tBoxLsbDatum;
         private System.Windows.Forms.TextBox tBoxLsBId;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox cBoxLsBearbeitetVon;
     }
 }

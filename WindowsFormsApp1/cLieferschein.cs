@@ -10,18 +10,19 @@ namespace WindowsFormsApp1
 {
     public class cLieferschein
     {
-        public static List<cBestellMenge> BMListe = new List<cBestellMenge>();
+        public static List<cLieferschein> LsListe = new List<cLieferschein>();
 
-        public long? BM_ID { get; set; } = null;
-        public int BM_BST_ID { get; set; }
-        public int BM_Menge { get; set; }
-        public int BM_ART_ID { get; set; }
+        public long? LS_ID { get; set; } = null;
+        public int Ls_B_ID { get; set; }
+        public string LS_Datum { get; set; }
+        public bool LS_Bearbeitet { get; set; } 
+        public int  LS_BearbeitetVon_ID { get; set; }
 
-        public string BestemMengeListe => BM_ID + ": " + BM_ART_ID + ":" + BM_Menge;
+        public string LieferscheinListe => LS_ID + ": " + Ls_B_ID + ":";
         
-        public static void BestellmengeLaden()
+        public static void LieferscheinLaden()
         {
-            string sql = "SELECT * FROM bestellmenge";
+            string sql = "SELECT * FROM Lieferschein";
             MySqlConnection conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["localsql"].ConnectionString);
 
             conn.Open();
@@ -41,29 +42,32 @@ namespace WindowsFormsApp1
             }
             rdr.Close();
         }
-       /* public void BestellmengeSpeichern()
+        public void LieferscheinSpeichern()
         {
             MySqlConnection conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["localsql"].ConnectionString);
 
             conn.Open();
 
-            string sql = "INSERT INTO bestellmenge (BM_ID, BM_BST_ID, BM_ART_ID, BM_Menge) VALUES (@BM_ID, @BM_BST_ID, @BM_ART_ID, @BM_Menge)";
+            string sql = "INSERT INTO lieferschein (LS_ID,Ls_B_ID, LS_Datum, LS_Bearbeitet, LS_BearbeitetVon_ID) " +
+                " VALUES (@Ls_ID, @Ls_B_ID, @Ls_Datum, @Ls_Bearbeitet, @Ls_BearbeitetVon_ID)";
             MySqlCommand cmd = new MySqlCommand(sql, conn);
-            this.BestellmengeWerteSpeichern(cmd);
+            this.LieferscheinWerteSpeichern(cmd);
             cmd.ExecuteNonQuery();
-            this.BM_ID = cmd.LastInsertedId;
-            cBestellMenge.BMListe.Add(this);
+            this.LS_ID = cmd.LastInsertedId;
+            cLieferschein.LsListe.Add(this);
 
             conn.Close();
             return;
         }
 
-        public void BestellmengeWerteSpeichern(MySqlCommand cmd)
+        public void LieferscheinWerteSpeichern(MySqlCommand cmd)
         {
-            cmd.Parameters.AddWithValue("@BM_ID", this.BM_ID);
-            cmd.Parameters.AddWithValue("@BM_BST_ID", this.BM_BST_ID);
-            cmd.Parameters.AddWithValue("@BM_ART_ID", this.BM_ART_ID);
-            cmd.Parameters.AddWithValue("@BM_Menge", this.BM_Menge);
-        }*/
+            cmd.Parameters.AddWithValue("@Ls_ID", this.LS_ID);
+            cmd.Parameters.AddWithValue("@Ls_B_ID", this.Ls_B_ID);
+            cmd.Parameters.AddWithValue("@Ls_Datum", this.LS_Datum);
+            cmd.Parameters.AddWithValue("@Ls_Bearbeitet", this.LS_Bearbeitet);
+            cmd.Parameters.AddWithValue("@Ls_BearbeitetVon_ID", this.LS_BearbeitetVon_ID);
+
+        }
     }
 }

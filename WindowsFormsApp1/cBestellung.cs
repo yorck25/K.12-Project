@@ -14,7 +14,7 @@ namespace WindowsFormsApp1
         public static List<cBestellung> BstListe = new List<cBestellung>();
 
         public long? B_ID { get; set; } = null;
-        public string B_Bestelldatum { get; set; }
+        public string B_Datum { get; set; }
         public int B_Lager { get; set; }
         public int B_Mitarbeiter { get; set; }
 
@@ -37,6 +37,7 @@ namespace WindowsFormsApp1
                 bst.B_ID = rdr.GetInt16("B_ID");
                 bst.B_Mitarbeiter = rdr.GetInt16("B_MIT_ID");
                 bst.B_Lager = rdr.GetInt16("B_L_ID");
+                bst.B_Datum = rdr.GetString("B_Datum");
                 cBestellung.BstListe.Add(bst);
             }
             rdr.Close();
@@ -58,7 +59,7 @@ namespace WindowsFormsApp1
             }
             else
             {
-                string sql = "INSERT INTO bestellung (B_ID, B_L_ID, B_Mit_ID) VALUES (@B_ID, @B_Lager, @B_Mitarbeiter)";
+                string sql = "INSERT INTO bestellung (B_ID, B_Datum, B_L_ID, B_Mit_ID) VALUES (@B_ID, @B_Datum, @B_Lager, @B_Mitarbeiter)";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 this.BestellungWerteSpeichern(cmd);
                 cmd.ExecuteNonQuery();
@@ -75,6 +76,7 @@ namespace WindowsFormsApp1
            // cmd.Parameters.AddWithValue("@B_Bestelldatum", this.B_Bestelldatum);
             cmd.Parameters.AddWithValue("@B_Lager", this.B_Lager);
             cmd.Parameters.AddWithValue("@B_Mitarbeiter", this.B_Mitarbeiter);
+            cmd.Parameters.AddWithValue("@B_Datum", this.B_Datum);
         }
     }
 }

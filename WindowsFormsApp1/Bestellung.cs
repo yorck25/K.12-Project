@@ -67,6 +67,10 @@ namespace WindowsFormsApp1
             {
             b.B_Mitarbeiter = Convert.ToInt32(cBoxBMit.SelectedIndex + 1);
             b.B_Lager = Convert.ToInt32(cBoxBLager.SelectedIndex + 1);
+            DateTime CurrentDate;
+            CurrentDate = DateTime.Now;
+            b.B_Datum = Convert.ToString(CurrentDate);
+            Console.WriteLine(b.B_Datum);
             b.BestellungSpeichern();
 
             BestellMenge bestellMenge = new BestellMenge(new cBestellMenge());

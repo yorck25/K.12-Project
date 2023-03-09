@@ -13,13 +13,24 @@ namespace WindowsFormsApp1
 {
     public partial class Lieferschein : Form
     {
-        public Lieferschein()
+        cLieferschein Ls;
+        public Lieferschein(cLieferschein ls)   
         {
             InitializeComponent();
+            this.Ls = ls;
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void butLsNeu_Click(object sender, EventArgs e)
         {
+            Ls.Ls_B_ID = Convert.ToInt16(tBoxLsBId.Text);
+            Ls.LS_BearbeitetVon_ID = Convert.ToInt32(cBoxLsBearbeitetVon.SelectedIndex + 1);
+            DateTime LsDate;
+            LsDate = DateTime.Now;
+            Ls.LS_Datum = Convert.ToString(LsDate);
+            Ls.LS_Bearbeitet = false;
+            Ls.LieferscheinSpeichern();
+            Console.WriteLine("Lieferschein wird gespeichert");
+
             Liefermenge liefermenge = new Liefermenge();
             liefermenge.ShowDialog();
         }
@@ -36,6 +47,7 @@ namespace WindowsFormsApp1
                 try
                 {
                     cBestellung.BestellungLaden();
+                    cMitarbeiter.MitarbeiterLaden();
                 }
                 catch (MySqlException ex)
                 {
@@ -46,12 +58,18 @@ namespace WindowsFormsApp1
             //Alle Boxen leeren
 
             lBoxLsBgeliefert.Items.Clear();
+            cBoxLsBearbeitetVon.Items.Clear();
 
             //ComoBox für Lager neu Aufbauen
             foreach (cBestellung bst in cBestellung.BstListe)
             {
                 lBoxLsBgeliefert.Items.Add(bst);
             };
+            foreach (cMitarbeiter mit in cMitarbeiter.MitListe)
+            {
+                cBoxLsBearbeitetVon.Items.Add(mit);
+            }
+            
         }
 
         private void lBoxLsBgeliefert_SelectedIndexChanged(object sender, EventArgs e)
@@ -60,6 +78,7 @@ namespace WindowsFormsApp1
             if (bst != null)
             {
                 tBoxLsBId.Text = Convert.ToString(bst.B_ID);
+                tBoxLsbDatum.Text = Convert.ToString(bst.B_Datum);
             }
             else
             {
