@@ -32,6 +32,7 @@
             this.hauptmenuÖffnenSidebar = new System.Windows.Forms.Button();
             this.kryptonPalette1 = new ComponentFactory.Krypton.Toolkit.KryptonPalette(this.components);
             this.hmenuNavElemente = new System.Windows.Forms.Panel();
+            this.butHmenuBestellung = new System.Windows.Forms.Button();
             this.butHmenuLieferschein = new System.Windows.Forms.Button();
             this.butHmenuMaterial = new System.Windows.Forms.Button();
             this.butHmenuMitarbeiter = new System.Windows.Forms.Button();
@@ -62,7 +63,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.tBoxHmenuAName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.butHmenuBestellung = new System.Windows.Forms.Button();
             this.hmenuNavElemente.SuspendLayout();
             this.hmenuAccElemente.SuspendLayout();
             this.hmenuBenachrichtigungList.SuspendLayout();
@@ -95,14 +95,25 @@
             this.hmenuNavElemente.TabIndex = 1;
             this.hmenuNavElemente.Visible = false;
             // 
+            // butHmenuBestellung
+            // 
+            this.butHmenuBestellung.Location = new System.Drawing.Point(3, 375);
+            this.butHmenuBestellung.Name = "butHmenuBestellung";
+            this.butHmenuBestellung.Size = new System.Drawing.Size(125, 41);
+            this.butHmenuBestellung.TabIndex = 6;
+            this.butHmenuBestellung.Text = "Bestellverwaltung";
+            this.butHmenuBestellung.UseVisualStyleBackColor = true;
+            this.butHmenuBestellung.Click += new System.EventHandler(this.butHmenuBestellung_Click);
+            // 
             // butHmenuLieferschein
             // 
-            this.butHmenuLieferschein.Location = new System.Drawing.Point(3, 251);
+            this.butHmenuLieferschein.Location = new System.Drawing.Point(3, 252);
             this.butHmenuLieferschein.Name = "butHmenuLieferschein";
             this.butHmenuLieferschein.Size = new System.Drawing.Size(125, 41);
             this.butHmenuLieferschein.TabIndex = 5;
             this.butHmenuLieferschein.Text = "Lieferscheinverwaltung";
             this.butHmenuLieferschein.UseVisualStyleBackColor = true;
+            this.butHmenuLieferschein.Click += new System.EventHandler(this.butHmenuLieferschein_Click);
             // 
             // butHmenuMaterial
             // 
@@ -383,16 +394,6 @@
             this.label2.Size = new System.Drawing.Size(67, 13);
             this.label2.TabIndex = 0;
             this.label2.Text = "Artikel Name";
-            // 
-            // butHmenuBestellung
-            // 
-            this.butHmenuBestellung.Location = new System.Drawing.Point(3, 375);
-            this.butHmenuBestellung.Name = "butHmenuBestellung";
-            this.butHmenuBestellung.Size = new System.Drawing.Size(125, 41);
-            this.butHmenuBestellung.TabIndex = 6;
-            this.butHmenuBestellung.Text = "Bestellverwaltung";
-            this.butHmenuBestellung.UseVisualStyleBackColor = true;
-            this.butHmenuBestellung.Click += new System.EventHandler(this.butHmenuBestellung_Click);
             // 
             // Hauptmenu
             // 

@@ -88,5 +88,11 @@ namespace WindowsFormsApp1
             Bestellung bestellung = new Bestellung(new cBestellung());
             bestellung.Show();
         }
+
+        private void butHmenuLieferschein_Click(object sender, EventArgs e)
+        {
+            Lieferschein lieferschein = new Lieferschein();
+            lieferschein.Show();
+        }
     }
 }

@@ -150,6 +150,7 @@
     <Compile Include="cKostenstelle.cs" />
     <Compile Include="cLager.cs" />
     <Compile Include="cLieferant.cs" />
+    <Compile Include="cLieferschein.cs" />
     <Compile Include="cLogin.cs" />
     <Compile Include="cMitarbeiter.cs" />
     <Compile Include="cRolle.cs" />
@@ -188,6 +189,18 @@
     </Compile>
     <Compile Include="Lieferant.Designer.cs">
       <DependentUpon>Lieferant.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Liefermenge.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Liefermenge.Designer.cs">
+      <DependentUpon>Liefermenge.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lieferschein.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lieferschein.Designer.cs">
+      <DependentUpon>Lieferschein.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -244,6 +257,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Lieferant.resx">
       <DependentUpon>Lieferant.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Liefermenge.resx">
+      <DependentUpon>Liefermenge.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lieferschein.resx">
+      <DependentUpon>Lieferschein.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
