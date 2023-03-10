@@ -23,10 +23,10 @@ namespace WindowsFormsApp1
 
         public void lBoxMverMitarbeiter_SelectedIndexChanged(object sender, EventArgs e)
         {
-            MverDetailMitarbeiter.Visible= true;
+            MverDetailMitarbeiter.Visible = true;
 
             Mit = (cMitarbeiter)lBoxMverMitarbeiter.SelectedItem;
-            if(Mit != null)
+            if (Mit != null)
             {
                 tBoxMitVName.Text = Mit.Mit_VName;
                 tBoxMitName.Text = Mit.Mit_Name;
@@ -35,6 +35,9 @@ namespace WindowsFormsApp1
                 tBoxMitPLZ.Text = Convert.ToString(Mit.Mit_PLZ);
                 tBoxMitOrt.Text = Mit.Mit_Ort;
                 //DateMit.Value = mit.Mit_GDat;
+                cBoxMitAbt.Text = Convert.ToString(Mit.Mit_Abt_ID);
+                cBoxMitFunk.Text = Convert.ToString(Mit.Mit_F_ID);
+                cBoxMitRolle.Text = Convert.ToString(Mit.Mit_R_ID);
                 tBoxMitEmail.Text = Mit.Mit_Mail;
                 tBoxMitBenutzer.Text = Mit.Mit_Benutzer;
                 tBoxMitPw.Text = Mit.Mit_Pw;
@@ -69,7 +72,7 @@ namespace WindowsFormsApp1
 
         private void butMitAbt_Click(object sender, EventArgs e)
         {
-            Abteilung abteilung= new Abteilung(new cAbteilung());
+            Abteilung abteilung = new Abteilung(new cAbteilung());
             abteilung.Show();
         }
 
@@ -87,62 +90,23 @@ namespace WindowsFormsApp1
 
         public void Mitarbeiterverwaltung_Load(object sender, EventArgs e)
         {
-            CBoxMitAbtNeuLaden(true);
-            CBoxMitRNeuLaden(true);
-            CBoxMitFNeuLaden(true);
-            MitListeLaden(true);
-;            
+            ListenMitNeuladen(true);
+            tBoxMitPw.PasswordChar = '*';
+
+
         }
 
-        public void MitListeLaden(bool MitNeuLaden)
+
+        public void ListenMitNeuladen(bool NeuLaden)
         {
-            if (MitNeuLaden)
+            if (NeuLaden)
             {
                 try
                 {
                     cMitarbeiter.MitarbeiterLaden();
-                }
-                catch (MySqlException ex)
-                {
-
-                    Console.WriteLine("Fehler beim Laden: " + ex.Message);
-                }
-            }
-            lBoxMverMitarbeiter.Items.Clear();
-            foreach (cMitarbeiter mit in cMitarbeiter.MitListe)
-            {
-                lBoxMverMitarbeiter.Items.Add(mit);
-            }
-        }
-
-        public void CBoxMitFNeuLaden(bool FNeuLaden)
-        {
-            if (FNeuLaden)
-            {
-                try
-                {
-                   cFunktion.FunktionLaden();
-                }
-                catch (MySqlException ex)
-                {
-
-                    Console.WriteLine("Fehler beim Laden: " + ex.Message);
-                }
-            }
-            cBoxMitFunk.Items.Clear();
-            foreach (cFunktion f in cFunktion.FListe)
-            {
-                cBoxMitFunk.Items.Add(f);
-            }
-        }
-
-        public void CBoxMitAbtNeuLaden(bool AbtNeuLaden)
-        {
-            if (AbtNeuLaden)
-            {
-                try
-                {
-                   cAbteilung.AbteilungLaden();
+                    cAbteilung.AbteilungLaden();
+                    cRolle.RolleLaden();
+                    cFunktion.FunktionLaden();
                 }
                 catch (MySqlException ex)
                 {
@@ -151,36 +115,45 @@ namespace WindowsFormsApp1
                 }
             }
             cBoxMitAbt.Items.Clear();
+            cBoxMitRolle.Items.Clear();
+            cBoxMitFunk.Items.Clear();
+            lBoxMverMitarbeiter.Items.Clear();
+            //Abteilung Neu Aufbauen
             foreach (cAbteilung abt in cAbteilung.Abtliste)
             {
                 cBoxMitAbt.Items.Add(abt);
             }
-        }
-
-        public void CBoxMitRNeuLaden(bool RNeuLaden)
-        {
-            if (RNeuLaden)
-            {
-                try
-                {
-                    cRolle.RolleLaden();
-                }
-                catch (MySqlException ex)
-                {
-
-                    Console.WriteLine("Fehler beim Laden: " + ex.Message);
-                }
-            }
-            cBoxMitRolle.Items.Clear();
+            //Rolle Neu Aufbauen
             foreach (cRolle r in cRolle.RListe)
             {
                 cBoxMitRolle.Items.Add(r);
+            }
+            //Funktion Neu Aufbauen
+            foreach (cFunktion f in cFunktion.FListe)
+            {
+                cBoxMitFunk.Items.Add(f);
+            }
+            foreach (cMitarbeiter mit in cMitarbeiter.MitListe)
+            {
+                lBoxMverMitarbeiter.Items.Add(mit);
             }
         }
 
         private void MverDetailMitarbeiter_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void butMitPwAnzeigen_Click(object sender, EventArgs e)
+        {
+            if (tBoxMitPw.PasswordChar == '*')
+            {
+                tBoxMitPw.PasswordChar = '\0';
+            }
+            else
+            {
+                tBoxMitPw.PasswordChar = '*';
+            }
         }
     }
 }

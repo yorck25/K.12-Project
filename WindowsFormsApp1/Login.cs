@@ -55,20 +55,26 @@ namespace WindowsFormsApp1
 
         public void butLoginAnmelden_Click(object sender, EventArgs e)
         {
-            cLogin l = new cLogin();
-            // l.Login_Email = tBoxLoginEmail.Text;
-            // l.Login_Passwort = tBoxLoginPas.Text;
-            l.Anmelden(tBoxLoginEmail.Text, tBoxLoginPas.Text);
-           /* if (string.IsNullOrEmpty(tBoxLoginEmail.Text))
-                {
+            LoginFehlermeldung.Visible= false;
+
+            if (string.IsNullOrEmpty(tBoxLoginEmail.Text) || string.IsNullOrEmpty(tBoxLoginPas.Text))
+            {
                 Console.WriteLine("Keine vollsätndige Eingabe");
+                LoginFehlermeldung.Visible= true;
             }
             else
             {
-                l.Anmelden();
-                Console.WriteLine("Login");
-            }*/
+                try
+                {
+                    l.Anmelden(tBoxLoginEmail.Text, tBoxLoginPas.Text);
 
+                }
+                catch (MySqlException ex)
+                {
+                    Console.WriteLine("Fehler beim einloggen" + ex.Message);
+                }
+                
+            }
 
         }
     }

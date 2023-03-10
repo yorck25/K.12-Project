@@ -34,7 +34,7 @@ namespace WindowsFormsApp1
             {
                 try
                 {
-                    cKostenstelle.AlleLaden();
+                    cRolle.RolleLaden();
                 }
                 catch (MySqlException ex)
                 {
@@ -53,29 +53,28 @@ namespace WindowsFormsApp1
         {
             r.R_Bez = tBoxRBez.Text;
 
-            if (string.IsNullOrEmpty(tBoxRBez.Text))
-            {
-                Console.WriteLine("Keine Eingabe");
-            }
-            else
-            {
-                r.RolleSpeichern();
-                Console.WriteLine("Kst wird gespeichert");
-                tBoxRBez.Clear();
-                RDetail.Visible = false;
-                RMitProAbt.Visible = false;
-
-                lBoxR.Items.Clear();
-                foreach (cRolle r in cRolle.RListe)
+                if (string.IsNullOrEmpty(tBoxRBez.Text))
                 {
-                    lBoxR.Items.Add(r);
+                    Console.WriteLine("Keine Eingabe");
+
                 }
-            }
-            this.Close();
+                else
+                {
+                    r.RolleSpeichern();
+                    Console.WriteLine("Rolle wird gespeichert");
+                    tBoxRBez.Clear();
+                    RDetail.Visible = false;
+                    RMitProAbt.Visible = false;
+                    RolleListeLaden(true);
+                }
+            //this.Close();
         }
 
         private void herfRNeue_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            lBoxR.ClearSelected();
+            Refresh();
+            tBoxRBez.Clear();
             RDetail.Visible = true;
             RMitProAbt.Visible = false;
         }

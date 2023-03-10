@@ -46,7 +46,7 @@ namespace WindowsFormsApp1
 
             if (Ein_ID.HasValue)
             {
-                string sql = "UPDATE einheit SET" + "Ein_Bez = @Ein_Bez WHERE Ein_ID = @Ein_ID";
+                string sql = "UPDATE einheit SET Ein_Bez = @Ein_Bez WHERE Ein_ID = @Ein_ID";
                 Console.WriteLine("ID:" + this.Ein_ID);
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 this.EinheitWerteSpeichern(cmd);

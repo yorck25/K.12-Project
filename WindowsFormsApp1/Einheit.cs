@@ -25,8 +25,7 @@ namespace WindowsFormsApp1
         private void herfEinNeu_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             EinDetail.Visible = true;
-            butEinErstellen.Visible = true;
-            butEinSpeichern.Visible = false;
+
         }
 
         private void Einheit_Load(object sender, EventArgs e)
@@ -37,10 +36,8 @@ namespace WindowsFormsApp1
         private void lBoxEinheit_SelectedIndexChanged(object sender, EventArgs e)
         {
             EinDetail.Visible = true;
-            butEinSpeichern.Visible = true;
-            butEinErstellen.Visible = false;
 
-            cEinheit ein = (cEinheit)lBoxEinheit.SelectedItem;
+            ein = (cEinheit)lBoxEinheit.SelectedItem;
             if (ein != null)
             {
                 tBoxEinBez.Text = ein.Ein_Bez;
@@ -96,6 +93,7 @@ namespace WindowsFormsApp1
                 {
                     lBoxEinheit.Items.Add(ein);
                 }
+                this.Close();
             }
 
         }

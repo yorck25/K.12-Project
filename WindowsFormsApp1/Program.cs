@@ -16,12 +16,13 @@ namespace WindowsFormsApp1
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new Registrieren(new cMitarbeiter()));
+            //Application.Run(new Rolle(new cRolle()));
             //Application.Run(new Liefermenge());
             //Application.Run(new Bestellung(new cBestellung()));
             //Application.Run(new Artikel(new cArtikel()));
             //Application.Run(new Abteilung(new cAbteilung()));
-             Application.Run(new Login(new cLogin()));
+            //Application.Run(new Login(new cLogin()));
+            Application.Run(new Hauptmenu());
         }
     }
 }

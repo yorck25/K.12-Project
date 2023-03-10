@@ -20,19 +20,39 @@ namespace WindowsFormsApp1
             this.Mit = Mit;
         }
 
-        private void textBox6_TextChanged(object sender, EventArgs e)
+        public void Registrieren_Load(object sender, EventArgs e)
         {
-
+            cBoxenRegLaden(true);
         }
 
-        private void textBox9_TextChanged(object sender, EventArgs e)
+        public void cBoxenRegLaden(bool NeuLaden)
         {
+            if(NeuLaden)
+            {
+                cAbteilung.AbteilungLaden();
+                cRolle.RolleLaden();
+                cFunktion.FunktionLaden();
+            }
 
-        }
+            cBoxRegAbt.Items.Clear();
+            cBoxRegAbr.Items.Clear();
+            cBoxRegFunk.Items.Clear();
+            cBoxRegRolle.Items.Clear();
 
-        private void Registrieren_Load(object sender, EventArgs e)
-        {
+            foreach(cAbteilung abt in cAbteilung.Abtliste)
+            {
+                cBoxRegAbt.Items.Add(abt);
+            }
 
+            foreach(cFunktion f in cFunktion.FListe)
+            {
+                cBoxRegFunk.Items.Add(f);
+            }
+
+            foreach(cRolle r in cRolle.RListe)
+            {
+                cBoxRegRolle.Items.Add(r);
+            }
         }
 
         private void herfRegVorhanden_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

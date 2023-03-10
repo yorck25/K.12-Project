@@ -62,6 +62,7 @@
             this.butMitAbt = new System.Windows.Forms.Button();
             this.butMitRolle = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.butMitPwAnzeigen = new System.Windows.Forms.Button();
             this.MverDetailMitarbeiter.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -80,6 +81,7 @@
             // 
             // MverDetailMitarbeiter
             // 
+            this.MverDetailMitarbeiter.Controls.Add(this.butMitPwAnzeigen);
             this.MverDetailMitarbeiter.Controls.Add(this.label15);
             this.MverDetailMitarbeiter.Controls.Add(this.tBoxMitPw);
             this.MverDetailMitarbeiter.Controls.Add(this.DateMit);
@@ -206,6 +208,7 @@
             // 
             // cBoxMitFunk
             // 
+            this.cBoxMitFunk.DisplayMember = "FunktionListe";
             this.cBoxMitFunk.FormattingEnabled = true;
             this.cBoxMitFunk.Location = new System.Drawing.Point(11, 281);
             this.cBoxMitFunk.Name = "cBoxMitFunk";
@@ -223,6 +226,7 @@
             // 
             // cBoxMitRolle
             // 
+            this.cBoxMitRolle.DisplayMember = "RolleListe";
             this.cBoxMitRolle.FormattingEnabled = true;
             this.cBoxMitRolle.Location = new System.Drawing.Point(127, 233);
             this.cBoxMitRolle.Name = "cBoxMitRolle";
@@ -240,6 +244,7 @@
             // 
             // cBoxMitAbt
             // 
+            this.cBoxMitAbt.DisplayMember = "AbteilungsListe";
             this.cBoxMitAbt.FormattingEnabled = true;
             this.cBoxMitAbt.Location = new System.Drawing.Point(11, 233);
             this.cBoxMitAbt.Name = "cBoxMitAbt";
@@ -384,6 +389,16 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // butMitPwAnzeigen
+            // 
+            this.butMitPwAnzeigen.Location = new System.Drawing.Point(234, 184);
+            this.butMitPwAnzeigen.Name = "butMitPwAnzeigen";
+            this.butMitPwAnzeigen.Size = new System.Drawing.Size(17, 20);
+            this.butMitPwAnzeigen.TabIndex = 77;
+            this.butMitPwAnzeigen.Text = "Anzeigen";
+            this.butMitPwAnzeigen.UseVisualStyleBackColor = true;
+            this.butMitPwAnzeigen.Click += new System.EventHandler(this.butMitPwAnzeigen_Click);
+            // 
             // Mitarbeiterverwaltung
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -439,5 +454,6 @@
         private System.Windows.Forms.TextBox tBoxMitVName;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox tBoxMitPw;
+        private System.Windows.Forms.Button butMitPwAnzeigen;
     }
 }

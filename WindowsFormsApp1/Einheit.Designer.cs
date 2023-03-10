@@ -34,7 +34,6 @@
             this.tBoxEinBez = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.butEinErstellen = new System.Windows.Forms.Button();
-            this.butEinSpeichern = new System.Windows.Forms.Button();
             this.EinDetail = new System.Windows.Forms.Panel();
             this.EinDetail.SuspendLayout();
             this.SuspendLayout();
@@ -104,24 +103,11 @@
             this.butEinErstellen.TabIndex = 5;
             this.butEinErstellen.Text = "Erstellen";
             this.butEinErstellen.UseVisualStyleBackColor = true;
-            this.butEinErstellen.Visible = false;
             this.butEinErstellen.Click += new System.EventHandler(this.butEinErstellen_Click);
-            // 
-            // butEinSpeichern
-            // 
-            this.butEinSpeichern.Location = new System.Drawing.Point(6, 63);
-            this.butEinSpeichern.Name = "butEinSpeichern";
-            this.butEinSpeichern.Size = new System.Drawing.Size(116, 23);
-            this.butEinSpeichern.TabIndex = 6;
-            this.butEinSpeichern.Text = "Änderung Speichern";
-            this.butEinSpeichern.UseVisualStyleBackColor = true;
-            this.butEinSpeichern.Visible = false;
-            this.butEinSpeichern.Click += new System.EventHandler(this.butEinSpeichern_Click);
             // 
             // EinDetail
             // 
             this.EinDetail.Controls.Add(this.label1);
-            this.EinDetail.Controls.Add(this.butEinSpeichern);
             this.EinDetail.Controls.Add(this.tBoxEinBez);
             this.EinDetail.Controls.Add(this.butEinErstellen);
             this.EinDetail.Location = new System.Drawing.Point(139, 26);
@@ -157,7 +143,6 @@
         private System.Windows.Forms.TextBox tBoxEinBez;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button butEinErstellen;
-        private System.Windows.Forms.Button butEinSpeichern;
         internal System.Windows.Forms.Panel EinDetail;
     }
 }

@@ -94,6 +94,7 @@
             // 
             // cBoxRegFunk
             // 
+            this.cBoxRegFunk.DisplayMember = "FunktionListe";
             this.cBoxRegFunk.FormattingEnabled = true;
             this.cBoxRegFunk.Location = new System.Drawing.Point(12, 282);
             this.cBoxRegFunk.Name = "cBoxRegFunk";
@@ -111,6 +112,7 @@
             // 
             // cBoxRegRolle
             // 
+            this.cBoxRegRolle.DisplayMember = "RolleListe";
             this.cBoxRegRolle.FormattingEnabled = true;
             this.cBoxRegRolle.Location = new System.Drawing.Point(128, 234);
             this.cBoxRegRolle.Name = "cBoxRegRolle";
@@ -128,6 +130,7 @@
             // 
             // cBoxRegAbt
             // 
+            this.cBoxRegAbt.DisplayMember = "AbteilungsListe";
             this.cBoxRegAbt.FormattingEnabled = true;
             this.cBoxRegAbt.Location = new System.Drawing.Point(12, 234);
             this.cBoxRegAbt.Name = "cBoxRegAbt";

@@ -35,6 +35,7 @@
             this.butLoginPasAnzeigen = new System.Windows.Forms.Button();
             this.butLoginAnmelden = new System.Windows.Forms.Button();
             this.butLoginReg = new System.Windows.Forms.Button();
+            this.LoginFehlermeldung = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -101,11 +102,23 @@
             this.butLoginReg.UseVisualStyleBackColor = true;
             this.butLoginReg.Click += new System.EventHandler(this.butLoginReg_Click);
             // 
+            // LoginFehlermeldung
+            // 
+            this.LoginFehlermeldung.AutoSize = true;
+            this.LoginFehlermeldung.ForeColor = System.Drawing.Color.Red;
+            this.LoginFehlermeldung.Location = new System.Drawing.Point(60, -1);
+            this.LoginFehlermeldung.Name = "LoginFehlermeldung";
+            this.LoginFehlermeldung.Size = new System.Drawing.Size(150, 13);
+            this.LoginFehlermeldung.TabIndex = 7;
+            this.LoginFehlermeldung.Text = "E-Mail oder Passwort ist flasch";
+            this.LoginFehlermeldung.Visible = false;
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(289, 244);
+            this.Controls.Add(this.LoginFehlermeldung);
             this.Controls.Add(this.butLoginReg);
             this.Controls.Add(this.butLoginAnmelden);
             this.Controls.Add(this.butLoginPasAnzeigen);
@@ -130,5 +143,6 @@
         private System.Windows.Forms.Button butLoginPasAnzeigen;
         private System.Windows.Forms.Button butLoginAnmelden;
         private System.Windows.Forms.Button butLoginReg;
+        private System.Windows.Forms.Label LoginFehlermeldung;
     }
 }
