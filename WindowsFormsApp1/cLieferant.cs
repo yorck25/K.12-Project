@@ -50,7 +50,7 @@ namespace WindowsFormsApp1
                 l.L_HausNr = rdr.GetInt16("L_HausNr");
                 l.L_PLZ = rdr.GetInt16("L_PLZ");
                 l.L_Ort = rdr.GetString("L_Ort");
-                l.L_Tel = rdr.GetInt16("L_Tel");
+                l.L_Tel = rdr.GetInt32("L_Tel");
                 l.L_Postfach = rdr.GetString("L_Postfach");
                 l.L_Fax = rdr.GetInt16("L_Fax");
                 l.L_BLZ = rdr.GetInt16("L_BLZ");
