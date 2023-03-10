@@ -28,18 +28,28 @@ namespace WindowsFormsApp1
 
         private void herfLNeu_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            tBoxLAnrede.Clear();
+            tBoxLName.Clear();
+            tBoxLMail.Clear();
+            tBoxLHausNr.Clear();
+            tBoxLFax.Clear();
+            tBoxLDurch.Clear();
+            tBoxLOrt.Clear();
+            tBoxLStrasse.Clear();
+            tBoxLPartner.Clear();
+            tBoxLTel.Clear();
+            tBoxLPost.Clear();
+            tBoxLPLZ.Clear();
+            tBoxLNotiz.Clear();
+            tBoxLBlz.Clear();
             lDetail.Visible = true;
-            butLErstellen.Visible= true;
-            butLÄndern.Visible= false;
         }
 
         private void lBoxLieferant_SelectedIndexChanged(object sender, EventArgs e)
         {
-            butLÄndern.Visible = true;
             lDetail.Visible = true;
-            butLErstellen.Visible= false;
 
-            cLieferant l = (cLieferant)lBoxLieferant.SelectedItem;
+            l = (cLieferant)lBoxLieferant.SelectedItem;
             if (l != null)
             {
                 tBoxLAnrede.Text = l.L_Anrede;
@@ -100,6 +110,8 @@ namespace WindowsFormsApp1
                 tBoxLTel.Clear();
                 tBoxLPost.Clear();
                 tBoxLPLZ.Clear();
+                tBoxLNotiz.Clear();
+                tBoxLBlz.Clear();
 
                 lBoxLieferant.Items.Clear();
                 foreach (cLieferant l in cLieferant.LListe)

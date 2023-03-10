@@ -69,15 +69,30 @@ namespace WindowsFormsApp1
 
             conn.Open();
 
-            string sql = "INSERT INTO lieferanten (L_Anrede, L_Name, L_Strasse, L_HausNr, L_PLZ, L_Ort, L_Postfach, L_Tel, L_Fax, L_BLZ, L_Anspr, L_Mail, L_Durchwahl, L_Ntz) " +
-                "VALUES (@L_Anrede, @L_Name, @L_Strasse,  @L_HausNr, @L_PLZ, @L_Ort, @L_Postfach, @L_Tel, @L_Fax, @L_BLZ, @L_Anspr, @L_Mail, @L_Durchwahl, @L_Ntz)";
-            MySqlCommand cmd = new MySqlCommand(sql, conn);
-            this.LieferantWerteSpeichern(cmd);
-            cmd.ExecuteNonQuery();
-            this.L_ID = cmd.LastInsertedId;
-            cLieferant.LListe.Add(this);
-            conn.Close();
-            return;
+            if(L_ID.HasValue)
+            {
+                string sql = "UPDATE lieferanten SET L_Name = @L_Name, L_Strasse = @L_Strasse, L_HausNr = @L_HausNr," +
+                    " L_PLZ = @L_PLZ, L_Ort = @L_Ort, L_Postfach = @L_Postfach, L_Tel = @L_Tel, L_Fax = @L_Fax, L_BLZ = @L_BLZ, L_Anspr = @L_Anspr, L_Mail = @L_Mail, L_Durchwahl = @L_Durchwahl," +
+                    " L_Ntz = @L_Ntz WHERE L_ID = @L_ID";
+                Console.WriteLine("ID:" + this.L_ID);
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                this.LieferantWerteSpeichern(cmd);
+                cmd.ExecuteNonQuery();
+            }
+            else
+            {
+                string sql = "INSERT INTO lieferanten (L_Anrede, L_Name, L_Strasse, L_HausNr, L_PLZ, L_Ort, L_Postfach, L_Tel, L_Fax, L_BLZ, L_Anspr, L_Mail, L_Durchwahl, L_Ntz) " +
+                    "VALUES (@L_Anrede, @L_Name, @L_Strasse,  @L_HausNr, @L_PLZ, @L_Ort, @L_Postfach, @L_Tel, @L_Fax, @L_BLZ, @L_Anspr, @L_Mail, @L_Durchwahl, @L_Ntz)";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                this.LieferantWerteSpeichern(cmd);
+                cmd.ExecuteNonQuery();
+                this.L_ID = cmd.LastInsertedId;
+                cLieferant.LListe.Add(this);
+                conn.Close();
+                return;               
+            }
+
+
         }
 
         public void LieferantWerteSpeichern(MySqlCommand cmd)

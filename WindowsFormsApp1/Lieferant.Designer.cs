@@ -29,46 +29,44 @@
         private void InitializeComponent()
         {
             this.lDetail = new System.Windows.Forms.Panel();
+            this.butLErstellen = new System.Windows.Forms.Button();
+            this.tBoxLNotiz = new System.Windows.Forms.RichTextBox();
+            this.tBoxLPartner = new System.Windows.Forms.TextBox();
+            this.tBoxLBlz = new System.Windows.Forms.TextBox();
+            this.tBoxLFax = new System.Windows.Forms.TextBox();
+            this.tBoxLDurch = new System.Windows.Forms.TextBox();
+            this.tBoxLTel = new System.Windows.Forms.TextBox();
+            this.tBoxLMail = new System.Windows.Forms.TextBox();
+            this.tBoxLPost = new System.Windows.Forms.TextBox();
+            this.tBoxLOrt = new System.Windows.Forms.TextBox();
+            this.tBoxLPLZ = new System.Windows.Forms.TextBox();
+            this.tBoxLHausNr = new System.Windows.Forms.TextBox();
+            this.tBoxLStrasse = new System.Windows.Forms.TextBox();
+            this.tBoxLName = new System.Windows.Forms.TextBox();
+            this.tBoxLAnrede = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.lBoxLieferant = new System.Windows.Forms.ListBox();
             this.herfLNeu = new System.Windows.Forms.LinkLabel();
             this.herfLLöschen = new System.Windows.Forms.LinkLabel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.tBoxLAnrede = new System.Windows.Forms.TextBox();
-            this.tBoxLName = new System.Windows.Forms.TextBox();
-            this.tBoxLStrasse = new System.Windows.Forms.TextBox();
-            this.tBoxLHausNr = new System.Windows.Forms.TextBox();
-            this.tBoxLPLZ = new System.Windows.Forms.TextBox();
-            this.tBoxLOrt = new System.Windows.Forms.TextBox();
-            this.tBoxLPost = new System.Windows.Forms.TextBox();
-            this.tBoxLMail = new System.Windows.Forms.TextBox();
-            this.tBoxLTel = new System.Windows.Forms.TextBox();
-            this.tBoxLDurch = new System.Windows.Forms.TextBox();
-            this.tBoxLFax = new System.Windows.Forms.TextBox();
-            this.tBoxLBlz = new System.Windows.Forms.TextBox();
-            this.tBoxLPartner = new System.Windows.Forms.TextBox();
-            this.tBoxLNotiz = new System.Windows.Forms.RichTextBox();
-            this.butLErstellen = new System.Windows.Forms.Button();
-            this.butLÄndern = new System.Windows.Forms.Button();
             this.lDetail.SuspendLayout();
             this.SuspendLayout();
             // 
             // lDetail
             // 
-            this.lDetail.Controls.Add(this.butLÄndern);
             this.lDetail.Controls.Add(this.butLErstellen);
             this.lDetail.Controls.Add(this.tBoxLNotiz);
             this.lDetail.Controls.Add(this.tBoxLPartner);
@@ -104,6 +102,241 @@
             this.lDetail.Size = new System.Drawing.Size(324, 438);
             this.lDetail.TabIndex = 3;
             this.lDetail.Visible = false;
+            // 
+            // butLErstellen
+            // 
+            this.butLErstellen.Location = new System.Drawing.Point(14, 408);
+            this.butLErstellen.Name = "butLErstellen";
+            this.butLErstellen.Size = new System.Drawing.Size(75, 23);
+            this.butLErstellen.TabIndex = 102;
+            this.butLErstellen.Text = "Speichern";
+            this.butLErstellen.UseVisualStyleBackColor = true;
+            this.butLErstellen.Click += new System.EventHandler(this.butLErstellen_Click);
+            // 
+            // tBoxLNotiz
+            // 
+            this.tBoxLNotiz.Location = new System.Drawing.Point(174, 283);
+            this.tBoxLNotiz.Name = "tBoxLNotiz";
+            this.tBoxLNotiz.Size = new System.Drawing.Size(125, 114);
+            this.tBoxLNotiz.TabIndex = 101;
+            this.tBoxLNotiz.Text = "";
+            // 
+            // tBoxLPartner
+            // 
+            this.tBoxLPartner.Location = new System.Drawing.Point(14, 377);
+            this.tBoxLPartner.Name = "tBoxLPartner";
+            this.tBoxLPartner.Size = new System.Drawing.Size(125, 20);
+            this.tBoxLPartner.TabIndex = 100;
+            // 
+            // tBoxLBlz
+            // 
+            this.tBoxLBlz.Location = new System.Drawing.Point(14, 330);
+            this.tBoxLBlz.Name = "tBoxLBlz";
+            this.tBoxLBlz.Size = new System.Drawing.Size(125, 20);
+            this.tBoxLBlz.TabIndex = 99;
+            // 
+            // tBoxLFax
+            // 
+            this.tBoxLFax.Location = new System.Drawing.Point(14, 283);
+            this.tBoxLFax.Name = "tBoxLFax";
+            this.tBoxLFax.Size = new System.Drawing.Size(125, 20);
+            this.tBoxLFax.TabIndex = 98;
+            // 
+            // tBoxLDurch
+            // 
+            this.tBoxLDurch.Location = new System.Drawing.Point(174, 236);
+            this.tBoxLDurch.Name = "tBoxLDurch";
+            this.tBoxLDurch.Size = new System.Drawing.Size(125, 20);
+            this.tBoxLDurch.TabIndex = 97;
+            // 
+            // tBoxLTel
+            // 
+            this.tBoxLTel.Location = new System.Drawing.Point(14, 236);
+            this.tBoxLTel.Name = "tBoxLTel";
+            this.tBoxLTel.Size = new System.Drawing.Size(125, 20);
+            this.tBoxLTel.TabIndex = 96;
+            // 
+            // tBoxLMail
+            // 
+            this.tBoxLMail.Location = new System.Drawing.Point(174, 189);
+            this.tBoxLMail.Name = "tBoxLMail";
+            this.tBoxLMail.Size = new System.Drawing.Size(125, 20);
+            this.tBoxLMail.TabIndex = 95;
+            // 
+            // tBoxLPost
+            // 
+            this.tBoxLPost.Location = new System.Drawing.Point(14, 189);
+            this.tBoxLPost.Name = "tBoxLPost";
+            this.tBoxLPost.Size = new System.Drawing.Size(125, 20);
+            this.tBoxLPost.TabIndex = 94;
+            // 
+            // tBoxLOrt
+            // 
+            this.tBoxLOrt.Location = new System.Drawing.Point(174, 142);
+            this.tBoxLOrt.Name = "tBoxLOrt";
+            this.tBoxLOrt.Size = new System.Drawing.Size(125, 20);
+            this.tBoxLOrt.TabIndex = 93;
+            // 
+            // tBoxLPLZ
+            // 
+            this.tBoxLPLZ.Location = new System.Drawing.Point(14, 142);
+            this.tBoxLPLZ.Name = "tBoxLPLZ";
+            this.tBoxLPLZ.Size = new System.Drawing.Size(125, 20);
+            this.tBoxLPLZ.TabIndex = 92;
+            // 
+            // tBoxLHausNr
+            // 
+            this.tBoxLHausNr.Location = new System.Drawing.Point(174, 95);
+            this.tBoxLHausNr.Name = "tBoxLHausNr";
+            this.tBoxLHausNr.Size = new System.Drawing.Size(125, 20);
+            this.tBoxLHausNr.TabIndex = 91;
+            // 
+            // tBoxLStrasse
+            // 
+            this.tBoxLStrasse.Location = new System.Drawing.Point(14, 95);
+            this.tBoxLStrasse.Name = "tBoxLStrasse";
+            this.tBoxLStrasse.Size = new System.Drawing.Size(125, 20);
+            this.tBoxLStrasse.TabIndex = 90;
+            // 
+            // tBoxLName
+            // 
+            this.tBoxLName.Location = new System.Drawing.Point(174, 48);
+            this.tBoxLName.Name = "tBoxLName";
+            this.tBoxLName.Size = new System.Drawing.Size(125, 20);
+            this.tBoxLName.TabIndex = 89;
+            // 
+            // tBoxLAnrede
+            // 
+            this.tBoxLAnrede.Location = new System.Drawing.Point(14, 48);
+            this.tBoxLAnrede.Name = "tBoxLAnrede";
+            this.tBoxLAnrede.Size = new System.Drawing.Size(125, 20);
+            this.tBoxLAnrede.TabIndex = 88;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(171, 263);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(34, 13);
+            this.label15.TabIndex = 87;
+            this.label15.Text = "Notiz:";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(171, 216);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(61, 13);
+            this.label14.TabIndex = 86;
+            this.label14.Text = "Durchwahl:";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(171, 169);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(39, 13);
+            this.label13.TabIndex = 85;
+            this.label13.Text = "E-Mail:";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(14, 361);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(88, 13);
+            this.label12.TabIndex = 84;
+            this.label12.Text = "Ansprechpartner;";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(14, 314);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(30, 13);
+            this.label11.TabIndex = 83;
+            this.label11.Text = "BLZ:";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(14, 263);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(27, 13);
+            this.label9.TabIndex = 82;
+            this.label9.Text = "Fax:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(14, 216);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(46, 13);
+            this.label8.TabIndex = 81;
+            this.label8.Text = "Telefon:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(14, 169);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(49, 13);
+            this.label7.TabIndex = 80;
+            this.label7.Text = "Postfach";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(171, 122);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(24, 13);
+            this.label6.TabIndex = 79;
+            this.label6.Text = "Ort:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(14, 122);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(30, 13);
+            this.label5.TabIndex = 78;
+            this.label5.Text = "PLZ:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(171, 75);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(72, 13);
+            this.label4.TabIndex = 77;
+            this.label4.Text = "Hausnummer:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(14, 75);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(45, 13);
+            this.label3.TabIndex = 76;
+            this.label3.Text = "Strasse:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(171, 28);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(38, 13);
+            this.label2.TabIndex = 75;
+            this.label2.Text = "Name:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(15, 28);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(44, 13);
+            this.label1.TabIndex = 51;
+            this.label1.Text = "Anrede:";
             // 
             // label10
             // 
@@ -149,252 +382,6 @@
             this.herfLLöschen.TabStop = true;
             this.herfLLöschen.Text = "Lieferant Löschen...";
             this.herfLLöschen.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.herfLLöschen_LinkClicked);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(15, 28);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 13);
-            this.label1.TabIndex = 51;
-            this.label1.Text = "Anrede:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(171, 28);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 13);
-            this.label2.TabIndex = 75;
-            this.label2.Text = "Name:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(14, 75);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(45, 13);
-            this.label3.TabIndex = 76;
-            this.label3.Text = "Strasse:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(171, 75);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(72, 13);
-            this.label4.TabIndex = 77;
-            this.label4.Text = "Hausnummer:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(14, 122);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(30, 13);
-            this.label5.TabIndex = 78;
-            this.label5.Text = "PLZ:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(171, 122);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(24, 13);
-            this.label6.TabIndex = 79;
-            this.label6.Text = "Ort:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(14, 169);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(49, 13);
-            this.label7.TabIndex = 80;
-            this.label7.Text = "Postfach";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(14, 216);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(46, 13);
-            this.label8.TabIndex = 81;
-            this.label8.Text = "Telefon:";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(14, 263);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(27, 13);
-            this.label9.TabIndex = 82;
-            this.label9.Text = "Fax:";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(14, 314);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(30, 13);
-            this.label11.TabIndex = 83;
-            this.label11.Text = "BLZ:";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(14, 361);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(88, 13);
-            this.label12.TabIndex = 84;
-            this.label12.Text = "Ansprechpartner;";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(171, 169);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(39, 13);
-            this.label13.TabIndex = 85;
-            this.label13.Text = "E-Mail:";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(171, 216);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(61, 13);
-            this.label14.TabIndex = 86;
-            this.label14.Text = "Durchwahl:";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(171, 263);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(34, 13);
-            this.label15.TabIndex = 87;
-            this.label15.Text = "Notiz:";
-            // 
-            // tBoxLAnrede
-            // 
-            this.tBoxLAnrede.Location = new System.Drawing.Point(14, 48);
-            this.tBoxLAnrede.Name = "tBoxLAnrede";
-            this.tBoxLAnrede.Size = new System.Drawing.Size(125, 20);
-            this.tBoxLAnrede.TabIndex = 88;
-            // 
-            // tBoxLName
-            // 
-            this.tBoxLName.Location = new System.Drawing.Point(174, 48);
-            this.tBoxLName.Name = "tBoxLName";
-            this.tBoxLName.Size = new System.Drawing.Size(125, 20);
-            this.tBoxLName.TabIndex = 89;
-            // 
-            // tBoxLStrasse
-            // 
-            this.tBoxLStrasse.Location = new System.Drawing.Point(14, 95);
-            this.tBoxLStrasse.Name = "tBoxLStrasse";
-            this.tBoxLStrasse.Size = new System.Drawing.Size(125, 20);
-            this.tBoxLStrasse.TabIndex = 90;
-            // 
-            // tBoxLHausNr
-            // 
-            this.tBoxLHausNr.Location = new System.Drawing.Point(174, 95);
-            this.tBoxLHausNr.Name = "tBoxLHausNr";
-            this.tBoxLHausNr.Size = new System.Drawing.Size(125, 20);
-            this.tBoxLHausNr.TabIndex = 91;
-            // 
-            // tBoxLPLZ
-            // 
-            this.tBoxLPLZ.Location = new System.Drawing.Point(14, 142);
-            this.tBoxLPLZ.Name = "tBoxLPLZ";
-            this.tBoxLPLZ.Size = new System.Drawing.Size(125, 20);
-            this.tBoxLPLZ.TabIndex = 92;
-            // 
-            // tBoxLOrt
-            // 
-            this.tBoxLOrt.Location = new System.Drawing.Point(174, 142);
-            this.tBoxLOrt.Name = "tBoxLOrt";
-            this.tBoxLOrt.Size = new System.Drawing.Size(125, 20);
-            this.tBoxLOrt.TabIndex = 93;
-            // 
-            // tBoxLPost
-            // 
-            this.tBoxLPost.Location = new System.Drawing.Point(14, 189);
-            this.tBoxLPost.Name = "tBoxLPost";
-            this.tBoxLPost.Size = new System.Drawing.Size(125, 20);
-            this.tBoxLPost.TabIndex = 94;
-            // 
-            // tBoxLMail
-            // 
-            this.tBoxLMail.Location = new System.Drawing.Point(174, 189);
-            this.tBoxLMail.Name = "tBoxLMail";
-            this.tBoxLMail.Size = new System.Drawing.Size(125, 20);
-            this.tBoxLMail.TabIndex = 95;
-            // 
-            // tBoxLTel
-            // 
-            this.tBoxLTel.Location = new System.Drawing.Point(14, 236);
-            this.tBoxLTel.Name = "tBoxLTel";
-            this.tBoxLTel.Size = new System.Drawing.Size(125, 20);
-            this.tBoxLTel.TabIndex = 96;
-            // 
-            // tBoxLDurch
-            // 
-            this.tBoxLDurch.Location = new System.Drawing.Point(174, 236);
-            this.tBoxLDurch.Name = "tBoxLDurch";
-            this.tBoxLDurch.Size = new System.Drawing.Size(125, 20);
-            this.tBoxLDurch.TabIndex = 97;
-            // 
-            // tBoxLFax
-            // 
-            this.tBoxLFax.Location = new System.Drawing.Point(14, 283);
-            this.tBoxLFax.Name = "tBoxLFax";
-            this.tBoxLFax.Size = new System.Drawing.Size(125, 20);
-            this.tBoxLFax.TabIndex = 98;
-            // 
-            // tBoxLBlz
-            // 
-            this.tBoxLBlz.Location = new System.Drawing.Point(14, 330);
-            this.tBoxLBlz.Name = "tBoxLBlz";
-            this.tBoxLBlz.Size = new System.Drawing.Size(125, 20);
-            this.tBoxLBlz.TabIndex = 99;
-            // 
-            // tBoxLPartner
-            // 
-            this.tBoxLPartner.Location = new System.Drawing.Point(14, 377);
-            this.tBoxLPartner.Name = "tBoxLPartner";
-            this.tBoxLPartner.Size = new System.Drawing.Size(125, 20);
-            this.tBoxLPartner.TabIndex = 100;
-            // 
-            // tBoxLNotiz
-            // 
-            this.tBoxLNotiz.Location = new System.Drawing.Point(174, 283);
-            this.tBoxLNotiz.Name = "tBoxLNotiz";
-            this.tBoxLNotiz.Size = new System.Drawing.Size(125, 114);
-            this.tBoxLNotiz.TabIndex = 101;
-            this.tBoxLNotiz.Text = "";
-            // 
-            // butLErstellen
-            // 
-            this.butLErstellen.Location = new System.Drawing.Point(14, 408);
-            this.butLErstellen.Name = "butLErstellen";
-            this.butLErstellen.Size = new System.Drawing.Size(75, 23);
-            this.butLErstellen.TabIndex = 102;
-            this.butLErstellen.Text = "Erstellen";
-            this.butLErstellen.UseVisualStyleBackColor = true;
-            this.butLErstellen.Visible = false;
-            this.butLErstellen.Click += new System.EventHandler(this.butLErstellen_Click);
-            // 
-            // butLÄndern
-            // 
-            this.butLÄndern.Location = new System.Drawing.Point(96, 408);
-            this.butLÄndern.Name = "butLÄndern";
-            this.butLÄndern.Size = new System.Drawing.Size(114, 23);
-            this.butLÄndern.TabIndex = 103;
-            this.butLÄndern.Text = "Änderung Speichern";
-            this.butLÄndern.UseVisualStyleBackColor = true;
-            this.butLÄndern.Visible = false;
             // 
             // Lieferant
             // 
@@ -451,6 +438,5 @@
         private System.Windows.Forms.TextBox tBoxLHausNr;
         private System.Windows.Forms.TextBox tBoxLStrasse;
         private System.Windows.Forms.TextBox tBoxLName;
-        private System.Windows.Forms.Button butLÄndern;
     }
 }

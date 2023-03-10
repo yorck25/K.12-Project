@@ -73,15 +73,37 @@ namespace WindowsFormsApp1
         private void lBoxArt_SelectedIndexChanged(object sender, EventArgs e)
         {
             AbtneueAbteilung.Visible = true;
-            butArtSpeichern.Visible= true;
-            butArtErstellen.Visible = false;
+            art = (cArtikel)lBoxArt.SelectedItem;
+            if (art != null)
+            {
+                tBoxAbtBez.Text = art.Art_Bez;
+                tBoxArtPreis.Text = Convert.ToString(art.Art_Preis);
+                tBoxArtBst.Text = Convert.ToString(art.Art_Bst);
+                tBoxArtMaxBst.Text = Convert.ToString(art.Art_MaxBst);
+                tBoxArtMinBst.Text = Convert.ToString(art.Art_MinBst);
+                cBoxArtLager.Text = Convert.ToString(art.Art_Lager);
+                cBoxAbtEinheit.Text = Convert.ToString(art.Art_Einheit);
+                cBoxArtL.Text = Convert.ToString(art.Art_Lieferant);
+
+            }
+            else
+            {
+                return;
+            }
         }
 
         private void herfArtNeu_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             AbtneueAbteilung.Visible = true;
-            butArtErstellen.Visible= true;
-            butArtSpeichern.Visible = false;
+
+            tBoxAbtBez.Clear();
+            tBoxArtPreis.Clear();
+            tBoxArtBst.Clear();
+            tBoxArtMaxBst.Clear();
+            tBoxArtMinBst.Clear();
+            cBoxArtLager.SelectedIndex = 0;
+            cBoxAbtEinheit.SelectedIndex = 0;
+            cBoxArtL.SelectedIndex = 0;
         }
 
         private void butArtErstellen_Click(object sender, EventArgs e)
@@ -104,6 +126,7 @@ namespace WindowsFormsApp1
                 art.Art_Lieferant = Convert.ToInt32(cBoxArtL.SelectedIndex +1);
                 
                 art.ArtikelSpeichern();
+                cBoxenLaden(true);
                 Console.WriteLine("Artikel wird gespeichert");
             }
         }

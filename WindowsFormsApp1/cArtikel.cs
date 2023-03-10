@@ -61,7 +61,7 @@ namespace WindowsFormsApp1
 
             if (Art_ID.HasValue)
             {
-                string sql = "UPDATE artikel SET" + "Art_Bez = @Art_Bez" + "WHERE Art_ID = @Art_ID";
+                string sql = "UPDATE artikel SET Art_Bez = @Art_Bez, Art_Einheit = @Art_Einheit, Art_Preis = @Art_Preis, Art_Bst = @Art_Bst, Art_MaxBst = @Art_MaxBst, Art_MinBst = @Art_MinBst, Art_LVW_ID = @Art_LVW_ID, Art_L_ID = @Art_L_ID WHERE Art_ID = @Art_ID";
                 Console.WriteLine("ID:" + this.Art_ID);
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 this.ArtikelWerteSpeichern(cmd);
@@ -83,6 +83,7 @@ namespace WindowsFormsApp1
 
         public void ArtikelWerteSpeichern(MySqlCommand cmd)
         {
+            cmd.Parameters.AddWithValue("@Art_ID", this.Art_ID);
             cmd.Parameters.AddWithValue("@Art_Bez", this.Art_Bez);
             cmd.Parameters.AddWithValue("@Art_Einheit", this.Art_Einheit);
             cmd.Parameters.AddWithValue("@Art_Preis", this.Art_Preis);
