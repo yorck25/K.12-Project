@@ -34,8 +34,8 @@ namespace WindowsFormsApp1
             {
                 cBestellMenge bm = new cBestellMenge();
                 bm.BM_ID = rdr.GetInt16("BM_ID");
-                bm.BM_BST_ID = rdr.GetInt16(" BM_BST_ID");
-                bm.BM_ART_ID = rdr.GetInt16(" BM_ART_ID");
+                bm.BM_BST_ID = rdr.GetInt16("BM_BST_ID");
+                bm.BM_ART_ID = rdr.GetInt16("BM_ART_ID");
                 bm.BM_Menge = rdr.GetInt16("BM_Menge");
                 cBestellMenge.BMListe.Add(bm);
             }

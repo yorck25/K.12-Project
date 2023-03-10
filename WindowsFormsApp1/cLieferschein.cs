@@ -13,12 +13,12 @@ namespace WindowsFormsApp1
         public static List<cLieferschein> LsListe = new List<cLieferschein>();
 
         public long? LS_ID { get; set; } = null;
-        public int Ls_B_ID { get; set; }
+        public int LS_B_ID { get; set; }
         public string LS_Datum { get; set; }
         public bool LS_Bearbeitet { get; set; } 
         public int  LS_BearbeitetVon_ID { get; set; }
 
-        public string LieferscheinListe => LS_ID + ": " + Ls_B_ID + ":";
+        public string LieferscheinListe => LS_ID + ": " + LS_B_ID + ":" + LS_Datum;
         
         public static void LieferscheinLaden()
         {
@@ -33,12 +33,13 @@ namespace WindowsFormsApp1
 
             while (rdr.Read())
             {
-                cBestellMenge bm = new cBestellMenge();
-                bm.BM_ID = rdr.GetInt16("BM_ID");
-                bm.BM_BST_ID = rdr.GetInt16(" BM_BST_ID");
-                bm.BM_ART_ID = rdr.GetInt16(" BM_ART_ID");
-                bm.BM_Menge = rdr.GetInt16("BM_Menge");
-                cBestellMenge.BMListe.Add(bm);
+                cLieferschein Ls = new cLieferschein();
+                Ls.LS_ID = rdr.GetInt16("LS_ID");
+                Ls.LS_B_ID = rdr.GetInt16("Ls_B_ID");
+                Ls.LS_Datum = rdr.GetString("LS_Datum");
+                Ls.LS_BearbeitetVon_ID = rdr.GetInt16("LS_BearbeitetVon_ID");
+                Ls.LS_Bearbeitet = rdr.GetBoolean("LS_Bearbeitet");
+                cLieferschein.LsListe.Add(Ls);
             }
             rdr.Close();
         }
@@ -63,7 +64,7 @@ namespace WindowsFormsApp1
         public void LieferscheinWerteSpeichern(MySqlCommand cmd)
         {
             cmd.Parameters.AddWithValue("@Ls_ID", this.LS_ID);
-            cmd.Parameters.AddWithValue("@Ls_B_ID", this.Ls_B_ID);
+            cmd.Parameters.AddWithValue("@Ls_B_ID", this.LS_B_ID);
             cmd.Parameters.AddWithValue("@Ls_Datum", this.LS_Datum);
             cmd.Parameters.AddWithValue("@Ls_Bearbeitet", this.LS_Bearbeitet);
             cmd.Parameters.AddWithValue("@Ls_BearbeitetVon_ID", this.LS_BearbeitetVon_ID);

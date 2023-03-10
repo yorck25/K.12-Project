@@ -22,7 +22,7 @@ namespace WindowsFormsApp1
 
         private void butLsNeu_Click(object sender, EventArgs e)
         {
-            Ls.Ls_B_ID = Convert.ToInt16(tBoxLsBId.Text);
+            Ls.LS_B_ID = Convert.ToInt16(tBoxLsBId.Text);
             Ls.LS_BearbeitetVon_ID = Convert.ToInt32(cBoxLsBearbeitetVon.SelectedIndex + 1);
             DateTime LsDate;
             LsDate = DateTime.Now;

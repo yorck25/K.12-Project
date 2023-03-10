@@ -18,7 +18,7 @@ namespace WindowsFormsApp1
         public int B_Lager { get; set; }
         public int B_Mitarbeiter { get; set; }
 
-        public string BestellungListe => B_ID + ": ";
+        public string BestellungListe => B_ID + ": " + B_Datum;
 
         public static void BestellungLaden()
         {

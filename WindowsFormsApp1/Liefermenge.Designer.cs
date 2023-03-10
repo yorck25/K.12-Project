@@ -29,33 +29,51 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cBoxLsmScheine = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tBoxLsmMenge = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.listBox2 = new System.Windows.Forms.ListBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lBoxLsmArt = new System.Windows.Forms.ListBox();
+            this.butLsmSpeichern = new System.Windows.Forms.Button();
+            this.cBoxLsmArt = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.cBoxLsmArt);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.comboBox1);
+            this.panel1.Controls.Add(this.cBoxLsmScheine);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.tBoxLsmMenge);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.listBox2);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.lBoxLsmArt);
+            this.panel1.Controls.Add(this.butLsmSpeichern);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(296, 344);
             this.panel1.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(14, 4);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(67, 13);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Lieferschein:";
+            // 
+            // cBoxLsmScheine
+            // 
+            this.cBoxLsmScheine.DisplayMember = "LieferscheinListe";
+            this.cBoxLsmScheine.FormattingEnabled = true;
+            this.cBoxLsmScheine.Location = new System.Drawing.Point(17, 20);
+            this.cBoxLsmScheine.Name = "cBoxLsmScheine";
+            this.cBoxLsmScheine.Size = new System.Drawing.Size(121, 21);
+            this.cBoxLsmScheine.TabIndex = 9;
             // 
             // label5
             // 
@@ -75,19 +93,12 @@
             this.label4.TabIndex = 7;
             this.label4.Text = "Artikel:";
             // 
-            // textBox2
+            // tBoxLsmMenge
             // 
-            this.textBox2.Location = new System.Drawing.Point(154, 127);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 6;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(154, 86);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 5;
+            this.tBoxLsmMenge.Location = new System.Drawing.Point(154, 127);
+            this.tBoxLsmMenge.Name = "tBoxLsmMenge";
+            this.tBoxLsmMenge.Size = new System.Drawing.Size(121, 20);
+            this.tBoxLsmMenge.TabIndex = 6;
             // 
             // label2
             // 
@@ -98,39 +109,30 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Alle Artikel in der Bestellung";
             // 
-            // listBox2
+            // lBoxLsmArt
             // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.Location = new System.Drawing.Point(17, 58);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(131, 147);
-            this.listBox2.TabIndex = 2;
+            this.lBoxLsmArt.FormattingEnabled = true;
+            this.lBoxLsmArt.Location = new System.Drawing.Point(17, 58);
+            this.lBoxLsmArt.Name = "lBoxLsmArt";
+            this.lBoxLsmArt.Size = new System.Drawing.Size(131, 147);
+            this.lBoxLsmArt.TabIndex = 2;
             // 
-            // button1
+            // butLsmSpeichern
             // 
-            this.button1.Location = new System.Drawing.Point(17, 211);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(131, 34);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Lagerbestand aktualisierun...";
-            this.button1.UseVisualStyleBackColor = true;
+            this.butLsmSpeichern.Location = new System.Drawing.Point(17, 211);
+            this.butLsmSpeichern.Name = "butLsmSpeichern";
+            this.butLsmSpeichern.Size = new System.Drawing.Size(131, 34);
+            this.butLsmSpeichern.TabIndex = 0;
+            this.butLsmSpeichern.Text = "Lagerbestand aktualisierun...";
+            this.butLsmSpeichern.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
+            // cBoxLsmArt
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(17, 20);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 9;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(14, 4);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 13);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "Lieferschein:";
+            this.cBoxLsmArt.FormattingEnabled = true;
+            this.cBoxLsmArt.Location = new System.Drawing.Point(154, 87);
+            this.cBoxLsmArt.Name = "cBoxLsmArt";
+            this.cBoxLsmArt.Size = new System.Drawing.Size(121, 21);
+            this.cBoxLsmArt.TabIndex = 11;
             // 
             // Liefermenge
             // 
@@ -140,6 +142,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "Liefermenge";
             this.Text = "Liefermenge";
+            this.Load += new System.EventHandler(this.Liefermenge_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -151,12 +154,12 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tBoxLsmMenge;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ListBox listBox2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ListBox lBoxLsmArt;
+        private System.Windows.Forms.Button butLsmSpeichern;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cBoxLsmScheine;
+        private System.Windows.Forms.ComboBox cBoxLsmArt;
     }
 }

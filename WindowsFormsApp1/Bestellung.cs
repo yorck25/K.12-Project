@@ -23,6 +23,7 @@ namespace WindowsFormsApp1
         private void Bestellung_Load(object sender, EventArgs e)
         {
             cBoxenBLaden(true);
+            ListBoxNeuLAden(true);
         }
 
         public void cBoxenBLaden(bool LVWNeuLaden)
@@ -32,6 +33,7 @@ namespace WindowsFormsApp1
                 try
                 {
                     cLager.LagerLaden();
+                    cBestellung.BestellungLaden();
                     cMitarbeiter.MitarbeiterLaden();
                 }
                 catch (MySqlException ex)
@@ -57,6 +59,27 @@ namespace WindowsFormsApp1
             };
         }
 
+        public void ListBoxNeuLAden(bool lBoxLaden)
+        {
+            if(lBoxLaden)
+            {
+                try
+                {
+                    cBestellung.BestellungLaden();
+                }
+                catch
+                {
+                    Console.WriteLine("Fehler");
+                }
+            }
+            lBoxBestellung.Items.Clear();
+            //ListBox für Bestellung neu Aufbauen
+            foreach (cBestellung bst in cBestellung.BstListe)
+            {
+                lBoxBestellung.Items.Add(bst);
+            }
+        }
+
         public void butBArtikel_Click(object sender, EventArgs e)
         {
 
@@ -65,16 +88,17 @@ namespace WindowsFormsApp1
             }
             else
             {
-            b.B_Mitarbeiter = Convert.ToInt32(cBoxBMit.SelectedIndex + 1);
-            b.B_Lager = Convert.ToInt32(cBoxBLager.SelectedIndex + 1);
-            DateTime CurrentDate;
-            CurrentDate = DateTime.Now;
-            b.B_Datum = Convert.ToString(CurrentDate);
-            Console.WriteLine(b.B_Datum);
-            b.BestellungSpeichern();
+                b.B_Mitarbeiter = Convert.ToInt32(cBoxBMit.SelectedIndex + 1);
+                b.B_Lager = Convert.ToInt32(cBoxBLager.SelectedIndex + 1);
+                DateTime CurrentDate;
+                CurrentDate = DateTime.Now;
+                b.B_Datum = Convert.ToString(CurrentDate);
+                Console.WriteLine(b.B_Datum);
+                b.BestellungSpeichern();
 
-            BestellMenge bestellMenge = new BestellMenge(new cBestellMenge());
-            bestellMenge.ShowDialog();
+                BestellMenge bestellMenge = new BestellMenge(new cBestellMenge());
+                bestellMenge.ShowDialog();
+                ListBoxNeuLAden(true);
             }
         }
     }

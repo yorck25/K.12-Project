@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,38 @@ namespace WindowsFormsApp1
         public Liefermenge()
         {
             InitializeComponent();
+        }
+
+        private void Liefermenge_Load(object sender, EventArgs e)
+        {
+            Cboxaufbauen(true);
+        }
+        public void Cboxaufbauen(bool NeuLaden)
+        {
+            if (NeuLaden)
+            {
+                try
+                {
+                    cLieferschein.LieferscheinLaden();
+                    cArtikel.ArtikelLaden();
+                }
+                catch (MySqlException ex)
+                {
+
+                    Console.WriteLine("Fehler beim Laden: " + ex.Message);
+                }
+            }
+            cBoxLsmArt.Items.Clear();
+            foreach (cArtikel art in cArtikel.ArtListe)
+            {
+                cBoxLsmArt.Items.Add(art);
+            }
+
+            cBoxLsmScheine.Items.Clear();
+            foreach (cLieferschein ls in cLieferschein.LsListe)
+            {
+                cBoxLsmScheine.Items.Add(ls);
+            }
         }
     }
 }

@@ -85,8 +85,31 @@ namespace WindowsFormsApp1
                 BM.BM_BST_ID = Convert.ToInt32(cBoxBMBestellung.SelectedIndex +1);
                 Console.WriteLine("Bestellmenge wird gespeichert");
                 BM.BestellmengeSpeichern();
+                ListBoxMengeLaden(true);
 
             }
+        }
+
+        public void ListBoxMengeLaden(bool ListeLaden)
+        {
+            if(ListeLaden)
+            {
+                try
+                {
+                    cBestellMenge.BestellmengeLaden();
+                }
+                catch (Exception ex) 
+                {
+                    Console.WriteLine("Fehler bei Laden der ListBox BstMenge" + ex);
+                }
+
+                lBoxBMliste.Items.Clear();
+                foreach(cBestellMenge bm in cBestellMenge.BMListe)
+                {
+                    lBoxBMliste.Items.Add(bm);
+                }
+            }
+
         }
     }
 }

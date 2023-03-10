@@ -41,6 +41,7 @@
             // 
             // lBoxBestellung
             // 
+            this.lBoxBestellung.DisplayMember = "BestellungListe";
             this.lBoxBestellung.FormattingEnabled = true;
             this.lBoxBestellung.Location = new System.Drawing.Point(12, 29);
             this.lBoxBestellung.Name = "lBoxBestellung";
