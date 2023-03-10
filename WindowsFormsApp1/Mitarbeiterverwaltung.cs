@@ -56,8 +56,17 @@ namespace WindowsFormsApp1
             Mit.Mit_VName = tBoxMitVName.Text;
             Mit.Mit_Mail = tBoxMitEmail.Text;
             Mit.Mit_Ort = tBoxMitOrt.Text;
-            //Mit.Mit_GDat = DatteMit.
+            Mit.Mit_GDat = DateMit.Value;
             Mit.Mit_HausNr = Convert.ToInt16(tBoxMitHausNr.Text);
+            Mit.Mit_PLZ = Convert.ToInt16(tBoxMitPLZ.Text);
+            Mit.Mit_Straße = tBoxMitStraße.Text;
+            Mit.Mit_Benutzer = tBoxMitBenutzer.Text;
+            Mit.Mit_Mail = tBoxMitEmail.Text;
+            Mit.Mit_Pw = tBoxMitPw.Text;
+            Mit.Mit_Abt_ID = Convert.ToInt16(cBoxMitAbt.SelectedIndex +1);
+            Mit.Mit_R_ID = Convert.ToInt16(cBoxMitRolle.SelectedIndex +1);
+            Mit.Mit_F_ID = Convert.ToInt16(cBoxMitFunk.SelectedIndex +1);
+
 
 
             try
@@ -92,7 +101,7 @@ namespace WindowsFormsApp1
         {
             ListenMitNeuladen(true);
             tBoxMitPw.PasswordChar = '*';
-
+            tBoxMitPw.ReadOnly= true;
 
         }
 
@@ -154,6 +163,11 @@ namespace WindowsFormsApp1
             {
                 tBoxMitPw.PasswordChar = '*';
             }
+        }
+
+        private void herfMitPwÄndern_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            tBoxMitPw.ReadOnly= false;
         }
     }
 }

@@ -52,7 +52,7 @@ namespace WindowsFormsApp1
 
             if (LVW_ID.HasValue)
             {
-                string sql = "UPDATE lagerverwaltung SET" + "R_Bez = @R_Bez" + "WHERE R_ID = @R_ID";
+                string sql = "UPDATE lagerverwaltung SET LVW_Bez = @LVW_Bez, LVW_Ort = @LVW_Ort, LVW_PLZ = @LVW_PLZ, LVW_Str = @LVW_Str  WHERE LVW_ID = @LVW_ID";
                 Console.WriteLine("ID:" + this.LVW_ID);
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 this.LagerWerteSpeichern(cmd);

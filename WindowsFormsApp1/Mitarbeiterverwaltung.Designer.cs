@@ -30,6 +30,7 @@
         {
             this.lBoxMverMitarbeiter = new System.Windows.Forms.ListBox();
             this.MverDetailMitarbeiter = new System.Windows.Forms.Panel();
+            this.butMitPwAnzeigen = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.tBoxMitPw = new System.Windows.Forms.TextBox();
             this.DateMit = new System.Windows.Forms.DateTimePicker();
@@ -62,7 +63,7 @@
             this.butMitAbt = new System.Windows.Forms.Button();
             this.butMitRolle = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.butMitPwAnzeigen = new System.Windows.Forms.Button();
+            this.herfMitPwÄndern = new System.Windows.Forms.LinkLabel();
             this.MverDetailMitarbeiter.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -81,6 +82,7 @@
             // 
             // MverDetailMitarbeiter
             // 
+            this.MverDetailMitarbeiter.Controls.Add(this.herfMitPwÄndern);
             this.MverDetailMitarbeiter.Controls.Add(this.butMitPwAnzeigen);
             this.MverDetailMitarbeiter.Controls.Add(this.label15);
             this.MverDetailMitarbeiter.Controls.Add(this.tBoxMitPw);
@@ -117,6 +119,16 @@
             this.MverDetailMitarbeiter.TabIndex = 1;
             this.MverDetailMitarbeiter.Visible = false;
             this.MverDetailMitarbeiter.Paint += new System.Windows.Forms.PaintEventHandler(this.MverDetailMitarbeiter_Paint);
+            // 
+            // butMitPwAnzeigen
+            // 
+            this.butMitPwAnzeigen.Location = new System.Drawing.Point(234, 184);
+            this.butMitPwAnzeigen.Name = "butMitPwAnzeigen";
+            this.butMitPwAnzeigen.Size = new System.Drawing.Size(17, 20);
+            this.butMitPwAnzeigen.TabIndex = 77;
+            this.butMitPwAnzeigen.Text = "Anzeigen";
+            this.butMitPwAnzeigen.UseVisualStyleBackColor = true;
+            this.butMitPwAnzeigen.Click += new System.EventHandler(this.butMitPwAnzeigen_Click);
             // 
             // label15
             // 
@@ -355,7 +367,7 @@
             this.butMverDetailSchließen.Name = "butMverDetailSchließen";
             this.butMverDetailSchließen.Size = new System.Drawing.Size(89, 32);
             this.butMverDetailSchließen.TabIndex = 12;
-            this.butMverDetailSchließen.Text = "Schließen";
+            this.butMverDetailSchließen.Text = "Speichern";
             this.butMverDetailSchließen.UseVisualStyleBackColor = true;
             this.butMverDetailSchließen.Click += new System.EventHandler(this.butMverDetailSchließen_Click);
             // 
@@ -389,15 +401,17 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // butMitPwAnzeigen
+            // herfMitPwÄndern
             // 
-            this.butMitPwAnzeigen.Location = new System.Drawing.Point(234, 184);
-            this.butMitPwAnzeigen.Name = "butMitPwAnzeigen";
-            this.butMitPwAnzeigen.Size = new System.Drawing.Size(17, 20);
-            this.butMitPwAnzeigen.TabIndex = 77;
-            this.butMitPwAnzeigen.Text = "Anzeigen";
-            this.butMitPwAnzeigen.UseVisualStyleBackColor = true;
-            this.butMitPwAnzeigen.Click += new System.EventHandler(this.butMitPwAnzeigen_Click);
+            this.herfMitPwÄndern.AutoSize = true;
+            this.herfMitPwÄndern.LinkColor = System.Drawing.SystemColors.Highlight;
+            this.herfMitPwÄndern.Location = new System.Drawing.Point(177, 167);
+            this.herfMitPwÄndern.Name = "herfMitPwÄndern";
+            this.herfMitPwÄndern.Size = new System.Drawing.Size(86, 13);
+            this.herfMitPwÄndern.TabIndex = 78;
+            this.herfMitPwÄndern.TabStop = true;
+            this.herfMitPwÄndern.Text = "Passwort ändern";
+            this.herfMitPwÄndern.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.herfMitPwÄndern_LinkClicked);
             // 
             // Mitarbeiterverwaltung
             // 
@@ -455,5 +469,6 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox tBoxMitPw;
         private System.Windows.Forms.Button butMitPwAnzeigen;
+        private System.Windows.Forms.LinkLabel herfMitPwÄndern;
     }
 }

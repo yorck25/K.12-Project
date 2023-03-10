@@ -52,13 +52,13 @@ namespace WindowsFormsApp1
             cBoxBMArt.Items.Clear();
             foreach (cArtikel art in cArtikel.ArtListe)
             {
-                cBoxBMArt.Items.Add(art);
+                cBoxBMArt.Items.Insert(0, art);
             }
 
             cBoxBMBestellung.Items.Clear();
             foreach (cBestellung b in cBestellung.BstListe)
             {
-                cBoxBMBestellung.Items.Add(b);
+                cBoxBMBestellung.Items.Insert(0, b);
             }
         }
 
@@ -106,7 +106,7 @@ namespace WindowsFormsApp1
                 lBoxBMliste.Items.Clear();
                 foreach(cBestellMenge bm in cBestellMenge.BMListe)
                 {
-                    lBoxBMliste.Items.Add(bm);
+                    lBoxBMliste.Items.Insert(0, bm);
                 }
             }
 

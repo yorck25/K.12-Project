@@ -29,26 +29,24 @@
         private void InitializeComponent()
         {
             this.LVWDetail = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.butEinSpeichern = new System.Windows.Forms.Button();
-            this.tBoxLVWBez = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.tBoxLVWStr = new System.Windows.Forms.TextBox();
             this.butLVWErstellen = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.tBoxLVWPLZ = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tBoxLVWOrt = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tBoxLVWBez = new System.Windows.Forms.TextBox();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.herfLVWNeu = new System.Windows.Forms.LinkLabel();
             this.lBoxLagerort = new System.Windows.Forms.ListBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.tBoxLVWOrt = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.tBoxLVWPLZ = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.tBoxLVWStr = new System.Windows.Forms.TextBox();
             this.LVWDetail.SuspendLayout();
             this.SuspendLayout();
             // 
             // LVWDetail
             // 
             this.LVWDetail.Controls.Add(this.label4);
-            this.LVWDetail.Controls.Add(this.butEinSpeichern);
             this.LVWDetail.Controls.Add(this.tBoxLVWStr);
             this.LVWDetail.Controls.Add(this.butLVWErstellen);
             this.LVWDetail.Controls.Add(this.label3);
@@ -63,31 +61,21 @@
             this.LVWDetail.TabIndex = 11;
             this.LVWDetail.Visible = false;
             // 
-            // label1
+            // label4
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 10);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 13);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Bezeichnung:";
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(3, 136);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(23, 13);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "Str:";
             // 
-            // butEinSpeichern
+            // tBoxLVWStr
             // 
-            this.butEinSpeichern.Location = new System.Drawing.Point(84, 180);
-            this.butEinSpeichern.Name = "butEinSpeichern";
-            this.butEinSpeichern.Size = new System.Drawing.Size(116, 23);
-            this.butEinSpeichern.TabIndex = 6;
-            this.butEinSpeichern.Text = "Änderung Speichern";
-            this.butEinSpeichern.UseVisualStyleBackColor = true;
-            this.butEinSpeichern.Visible = false;
-            // 
-            // tBoxLVWBez
-            // 
-            this.tBoxLVWBez.Location = new System.Drawing.Point(3, 28);
-            this.tBoxLVWBez.Name = "tBoxLVWBez";
-            this.tBoxLVWBez.Size = new System.Drawing.Size(116, 20);
-            this.tBoxLVWBez.TabIndex = 3;
+            this.tBoxLVWStr.Location = new System.Drawing.Point(3, 154);
+            this.tBoxLVWStr.Name = "tBoxLVWStr";
+            this.tBoxLVWStr.Size = new System.Drawing.Size(116, 20);
+            this.tBoxLVWStr.TabIndex = 9;
             // 
             // butLVWErstellen
             // 
@@ -97,8 +85,55 @@
             this.butLVWErstellen.TabIndex = 5;
             this.butLVWErstellen.Text = "Erstellen";
             this.butLVWErstellen.UseVisualStyleBackColor = true;
-            this.butLVWErstellen.Visible = false;
             this.butLVWErstellen.Click += new System.EventHandler(this.butLVWErstellen_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(3, 97);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(30, 13);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "PLZ:";
+            // 
+            // tBoxLVWPLZ
+            // 
+            this.tBoxLVWPLZ.Location = new System.Drawing.Point(3, 113);
+            this.tBoxLVWPLZ.Name = "tBoxLVWPLZ";
+            this.tBoxLVWPLZ.Size = new System.Drawing.Size(116, 20);
+            this.tBoxLVWPLZ.TabIndex = 7;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(3, 52);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(24, 13);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Ort:";
+            // 
+            // tBoxLVWOrt
+            // 
+            this.tBoxLVWOrt.Location = new System.Drawing.Point(3, 70);
+            this.tBoxLVWOrt.Name = "tBoxLVWOrt";
+            this.tBoxLVWOrt.Size = new System.Drawing.Size(116, 20);
+            this.tBoxLVWOrt.TabIndex = 5;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(3, 10);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(72, 13);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Bezeichnung:";
+            // 
+            // tBoxLVWBez
+            // 
+            this.tBoxLVWBez.Location = new System.Drawing.Point(3, 28);
+            this.tBoxLVWBez.Name = "tBoxLVWBez";
+            this.tBoxLVWBez.Size = new System.Drawing.Size(116, 20);
+            this.tBoxLVWBez.TabIndex = 3;
             // 
             // linkLabel1
             // 
@@ -141,54 +176,6 @@
             this.lBoxLagerort.TabIndex = 8;
             this.lBoxLagerort.SelectedIndexChanged += new System.EventHandler(this.lBoxLagerort_SelectedIndexChanged);
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 52);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(24, 13);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Ort:";
-            // 
-            // tBoxLVWOrt
-            // 
-            this.tBoxLVWOrt.Location = new System.Drawing.Point(3, 70);
-            this.tBoxLVWOrt.Name = "tBoxLVWOrt";
-            this.tBoxLVWOrt.Size = new System.Drawing.Size(116, 20);
-            this.tBoxLVWOrt.TabIndex = 5;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 97);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(30, 13);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "PLZ:";
-            // 
-            // tBoxLVWPLZ
-            // 
-            this.tBoxLVWPLZ.Location = new System.Drawing.Point(3, 113);
-            this.tBoxLVWPLZ.Name = "tBoxLVWPLZ";
-            this.tBoxLVWPLZ.Size = new System.Drawing.Size(116, 20);
-            this.tBoxLVWPLZ.TabIndex = 7;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(3, 136);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(23, 13);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "Str:";
-            // 
-            // tBoxLVWStr
-            // 
-            this.tBoxLVWStr.Location = new System.Drawing.Point(3, 154);
-            this.tBoxLVWStr.Name = "tBoxLVWStr";
-            this.tBoxLVWStr.Size = new System.Drawing.Size(116, 20);
-            this.tBoxLVWStr.TabIndex = 9;
-            // 
             // Lager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -220,7 +207,6 @@
         private System.Windows.Forms.TextBox tBoxLVWOrt;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tBoxLVWBez;
-        private System.Windows.Forms.Button butEinSpeichern;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.LinkLabel herfLVWNeu;
         private System.Windows.Forms.ListBox lBoxLagerort;

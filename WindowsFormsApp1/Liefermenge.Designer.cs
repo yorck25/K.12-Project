@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cBoxLsmArt = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.cBoxLsmScheine = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -37,7 +38,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lBoxLsmArt = new System.Windows.Forms.ListBox();
             this.butLsmSpeichern = new System.Windows.Forms.Button();
-            this.cBoxLsmArt = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,6 +56,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(296, 344);
             this.panel1.TabIndex = 2;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // cBoxLsmArt
+            // 
+            this.cBoxLsmArt.DisplayMember = "ArtikelListe";
+            this.cBoxLsmArt.FormattingEnabled = true;
+            this.cBoxLsmArt.Location = new System.Drawing.Point(154, 87);
+            this.cBoxLsmArt.Name = "cBoxLsmArt";
+            this.cBoxLsmArt.Size = new System.Drawing.Size(121, 21);
+            this.cBoxLsmArt.TabIndex = 11;
             // 
             // label1
             // 
@@ -125,14 +135,6 @@
             this.butLsmSpeichern.TabIndex = 0;
             this.butLsmSpeichern.Text = "Lagerbestand aktualisierun...";
             this.butLsmSpeichern.UseVisualStyleBackColor = true;
-            // 
-            // cBoxLsmArt
-            // 
-            this.cBoxLsmArt.FormattingEnabled = true;
-            this.cBoxLsmArt.Location = new System.Drawing.Point(154, 87);
-            this.cBoxLsmArt.Name = "cBoxLsmArt";
-            this.cBoxLsmArt.Size = new System.Drawing.Size(121, 21);
-            this.cBoxLsmArt.TabIndex = 11;
             // 
             // Liefermenge
             // 

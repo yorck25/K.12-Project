@@ -78,18 +78,21 @@ namespace WindowsFormsApp1
 
         private void herfLVWNeu_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            lBoxLagerort.ClearSelected();
+            Refresh();
+            tBoxLVWBez.Clear();
+            tBoxLVWOrt.Clear();
+            tBoxLVWPLZ.Clear();
+            tBoxLVWStr.Clear();
+
             LVWDetail.Visible = true;
-            butLVWErstellen.Visible = true;
-            butEinSpeichern.Visible = false;
         }
 
         private void lBoxLagerort_SelectedIndexChanged(object sender, EventArgs e)
         {
             LVWDetail.Visible = true;
-            butEinSpeichern.Visible =true;
-            butLVWErstellen.Visible =false;
 
-            cLager lvw = (cLager)lBoxLagerort.SelectedItem;
+            lvw = (cLager)lBoxLagerort.SelectedItem;
             if (lvw != null)
             {
                 tBoxLVWBez.Text = lvw.LVW_Bez;

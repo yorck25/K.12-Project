@@ -39,10 +39,9 @@ namespace WindowsFormsApp1
 
             if (Mit_ID.HasValue)
             {
-                string sql = "UPDATE mitarbeiter SET" 
-                    + "Mit_Name = @Mit_Name," +
+                string sql = "UPDATE mitarbeiter SET Mit_Name = @Mit_Name," +
                     " Mit_VName = @Mit_VName," +
-                    " Mit_Straße = @Mit_Straße," +
+                    " Mit_Strasse = @Mit_Straße," +
                     " Mit_HausNr = @Mit_HausNr, " +
                     " Mit_PLZ = @Mit_PLZ," +
                     " Mit_Ort = @Mit_Ort," +
@@ -54,7 +53,7 @@ namespace WindowsFormsApp1
                     " Mit_F_ID = @Mit_F_ID," +
                     " Mit_R_ID =  @Mit_R_ID," +
                     " Mit_Abr_ID =  @Mit_Abr_ID  "
-                    + "WHERE Mit_ID = @Mit_ID";
+                    + " WHERE Mit_ID = @Mit_ID";
                 Console.WriteLine("ID:" + this.Mit_ID);
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 this.MitarbeiterWerte(cmd);

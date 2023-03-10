@@ -76,7 +76,7 @@ namespace WindowsFormsApp1
             //ListBox für Bestellung neu Aufbauen
             foreach (cBestellung bst in cBestellung.BstListe)
             {
-                lBoxBestellung.Items.Add(bst);
+                lBoxBestellung.Items.Insert(0, bst);
             }
         }
 
@@ -96,10 +96,23 @@ namespace WindowsFormsApp1
                 Console.WriteLine(b.B_Datum);
                 b.BestellungSpeichern();
 
+                cBoxBLager.SelectedIndex = 0;
+                cBoxBMit.SelectedIndex = 0;
+                BestellungDetail.Visible = false;
                 BestellMenge bestellMenge = new BestellMenge(new cBestellMenge());
                 bestellMenge.ShowDialog();
                 ListBoxNeuLAden(true);
             }
+        }
+
+        private void lBoxBestellung_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void herfBNeu_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            BestellungDetail.Show();
         }
     }
 }

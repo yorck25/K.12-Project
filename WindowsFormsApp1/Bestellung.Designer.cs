@@ -30,13 +30,13 @@
         {
             this.lBoxBestellung = new System.Windows.Forms.ListBox();
             this.herfBNeu = new System.Windows.Forms.LinkLabel();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.BestellungDetail = new System.Windows.Forms.Panel();
             this.butBArtikel = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.cBoxBMit = new System.Windows.Forms.ComboBox();
             this.cBoxBLager = new System.Windows.Forms.ComboBox();
-            this.panel1.SuspendLayout();
+            this.BestellungDetail.SuspendLayout();
             this.SuspendLayout();
             // 
             // lBoxBestellung
@@ -47,6 +47,7 @@
             this.lBoxBestellung.Name = "lBoxBestellung";
             this.lBoxBestellung.Size = new System.Drawing.Size(120, 329);
             this.lBoxBestellung.TabIndex = 0;
+            this.lBoxBestellung.SelectedIndexChanged += new System.EventHandler(this.lBoxBestellung_SelectedIndexChanged);
             // 
             // herfBNeu
             // 
@@ -58,18 +59,20 @@
             this.herfBNeu.TabIndex = 1;
             this.herfBNeu.TabStop = true;
             this.herfBNeu.Text = "Neue Bestellung...";
+            this.herfBNeu.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.herfBNeu_LinkClicked);
             // 
-            // panel1
+            // BestellungDetail
             // 
-            this.panel1.Controls.Add(this.butBArtikel);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.cBoxBMit);
-            this.panel1.Controls.Add(this.cBoxBLager);
-            this.panel1.Location = new System.Drawing.Point(154, 29);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(142, 218);
-            this.panel1.TabIndex = 3;
+            this.BestellungDetail.Controls.Add(this.butBArtikel);
+            this.BestellungDetail.Controls.Add(this.label2);
+            this.BestellungDetail.Controls.Add(this.label1);
+            this.BestellungDetail.Controls.Add(this.cBoxBMit);
+            this.BestellungDetail.Controls.Add(this.cBoxBLager);
+            this.BestellungDetail.Location = new System.Drawing.Point(154, 29);
+            this.BestellungDetail.Name = "BestellungDetail";
+            this.BestellungDetail.Size = new System.Drawing.Size(142, 218);
+            this.BestellungDetail.TabIndex = 3;
+            this.BestellungDetail.Visible = false;
             // 
             // butBArtikel
             // 
@@ -122,14 +125,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(663, 394);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.BestellungDetail);
             this.Controls.Add(this.herfBNeu);
             this.Controls.Add(this.lBoxBestellung);
             this.Name = "Bestellung";
             this.Text = "Bestellung";
             this.Load += new System.EventHandler(this.Bestellung_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.BestellungDetail.ResumeLayout(false);
+            this.BestellungDetail.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -139,7 +142,7 @@
 
         private System.Windows.Forms.ListBox lBoxBestellung;
         private System.Windows.Forms.LinkLabel herfBNeu;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel BestellungDetail;
         private System.Windows.Forms.Button butBArtikel;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;

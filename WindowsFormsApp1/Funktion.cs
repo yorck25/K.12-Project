@@ -24,6 +24,9 @@ namespace WindowsFormsApp1
 
         private void herfFNeue_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            lBoxF.ClearSelected();
+            Refresh();
+            tBoxFBez.Clear();
             FDetail.Visible = true;
             FMitProAbt.Visible = false;
         }
@@ -66,13 +69,12 @@ namespace WindowsFormsApp1
             lBoxF.Items.Clear();
             foreach(cFunktion f in cFunktion.FListe)
             {
-                lBoxF.Items.Add(f);
+                lBoxF.Items.Insert(0, f);
             }
         }
 
         private void butFSpeichern_Click(object sender, EventArgs e)
         {
-            f.F_Bez = tBoxFBez.Text;
 
             if (string.IsNullOrEmpty(tBoxFBez.Text))
             {
@@ -80,6 +82,7 @@ namespace WindowsFormsApp1
             }
             else
             {
+                f.F_Bez = tBoxFBez.Text;
                 f.FunktionSpeichern();
                 Console.WriteLine("Kst wird gespeichert");
                 tBoxFBez.Clear();

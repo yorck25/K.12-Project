@@ -18,7 +18,7 @@ namespace WindowsFormsApp1
         public bool LS_Bearbeitet { get; set; } 
         public int  LS_BearbeitetVon_ID { get; set; }
 
-        public string LieferscheinListe => LS_ID + ": " + LS_B_ID + ":" + LS_Datum;
+        public string LieferscheinListe => LS_ID + ": " + LS_Datum;
         
         public static void LieferscheinLaden()
         {

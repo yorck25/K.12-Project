@@ -46,8 +46,13 @@ namespace WindowsFormsApp1
             cBoxLsmScheine.Items.Clear();
             foreach (cLieferschein ls in cLieferschein.LsListe)
             {
-                cBoxLsmScheine.Items.Add(ls);
+                cBoxLsmScheine.Items.Insert(0, ls);
             }
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
