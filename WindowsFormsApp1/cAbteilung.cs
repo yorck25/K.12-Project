@@ -35,6 +35,7 @@ namespace WindowsFormsApp1
                 cAbteilung abt = new cAbteilung();
                 abt.Abt_ID = rdr.GetInt64("Abt_ID");
                 abt.Abt_Bez = rdr.GetString("Abt_Bez");
+                abt.Abt_Kst_ID = rdr.GetInt16("Abt_Kst_ID");
                 cAbteilung.Abtliste.Add(abt);
             }
             rdr.Close();

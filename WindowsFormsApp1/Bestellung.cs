@@ -96,8 +96,8 @@ namespace WindowsFormsApp1
                 Console.WriteLine(b.B_Datum);
                 b.BestellungSpeichern();
 
-                cBoxBLager.SelectedIndex = 0;
-                cBoxBMit.SelectedIndex = 0;
+                cBoxBLager.SelectedIndex = 0 -1;
+                cBoxBMit.SelectedIndex = 0 -1;
                 BestellungDetail.Visible = false;
                 BestellMenge bestellMenge = new BestellMenge(new cBestellMenge());
                 bestellMenge.ShowDialog();

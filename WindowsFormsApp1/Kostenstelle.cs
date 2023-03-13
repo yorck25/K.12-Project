@@ -82,6 +82,7 @@ namespace WindowsFormsApp1
                 KstDetail.Visible = false;
                 AbtMitProAbt.Visible = false;
                 KstFehlereingabe.Visible = false;
+                Listaufbauen(true);
             }
             catch(MySqlException ex)
             {
@@ -108,6 +109,9 @@ namespace WindowsFormsApp1
         private void herfKstNew_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             KstDetail.Visible= true;
+            AbtMitProAbt.Visible = false;
+            tBoxKstBez.Clear();
+            lBoxKst.ClearSelected();
         }
 
         private void Kostenstelle_Load(object sender, EventArgs e)

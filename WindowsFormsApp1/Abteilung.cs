@@ -30,6 +30,7 @@ namespace WindowsFormsApp1
                 if (abt != null)
                 {
                     tBoxAbtBez.Text = abt.Abt_Bez;
+                    cBoxAbtKst.Text = Convert.ToString(abt.Abt_Kst_ID);
                 }
                 else
                 {
@@ -116,6 +117,10 @@ namespace WindowsFormsApp1
                 Console.WriteLine(abt.Abt_Kst_ID);
                 abt.Spiechern();
                 Console.WriteLine("Abteilung wird gespeichert");
+                lBoxAbtNeuLaden(true);
+                tBoxAbtBez.Clear();
+                cBoxAbtKst.SelectedIndex = 0 -1;
+                
             }
 
         }
@@ -129,6 +134,9 @@ namespace WindowsFormsApp1
         {
             AbtDetail.Visible = true;
             AbtMitProAbt.Visible = false;
+            tBoxAbtBez.Clear() ;
+            cBoxAbtKst.Text = "0";
+            lBoxAbt.ClearSelected();
         }
     }
 }

@@ -35,9 +35,9 @@ namespace WindowsFormsApp1
                 tBoxMitPLZ.Text = Convert.ToString(Mit.Mit_PLZ);
                 tBoxMitOrt.Text = Mit.Mit_Ort;
                 //DateMit.Value = mit.Mit_GDat;
-                cBoxMitAbt.Text = Convert.ToString(Mit.Mit_Abt_ID);
-                cBoxMitFunk.Text = Convert.ToString(Mit.Mit_F_ID);
-                cBoxMitRolle.Text = Convert.ToString(Mit.Mit_R_ID);
+                cBoxMitAbt.Text = Convert.ToString(Mit.Mit_Abt_ID +1);
+                cBoxMitFunk.Text = Convert.ToString(Mit.Mit_F_ID +1);
+                cBoxMitRolle.Text = Convert.ToString(Mit.Mit_R_ID + 1);
                 tBoxMitEmail.Text = Mit.Mit_Mail;
                 tBoxMitBenutzer.Text = Mit.Mit_Benutzer;
                 tBoxMitPw.Text = Mit.Mit_Pw;
