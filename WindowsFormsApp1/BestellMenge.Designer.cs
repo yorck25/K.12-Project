@@ -30,13 +30,13 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.tBoxBMmenge = new System.Windows.Forms.TextBox();
-            this.cBoxBMBestellung = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.BMDetail = new System.Windows.Forms.Panel();
             this.butBMHinzu = new System.Windows.Forms.Button();
             this.cBoxBMArt = new System.Windows.Forms.ComboBox();
             this.lBoxBMliste = new System.Windows.Forms.ListBox();
+            this.lBoxBestellungen = new System.Windows.Forms.ListBox();
             this.BMDetail.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,16 +56,6 @@
             this.tBoxBMmenge.Size = new System.Drawing.Size(121, 20);
             this.tBoxBMmenge.TabIndex = 1;
             this.tBoxBMmenge.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // cBoxBMBestellung
-            // 
-            this.cBoxBMBestellung.DisplayMember = "BestellungListe";
-            this.cBoxBMBestellung.FormattingEnabled = true;
-            this.cBoxBMBestellung.Location = new System.Drawing.Point(12, 32);
-            this.cBoxBMBestellung.Name = "cBoxBMBestellung";
-            this.cBoxBMBestellung.Size = new System.Drawing.Size(121, 21);
-            this.cBoxBMBestellung.TabIndex = 2;
-            this.cBoxBMBestellung.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -93,7 +83,7 @@
             this.BMDetail.Controls.Add(this.lBoxBMliste);
             this.BMDetail.Controls.Add(this.tBoxBMmenge);
             this.BMDetail.Controls.Add(this.label1);
-            this.BMDetail.Location = new System.Drawing.Point(15, 59);
+            this.BMDetail.Location = new System.Drawing.Point(137, 63);
             this.BMDetail.Name = "BMDetail";
             this.BMDetail.Size = new System.Drawing.Size(319, 197);
             this.BMDetail.TabIndex = 5;
@@ -127,15 +117,26 @@
             this.lBoxBMliste.Name = "lBoxBMliste";
             this.lBoxBMliste.Size = new System.Drawing.Size(120, 147);
             this.lBoxBMliste.TabIndex = 0;
+            this.lBoxBMliste.SelectedIndexChanged += new System.EventHandler(this.lBoxBMliste_SelectedIndexChanged);
+            // 
+            // lBoxBestellungen
+            // 
+            this.lBoxBestellungen.DisplayMember = "BestellungListe";
+            this.lBoxBestellungen.FormattingEnabled = true;
+            this.lBoxBestellungen.Location = new System.Drawing.Point(12, 45);
+            this.lBoxBestellungen.Name = "lBoxBestellungen";
+            this.lBoxBestellungen.Size = new System.Drawing.Size(120, 264);
+            this.lBoxBestellungen.TabIndex = 6;
+            this.lBoxBestellungen.SelectedIndexChanged += new System.EventHandler(this.lBoxBestellungen_SelectedIndexChanged);
             // 
             // BestellMenge
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(468, 450);
+            this.Controls.Add(this.lBoxBestellungen);
             this.Controls.Add(this.BMDetail);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.cBoxBMBestellung);
             this.Name = "BestellMenge";
             this.Text = "BtestellMenge";
             this.Load += new System.EventHandler(this.BestellMenge_Load);
@@ -150,12 +151,12 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tBoxBMmenge;
-        private System.Windows.Forms.ComboBox cBoxBMBestellung;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel BMDetail;
         private System.Windows.Forms.Button butBMHinzu;
         private System.Windows.Forms.ComboBox cBoxBMArt;
         private System.Windows.Forms.ListBox lBoxBMliste;
+        private System.Windows.Forms.ListBox lBoxBestellungen;
     }
 }

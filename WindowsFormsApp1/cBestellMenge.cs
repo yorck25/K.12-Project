@@ -19,14 +19,17 @@ namespace WindowsFormsApp1
         public int BM_ART_ID { get; set; }
 
         public string BestemMengeListe => BM_ID + ": " + BM_ART_ID + ":"+ BM_Menge;
-        public static void BestellmengeLaden()
+        public void BestellmengeLadenFürBestellung()
         {
-            string sql = "SELECT * FROM bestellmenge";
+
+            string sql = "SELECT BM_BST_ID FROM bestellmenge WHERE BM_BST_ID = @BM_BST_ID";
             MySqlConnection conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["localsql"].ConnectionString);
 
             conn.Open();
             MySqlCommand cmd = new MySqlCommand(sql, conn);
             MySqlDataReader rdr = cmd.ExecuteReader();
+            cmd.Parameters.AddWithValue("@BM_BST_ID", this.BM_BST_ID);
+            Console.WriteLine(BM_BST_ID);
 
             cBestellMenge.BMListe = new List<cBestellMenge>();
 

@@ -24,8 +24,19 @@ namespace WindowsFormsApp1
         {
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void cBoxBMBestellung_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (0 == 0)
+            {
+                try
+                {
+                    cBestellung.BestellungLaden();
+                }
+                catch (MySqlException ex)
+                {
+                    Console.WriteLine("Fehler" + ex);
+                }
+            }
             BMDetail.Visible = true;
         }
 
@@ -52,13 +63,13 @@ namespace WindowsFormsApp1
             cBoxBMArt.Items.Clear();
             foreach (cArtikel art in cArtikel.ArtListe)
             {
-                cBoxBMArt.Items.Insert(0, art);
+                cBoxBMArt.Items.Add(art);
             }
 
-            cBoxBMBestellung.Items.Clear();
+            lBoxBestellungen.Items.Clear();
             foreach (cBestellung b in cBestellung.BstListe)
             {
-                cBoxBMBestellung.Items.Insert(0, b);
+                lBoxBestellungen.Items.Add(b);
             }
         }
 
@@ -74,7 +85,8 @@ namespace WindowsFormsApp1
 
         private void butBMHinzu_Click(object sender, EventArgs e)
         {
-            if (cBoxBMArt.SelectedItem == null && tBoxBMmenge.Text == null)
+
+            if(string.IsNullOrEmpty(Convert.ToString(cBoxBMArt.SelectedIndex == -1)) || string.IsNullOrEmpty(tBoxBMmenge.Text))
             {
                 Console.WriteLine("Error");
             }
@@ -82,12 +94,15 @@ namespace WindowsFormsApp1
             {
                 BM.BM_ART_ID = Convert.ToInt32(cBoxBMArt.SelectedIndex + 1);
                 BM.BM_Menge = Convert.ToInt32(tBoxBMmenge.Text);
-                BM.BM_BST_ID = Convert.ToInt32(cBoxBMBestellung.SelectedIndex +1);
+                BM.BM_BST_ID = Convert.ToInt32(lBoxBestellungen.SelectedIndex +1);
                 Console.WriteLine("Bestellmenge wird gespeichert");
                 BM.BestellmengeSpeichern();
+                BM.BestellmengeLadenFürBestellung();
                 ListBoxMengeLaden(true);
 
             }
+
+            
         }
 
         public void ListBoxMengeLaden(bool ListeLaden)
@@ -96,7 +111,7 @@ namespace WindowsFormsApp1
             {
                 try
                 {
-                    cBestellMenge.BestellmengeLaden();
+                    BM.BestellmengeLadenFürBestellung();
                 }
                 catch (Exception ex) 
                 {
@@ -106,10 +121,21 @@ namespace WindowsFormsApp1
                 lBoxBMliste.Items.Clear();
                 foreach(cBestellMenge bm in cBestellMenge.BMListe)
                 {
-                    lBoxBMliste.Items.Insert(0, bm);
+                    lBoxBMliste.Items.Add( bm);
                 }
             }
 
+        }
+
+        private void lBoxBMliste_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lBoxBestellungen_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            BM.BM_BST_ID = Convert.ToInt32(lBoxBestellungen.SelectedIndex + 1);
+            BMDetail.Visible = true;
         }
     }
 }
