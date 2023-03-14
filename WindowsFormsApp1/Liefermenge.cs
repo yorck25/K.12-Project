@@ -61,5 +61,10 @@ namespace WindowsFormsApp1
         {
             Lms.ArtikelEinFürLieferschein();
         }
+
+        private void butLsmBestandAktuell_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

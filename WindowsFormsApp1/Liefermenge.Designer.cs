@@ -137,6 +137,7 @@
             this.butLsmBestandAktuell.TabIndex = 0;
             this.butLsmBestandAktuell.Text = "Lagerbestand aktualisierun...";
             this.butLsmBestandAktuell.UseVisualStyleBackColor = true;
+            this.butLsmBestandAktuell.Click += new System.EventHandler(this.butLsmBestandAktuell_Click);
             // 
             // butLsmHinzu
             // 

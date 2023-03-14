@@ -283,6 +283,7 @@
             // 
             // lBoxHmenuBestand
             // 
+            this.lBoxHmenuBestand.DisplayMember = "ArtikelListe";
             this.lBoxHmenuBestand.FormattingEnabled = true;
             this.lBoxHmenuBestand.Items.AddRange(new object[] {
             "Test 1",
