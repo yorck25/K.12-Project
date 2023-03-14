@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace WindowsFormsApp1
 {
     public partial class Hauptmenu : Form
     {
+        cArtikel art;
         public Hauptmenu()
         {
             InitializeComponent();
@@ -19,27 +21,63 @@ namespace WindowsFormsApp1
 
         private void hauptmenuÖffnenSidebar_Click(object sender, EventArgs e)
         {
-            hmenuNavElemente.Visible =! hmenuNavElemente.Visible; 
+            hmenuNavElemente.Visible = !hmenuNavElemente.Visible;
         }
 
         private void button1hauptmenuÖffnenAcc_Click(object sender, EventArgs e)
         {
-            hmenuAccElemente.Visible = ! hmenuAccElemente.Visible;
+            hmenuAccElemente.Visible = !hmenuAccElemente.Visible;
         }
 
         private void butHauptmenuÖffnenNachrichten_Click(object sender, EventArgs e)
         {
-            hmenuBenachrichtigungList.Visible = ! hmenuBenachrichtigungList.Visible;
+            hmenuBenachrichtigungList.Visible = !hmenuBenachrichtigungList.Visible;
         }
 
         private void lBoxBenachrichtigung_SelectedIndexChanged(object sender, EventArgs e)
         {
-            hmenuDetailBenachrichtigung.Visible = ! hmenuDetailBenachrichtigung.Visible;
+            hmenuDetailBenachrichtigung.Visible = !hmenuDetailBenachrichtigung.Visible;
         }
+        public void cBoxenLaden(bool HMenuArtNeuLaden)
+        {
+            if (HMenuArtNeuLaden)
+            {
+                try
+                {
+                    cArtikel.ArtikelLaden();
+                }
+                catch (MySqlException exc)
+                {
+                    Console.WriteLine("Fehler beim Laden: " + exc.Message);
+                }
+            }
+            //Alle Boxen leeren
+            lBoxHmenuBestand.Items.Clear();
 
+
+            //ListBox Artikel neu Aufbauen
+            foreach (cArtikel art in cArtikel.ArtListe)
+            {
+                lBoxHmenuBestand.Items.Add(art);
+                Console.WriteLine(art);
+            }
+        }
         private void lBoxHmenuBestand_SelectedIndexChanged(object sender, EventArgs e)
         {
-            hmenuDetailABestand.Visible = !hmenuDetailABestand.Visible;
+            hmenuDetailABestand.Visible = hmenuDetailABestand.Visible;
+            art = (cArtikel)lBoxHmenuBestand.SelectedItem;
+            if (art != null)
+            {
+                tBoxHmenuAName.Text = art.Art_Bez;
+                tBoxHmenuABestand.Text = Convert.ToString(art.Art_Bst);
+                tBoxHmenuAMAxBestand.Text = Convert.ToString(art.Art_MaxBst);
+                tBoxHmenuAMinBestand.Text = Convert.ToString(art.Art_MinBst);
+
+            }
+            else
+            {
+                return;
+            }
         }
 
         private void butHmenuBestätigen_Click(object sender, EventArgs e)
@@ -93,6 +131,11 @@ namespace WindowsFormsApp1
         {
             Lieferschein lieferschein = new Lieferschein(new cLieferschein());
             lieferschein.Show();
+        }
+
+        private void Hauptmenu_Load(object sender, EventArgs e)
+        {
+            cBoxenLaden(true);
         }
     }
 }

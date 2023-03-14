@@ -13,7 +13,7 @@ namespace WindowsFormsApp1
     {
         public static List<cArtikel> ArtListe = new List<cArtikel>();
 
-        public long? Art_ID { get; set; } = null;
+        public long? Art_ID { get; set; } = null; // Fragezeichen MUSS so, weil Autoinkrement
         public string Art_Bez { get; set; }
         public int Art_Einheit { get; set; }
         public double Art_Preis { get; set; } // In der Datenbank auf double ändern
@@ -25,6 +25,7 @@ namespace WindowsFormsApp1
 
         public string ArtikelListe => Art_ID + ": " + Art_Bez;
 
+        public string ArtHmenuListe => Art_Bez + " - " + Art_Bst;
         public static void ArtikelLaden()
         {
             string sql = "SELECT * FROM artikel";

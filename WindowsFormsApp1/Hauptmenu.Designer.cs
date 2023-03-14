@@ -28,9 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.hauptmenuÖffnenSidebar = new System.Windows.Forms.Button();
-            this.kryptonPalette1 = new ComponentFactory.Krypton.Toolkit.KryptonPalette(this.components);
             this.hmenuNavElemente = new System.Windows.Forms.Panel();
             this.butHmenuBestellung = new System.Windows.Forms.Button();
             this.butHmenuLieferschein = new System.Windows.Forms.Button();
@@ -283,6 +281,7 @@
             // 
             // lBoxHmenuBestand
             // 
+            this.lBoxHmenuBestand.DisplayMember = "ArtikelListe";
             this.lBoxHmenuBestand.FormattingEnabled = true;
             this.lBoxHmenuBestand.Items.AddRange(new object[] {
             "Test 1",
@@ -411,6 +410,7 @@
             this.Controls.Add(this.hauptmenuÖffnenSidebar);
             this.Name = "Hauptmenu";
             this.Text = "Hauptmenu";
+            this.Load += new System.EventHandler(this.Hauptmenu_Load);
             this.hmenuNavElemente.ResumeLayout(false);
             this.hmenuAccElemente.ResumeLayout(false);
             this.hmenuBenachrichtigungList.ResumeLayout(false);
@@ -425,7 +425,6 @@
         #endregion
 
         private System.Windows.Forms.Button hauptmenuÖffnenSidebar;
-        private ComponentFactory.Krypton.Toolkit.KryptonPalette kryptonPalette1;
         private System.Windows.Forms.Panel hmenuNavElemente;
         private System.Windows.Forms.Button butHmenuLieferschein;
         private System.Windows.Forms.Button butHmenuMaterial;

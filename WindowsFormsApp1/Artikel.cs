@@ -58,7 +58,7 @@ namespace WindowsFormsApp1
             {
                 cBoxArtL.Items.Add(l);
             };
-            //ComoBox für Einhaiten neu Aufbauen
+            //ComoBox für Einheiten neu Aufbauen
             foreach (cEinheit ein in cEinheit.EinListe)
             {
                 cBoxAbtEinheit.Items.Add(ein);
