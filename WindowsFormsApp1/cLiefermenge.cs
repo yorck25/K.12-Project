@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -37,9 +38,28 @@ namespace WindowsFormsApp1
                 cLiefermenge lm = new cLiefermenge();
                 lm.LM_ID = rdr.GetInt32("LM_ID");
                 lm.LM_LS_ID = rdr.GetInt16("LM_LS_ID");
-                lm.LM_ART_ID = rdr.GetInt16("LM_ART_ID");
+ 
+                cLiefermenge.LmListe.Add(lm);
+            }
+            rdr.Close();
+        }
+
+        public void ArtikelFürLmLAden()
+        {
+            string sql = "SELECT Art_ID, Art_Menge FROM artikel";
+            MySqlConnection conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["localsql"].ConnectionString);
+
+            conn.Open();
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+            MySqlDataReader rdr = cmd.ExecuteReader();
+
+            cArtikel.ArtListe = new List<cArtikel>();
+
+            while (rdr.Read())
+            {
+                cLiefermenge lm = new cLiefermenge();
+                lm.LM_ID = rdr.GetInt32("LM_ID");
                 lm.LM_Menge = rdr.GetInt16("LM_Menge");
-                lm.summe = rdr.GetInt16("LM_Menge");
                 cLiefermenge.LmListe.Add(lm);
             }
             rdr.Close();
@@ -51,11 +71,10 @@ namespace WindowsFormsApp1
 
             conn.Open();
            
-            string sql = "UPDATE artikel SET Art_Bst = 25 WHERE Art_ID = 1";
+            string sql = "UPDATE artikel SET Art_Bst = Art_Bst + @LM_Menge WHERE Art_ID = @LM_ART_ID";
             MySqlCommand cmd = new MySqlCommand(sql, conn);
             this.LiefermengeWerteSpeichern(cmd);
             cmd.ExecuteNonQuery();
-            int summeNeu = this.summe + LM_Menge;
             this.LM_ID = cmd.LastInsertedId;
             cLiefermenge.LmListe.Add(this);
             conn.Close();
@@ -68,7 +87,7 @@ namespace WindowsFormsApp1
 
             conn.Open();
 
-            string sql = "INSERT INTO  (LM_ID, LM_LS_ID, LM_ART_ID, LM_Menge) " +" VALUES (@LM_ID, @LM_LS_ID, @LM_ART_ID, @LM_Menge)";
+            string sql = "INSERT INTO liefermenge (LM_ID, LM_LS_ID, LM_ART_ID, LM_Menge) " +" VALUES (@LM_ID, @LM_LS_ID, @LM_ART_ID, @LM_Menge)";
             LagerAtuell();
             MySqlCommand cmd = new MySqlCommand(sql, conn);
             this.LiefermengeWerteSpeichern(cmd);
