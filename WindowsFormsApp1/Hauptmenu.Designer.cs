@@ -283,7 +283,7 @@
             // 
             // lBoxHmenuBestand
             // 
-            this.lBoxHmenuBestand.DisplayMember = "ArtikelListe";
+            this.lBoxHmenuBestand.DisplayMember = "ArtHmenuBst";
             this.lBoxHmenuBestand.FormattingEnabled = true;
             this.lBoxHmenuBestand.Items.AddRange(new object[] {
             "Test 1",
@@ -331,6 +331,7 @@
             this.butHmenuNeuBestellen.TabIndex = 8;
             this.butHmenuNeuBestellen.Text = "Neu Bestellen";
             this.butHmenuNeuBestellen.UseVisualStyleBackColor = true;
+            this.butHmenuNeuBestellen.Click += new System.EventHandler(this.butHmenuNeuBestellen_Click);
             // 
             // tBoxHmenuAMAxBestand
             // 
@@ -412,6 +413,7 @@
             this.Controls.Add(this.hauptmenuÖffnenSidebar);
             this.Name = "Hauptmenu";
             this.Text = "Hauptmenu";
+            this.Load += new System.EventHandler(this.Hauptmenu_Load);
             this.hmenuNavElemente.ResumeLayout(false);
             this.hmenuAccElemente.ResumeLayout(false);
             this.hmenuBenachrichtigungList.ResumeLayout(false);

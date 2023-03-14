@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace WindowsFormsApp1
 {
     public partial class Hauptmenu : Form
     {
+        cArtikel art;
         public Hauptmenu()
         {
             InitializeComponent();
@@ -39,7 +41,19 @@ namespace WindowsFormsApp1
 
         private void lBoxHmenuBestand_SelectedIndexChanged(object sender, EventArgs e)
         {
-            hmenuDetailABestand.Visible = !hmenuDetailABestand.Visible;
+            hmenuDetailABestand.Visible = true;
+            art = (cArtikel)lBoxHmenuBestand.SelectedItem;
+            if (art != null)
+            {
+                tBoxHmenuAName.Text = art.Art_Bez;
+                tBoxHmenuABestand.Text = Convert.ToString(art.Art_Bst);
+                tBoxHmenuAMAxBestand.Text = Convert.ToString(art.Art_MaxBst);
+                tBoxHmenuAMinBestand.Text = Convert.ToString(art.Art_MinBst);
+            }
+            else
+            {
+                return;
+            }
         }
 
         private void butHmenuBestätigen_Click(object sender, EventArgs e)
@@ -93,6 +107,41 @@ namespace WindowsFormsApp1
         {
             Lieferschein lieferschein = new Lieferschein(new cLieferschein());
             lieferschein.Show();
+        }
+
+        private void Hauptmenu_Load(object sender, EventArgs e)
+        {
+            BstHmenuLaden(true);
+        }
+
+        public void BstHmenuLaden(bool HMenuArtNeuLaden)
+        {
+            if (HMenuArtNeuLaden)
+            {
+                try
+                {
+                    cArtikel.ArtikelLaden();
+                }
+                catch (MySqlException exc)
+                {
+                    Console.WriteLine("Fehler beim Laden: " + exc.Message);
+                }
+            }
+            //Alle Boxen leeren
+            lBoxHmenuBestand.Items.Clear();
+
+
+            //ListBox Artikel neu Aufbauen
+            foreach (cArtikel art in cArtikel.ArtListe)
+            {
+                lBoxHmenuBestand.Items.Add(art);
+            }
+        }
+
+        private void butHmenuNeuBestellen_Click(object sender, EventArgs e)
+        {
+            Bestellung bestellung = new Bestellung(new cBestellung());
+            bestellung.Show();
         }
     }
 }

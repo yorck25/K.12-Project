@@ -59,7 +59,19 @@ namespace WindowsFormsApp1
 
         private void butLsmHinzu_Click(object sender, EventArgs e)
         {
-            Lms.ArtikelEinFürLieferschein();
+                Lms.LM_ART_ID = Convert.ToInt16(cBoxLsmArt.SelectedIndex +1);
+                Lms.LM_Menge = Convert.ToInt16(tBoxLsmMenge.Text);
+                Lms.LM_LS_ID = Convert.ToInt16(cBoxLsmScheine.SelectedIndex +1);
+                Lms.ArtikelEinFürLieferschein();
+                Console.WriteLine("Liefermenge wird hinzugefügt");
+            try
+            {
+
+            }
+            catch(MySqlException ex)
+            {
+                Console.WriteLine("Fehler beim erstellen" + ex);
+            }
         }
 
         private void butLsmBestandAktuell_Click(object sender, EventArgs e)

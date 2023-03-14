@@ -25,6 +25,8 @@ namespace WindowsFormsApp1
 
         public string ArtikelListe => Art_ID + ": " + Art_Bez;
 
+        public string ArtHmenuBst => Art_Bez + " - " + Art_Bst;
+
         public static void ArtikelLaden()
         {
             string sql = "SELECT * FROM artikel";
