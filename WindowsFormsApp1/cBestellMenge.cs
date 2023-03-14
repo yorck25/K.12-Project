@@ -51,7 +51,7 @@ namespace WindowsFormsApp1
             conn.Open();
 
             string sql = "INSERT INTO bestellmenge (BM_ID, BM_BST_ID, BM_ART_ID, BM_Menge) VALUES (@BM_ID, @BM_BST_ID, @BM_ART_ID, @BM_Menge)";
-            MySqlCommand cmd = new MySqlCommand(sql, conn);
+            MySqlCommand cmd = new MySqlCommand(sql, conn) ;
             this.BestellmengeWerteSpeichern(cmd);
             cmd.ExecuteNonQuery();
             this.BM_ID = cmd.LastInsertedId;

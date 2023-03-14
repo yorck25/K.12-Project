@@ -150,6 +150,7 @@
     <Compile Include="cKostenstelle.cs" />
     <Compile Include="cLager.cs" />
     <Compile Include="cLieferant.cs" />
+    <Compile Include="cLiefermenge.cs" />
     <Compile Include="cLieferschein.cs" />
     <Compile Include="cLogin.cs" />
     <Compile Include="cMitarbeiter.cs" />

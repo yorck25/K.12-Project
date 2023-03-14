@@ -31,7 +31,7 @@ namespace WindowsFormsApp1
             Ls.LieferscheinSpeichern();
             Console.WriteLine("Lieferschein wird gespeichert");
 
-            Liefermenge liefermenge = new Liefermenge();
+            Liefermenge liefermenge = new Liefermenge(new cLiefermenge());
             liefermenge.ShowDialog();
         }
 
@@ -39,7 +39,7 @@ namespace WindowsFormsApp1
         {
             lBoxladenLaden(true);
         }
-
+            
         public void lBoxladenLaden(bool ListNeuLaden)
         {
             if (ListNeuLaden)

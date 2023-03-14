@@ -13,9 +13,11 @@ namespace WindowsFormsApp1
 {
     public partial class Liefermenge : Form
     {
-        public Liefermenge()
+        cLiefermenge Lms;
+        public Liefermenge(cLiefermenge lms)
         {
             InitializeComponent();
+            Lms = lms;
         }
 
         private void Liefermenge_Load(object sender, EventArgs e)
@@ -53,6 +55,11 @@ namespace WindowsFormsApp1
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void butLsmHinzu_Click(object sender, EventArgs e)
+        {
+            Lms.ArtikelEinFürLieferschein();
         }
     }
 }

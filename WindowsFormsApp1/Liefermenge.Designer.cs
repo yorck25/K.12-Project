@@ -37,12 +37,14 @@
             this.tBoxLsmMenge = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.lBoxLsmArt = new System.Windows.Forms.ListBox();
-            this.butLsmSpeichern = new System.Windows.Forms.Button();
+            this.butLsmBestandAktuell = new System.Windows.Forms.Button();
+            this.butLsmHinzu = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.butLsmHinzu);
             this.panel1.Controls.Add(this.cBoxLsmArt);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.cBoxLsmScheine);
@@ -51,7 +53,7 @@
             this.panel1.Controls.Add(this.tBoxLsmMenge);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.lBoxLsmArt);
-            this.panel1.Controls.Add(this.butLsmSpeichern);
+            this.panel1.Controls.Add(this.butLsmBestandAktuell);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(296, 344);
@@ -127,14 +129,24 @@
             this.lBoxLsmArt.Size = new System.Drawing.Size(131, 147);
             this.lBoxLsmArt.TabIndex = 2;
             // 
-            // butLsmSpeichern
+            // butLsmBestandAktuell
             // 
-            this.butLsmSpeichern.Location = new System.Drawing.Point(17, 211);
-            this.butLsmSpeichern.Name = "butLsmSpeichern";
-            this.butLsmSpeichern.Size = new System.Drawing.Size(131, 34);
-            this.butLsmSpeichern.TabIndex = 0;
-            this.butLsmSpeichern.Text = "Lagerbestand aktualisierun...";
-            this.butLsmSpeichern.UseVisualStyleBackColor = true;
+            this.butLsmBestandAktuell.Location = new System.Drawing.Point(17, 211);
+            this.butLsmBestandAktuell.Name = "butLsmBestandAktuell";
+            this.butLsmBestandAktuell.Size = new System.Drawing.Size(131, 34);
+            this.butLsmBestandAktuell.TabIndex = 0;
+            this.butLsmBestandAktuell.Text = "Lagerbestand aktualisierun...";
+            this.butLsmBestandAktuell.UseVisualStyleBackColor = true;
+            // 
+            // butLsmHinzu
+            // 
+            this.butLsmHinzu.Location = new System.Drawing.Point(154, 165);
+            this.butLsmHinzu.Name = "butLsmHinzu";
+            this.butLsmHinzu.Size = new System.Drawing.Size(75, 23);
+            this.butLsmHinzu.TabIndex = 12;
+            this.butLsmHinzu.Text = "Hinzufügen";
+            this.butLsmHinzu.UseVisualStyleBackColor = true;
+            this.butLsmHinzu.Click += new System.EventHandler(this.butLsmHinzu_Click);
             // 
             // Liefermenge
             // 
@@ -159,9 +171,10 @@
         private System.Windows.Forms.TextBox tBoxLsmMenge;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ListBox lBoxLsmArt;
-        private System.Windows.Forms.Button butLsmSpeichern;
+        private System.Windows.Forms.Button butLsmBestandAktuell;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cBoxLsmScheine;
         private System.Windows.Forms.ComboBox cBoxLsmArt;
+        private System.Windows.Forms.Button butLsmHinzu;
     }
 }
