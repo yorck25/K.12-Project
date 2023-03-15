@@ -13,17 +13,18 @@ namespace WindowsFormsApp1
 {
     public partial class Entnahmeschein : Form
     {
-        cEntnahmeschein Em;
-        public Entnahmeschein(cEntnahmeschein em)
+        cEntnahmeschein Es;
+        public Entnahmeschein(cEntnahmeschein es)
         {
             InitializeComponent();
-            this.Em = em;
+            this.Es = es;
         }
 
         private void Entnahmeschein_Load(object sender, EventArgs e)
         {
             ListenMitNeuladen(true);
-            cBoxEsVonMit.DisplayMember= "MitarbeiterListe";
+            cBoxEsVonMit.DisplayMember = "MitarbeiterListe";
+            cBoxEsFürMit.DisplayMember = "MitarbeiterListe";
         }
 
     public void ListenMitNeuladen(bool NeuLaden)
@@ -51,6 +52,20 @@ namespace WindowsFormsApp1
                 cBoxEsFürMit.Items.Add(mit);
                 cBoxEsVonMit.Items.Add(mit);
             }
+        }
+
+        public void butEsErstellen_Click(object sender, EventArgs e)
+        {
+            Es.ES_VonMit = Convert.ToInt16(cBoxEsVonMit.SelectedIndex + 1);
+            Es.ES_FuerMit = Convert.ToInt16(cBoxEsFürMit.SelectedIndex + 1);
+            Es.ES_Ntz = tBoxEsNtz.Text;
+            DateTime EsDate;
+            EsDate = DateTime.Now;
+            Es.ES_Datum = Convert.ToString(EsDate);
+            //Es.Es_Bearbeitet = false;
+            Es.EntnahmescheinSpiechern();
+            Console.WriteLine("Entnahmeschein wird gespeichert");
+            
         }
     }
 }

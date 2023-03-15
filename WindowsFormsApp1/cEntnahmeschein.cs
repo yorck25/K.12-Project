@@ -15,8 +15,8 @@ namespace WindowsFormsApp1
         public long? ES_ID { get; set; } = null;
         public string ES_Datum { get; set; }
         public string ES_Ntz { get; set; }
-        public string ES_VonMit { get; set; }
-        public string ES_FueMit { get; set; }
+        public int ES_VonMit { get; set; }
+        public int ES_FuerMit { get; set; }
 
         public string EntnahmeschinListe => ES_ID + ": " + ES_Datum;
 
@@ -37,23 +37,22 @@ namespace WindowsFormsApp1
                 em.ES_ID = rdr.GetInt64("ES_ID");
                 em.ES_Datum = rdr.GetString("ES_Datum");
                 em.ES_Ntz = rdr.GetString("ES_Ntz");
-                em.ES_VonMit = rdr.GetString("ES_VonMit_ID");
-                em.ES_FueMit = rdr.GetString("ES_FuerMit_ID");
+                em.ES_VonMit = rdr.GetInt16("ES_VonMit_ID");
+                em.ES_FuerMit = rdr.GetInt16("ES_FuerMit_ID");
                 cEntnahmeschein.Emliste.Add(em);
             }
             rdr.Close();
         }
 
-        public void Spiechern()
+        public void EntnahmescheinSpiechern()
         {
             MySqlConnection conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["localsql"].ConnectionString);
 
             conn.Open();
 
-            string sql = "INSERT INTO entnaheschein (ES_ID, ES_Datum, ES_Ntz, ES_VonMit_ID, ES_fuerMit_ID)" +
-                " VALUES (@ES_ID, @ES_Datum, @ES_Ntz, @ES_VonMit, @Es_feuerMit)";
+            string sql = "INSERT INTO entnahmeschein (ES_ID, ES_Datum, ES_Ntz, ES_VonMit_ID, ES_FuerMit_ID) VALUES (@ES_ID, @ES_Datum, @ES_Ntz, @ES_VonMit, @Es_FeurMit)";
             MySqlCommand cmd = new MySqlCommand(sql, conn);
-            this.WerteSpeichern(cmd);
+            this.EntnahmescheinWerteSpeichern(cmd);
             cmd.ExecuteNonQuery();
             this.ES_ID = cmd.LastInsertedId;
             cEntnahmeschein.Emliste.Add(this);
@@ -62,10 +61,13 @@ namespace WindowsFormsApp1
             return;
         }
 
-        public void WerteSpeichern(MySqlCommand cmd)
+        public void EntnahmescheinWerteSpeichern(MySqlCommand cmd)
         {
-            //cmd.Parameters.AddWithValue("@Kst_Bez", this.Kst_Bez);
-            //cmd.Parameters.AddWithValue("@Kst_ID", this.Kst_ID);
+            cmd.Parameters.AddWithValue("@ES_ID", this.ES_ID);
+            cmd.Parameters.AddWithValue("@ES_Datum", this.ES_Datum);
+            cmd.Parameters.AddWithValue("@ES_Ntz", this.ES_Ntz);
+            cmd.Parameters.AddWithValue("@ES_VonMit", this.ES_VonMit);
+            cmd.Parameters.AddWithValue("@ES_FeurMit", this.ES_FuerMit);
         }
     }
 }

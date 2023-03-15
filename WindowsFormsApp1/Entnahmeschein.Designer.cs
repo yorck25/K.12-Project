@@ -31,11 +31,13 @@
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.herfEsNeu = new System.Windows.Forms.LinkLabel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.cBoxEsVonMit = new System.Windows.Forms.ComboBox();
-            this.cBoxEsFürMit = new System.Windows.Forms.ComboBox();
             this.butEsErstellen = new System.Windows.Forms.Button();
+            this.cBoxEsFürMit = new System.Windows.Forms.ComboBox();
+            this.cBoxEsVonMit = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tBoxEsNtz = new System.Windows.Forms.RichTextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,6 +62,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.tBoxEsNtz);
             this.panel1.Controls.Add(this.butEsErstellen);
             this.panel1.Controls.Add(this.cBoxEsFürMit);
             this.panel1.Controls.Add(this.cBoxEsVonMit);
@@ -67,17 +71,34 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(159, 23);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(166, 160);
+            this.panel1.Size = new System.Drawing.Size(166, 288);
             this.panel1.TabIndex = 2;
             // 
-            // label1
+            // butEsErstellen
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(14, 14);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Bearbeitet von:";
+            this.butEsErstellen.Location = new System.Drawing.Point(17, 218);
+            this.butEsErstellen.Name = "butEsErstellen";
+            this.butEsErstellen.Size = new System.Drawing.Size(75, 23);
+            this.butEsErstellen.TabIndex = 4;
+            this.butEsErstellen.Text = "Erstellen";
+            this.butEsErstellen.UseVisualStyleBackColor = true;
+            this.butEsErstellen.Click += new System.EventHandler(this.butEsErstellen_Click);
+            // 
+            // cBoxEsFürMit
+            // 
+            this.cBoxEsFürMit.FormattingEnabled = true;
+            this.cBoxEsFürMit.Location = new System.Drawing.Point(17, 71);
+            this.cBoxEsFürMit.Name = "cBoxEsFürMit";
+            this.cBoxEsFürMit.Size = new System.Drawing.Size(121, 21);
+            this.cBoxEsFürMit.TabIndex = 3;
+            // 
+            // cBoxEsVonMit
+            // 
+            this.cBoxEsVonMit.FormattingEnabled = true;
+            this.cBoxEsVonMit.Location = new System.Drawing.Point(17, 30);
+            this.cBoxEsVonMit.Name = "cBoxEsVonMit";
+            this.cBoxEsVonMit.Size = new System.Drawing.Size(121, 21);
+            this.cBoxEsVonMit.TabIndex = 2;
             // 
             // label2
             // 
@@ -88,30 +109,31 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Ausgabe an:";
             // 
-            // cBoxEsVonMit
+            // label1
             // 
-            this.cBoxEsVonMit.FormattingEnabled = true;
-            this.cBoxEsVonMit.Location = new System.Drawing.Point(17, 30);
-            this.cBoxEsVonMit.Name = "cBoxEsVonMit";
-            this.cBoxEsVonMit.Size = new System.Drawing.Size(121, 21);
-            this.cBoxEsVonMit.TabIndex = 2;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(14, 14);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(79, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Bearbeitet von:";
             // 
-            // cBoxEsFürMit
+            // tBoxEsNtz
             // 
-            this.cBoxEsFürMit.FormattingEnabled = true;
-            this.cBoxEsFürMit.Location = new System.Drawing.Point(17, 71);
-            this.cBoxEsFürMit.Name = "cBoxEsFürMit";
-            this.cBoxEsFürMit.Size = new System.Drawing.Size(121, 21);
-            this.cBoxEsFürMit.TabIndex = 3;
+            this.tBoxEsNtz.Location = new System.Drawing.Point(17, 116);
+            this.tBoxEsNtz.Name = "tBoxEsNtz";
+            this.tBoxEsNtz.Size = new System.Drawing.Size(100, 96);
+            this.tBoxEsNtz.TabIndex = 5;
+            this.tBoxEsNtz.Text = "";
             // 
-            // butEsErstellen
+            // label3
             // 
-            this.butEsErstellen.Location = new System.Drawing.Point(17, 111);
-            this.butEsErstellen.Name = "butEsErstellen";
-            this.butEsErstellen.Size = new System.Drawing.Size(75, 23);
-            this.butEsErstellen.TabIndex = 4;
-            this.butEsErstellen.Text = "Erstellen";
-            this.butEsErstellen.UseVisualStyleBackColor = true;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(17, 100);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(47, 13);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Anhang:";
             // 
             // Entnahmeschein
             // 
@@ -141,5 +163,7 @@
         private System.Windows.Forms.ComboBox cBoxEsFürMit;
         private System.Windows.Forms.ComboBox cBoxEsVonMit;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.RichTextBox tBoxEsNtz;
     }
 }
