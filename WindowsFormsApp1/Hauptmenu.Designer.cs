@@ -123,6 +123,7 @@
             this.butHmenuMaterial.TabIndex = 4;
             this.butHmenuMaterial.Text = "Materialentnahmescheinverwaltung";
             this.butHmenuMaterial.UseVisualStyleBackColor = true;
+            this.butHmenuMaterial.Click += new System.EventHandler(this.butHmenuMaterial_Click);
             // 
             // butHmenuMitarbeiter
             // 

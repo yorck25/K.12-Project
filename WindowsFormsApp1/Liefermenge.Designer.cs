@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.butLsmHinzu = new System.Windows.Forms.Button();
             this.cBoxLsmArt = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.cBoxLsmScheine = new System.Windows.Forms.ComboBox();
@@ -38,7 +39,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lBoxLsmArt = new System.Windows.Forms.ListBox();
             this.butLsmBestandAktuell = new System.Windows.Forms.Button();
-            this.butLsmHinzu = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,7 +58,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(296, 344);
             this.panel1.TabIndex = 2;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // butLsmHinzu
+            // 
+            this.butLsmHinzu.Location = new System.Drawing.Point(154, 165);
+            this.butLsmHinzu.Name = "butLsmHinzu";
+            this.butLsmHinzu.Size = new System.Drawing.Size(75, 23);
+            this.butLsmHinzu.TabIndex = 12;
+            this.butLsmHinzu.Text = "Hinzufügen";
+            this.butLsmHinzu.UseVisualStyleBackColor = true;
+            this.butLsmHinzu.Click += new System.EventHandler(this.butLsmHinzu_Click);
             // 
             // cBoxLsmArt
             // 
@@ -123,6 +132,7 @@
             // 
             // lBoxLsmArt
             // 
+            this.lBoxLsmArt.DisplayMember = "LmArtProBstListe";
             this.lBoxLsmArt.FormattingEnabled = true;
             this.lBoxLsmArt.Location = new System.Drawing.Point(17, 58);
             this.lBoxLsmArt.Name = "lBoxLsmArt";
@@ -138,16 +148,6 @@
             this.butLsmBestandAktuell.Text = "Lagerbestand aktualisierun...";
             this.butLsmBestandAktuell.UseVisualStyleBackColor = true;
             this.butLsmBestandAktuell.Click += new System.EventHandler(this.butLsmBestandAktuell_Click);
-            // 
-            // butLsmHinzu
-            // 
-            this.butLsmHinzu.Location = new System.Drawing.Point(154, 165);
-            this.butLsmHinzu.Name = "butLsmHinzu";
-            this.butLsmHinzu.Size = new System.Drawing.Size(75, 23);
-            this.butLsmHinzu.TabIndex = 12;
-            this.butLsmHinzu.Text = "Hinzufügen";
-            this.butLsmHinzu.UseVisualStyleBackColor = true;
-            this.butLsmHinzu.Click += new System.EventHandler(this.butLsmHinzu_Click);
             // 
             // Liefermenge
             // 

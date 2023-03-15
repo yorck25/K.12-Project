@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,18 +19,21 @@ namespace WindowsFormsApp1
         public int LM_LS_ID { get; set; }
         public int LM_ART_ID { get; set; }
         public int LM_Menge { get; set; }
-        public int summe { get; set; }
 
+        public string LmArtProBstListe => LM_ID +"-- "+ LM_ART_ID + ": " + LM_Menge;
 
-
-        public static void LiefermengeLaden()
+        public void LiefermengeLaden()
         {
-            string sql = "SELECT * FROM liefermenge";
+            string sql = "SELECT * FROM liefermenge WHERE LM_LS_ID = @LM_LS_ID";
             MySqlConnection conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["localsql"].ConnectionString);
 
             conn.Open();
+            
             MySqlCommand cmd = new MySqlCommand(sql, conn);
+            this.LiefermengeWerteSpeichern(cmd);
+            cmd.ExecuteNonQuery();
             MySqlDataReader rdr = cmd.ExecuteReader();
+
 
             cArtikel.ArtListe = new List<cArtikel>();
 
@@ -38,7 +42,8 @@ namespace WindowsFormsApp1
                 cLiefermenge lm = new cLiefermenge();
                 lm.LM_ID = rdr.GetInt32("LM_ID");
                 lm.LM_LS_ID = rdr.GetInt16("LM_LS_ID");
- 
+                lm.LM_ART_ID = rdr.GetInt16("LM_ART_ID");
+                lm.LM_Menge = rdr.GetInt16("LM_Menge");
                 cLiefermenge.LmListe.Add(lm);
             }
             rdr.Close();

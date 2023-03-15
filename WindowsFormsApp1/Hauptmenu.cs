@@ -143,5 +143,11 @@ namespace WindowsFormsApp1
             Bestellung bestellung = new Bestellung(new cBestellung());
             bestellung.Show();
         }
+
+        private void butHmenuMaterial_Click(object sender, EventArgs e)
+        {
+            Entnahmeschein entnahmeschein = new Entnahmeschein(new cEntnahmeschein());
+            entnahmeschein.Show();
+        }
     }
 }

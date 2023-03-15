@@ -48,13 +48,21 @@ namespace WindowsFormsApp1
             cBoxLsmScheine.Items.Clear();
             foreach (cLieferschein ls in cLieferschein.LsListe)
             {
-                cBoxLsmScheine.Items.Insert(0, ls);
+                cBoxLsmScheine.Items.Add(ls);
             }
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        public void ArtikelProLSchein(bool ArtLaden)
         {
-
+            if (ArtLaden)
+            {
+                Lms.LiefermengeLaden();
+            }
+            lBoxLsmArt.Items.Clear();
+            foreach(cLiefermenge lm in cLiefermenge.LmListe)
+            {
+                cBoxLsmArt.Items.Add(lm);
+            }
         }
 
         private void butLsmHinzu_Click(object sender, EventArgs e)
@@ -63,6 +71,7 @@ namespace WindowsFormsApp1
                 Lms.LM_Menge = Convert.ToInt16(tBoxLsmMenge.Text);
                 Lms.LM_LS_ID = Convert.ToInt16(cBoxLsmScheine.SelectedIndex +1);
                 Lms.ArtikelEinFürLieferschein();
+                ArtikelProLSchein(true);
                 Console.WriteLine("Liefermenge wird hinzugefügt");
             try
             {
