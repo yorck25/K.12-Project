@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,7 +22,35 @@ namespace WindowsFormsApp1
 
         private void Entnahmeschein_Load(object sender, EventArgs e)
         {
+            ListenMitNeuladen(true);
+            cBoxEsVonMit.DisplayMember= "MitarbeiterListe";
+        }
 
+    public void ListenMitNeuladen(bool NeuLaden)
+        {
+            if (NeuLaden)
+            {
+                try
+                {
+                    cMitarbeiter.MitarbeiterLaden();
+                    cAbteilung.AbteilungLaden();
+                    cRolle.RolleLaden();
+                    cFunktion.FunktionLaden();
+                }
+                catch (MySqlException ex)
+                {
+
+                    Console.WriteLine("Fehler beim Laden: " + ex.Message);
+                }
+            }
+            cBoxEsFürMit.Items.Clear();
+            cBoxEsVonMit.Items.Clear();
+            //Abteilung Neu Aufbauen
+            foreach (cMitarbeiter mit in cMitarbeiter.MitListe)
+            {
+                cBoxEsFürMit.Items.Add(mit);
+                cBoxEsVonMit.Items.Add(mit);
+            }
         }
     }
 }
