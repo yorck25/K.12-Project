@@ -92,23 +92,23 @@ namespace WindowsFormsApp1
 
             conn.Open();
 
-            string sql = "INSERT INTO liefermenge (LM_ID, LM_LS_ID, LM_ART_ID, LM_Menge) " +" VALUES (@LM_ID, @LM_LS_ID, @LM_ART_ID, @LM_Menge)";
-            LagerAtuell();
+            string sql = "INSERT INTO liefermenge (LM_ID, LM_LS_ID, LM_ART_ID, LM_Menge) VALUES (@LM_ID, @LM_LS_ID, @LM_ART_ID, @LM_Menge)";
             MySqlCommand cmd = new MySqlCommand(sql, conn);
             this.LiefermengeWerteSpeichern(cmd);
-            cmd.ExecuteNonQuery();
             this.LM_ID = cmd.LastInsertedId;
+            cmd.ExecuteNonQuery();
             cLiefermenge.LmListe.Add(this);
+            LagerAtuell();
             conn.Close();
             return;
         }
 
         public void LiefermengeWerteSpeichern(MySqlCommand cmd)
         {
-            cmd.Parameters.AddWithValue("@LM_ID", this.LM_ID);
             cmd.Parameters.AddWithValue("@LM_LS_ID", this.LM_LS_ID);
             cmd.Parameters.AddWithValue("@LM_ART_ID", this.LM_ART_ID);
             cmd.Parameters.AddWithValue("@LM_Menge", this.LM_Menge);
+            cmd.Parameters.AddWithValue("@LM_ID", this.LM_ID);
         }
     }
 }

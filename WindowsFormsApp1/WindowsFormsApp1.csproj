@@ -258,6 +258,9 @@
     <EmbeddedResource Include="Einheit.resx">
       <DependentUpon>Einheit.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Entnahmemenge.resx">
+      <DependentUpon>Entnahmemenge.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Entnahmeschein.resx">
       <DependentUpon>Entnahmeschein.cs</DependentUpon>
     </EmbeddedResource>
