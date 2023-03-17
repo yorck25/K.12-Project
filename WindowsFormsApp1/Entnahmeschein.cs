@@ -64,6 +64,8 @@ namespace WindowsFormsApp1
             Es.ES_Datum = Convert.ToString(EsDate);
             //Es.Es_Bearbeitet = false;
             Es.EntnahmescheinSpiechern();
+            Entnahmemenge entnahmemenge = new Entnahmemenge(new cEntnahmemenge());
+            entnahmemenge.Show();
             Console.WriteLine("Entnahmeschein wird gespeichert");
             
         }

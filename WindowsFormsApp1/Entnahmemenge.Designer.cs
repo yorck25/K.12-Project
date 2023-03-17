@@ -65,6 +65,7 @@
             this.butEmHinzu.TabIndex = 12;
             this.butEmHinzu.Text = "Hinzufügen";
             this.butEmHinzu.UseVisualStyleBackColor = true;
+            this.butEmHinzu.Click += new System.EventHandler(this.butEmHinzu_Click);
             // 
             // cBoxEmArt
             // 
@@ -86,7 +87,7 @@
             // 
             // cBoxEmEschein
             // 
-            this.cBoxEmEschein.DisplayMember = "LieferscheinListe";
+            this.cBoxEmEschein.DisplayMember = "EntnahmeschinListe";
             this.cBoxEmEschein.FormattingEnabled = true;
             this.cBoxEmEschein.Location = new System.Drawing.Point(17, 20);
             this.cBoxEmEschein.Name = "cBoxEmEschein";
@@ -144,6 +145,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "Entnahmemenge";
             this.Text = "Entnahmemenge";
+            this.Load += new System.EventHandler(this.Entnahmemenge_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

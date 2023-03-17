@@ -67,12 +67,13 @@ namespace WindowsFormsApp1
 
         private void butLsmHinzu_Click(object sender, EventArgs e)
         {
-                Lms.LM_ART_ID = Convert.ToInt16(cBoxLsmArt.SelectedIndex +1);
-                Lms.LM_Menge = Convert.ToInt16(tBoxLsmMenge.Text);
-                Lms.LM_LS_ID = Convert.ToInt16(cBoxLsmScheine.SelectedIndex +1);
-                Lms.ArtikelEinFürLieferschein();
-                ArtikelProLSchein(true);
-                Console.WriteLine("Liefermenge wird hinzugefügt");
+            Lms.LM_ART_ID = Convert.ToInt16(cBoxLsmArt.SelectedIndex +1);
+            Lms.LM_Menge = Convert.ToInt16(tBoxLsmMenge.Text);
+            Lms.LM_LS_ID = Convert.ToInt16(cBoxLsmScheine.SelectedIndex +1);
+            Lms.ArtikelEinFürLieferschein();
+            ArtikelProLSchein(true);
+            Console.WriteLine("Liefermenge wird hinzugefügt");
+
             try
             {
 

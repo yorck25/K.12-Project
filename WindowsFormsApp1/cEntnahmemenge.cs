@@ -13,78 +13,77 @@ namespace WindowsFormsApp1
         public static List<cEntnahmemenge> EmListe = new List<cEntnahmemenge>();
 
         public long? EM_ID { get; set; } = null;
-        public int Em_ART_ID { get; set; }
-        public int LM_ES_ID { get; set; }
+        public int EM_ART_ID { get; set; }
+        public int EM_ES_ID { get; set; }
         public int EM_Menge { get; set; }
 
-        //public void EntnahmeMengeLaden()
-        //{
-        //    string sql = "SELECT * FROM entnahmemenge WHERE EM_ES_ID = @EM_ES_ID";
-        //    MySqlConnection conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["localsql"].ConnectionString);
+        public void EntnahmeMengeLaden()
+        {
+            string sql = "SELECT * FROM entnahmemenge WHERE EM_ES_ID = @EM_ES_ID";
+            MySqlConnection conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["localsql"].ConnectionString);
 
-        //    conn.Open();
+            conn.Open();
 
-        //    MySqlCommand cmd = new MySqlCommand(sql, conn);
-        //    this.LiefermengeWerteSpeichern(cmd);
-        //    cmd.ExecuteNonQuery();
-        //    MySqlDataReader rdr = cmd.ExecuteReader();
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+            this.EntnahmemengeWerteSpeichern(cmd);
+            cmd.ExecuteNonQuery();
+            MySqlDataReader rdr = cmd.ExecuteReader();
 
+            cEntnahmemenge.EmListe = new List<cEntnahmemenge>();
+            cArtikel.ArtListe = new List<cArtikel>();
 
-        //    cArtikel.ArtListe = new List<cArtikel>();
+            while (rdr.Read())
+            {
+                cEntnahmemenge em = new cEntnahmemenge();
+                em.EM_ID = rdr.GetInt16("EM_ID");
+                em.EM_ART_ID = rdr.GetInt16("EM_ART_ID");
+                em.EM_ART_ID = rdr.GetInt16("EM_ART_ID");
+                em.EM_ART_ID = rdr.GetInt16("EM_ART_ID");
+                em.EM_Menge = rdr.GetInt16("EM_Menge");
+                cEntnahmemenge.EmListe.Add(em);
+            }
+            rdr.Close();
+        }
 
-        //    while (rdr.Read())
-        //    {
-        //        cLiefermenge lm = new cLiefermenge();
-        //        lm.LM_ID = rdr.GetInt32("LM_ID");
-        //        lm.LM_LS_ID = rdr.GetInt16("LM_LS_ID");
-        //        lm.LM_ART_ID = rdr.GetInt16("LM_ART_ID");
-        //        lm.LM_Menge = rdr.GetInt16("LM_Menge");
-        //        cLiefermenge.LmListe.Add(lm);
-        //    }
-        //    rdr.Close();
-        //}
+        public void LagerAtuell()
+        {
+            MySqlConnection conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["localsql"].ConnectionString);
 
-        
+            conn.Open();
 
-        //public void LagerAtuell()
-        //{
-        //    MySqlConnection conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["localsql"].ConnectionString);
+            string sql = "UPDATE artikel SET Art_Bst = Art_Bst - @EM_Menge WHERE Art_ID = @EM_ART_ID";
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+            this.EntnahmemengeWerteSpeichern(cmd);
+            cmd.ExecuteNonQuery();
+            this.EM_ID = cmd.LastInsertedId;
+            cEntnahmemenge.EmListe.Add(this);
+            conn.Close();
+            return;
+        }
 
-        //    conn.Open();
+        public void ArtikelEinFürLieferschein()
+        {
+            MySqlConnection conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["localsql"].ConnectionString);
 
-        //    string sql = "UPDATE artikel SET Art_Bst = Art_Bst - @LM_Menge WHERE Art_ID = @LM_ART_ID";
-        //    MySqlCommand cmd = new MySqlCommand(sql, conn);
-        //    this.LiefermengeWerteSpeichern(cmd);
-        //    cmd.ExecuteNonQuery();
-        //    this.EM_ID = cmd.LastInsertedId;
-        //   // cLiefermenge.LmListe.Add(this);
-        //    conn.Close();
-        //    return;
-        //}
+            conn.Open();
 
-        //public void ArtikelEinFürLieferschein()
-        //{
-        //    MySqlConnection conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["localsql"].ConnectionString);
+            string sql = "INSERT INTO entnahmemenge (EM_ID, EM_ES_ID, EM_ART_ID, EM_Menge) VALUES (@EM_ID, @EM_ES_ID, @EM_ART_ID, @EM_Menge)";
+            LagerAtuell();
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+            this.EntnahmemengeWerteSpeichern(cmd);
+            cmd.ExecuteNonQuery();
+            this.EM_ID = cmd.LastInsertedId;
+            cEntnahmemenge.EmListe.Add(this);
+            conn.Close();
+            return;
+        }
 
-        //    conn.Open();
-
-        //    string sql = "INSERT INTO liefermenge (LM_ID, LM_LS_ID, LM_ART_ID, LM_Menge) " + " VALUES (@LM_ID, @LM_LS_ID, @LM_ART_ID, @LM_Menge)";
-        //    LagerAtuell();
-        //    MySqlCommand cmd = new MySqlCommand(sql, conn);
-        //    this.LiefermengeWerteSpeichern(cmd);
-        //    cmd.ExecuteNonQuery();
-        //    this.LM_ID = cmd.LastInsertedId;
-        //    cLiefermenge.LmListe.Add(this);
-        //    conn.Close();
-        //    return;
-        //}
-
-        //public void LiefermengeWerteSpeichern(MySqlCommand cmd)
-        //{
-        //    cmd.Parameters.AddWithValue("@LM_ID", this.LM_ID);
-        //    cmd.Parameters.AddWithValue("@LM_LS_ID", this.LM_LS_ID);
-        //    cmd.Parameters.AddWithValue("@LM_ART_ID", this.LM_ART_ID);
-        //    cmd.Parameters.AddWithValue("@LM_Menge", this.LM_Menge);
-        //}
+        public void EntnahmemengeWerteSpeichern(MySqlCommand cmd)
+        {
+            cmd.Parameters.AddWithValue("@EM_ID", this.EM_ID);
+            cmd.Parameters.AddWithValue("@EM_ES_ID", this.EM_ES_ID);
+            cmd.Parameters.AddWithValue("@EM_ART_ID", this.EM_ART_ID);
+            cmd.Parameters.AddWithValue("@EM_Menge", this.EM_Menge);
+        }
     }
 }
