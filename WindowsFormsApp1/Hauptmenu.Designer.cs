@@ -298,6 +298,7 @@
             // 
             // hmenuDetailABestand
             // 
+            this.hmenuDetailABestand.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.hmenuDetailABestand.Controls.Add(this.butHmenuBestätigen);
             this.hmenuDetailABestand.Controls.Add(this.butHmenuNeuBestellen);
             this.hmenuDetailABestand.Controls.Add(this.tBoxHmenuAMAxBestand);

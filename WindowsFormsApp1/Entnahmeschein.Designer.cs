@@ -28,26 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.lBoxEs = new System.Windows.Forms.ListBox();
             this.herfEsNeu = new System.Windows.Forms.LinkLabel();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.EsDetail = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.tBoxEsNtz = new System.Windows.Forms.RichTextBox();
             this.butEsErstellen = new System.Windows.Forms.Button();
             this.cBoxEsFürMit = new System.Windows.Forms.ComboBox();
             this.cBoxEsVonMit = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.tBoxEsNtz = new System.Windows.Forms.RichTextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
+            this.EsDetail.SuspendLayout();
             this.SuspendLayout();
             // 
-            // listBox1
+            // lBoxEs
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(12, 23);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(126, 329);
-            this.listBox1.TabIndex = 0;
+            this.lBoxEs.DisplayMember = "EntnahmeschinListe";
+            this.lBoxEs.FormattingEnabled = true;
+            this.lBoxEs.Location = new System.Drawing.Point(12, 37);
+            this.lBoxEs.Name = "lBoxEs";
+            this.lBoxEs.Size = new System.Drawing.Size(126, 329);
+            this.lBoxEs.TabIndex = 0;
+            this.lBoxEs.SelectedIndexChanged += new System.EventHandler(this.lBoxEs_SelectedIndexChanged);
             // 
             // herfEsNeu
             // 
@@ -59,20 +61,38 @@
             this.herfEsNeu.TabIndex = 1;
             this.herfEsNeu.TabStop = true;
             this.herfEsNeu.Text = "Neuen Entnahmeschein...";
+            this.herfEsNeu.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.herfEsNeu_LinkClicked);
             // 
-            // panel1
+            // EsDetail
             // 
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.tBoxEsNtz);
-            this.panel1.Controls.Add(this.butEsErstellen);
-            this.panel1.Controls.Add(this.cBoxEsFürMit);
-            this.panel1.Controls.Add(this.cBoxEsVonMit);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(159, 23);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(166, 288);
-            this.panel1.TabIndex = 2;
+            this.EsDetail.Controls.Add(this.label3);
+            this.EsDetail.Controls.Add(this.tBoxEsNtz);
+            this.EsDetail.Controls.Add(this.butEsErstellen);
+            this.EsDetail.Controls.Add(this.cBoxEsFürMit);
+            this.EsDetail.Controls.Add(this.cBoxEsVonMit);
+            this.EsDetail.Controls.Add(this.label2);
+            this.EsDetail.Controls.Add(this.label1);
+            this.EsDetail.Location = new System.Drawing.Point(166, 37);
+            this.EsDetail.Name = "EsDetail";
+            this.EsDetail.Size = new System.Drawing.Size(166, 288);
+            this.EsDetail.TabIndex = 2;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(17, 100);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(47, 13);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Anhang:";
+            // 
+            // tBoxEsNtz
+            // 
+            this.tBoxEsNtz.Location = new System.Drawing.Point(17, 116);
+            this.tBoxEsNtz.Name = "tBoxEsNtz";
+            this.tBoxEsNtz.Size = new System.Drawing.Size(100, 96);
+            this.tBoxEsNtz.TabIndex = 5;
+            this.tBoxEsNtz.Text = "";
             // 
             // butEsErstellen
             // 
@@ -118,36 +138,19 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Bearbeitet von:";
             // 
-            // tBoxEsNtz
-            // 
-            this.tBoxEsNtz.Location = new System.Drawing.Point(17, 116);
-            this.tBoxEsNtz.Name = "tBoxEsNtz";
-            this.tBoxEsNtz.Size = new System.Drawing.Size(100, 96);
-            this.tBoxEsNtz.TabIndex = 5;
-            this.tBoxEsNtz.Text = "";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(17, 100);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(47, 13);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Anhang:";
-            // 
             // Entnahmeschein
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(570, 397);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.EsDetail);
             this.Controls.Add(this.herfEsNeu);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.lBoxEs);
             this.Name = "Entnahmeschein";
             this.Text = "Entnahmeschein";
             this.Load += new System.EventHandler(this.Entnahmeschein_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.EsDetail.ResumeLayout(false);
+            this.EsDetail.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -155,9 +158,9 @@
 
         #endregion
 
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox lBoxEs;
         private System.Windows.Forms.LinkLabel herfEsNeu;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel EsDetail;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button butEsErstellen;
         private System.Windows.Forms.ComboBox cBoxEsFürMit;
