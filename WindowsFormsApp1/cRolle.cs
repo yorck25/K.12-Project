@@ -65,6 +65,31 @@ namespace WindowsFormsApp1
             return;
         }
 
+        public void RolleLöschen()
+        {
+            MySqlConnection conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["localsql"].ConnectionString);
+
+            conn.Open();
+
+            try
+            {
+
+            string sql = "DELETE FROM rolle WHERE R_ID = @R_ID";
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+            this.RolleWerteSpeichern(cmd);
+            cmd.ExecuteNonQuery();
+            Console.WriteLine("Rolle wird Gelöscht");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+
+            conn.Close();
+            return;
+        }
+
+
         public void RolleWerteSpeichern(MySqlCommand cmd)
         {
             cmd.Parameters.AddWithValue("@R_Bez", this.R_Bez);

@@ -39,8 +39,12 @@
             this.tBoxRBez = new System.Windows.Forms.TextBox();
             this.herfRLöschen = new System.Windows.Forms.LinkLabel();
             this.lBoxR = new System.Windows.Forms.ListBox();
+            this.rBestätigungLöschen = new System.Windows.Forms.Panel();
+            this.butRbestätigen = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.RDetail.SuspendLayout();
             this.RMitProAbt.SuspendLayout();
+            this.rBestätigungLöschen.SuspendLayout();
             this.SuspendLayout();
             // 
             // herfRNeue
@@ -57,6 +61,7 @@
             // 
             // RDetail
             // 
+            this.RDetail.Controls.Add(this.rBestätigungLöschen);
             this.RDetail.Controls.Add(this.butRSpeichern);
             this.RDetail.Controls.Add(this.RMitProAbt);
             this.RDetail.Controls.Add(this.label1);
@@ -144,6 +149,7 @@
             this.herfRLöschen.TabIndex = 21;
             this.herfRLöschen.TabStop = true;
             this.herfRLöschen.Text = "Rolle Löschen...";
+            this.herfRLöschen.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.herfRLöschen_LinkClicked);
             // 
             // lBoxR
             // 
@@ -156,6 +162,35 @@
             this.lBoxR.Size = new System.Drawing.Size(120, 303);
             this.lBoxR.TabIndex = 20;
             this.lBoxR.SelectedIndexChanged += new System.EventHandler(this.lBoxR_SelectedIndexChanged);
+            // 
+            // rBestätigungLöschen
+            // 
+            this.rBestätigungLöschen.Controls.Add(this.label2);
+            this.rBestätigungLöschen.Controls.Add(this.butRbestätigen);
+            this.rBestätigungLöschen.Location = new System.Drawing.Point(17, 145);
+            this.rBestätigungLöschen.Name = "rBestätigungLöschen";
+            this.rBestätigungLöschen.Size = new System.Drawing.Size(200, 100);
+            this.rBestätigungLöschen.TabIndex = 10;
+            this.rBestätigungLöschen.Visible = false;
+            // 
+            // butRbestätigen
+            // 
+            this.butRbestätigen.Location = new System.Drawing.Point(59, 47);
+            this.butRbestätigen.Name = "butRbestätigen";
+            this.butRbestätigen.Size = new System.Drawing.Size(75, 23);
+            this.butRbestätigen.TabIndex = 0;
+            this.butRbestätigen.Text = "Bestätigen";
+            this.butRbestätigen.UseVisualStyleBackColor = true;
+            this.butRbestätigen.Click += new System.EventHandler(this.butRbestätigen_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(15, 18);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(182, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Die Ausgewählte Rolle wird gelösche";
             // 
             // Rolle
             // 
@@ -173,6 +208,8 @@
             this.RDetail.PerformLayout();
             this.RMitProAbt.ResumeLayout(false);
             this.RMitProAbt.PerformLayout();
+            this.rBestätigungLöschen.ResumeLayout(false);
+            this.rBestätigungLöschen.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -191,5 +228,8 @@
         private System.Windows.Forms.TextBox tBoxRBez;
         private System.Windows.Forms.LinkLabel herfRLöschen;
         private System.Windows.Forms.ListBox lBoxR;
+        private System.Windows.Forms.Panel rBestätigungLöschen;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button butRbestätigen;
     }
 }

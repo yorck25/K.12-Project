@@ -99,5 +99,24 @@ namespace WindowsFormsApp1
             Mitarbeiterverwaltung mitarbeiterverwaltung = new Mitarbeiterverwaltung(new cMitarbeiter());
             mitarbeiterverwaltung.Show();
         }
+
+        private void herfRLöschen_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            rBestätigungLöschen.Visible = true;
+        }
+
+        private void butRbestätigen_Click(object sender, EventArgs e)
+        {
+            r = (cRolle)lBoxR.SelectedItem;
+            if (r != null)
+            {
+                r.RolleLöschen();
+                rBestätigungLöschen.Visible = false;
+            }
+            else
+            {
+                return;
+            }
+        }
     }
 }
