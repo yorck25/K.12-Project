@@ -63,18 +63,20 @@
             this.label3 = new System.Windows.Forms.Label();
             this.tBoxHmenuAName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.hmenuNavElemente.SuspendLayout();
             this.hmenuAccElemente.SuspendLayout();
             this.hmenuBenachrichtigungList.SuspendLayout();
             this.hmenuDetailBenachrichtigung.SuspendLayout();
             this.hmenuDetailABestand.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // hauptmenuÖffnenSidebar
             // 
-            this.hauptmenuÖffnenSidebar.Location = new System.Drawing.Point(12, 12);
+            this.hauptmenuÖffnenSidebar.Location = new System.Drawing.Point(12, 7);
             this.hauptmenuÖffnenSidebar.Name = "hauptmenuÖffnenSidebar";
-            this.hauptmenuÖffnenSidebar.Size = new System.Drawing.Size(59, 37);
+            this.hauptmenuÖffnenSidebar.Size = new System.Drawing.Size(71, 37);
             this.hauptmenuÖffnenSidebar.TabIndex = 0;
             this.hauptmenuÖffnenSidebar.Text = "---------";
             this.hauptmenuÖffnenSidebar.UseVisualStyleBackColor = true;
@@ -82,22 +84,18 @@
             // 
             // hmenuNavElemente
             // 
-            this.hmenuNavElemente.Controls.Add(this.butHmenuBestellung);
-            this.hmenuNavElemente.Controls.Add(this.butHmenuLieferschein);
-            this.hmenuNavElemente.Controls.Add(this.butHmenuMaterial);
+            this.hmenuNavElemente.Controls.Add(this.butHmenuArtikel);
             this.hmenuNavElemente.Controls.Add(this.butHmenuMitarbeiter);
             this.hmenuNavElemente.Controls.Add(this.butHmenuLieferant);
             this.hmenuNavElemente.Controls.Add(this.butHmenuLager);
-            this.hmenuNavElemente.Controls.Add(this.butHmenuArtikel);
             this.hmenuNavElemente.Location = new System.Drawing.Point(12, 55);
             this.hmenuNavElemente.Name = "hmenuNavElemente";
-            this.hmenuNavElemente.Size = new System.Drawing.Size(140, 431);
+            this.hmenuNavElemente.Size = new System.Drawing.Size(140, 250);
             this.hmenuNavElemente.TabIndex = 1;
-            this.hmenuNavElemente.Visible = false;
             // 
             // butHmenuBestellung
             // 
-            this.butHmenuBestellung.Location = new System.Drawing.Point(3, 375);
+            this.butHmenuBestellung.Location = new System.Drawing.Point(12, 2);
             this.butHmenuBestellung.Name = "butHmenuBestellung";
             this.butHmenuBestellung.Size = new System.Drawing.Size(125, 41);
             this.butHmenuBestellung.TabIndex = 6;
@@ -107,7 +105,7 @@
             // 
             // butHmenuLieferschein
             // 
-            this.butHmenuLieferschein.Location = new System.Drawing.Point(3, 252);
+            this.butHmenuLieferschein.Location = new System.Drawing.Point(143, 2);
             this.butHmenuLieferschein.Name = "butHmenuLieferschein";
             this.butHmenuLieferschein.Size = new System.Drawing.Size(125, 41);
             this.butHmenuLieferschein.TabIndex = 5;
@@ -117,7 +115,7 @@
             // 
             // butHmenuMaterial
             // 
-            this.butHmenuMaterial.Location = new System.Drawing.Point(3, 314);
+            this.butHmenuMaterial.Location = new System.Drawing.Point(274, 2);
             this.butHmenuMaterial.Name = "butHmenuMaterial";
             this.butHmenuMaterial.Size = new System.Drawing.Size(125, 41);
             this.butHmenuMaterial.TabIndex = 4;
@@ -127,7 +125,7 @@
             // 
             // butHmenuMitarbeiter
             // 
-            this.butHmenuMitarbeiter.Location = new System.Drawing.Point(3, 80);
+            this.butHmenuMitarbeiter.Location = new System.Drawing.Point(3, 79);
             this.butHmenuMitarbeiter.Name = "butHmenuMitarbeiter";
             this.butHmenuMitarbeiter.Size = new System.Drawing.Size(125, 41);
             this.butHmenuMitarbeiter.TabIndex = 3;
@@ -157,7 +155,7 @@
             // 
             // butHmenuArtikel
             // 
-            this.butHmenuArtikel.Location = new System.Drawing.Point(3, 19);
+            this.butHmenuArtikel.Location = new System.Drawing.Point(3, 22);
             this.butHmenuArtikel.Name = "butHmenuArtikel";
             this.butHmenuArtikel.Size = new System.Drawing.Size(125, 41);
             this.butHmenuArtikel.TabIndex = 0;
@@ -169,7 +167,7 @@
             // 
             this.hmenuAccElemente.Controls.Add(this.butHmenuÄndern);
             this.hmenuAccElemente.Controls.Add(this.butHmenuAbmelden);
-            this.hmenuAccElemente.Location = new System.Drawing.Point(777, 68);
+            this.hmenuAccElemente.Location = new System.Drawing.Point(683, 62);
             this.hmenuAccElemente.Name = "hmenuAccElemente";
             this.hmenuAccElemente.Size = new System.Drawing.Size(141, 113);
             this.hmenuAccElemente.TabIndex = 2;
@@ -197,7 +195,7 @@
             // 
             // butHauptmenuÖffnenAcc
             // 
-            this.butHauptmenuÖffnenAcc.Location = new System.Drawing.Point(852, 12);
+            this.butHauptmenuÖffnenAcc.Location = new System.Drawing.Point(767, 5);
             this.butHauptmenuÖffnenAcc.Name = "butHauptmenuÖffnenAcc";
             this.butHauptmenuÖffnenAcc.Size = new System.Drawing.Size(57, 37);
             this.butHauptmenuÖffnenAcc.TabIndex = 3;
@@ -207,7 +205,7 @@
             // 
             // butHauptmenuÖffnenNachrichten
             // 
-            this.butHauptmenuÖffnenNachrichten.Location = new System.Drawing.Point(691, 12);
+            this.butHauptmenuÖffnenNachrichten.Location = new System.Drawing.Point(523, 4);
             this.butHauptmenuÖffnenNachrichten.Name = "butHauptmenuÖffnenNachrichten";
             this.butHauptmenuÖffnenNachrichten.Size = new System.Drawing.Size(65, 37);
             this.butHauptmenuÖffnenNachrichten.TabIndex = 4;
@@ -218,7 +216,7 @@
             // hmenuBenachrichtigungList
             // 
             this.hmenuBenachrichtigungList.Controls.Add(this.lBoxBenachrichtigung);
-            this.hmenuBenachrichtigungList.Location = new System.Drawing.Point(635, 68);
+            this.hmenuBenachrichtigungList.Location = new System.Drawing.Point(523, 62);
             this.hmenuBenachrichtigungList.Name = "hmenuBenachrichtigungList";
             this.hmenuBenachrichtigungList.Size = new System.Drawing.Size(136, 113);
             this.hmenuBenachrichtigungList.TabIndex = 5;
@@ -243,9 +241,9 @@
             this.hmenuDetailBenachrichtigung.Controls.Add(this.label1);
             this.hmenuDetailBenachrichtigung.Controls.Add(this.butHmenuNachrichtLöschen);
             this.hmenuDetailBenachrichtigung.Controls.Add(this.tBoxNachricht);
-            this.hmenuDetailBenachrichtigung.Location = new System.Drawing.Point(635, 192);
+            this.hmenuDetailBenachrichtigung.Location = new System.Drawing.Point(523, 184);
             this.hmenuDetailBenachrichtigung.Name = "hmenuDetailBenachrichtigung";
-            this.hmenuDetailBenachrichtigung.Size = new System.Drawing.Size(283, 155);
+            this.hmenuDetailBenachrichtigung.Size = new System.Drawing.Size(301, 155);
             this.hmenuDetailBenachrichtigung.TabIndex = 6;
             this.hmenuDetailBenachrichtigung.Visible = false;
             // 
@@ -290,7 +288,7 @@
             "Test 1",
             "Test 2",
             "Test 3"});
-            this.lBoxHmenuBestand.Location = new System.Drawing.Point(228, 55);
+            this.lBoxHmenuBestand.Location = new System.Drawing.Point(158, 55);
             this.lBoxHmenuBestand.Name = "lBoxHmenuBestand";
             this.lBoxHmenuBestand.Size = new System.Drawing.Size(154, 355);
             this.lBoxHmenuBestand.TabIndex = 7;
@@ -309,11 +307,10 @@
             this.hmenuDetailABestand.Controls.Add(this.label3);
             this.hmenuDetailABestand.Controls.Add(this.tBoxHmenuAName);
             this.hmenuDetailABestand.Controls.Add(this.label2);
-            this.hmenuDetailABestand.Location = new System.Drawing.Point(408, 55);
+            this.hmenuDetailABestand.Location = new System.Drawing.Point(331, 55);
             this.hmenuDetailABestand.Name = "hmenuDetailABestand";
-            this.hmenuDetailABestand.Size = new System.Drawing.Size(200, 355);
+            this.hmenuDetailABestand.Size = new System.Drawing.Size(175, 355);
             this.hmenuDetailABestand.TabIndex = 8;
-            this.hmenuDetailABestand.Visible = false;
             // 
             // butHmenuBestätigen
             // 
@@ -399,11 +396,22 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Artikel Name";
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.butHmenuLieferschein);
+            this.panel1.Controls.Add(this.butHmenuMaterial);
+            this.panel1.Controls.Add(this.butHmenuBestellung);
+            this.panel1.Location = new System.Drawing.Point(107, 1);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(405, 48);
+            this.panel1.TabIndex = 9;
+            // 
             // Hauptmenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(921, 498);
+            this.ClientSize = new System.Drawing.Size(837, 422);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.hmenuDetailABestand);
             this.Controls.Add(this.lBoxHmenuBestand);
             this.Controls.Add(this.hmenuDetailBenachrichtigung);
@@ -423,6 +431,7 @@
             this.hmenuDetailBenachrichtigung.PerformLayout();
             this.hmenuDetailABestand.ResumeLayout(false);
             this.hmenuDetailABestand.PerformLayout();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -463,5 +472,6 @@
         private System.Windows.Forms.TextBox tBoxHmenuAName;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button butHmenuBestellung;
+        private System.Windows.Forms.Panel panel1;
     }
 }

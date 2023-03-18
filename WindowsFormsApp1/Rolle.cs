@@ -112,6 +112,7 @@ namespace WindowsFormsApp1
             {
                 r.RolleLöschen();
                 rBestätigungLöschen.Visible = false;
+                RolleListeLaden(true);
             }
             else
             {

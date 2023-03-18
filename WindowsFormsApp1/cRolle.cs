@@ -73,12 +73,11 @@ namespace WindowsFormsApp1
 
             try
             {
-
-            string sql = "DELETE FROM rolle WHERE R_ID = @R_ID";
-            MySqlCommand cmd = new MySqlCommand(sql, conn);
-            this.RolleWerteSpeichern(cmd);
-            cmd.ExecuteNonQuery();
-            Console.WriteLine("Rolle wird Gelöscht");
+                string sql = "DELETE FROM rolle WHERE R_ID = @R_ID";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                this.RolleWerteSpeichern(cmd);
+                cmd.ExecuteNonQuery();
+                Console.WriteLine("Rolle wird Gelöscht");
             }
             catch (Exception ex)
             {

@@ -44,9 +44,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.label1.Location = new System.Drawing.Point(59, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 24);
+            this.label1.Size = new System.Drawing.Size(118, 24);
             this.label1.TabIndex = 0;
-            this.label1.Text = "E-Mail:";
+            this.label1.Text = "Nutzername:";
             // 
             // label2
             // 
@@ -108,9 +108,9 @@
             this.LoginFehlermeldung.ForeColor = System.Drawing.Color.Red;
             this.LoginFehlermeldung.Location = new System.Drawing.Point(60, -1);
             this.LoginFehlermeldung.Name = "LoginFehlermeldung";
-            this.LoginFehlermeldung.Size = new System.Drawing.Size(150, 13);
+            this.LoginFehlermeldung.Size = new System.Drawing.Size(178, 13);
             this.LoginFehlermeldung.TabIndex = 7;
-            this.LoginFehlermeldung.Text = "E-Mail oder Passwort ist flasch";
+            this.LoginFehlermeldung.Text = "Nutzername oder Passwort ist flasch";
             this.LoginFehlermeldung.Visible = false;
             // 
             // Login
