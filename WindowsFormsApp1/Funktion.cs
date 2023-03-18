@@ -58,7 +58,7 @@ namespace WindowsFormsApp1
             {
                 try
                 {
-                    cKostenstelle.AlleLaden();
+                    cFunktion.FunktionLaden();
                 }
                 catch (MySqlException ex)
                 {
@@ -69,7 +69,7 @@ namespace WindowsFormsApp1
             lBoxF.Items.Clear();
             foreach(cFunktion f in cFunktion.FListe)
             {
-                lBoxF.Items.Insert(0, f);
+                lBoxF.Items.Add(f);
             }
         }
 
@@ -94,6 +94,27 @@ namespace WindowsFormsApp1
                 {
                     lBoxF.Items.Add(f);
                 }
+            }
+        }
+
+        private void herfFLöschen_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            fBestätigungLöschen.Visible = true;
+        }
+
+        private void butRbestätigen_Click(object sender, EventArgs e)
+        {
+            fBestätigungLöschen.Visible = false;
+            f = (cFunktion)lBoxF.SelectedItem;
+            if (f != null)
+            {
+                f.FunktionLöschen();
+                fBestätigungLöschen.Visible = false;
+                FunktionListeLaden(true);
+            }
+            else
+            {
+                return;
             }
         }
     }

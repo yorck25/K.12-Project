@@ -51,26 +51,25 @@ namespace WindowsFormsApp1
 
         private void butMverDetailSchließen_Click(object sender, EventArgs e)
         {
-            MverDetailMitarbeiter.Visible = false;
-            Mit.Mit_Name = tBoxMitName.Text;
-            Mit.Mit_VName = tBoxMitVName.Text;
-            Mit.Mit_Mail = tBoxMitEmail.Text;
-            Mit.Mit_Ort = tBoxMitOrt.Text;
-            Mit.Mit_GDat = DateMit.Value;
-            Mit.Mit_HausNr = Convert.ToInt16(tBoxMitHausNr.Text);
-            Mit.Mit_PLZ = Convert.ToInt16(tBoxMitPLZ.Text);
-            Mit.Mit_Straße = tBoxMitStraße.Text;
-            Mit.Mit_Benutzer = tBoxMitBenutzer.Text;
-            Mit.Mit_Mail = tBoxMitEmail.Text;
-            Mit.Mit_Pw = tBoxMitPw.Text;
-            Mit.Mit_Abt_ID = Convert.ToInt16(cBoxMitAbt.SelectedIndex +1);
-            Mit.Mit_R_ID = Convert.ToInt16(cBoxMitRolle.SelectedIndex +1);
-            Mit.Mit_F_ID = Convert.ToInt16(cBoxMitFunk.SelectedIndex +1);
-
 
 
             try
             {
+                MverDetailMitarbeiter.Visible = false;
+                Mit.Mit_Name = tBoxMitName.Text;
+                Mit.Mit_VName = tBoxMitVName.Text;
+                Mit.Mit_Mail = tBoxMitEmail.Text;
+                Mit.Mit_Ort = tBoxMitOrt.Text;
+                Mit.Mit_GDat = DateMit.Value;
+                Mit.Mit_HausNr = Convert.ToInt16(tBoxMitHausNr.Text);
+                Mit.Mit_PLZ = Convert.ToInt16(tBoxMitPLZ.Text);
+                Mit.Mit_Straße = tBoxMitStraße.Text;
+                Mit.Mit_Benutzer = tBoxMitBenutzer.Text;
+                Mit.Mit_Mail = tBoxMitEmail.Text;
+                Mit.Mit_Pw = tBoxMitPw.Text;
+                Mit.Mit_Abt_ID = Convert.ToInt32(cBoxMitAbt.SelectedIndex + 1);
+                Mit.Mit_R_ID = Convert.ToInt32(cBoxMitRolle.SelectedIndex + 1);
+                Mit.Mit_F_ID = Convert.ToInt32(cBoxMitFunk.SelectedIndex + 1);
                 Mit.MitarbeiterSpeichern();
             }
             catch
@@ -168,6 +167,28 @@ namespace WindowsFormsApp1
         private void herfMitPwÄndern_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             tBoxMitPw.ReadOnly= false;
+        }
+
+        private void herfMitLöschen_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            mitBestätigungLöschen.Visible = true;
+        }
+
+        private void butMitbestätigen_Click(object sender, EventArgs e)
+        {
+            mitBestätigungLöschen.Visible = false;
+            Mit = (cMitarbeiter)lBoxMverMitarbeiter.SelectedItem;
+            if (Mit != null)
+            {
+                Mit.Mit_Geloescht = true;
+                Mit.MItarbeiterLöschen();
+                mitBestätigungLöschen.Visible = false;
+                ListenMitNeuladen(true);
+            }
+            else
+            {
+                return;
+            }
         }
     }
 }

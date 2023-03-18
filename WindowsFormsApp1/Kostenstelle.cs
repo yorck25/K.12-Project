@@ -73,6 +73,7 @@ namespace WindowsFormsApp1
         private void butKstSpeichern_Click(object sender, EventArgs e)
         {
             kst.Kst_Bez = tBoxKstBez.Text;
+            kst.Kst_Geloescht = false;
 
             try
             {
@@ -117,6 +118,27 @@ namespace WindowsFormsApp1
         private void Kostenstelle_Load(object sender, EventArgs e)
         {
             Listaufbauen(true);
+        }
+
+        private void herfKstLöschen_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            KstBestätigungLöschen.Visible = true;
+        }
+
+        private void butKstbestätigen_Click(object sender, EventArgs e)
+        {
+            kst = (cKostenstelle)lBoxKst.SelectedItem;
+            if (kst != null)
+            {
+                kst.Kst_Geloescht = true;
+                kst.KostenstelleLöschen();
+                KstBestätigungLöschen.Visible = false;
+                Listaufbauen(true);
+            }
+            else
+            {
+                return;
+            }
         }
     }
 }

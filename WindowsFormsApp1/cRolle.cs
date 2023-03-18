@@ -14,6 +14,7 @@ namespace WindowsFormsApp1
 
         public long? R_ID { get; set; } = null;
         public string R_Bez { get; set; }
+        public bool R_Geloescht { get; set; }
 
         public string RolleListe => R_ID + ": " + R_Bez;
 
@@ -54,7 +55,7 @@ namespace WindowsFormsApp1
             }
             else
             {
-                string sql = "INSERT INTO rolle (R_Bez) VALUES (@R_Bez)";
+                string sql = "INSERT INTO rolle (R_Bez, R_Geloescht) VALUES (@R_Bez, @R_Geloescht)";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 this.RolleWerteSpeichern(cmd);
                 cmd.ExecuteNonQuery();
@@ -92,6 +93,7 @@ namespace WindowsFormsApp1
         public void RolleWerteSpeichern(MySqlCommand cmd)
         {
             cmd.Parameters.AddWithValue("@R_Bez", this.R_Bez);
+            cmd.Parameters.AddWithValue("@R_Geloescht", this.R_Geloescht);
             cmd.Parameters.AddWithValue("@R_ID", this.R_ID);
         }
     }

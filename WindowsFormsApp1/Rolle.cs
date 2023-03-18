@@ -52,6 +52,7 @@ namespace WindowsFormsApp1
         private void butRSpeichern_Click(object sender, EventArgs e)
         {
             r.R_Bez = tBoxRBez.Text;
+            r.R_Geloescht = false;
 
                 if (string.IsNullOrEmpty(tBoxRBez.Text))
                 {
@@ -110,6 +111,7 @@ namespace WindowsFormsApp1
             r = (cRolle)lBoxR.SelectedItem;
             if (r != null)
             {
+                r.R_Geloescht = true;
                 r.RolleLöschen();
                 rBestätigungLöschen.Visible = false;
                 RolleListeLaden(true);

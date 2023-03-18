@@ -27,7 +27,7 @@ namespace WindowsFormsApp1
         public int Mit_Abt_ID { get; set; }
         public int Mit_R_ID { get; set; }
         public int Mit_F_ID { get; set; }
-        public int Mit_Abr_ID { get; set; }
+        public bool Mit_Geloescht { get; set; }
 
         public string MitarbeiterListe => Mit_ID + ":" + Mit_VName + "," + Mit_Name; 
 
@@ -52,8 +52,7 @@ namespace WindowsFormsApp1
                     " Mit_Abt_ID = @Mit_Abt_ID," +
                     " Mit_F_ID = @Mit_F_ID," +
                     " Mit_R_ID =  @Mit_R_ID," +
-                    " Mit_Abr_ID =  @Mit_Abr_ID  "
-                    + " WHERE Mit_ID = @Mit_ID";
+                    " WHERE Mit_ID = @Mit_ID";
                 Console.WriteLine("ID:" + this.Mit_ID);
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 this.MitarbeiterWerte(cmd);
@@ -61,8 +60,8 @@ namespace WindowsFormsApp1
             }
             else
             {
-                string sql = "INSERT INTO mitarbeiter (Mit_Name, Mit_VName, Mit_Strasse, Mit_HausNr, Mit_PLZ, Mit_Ort, Mit_GDat, Mit_Mail, Mit_Benutzer, Mit_Pw, Mit_Abt_ID, Mit_F_ID, Mit_R_ID, Mit_Abr_ID)" +
-                    " VALUES (@Mit_Name, @Mit_VName, @Mit_Strasse, @Mit_HausNr, @Mit_PLZ, @Mit_Ort, @Mit_GDat, @Mit_Mail, @Mit_Benutzer, @Mit_Pw, @Mit_Abt_ID, @Mit_F_ID, @Mit_R_ID, @Mit_Abr_ID)";
+                string sql = "INSERT INTO mitarbeiter (Mit_Name, Mit_VName, Mit_Strasse, Mit_HausNr, Mit_PLZ, Mit_Ort, Mit_GDat, Mit_Mail, Mit_Benutzer, Mit_Pw, Mit_Abt_ID, Mit_F_ID, Mit_R_ID, Mit_Geloescht)" +
+                    " VALUES (@Mit_Name, @Mit_VName, @Mit_Strasse, @Mit_HausNr, @Mit_PLZ, @Mit_Ort, @Mit_GDat, @Mit_Mail, @Mit_Benutzer, @Mit_Pw, @Mit_Abt_ID, @Mit_F_ID, @Mit_R_ID, @Mit_Geloescht)";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 this.MitarbeiterWerte(cmd);
                 cmd.ExecuteNonQuery();
@@ -89,7 +88,7 @@ namespace WindowsFormsApp1
             cmd.Parameters.AddWithValue("@Mit_Abt_ID", this.Mit_Abt_ID);
             cmd.Parameters.AddWithValue("@Mit_R_ID", this.Mit_R_ID);
             cmd.Parameters.AddWithValue("@Mit_F_ID", this.Mit_F_ID);
-            cmd.Parameters.AddWithValue("@Mit_Abr_ID", this.Mit_Abr_ID);
+            cmd.Parameters.AddWithValue("@Mit_Geloescht", this.Mit_Geloescht);
         }
 
         public static void MitarbeiterLaden()
@@ -120,10 +119,31 @@ namespace WindowsFormsApp1
                 mit.Mit_Abt_ID = rdr.GetInt16("Mit_Abt_ID");
                 mit.Mit_R_ID = rdr.GetInt16("Mit_R_ID");
                 mit.Mit_F_ID = rdr.GetInt16("Mit_F_ID");
-                mit.Mit_Abr_ID = rdr.GetInt16("Mit_Abr_ID");
                 cMitarbeiter.MitListe.Add(mit);
             }
             rdr.Close();
+        }
+        public void MItarbeiterLöschen()
+        {
+            MySqlConnection conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["localsql"].ConnectionString);
+
+            conn.Open();
+
+            try
+            {
+                string sql = "DELETE FROM mitarbeiter WHERE Mit_ID = @Mit_ID";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                this.MitarbeiterWerte(cmd);
+                cmd.ExecuteNonQuery();
+                Console.WriteLine("Mitarbeiter wird Gelöscht");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+
+            conn.Close();
+            return;
         }
     }
 }

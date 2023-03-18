@@ -35,7 +35,6 @@ namespace WindowsFormsApp1
             }
 
             cBoxRegAbt.Items.Clear();
-            cBoxRegAbr.Items.Clear();
             cBoxRegFunk.Items.Clear();
             cBoxRegRolle.Items.Clear();
 
@@ -78,7 +77,6 @@ namespace WindowsFormsApp1
             Mit.Mit_Abt_ID = Convert.ToInt32(cBoxRegAbt.SelectedIndex);
             Mit.Mit_R_ID = Convert.ToInt32(cBoxRegRolle.SelectedIndex);
             Mit.Mit_F_ID = Convert.ToInt32(cBoxRegFunk.SelectedIndex);
-            Mit.Mit_Abr_ID = Convert.ToInt32(cBoxRegAbr.SelectedIndex);
 
             if (string.IsNullOrEmpty(tBoxRegName.Text))
             {

@@ -30,6 +30,9 @@
         {
             this.herfRNeue = new System.Windows.Forms.LinkLabel();
             this.RDetail = new System.Windows.Forms.Panel();
+            this.rBestätigungLöschen = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.butRbestätigen = new System.Windows.Forms.Button();
             this.butRSpeichern = new System.Windows.Forms.Button();
             this.RMitProAbt = new System.Windows.Forms.Panel();
             this.herfRMit = new System.Windows.Forms.LinkLabel();
@@ -39,12 +42,9 @@
             this.tBoxRBez = new System.Windows.Forms.TextBox();
             this.herfRLöschen = new System.Windows.Forms.LinkLabel();
             this.lBoxR = new System.Windows.Forms.ListBox();
-            this.rBestätigungLöschen = new System.Windows.Forms.Panel();
-            this.butRbestätigen = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
             this.RDetail.SuspendLayout();
-            this.RMitProAbt.SuspendLayout();
             this.rBestätigungLöschen.SuspendLayout();
+            this.RMitProAbt.SuspendLayout();
             this.SuspendLayout();
             // 
             // herfRNeue
@@ -71,6 +71,37 @@
             this.RDetail.Size = new System.Drawing.Size(413, 329);
             this.RDetail.TabIndex = 22;
             this.RDetail.Visible = false;
+            // 
+            // rBestätigungLöschen
+            // 
+            this.rBestätigungLöschen.BackColor = System.Drawing.Color.Gray;
+            this.rBestätigungLöschen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.rBestätigungLöschen.Controls.Add(this.label2);
+            this.rBestätigungLöschen.Controls.Add(this.butRbestätigen);
+            this.rBestätigungLöschen.Location = new System.Drawing.Point(17, 145);
+            this.rBestätigungLöschen.Name = "rBestätigungLöschen";
+            this.rBestätigungLöschen.Size = new System.Drawing.Size(200, 100);
+            this.rBestätigungLöschen.TabIndex = 10;
+            this.rBestätigungLöschen.Visible = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(15, 18);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(182, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Die Ausgewählte Rolle wird gelösche";
+            // 
+            // butRbestätigen
+            // 
+            this.butRbestätigen.Location = new System.Drawing.Point(59, 47);
+            this.butRbestätigen.Name = "butRbestätigen";
+            this.butRbestätigen.Size = new System.Drawing.Size(75, 23);
+            this.butRbestätigen.TabIndex = 0;
+            this.butRbestätigen.Text = "Bestätigen";
+            this.butRbestätigen.UseVisualStyleBackColor = true;
+            this.butRbestätigen.Click += new System.EventHandler(this.butRbestätigen_Click);
             // 
             // butRSpeichern
             // 
@@ -143,7 +174,7 @@
             // 
             this.herfRLöschen.AutoSize = true;
             this.herfRLöschen.LinkColor = System.Drawing.SystemColors.Highlight;
-            this.herfRLöschen.Location = new System.Drawing.Point(28, 328);
+            this.herfRLöschen.Location = new System.Drawing.Point(48, 328);
             this.herfRLöschen.Name = "herfRLöschen";
             this.herfRLöschen.Size = new System.Drawing.Size(84, 13);
             this.herfRLöschen.TabIndex = 21;
@@ -163,35 +194,6 @@
             this.lBoxR.TabIndex = 20;
             this.lBoxR.SelectedIndexChanged += new System.EventHandler(this.lBoxR_SelectedIndexChanged);
             // 
-            // rBestätigungLöschen
-            // 
-            this.rBestätigungLöschen.Controls.Add(this.label2);
-            this.rBestätigungLöschen.Controls.Add(this.butRbestätigen);
-            this.rBestätigungLöschen.Location = new System.Drawing.Point(17, 145);
-            this.rBestätigungLöschen.Name = "rBestätigungLöschen";
-            this.rBestätigungLöschen.Size = new System.Drawing.Size(200, 100);
-            this.rBestätigungLöschen.TabIndex = 10;
-            this.rBestätigungLöschen.Visible = false;
-            // 
-            // butRbestätigen
-            // 
-            this.butRbestätigen.Location = new System.Drawing.Point(59, 47);
-            this.butRbestätigen.Name = "butRbestätigen";
-            this.butRbestätigen.Size = new System.Drawing.Size(75, 23);
-            this.butRbestätigen.TabIndex = 0;
-            this.butRbestätigen.Text = "Bestätigen";
-            this.butRbestätigen.UseVisualStyleBackColor = true;
-            this.butRbestätigen.Click += new System.EventHandler(this.butRbestätigen_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(15, 18);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(182, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Die Ausgewählte Rolle wird gelösche";
-            // 
             // Rolle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -206,10 +208,10 @@
             this.Load += new System.EventHandler(this.Rolle_Load);
             this.RDetail.ResumeLayout(false);
             this.RDetail.PerformLayout();
-            this.RMitProAbt.ResumeLayout(false);
-            this.RMitProAbt.PerformLayout();
             this.rBestätigungLöschen.ResumeLayout(false);
             this.rBestätigungLöschen.PerformLayout();
+            this.RMitProAbt.ResumeLayout(false);
+            this.RMitProAbt.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

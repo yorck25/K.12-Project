@@ -112,6 +112,7 @@ namespace WindowsFormsApp1
             }
             else
             {
+                abt.Abt_Geloescht = false;
                 abt.Abt_Bez = tBoxAbtBez.Text;
                 abt.Abt_Kst_ID = Convert.ToInt32(cBoxAbtKst.SelectedIndex + 1);
                 Console.WriteLine(abt.Abt_Kst_ID);
@@ -137,6 +138,28 @@ namespace WindowsFormsApp1
             tBoxAbtBez.Clear() ;
             cBoxAbtKst.Text = "0";
             lBoxAbt.ClearSelected();
+        }
+
+        private void herfAbtLöschen_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            abtBestätigungLöschen.Visible = true;
+        }
+
+        private void butAbtbestätigen_Click(object sender, EventArgs e)
+        {
+            abtBestätigungLöschen.Visible = false;
+            abt = (cAbteilung)lBoxAbt.SelectedItem;
+            if (abt != null)
+            {
+                abt.Abt_Geloescht = true;
+                abt.AbteilungLöschen();
+                abtBestätigungLöschen.Visible = false;
+                lBoxAbtNeuLaden(true);
+            }
+            else
+            {
+                return;
+            }
         }
     }
 }

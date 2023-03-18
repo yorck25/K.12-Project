@@ -5,6 +5,7 @@ using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
@@ -14,6 +15,7 @@ namespace WindowsFormsApp1
 
         public long? F_ID { get; set; } = null;
         public string F_Bez { get; set; }
+        public bool F_Geloescht { get; set; }
 
         public string FunktionListe => F_ID + ": " + F_Bez;
 
@@ -54,7 +56,7 @@ namespace WindowsFormsApp1
             }
             else
             {
-                string sql = "INSERT INTO funktion (F_Bez) VALUES (@F_Bez)";
+                string sql = "INSERT INTO funktion (F_Bez, F_Geloescht) VALUES (@F_Bez, @F_Geloescht)";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 this.FunktionWerteSpeichern(cmd);
                 cmd.ExecuteNonQuery();
@@ -65,9 +67,33 @@ namespace WindowsFormsApp1
             return;
         }
 
-        public void FunktionWerteSpeichern(MySqlCommand cmd)
+        public void FunktionLöschen()
         {
+            MySqlConnection conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["localsql"].ConnectionString);
+
+            conn.Open();
+
+            try
+            {
+                string sql = "DELETE FROM funktion WHERE F_ID = @F_ID";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                this.FunktionWerteSpeichern(cmd);
+                cmd.ExecuteNonQuery();
+                Console.WriteLine("Funktion wird Gelöscht");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+
+            conn.Close();
+            return;
+        }
+
+        public void FunktionWerteSpeichern(MySqlCommand cmd)
+        {       
             cmd.Parameters.AddWithValue("@F_Bez", this.F_Bez);
+            cmd.Parameters.AddWithValue("@F_Geloescht", this.F_Geloescht);
             cmd.Parameters.AddWithValue("@F_ID", this.F_ID);
         }
     }

@@ -48,8 +48,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.tBoxRegVname = new System.Windows.Forms.TextBox();
-            this.cBoxRegAbr = new System.Windows.Forms.ComboBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.tBoxRegStraße = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.tBoxRegPLZ = new System.Windows.Forms.TextBox();
@@ -235,23 +233,6 @@
             this.tBoxRegVname.Size = new System.Drawing.Size(100, 20);
             this.tBoxRegVname.TabIndex = 22;
             // 
-            // cBoxRegAbr
-            // 
-            this.cBoxRegAbr.FormattingEnabled = true;
-            this.cBoxRegAbr.Location = new System.Drawing.Point(128, 282);
-            this.cBoxRegAbr.Name = "cBoxRegAbr";
-            this.cBoxRegAbr.Size = new System.Drawing.Size(100, 21);
-            this.cBoxRegAbr.TabIndex = 40;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(125, 265);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(110, 13);
-            this.label11.TabIndex = 41;
-            this.label11.Text = "Abrechnungsnummer:";
-            // 
             // tBoxRegStraße
             // 
             this.tBoxRegStraße.Location = new System.Drawing.Point(12, 69);
@@ -338,8 +319,6 @@
             this.Controls.Add(this.label13);
             this.Controls.Add(this.tBoxRegStraße);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.cBoxRegAbr);
             this.Controls.Add(this.cBoxRegFunk);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.cBoxRegRolle);
@@ -389,8 +368,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox tBoxRegVname;
-        private System.Windows.Forms.ComboBox cBoxRegAbr;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox tBoxRegStraße;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox tBoxRegPLZ;

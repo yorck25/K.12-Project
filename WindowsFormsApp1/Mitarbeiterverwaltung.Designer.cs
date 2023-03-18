@@ -30,6 +30,7 @@
         {
             this.lBoxMverMitarbeiter = new System.Windows.Forms.ListBox();
             this.MverDetailMitarbeiter = new System.Windows.Forms.Panel();
+            this.herfMitPwÄndern = new System.Windows.Forms.LinkLabel();
             this.butMitPwAnzeigen = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.tBoxMitPw = new System.Windows.Forms.TextBox();
@@ -63,8 +64,12 @@
             this.butMitAbt = new System.Windows.Forms.Button();
             this.butMitRolle = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.herfMitPwÄndern = new System.Windows.Forms.LinkLabel();
+            this.herfMitLöschen = new System.Windows.Forms.LinkLabel();
+            this.mitBestätigungLöschen = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.butMitbestätigen = new System.Windows.Forms.Button();
             this.MverDetailMitarbeiter.SuspendLayout();
+            this.mitBestätigungLöschen.SuspendLayout();
             this.SuspendLayout();
             // 
             // lBoxMverMitarbeiter
@@ -82,6 +87,7 @@
             // 
             // MverDetailMitarbeiter
             // 
+            this.MverDetailMitarbeiter.Controls.Add(this.herfMitLöschen);
             this.MverDetailMitarbeiter.Controls.Add(this.herfMitPwÄndern);
             this.MverDetailMitarbeiter.Controls.Add(this.butMitPwAnzeigen);
             this.MverDetailMitarbeiter.Controls.Add(this.label15);
@@ -119,6 +125,18 @@
             this.MverDetailMitarbeiter.TabIndex = 1;
             this.MverDetailMitarbeiter.Visible = false;
             this.MverDetailMitarbeiter.Paint += new System.Windows.Forms.PaintEventHandler(this.MverDetailMitarbeiter_Paint);
+            // 
+            // herfMitPwÄndern
+            // 
+            this.herfMitPwÄndern.AutoSize = true;
+            this.herfMitPwÄndern.LinkColor = System.Drawing.SystemColors.Highlight;
+            this.herfMitPwÄndern.Location = new System.Drawing.Point(177, 167);
+            this.herfMitPwÄndern.Name = "herfMitPwÄndern";
+            this.herfMitPwÄndern.Size = new System.Drawing.Size(86, 13);
+            this.herfMitPwÄndern.TabIndex = 78;
+            this.herfMitPwÄndern.TabStop = true;
+            this.herfMitPwÄndern.Text = "Passwort ändern";
+            this.herfMitPwÄndern.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.herfMitPwÄndern_LinkClicked);
             // 
             // butMitPwAnzeigen
             // 
@@ -363,7 +381,7 @@
             // 
             // butMverDetailSchließen
             // 
-            this.butMverDetailSchließen.Location = new System.Drawing.Point(11, 308);
+            this.butMverDetailSchließen.Location = new System.Drawing.Point(11, 320);
             this.butMverDetailSchließen.Name = "butMverDetailSchließen";
             this.butMverDetailSchließen.Size = new System.Drawing.Size(89, 32);
             this.butMverDetailSchließen.TabIndex = 12;
@@ -401,23 +419,55 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // herfMitPwÄndern
+            // herfMitLöschen
             // 
-            this.herfMitPwÄndern.AutoSize = true;
-            this.herfMitPwÄndern.LinkColor = System.Drawing.SystemColors.Highlight;
-            this.herfMitPwÄndern.Location = new System.Drawing.Point(177, 167);
-            this.herfMitPwÄndern.Name = "herfMitPwÄndern";
-            this.herfMitPwÄndern.Size = new System.Drawing.Size(86, 13);
-            this.herfMitPwÄndern.TabIndex = 78;
-            this.herfMitPwÄndern.TabStop = true;
-            this.herfMitPwÄndern.Text = "Passwort ändern";
-            this.herfMitPwÄndern.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.herfMitPwÄndern_LinkClicked);
+            this.herfMitLöschen.AutoSize = true;
+            this.herfMitLöschen.LinkColor = System.Drawing.SystemColors.Highlight;
+            this.herfMitLöschen.Location = new System.Drawing.Point(11, 304);
+            this.herfMitLöschen.Name = "herfMitLöschen";
+            this.herfMitLöschen.Size = new System.Drawing.Size(100, 13);
+            this.herfMitLöschen.TabIndex = 5;
+            this.herfMitLöschen.TabStop = true;
+            this.herfMitLöschen.Text = "Mitarbeiter Löschen";
+            this.herfMitLöschen.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.herfMitLöschen_LinkClicked);
+            // 
+            // mitBestätigungLöschen
+            // 
+            this.mitBestätigungLöschen.BackColor = System.Drawing.Color.Gray;
+            this.mitBestätigungLöschen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.mitBestätigungLöschen.Controls.Add(this.label8);
+            this.mitBestätigungLöschen.Controls.Add(this.butMitbestätigen);
+            this.mitBestätigungLöschen.Location = new System.Drawing.Point(158, 138);
+            this.mitBestätigungLöschen.Name = "mitBestätigungLöschen";
+            this.mitBestätigungLöschen.Size = new System.Drawing.Size(212, 100);
+            this.mitBestätigungLöschen.TabIndex = 11;
+            this.mitBestätigungLöschen.Visible = false;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(3, 18);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(204, 26);
+            this.label8.TabIndex = 1;
+            this.label8.Text = "Der ausgewählte Mitarbeiter wird gelöscht\r\n\r\n";
+            // 
+            // butMitbestätigen
+            // 
+            this.butMitbestätigen.Location = new System.Drawing.Point(59, 47);
+            this.butMitbestätigen.Name = "butMitbestätigen";
+            this.butMitbestätigen.Size = new System.Drawing.Size(75, 23);
+            this.butMitbestätigen.TabIndex = 0;
+            this.butMitbestätigen.Text = "Bestätigen";
+            this.butMitbestätigen.UseVisualStyleBackColor = true;
+            this.butMitbestätigen.Click += new System.EventHandler(this.butMitbestätigen_Click);
             // 
             // Mitarbeiterverwaltung
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(768, 413);
+            this.Controls.Add(this.mitBestätigungLöschen);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.butMitRolle);
             this.Controls.Add(this.butMitAbt);
@@ -428,6 +478,8 @@
             this.Load += new System.EventHandler(this.Mitarbeiterverwaltung_Load);
             this.MverDetailMitarbeiter.ResumeLayout(false);
             this.MverDetailMitarbeiter.PerformLayout();
+            this.mitBestätigungLöschen.ResumeLayout(false);
+            this.mitBestätigungLöschen.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -470,5 +522,9 @@
         private System.Windows.Forms.TextBox tBoxMitPw;
         private System.Windows.Forms.Button butMitPwAnzeigen;
         private System.Windows.Forms.LinkLabel herfMitPwÄndern;
+        private System.Windows.Forms.LinkLabel herfMitLöschen;
+        private System.Windows.Forms.Panel mitBestätigungLöschen;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button butMitbestätigen;
     }
 }

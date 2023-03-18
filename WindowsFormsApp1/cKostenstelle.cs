@@ -14,6 +14,7 @@ namespace WindowsFormsApp1
 
         public long? Kst_ID { get; set; } = null;
         public string Kst_Bez { get; set; }
+        public bool Kst_Geloescht { get; set; }
 
         public string KostenstelleListe => Kst_ID + ": " + Kst_Bez;
 
@@ -54,7 +55,7 @@ namespace WindowsFormsApp1
             }
             else
             {
-                string sql = "INSERT INTO kostenstelle (Kst_Bez) VALUES (@Kst_Bez)";
+                string sql = "INSERT INTO kostenstelle (Kst_Bez, Kst_Geloescht) VALUES (@Kst_Bez, @Kst_Geloescht)";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 this.WerteSpeichern(cmd);
                 cmd.ExecuteNonQuery();
@@ -63,27 +64,34 @@ namespace WindowsFormsApp1
             }
             conn.Close();
             return;
+        }
 
+        public void KostenstelleLöschen()
+        {
+            MySqlConnection conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["localsql"].ConnectionString);
 
-            /*
-            //Connection String für SqlGuru
-            string connectionString = "server=dedi1778.your-server.de;user=sqlguru_5;database=sqlguru_db5;port=3306;password=t5Z3s4Z7uqig2bwJ";
-            MySqlConnection conn = new MySqlConnection(connectionString);
+            conn.Open();
 
             try
             {
-                conn.Open();
-                Console.WriteLine("Conn Open");
+                string sql = "DELETE FROM kostenstelle WHERE Kst_ID = @Kst_ID";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                this.WerteSpeichern(cmd);
+                cmd.ExecuteNonQuery();
+                Console.WriteLine("Kostenstelle wird Gelöscht");
             }
             catch (Exception ex)
             {
-                Console.WriteLine("not open" + ex.Message);
+                Console.WriteLine(ex);
             }
-            */
+
+            conn.Close();
+            return;
         }
 
         public void WerteSpeichern(MySqlCommand cmd)
         {
+            cmd.Parameters.AddWithValue("@Kst_Geloescht", this.Kst_Geloescht);
             cmd.Parameters.AddWithValue("@Kst_Bez", this.Kst_Bez);
             cmd.Parameters.AddWithValue("@Kst_ID", this.Kst_ID);
         }

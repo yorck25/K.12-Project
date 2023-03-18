@@ -16,6 +16,7 @@ namespace WindowsFormsApp1
         public long? Abt_ID { get; set; } = null;
         public string Abt_Bez { get; set; }
         public int Abt_Kst_ID { get; set; }
+        public bool Abt_Geloescht { get; set; }
 
         public string AbteilungsListe => Abt_ID + ": " + Abt_Bez;
 
@@ -77,7 +78,7 @@ namespace WindowsFormsApp1
             }
             else
             {
-                string sql = "INSERT INTO abteilung (Abt_Bez, Abt_KST_ID) VALUES (@Abt_Bez, @Abt_KST_ID)";
+                string sql = "INSERT INTO abteilung (Abt_Bez, Abt_KST_ID, Abt_Geloescht) VALUES (@Abt_Bez, @Abt_KST_ID, @Abt_Geloescht)";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 this.AbteilungSpeichern(cmd);
                 cmd.ExecuteNonQuery();
@@ -86,27 +87,34 @@ namespace WindowsFormsApp1
             }
             conn.Close();
             return;
+        }
 
+        public void AbteilungLöschen()
+        {
+            MySqlConnection conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["localsql"].ConnectionString);
 
-            /*
-            //Connection String für SqlGuru
-            string connectionString = "server=dedi1778.your-server.de;user=sqlguru_5;database=sqlguru_db5;port=3306;password=t5Z3s4Z7uqig2bwJ";
-            MySqlConnection conn = new MySqlConnection(connectionString);
+            conn.Open();
 
             try
             {
-                conn.Open();
-                Console.WriteLine("Conn Open");
+                string sql = "DELETE FROM abteilung WHERE Abt_ID = @Abt_ID";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                this.AbteilungSpeichern(cmd);
+                cmd.ExecuteNonQuery();
+                Console.WriteLine("Abteilung wird Gelöscht");
             }
             catch (Exception ex)
             {
-                Console.WriteLine("not open" + ex.Message);
+                Console.WriteLine(ex);
             }
-            */
+
+            conn.Close();
+            return;
         }
 
         public void AbteilungSpeichern(MySqlCommand cmd)
         {
+            cmd.Parameters.AddWithValue("@Abt_Geloescht", this.Abt_Geloescht);
             cmd.Parameters.AddWithValue("@Abt_Bez", this.Abt_Bez);
             cmd.Parameters.AddWithValue("@Abt_ID", this.Abt_ID);
             cmd.Parameters.AddWithValue("@Abt_Kst_ID", this.Abt_Kst_ID);

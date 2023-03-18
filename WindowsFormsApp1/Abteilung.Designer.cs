@@ -42,8 +42,12 @@
             this.AbtDetail = new System.Windows.Forms.Panel();
             this.herfAbtKst = new System.Windows.Forms.LinkLabel();
             this.herfAbtNeu = new System.Windows.Forms.LinkLabel();
+            this.abtBestätigungLöschen = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.butAbtbestätigen = new System.Windows.Forms.Button();
             this.AbtMitProAbt.SuspendLayout();
             this.AbtDetail.SuspendLayout();
+            this.abtBestätigungLöschen.SuspendLayout();
             this.SuspendLayout();
             // 
             // lBoxAbt
@@ -103,6 +107,7 @@
             this.herfAbtLöschen.TabIndex = 6;
             this.herfAbtLöschen.TabStop = true;
             this.herfAbtLöschen.Text = "Abteilung Löschen...";
+            this.herfAbtLöschen.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.herfAbtLöschen_LinkClicked);
             // 
             // AbtMitProAbt
             // 
@@ -166,9 +171,9 @@
             this.AbtDetail.Controls.Add(this.label2);
             this.AbtDetail.Controls.Add(this.label1);
             this.AbtDetail.Controls.Add(this.tBoxAbtBez);
-            this.AbtDetail.Location = new System.Drawing.Point(151, 12);
+            this.AbtDetail.Location = new System.Drawing.Point(174, 12);
             this.AbtDetail.Name = "AbtDetail";
-            this.AbtDetail.Size = new System.Drawing.Size(413, 329);
+            this.AbtDetail.Size = new System.Drawing.Size(390, 234);
             this.AbtDetail.TabIndex = 10;
             this.AbtDetail.Visible = false;
             // 
@@ -196,11 +201,43 @@
             this.herfAbtNeu.Text = "Neu Abteilung...";
             this.herfAbtNeu.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.herfAbtNeu_LinkClicked);
             // 
+            // abtBestätigungLöschen
+            // 
+            this.abtBestätigungLöschen.BackColor = System.Drawing.Color.Gray;
+            this.abtBestätigungLöschen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.abtBestätigungLöschen.Controls.Add(this.label4);
+            this.abtBestätigungLöschen.Controls.Add(this.butAbtbestätigen);
+            this.abtBestätigungLöschen.Location = new System.Drawing.Point(151, 123);
+            this.abtBestätigungLöschen.Name = "abtBestätigungLöschen";
+            this.abtBestätigungLöschen.Size = new System.Drawing.Size(200, 100);
+            this.abtBestätigungLöschen.TabIndex = 11;
+            this.abtBestätigungLöschen.Visible = false;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(15, 18);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(182, 13);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Die Ausgewählte Rolle wird gelösche";
+            // 
+            // butAbtbestätigen
+            // 
+            this.butAbtbestätigen.Location = new System.Drawing.Point(59, 47);
+            this.butAbtbestätigen.Name = "butAbtbestätigen";
+            this.butAbtbestätigen.Size = new System.Drawing.Size(75, 23);
+            this.butAbtbestätigen.TabIndex = 0;
+            this.butAbtbestätigen.Text = "Bestätigen";
+            this.butAbtbestätigen.UseVisualStyleBackColor = true;
+            this.butAbtbestätigen.Click += new System.EventHandler(this.butAbtbestätigen_Click);
+            // 
             // Abteilung
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(560, 363);
+            this.Controls.Add(this.abtBestätigungLöschen);
             this.Controls.Add(this.herfAbtNeu);
             this.Controls.Add(this.AbtDetail);
             this.Controls.Add(this.herfAbtLöschen);
@@ -212,6 +249,8 @@
             this.AbtMitProAbt.PerformLayout();
             this.AbtDetail.ResumeLayout(false);
             this.AbtDetail.PerformLayout();
+            this.abtBestätigungLöschen.ResumeLayout(false);
+            this.abtBestätigungLöschen.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -233,5 +272,8 @@
         private System.Windows.Forms.Panel AbtDetail;
         private System.Windows.Forms.LinkLabel herfAbtKst;
         private System.Windows.Forms.LinkLabel herfAbtNeu;
+        private System.Windows.Forms.Panel abtBestätigungLöschen;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button butAbtbestätigen;
     }
 }

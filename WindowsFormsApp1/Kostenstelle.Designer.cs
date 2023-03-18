@@ -40,8 +40,12 @@
             this.herfKstLöschen = new System.Windows.Forms.LinkLabel();
             this.lBoxKst = new System.Windows.Forms.ListBox();
             this.herfKstNew = new System.Windows.Forms.LinkLabel();
+            this.KstBestätigungLöschen = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.butKstbestätigen = new System.Windows.Forms.Button();
             this.KstDetail.SuspendLayout();
             this.AbtMitProAbt.SuspendLayout();
+            this.KstBestätigungLöschen.SuspendLayout();
             this.SuspendLayout();
             // 
             // KstDetail
@@ -144,13 +148,14 @@
             // 
             this.herfKstLöschen.AutoSize = true;
             this.herfKstLöschen.LinkColor = System.Drawing.SystemColors.Highlight;
-            this.herfKstLöschen.Location = new System.Drawing.Point(28, 332);
+            this.herfKstLöschen.Location = new System.Drawing.Point(15, 332);
             this.herfKstLöschen.Name = "herfKstLöschen";
             this.herfKstLöschen.Size = new System.Drawing.Size(117, 13);
             this.herfKstLöschen.TabIndex = 12;
             this.herfKstLöschen.TabStop = true;
             this.herfKstLöschen.Text = "Kostenstelle Löschen...";
             this.herfKstLöschen.Visible = false;
+            this.herfKstLöschen.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.herfKstLöschen_LinkClicked);
             // 
             // lBoxKst
             // 
@@ -176,11 +181,43 @@
             this.herfKstNew.Text = "Neu Kostenstelle...";
             this.herfKstNew.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.herfKstNew_LinkClicked);
             // 
+            // KstBestätigungLöschen
+            // 
+            this.KstBestätigungLöschen.BackColor = System.Drawing.Color.Gray;
+            this.KstBestätigungLöschen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.KstBestätigungLöschen.Controls.Add(this.label2);
+            this.KstBestätigungLöschen.Controls.Add(this.butKstbestätigen);
+            this.KstBestätigungLöschen.Location = new System.Drawing.Point(194, 132);
+            this.KstBestätigungLöschen.Name = "KstBestätigungLöschen";
+            this.KstBestätigungLöschen.Size = new System.Drawing.Size(200, 100);
+            this.KstBestätigungLöschen.TabIndex = 15;
+            this.KstBestätigungLöschen.Visible = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(15, 18);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(182, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Die Ausgewählte Rolle wird gelösche";
+            // 
+            // butKstbestätigen
+            // 
+            this.butKstbestätigen.Location = new System.Drawing.Point(59, 47);
+            this.butKstbestätigen.Name = "butKstbestätigen";
+            this.butKstbestätigen.Size = new System.Drawing.Size(75, 23);
+            this.butKstbestätigen.TabIndex = 0;
+            this.butKstbestätigen.Text = "Bestätigen";
+            this.butKstbestätigen.UseVisualStyleBackColor = true;
+            this.butKstbestätigen.Click += new System.EventHandler(this.butKstbestätigen_Click);
+            // 
             // Kostenstelle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(596, 367);
+            this.Controls.Add(this.KstBestätigungLöschen);
             this.Controls.Add(this.herfKstNew);
             this.Controls.Add(this.KstDetail);
             this.Controls.Add(this.AbtMitProAbt);
@@ -193,6 +230,8 @@
             this.KstDetail.PerformLayout();
             this.AbtMitProAbt.ResumeLayout(false);
             this.AbtMitProAbt.PerformLayout();
+            this.KstBestätigungLöschen.ResumeLayout(false);
+            this.KstBestätigungLöschen.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -212,5 +251,8 @@
         private System.Windows.Forms.Button butKstSpeichern;
         private System.Windows.Forms.LinkLabel herfKstNew;
         private System.Windows.Forms.Label KstFehlereingabe;
+        private System.Windows.Forms.Panel KstBestätigungLöschen;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button butKstbestätigen;
     }
 }

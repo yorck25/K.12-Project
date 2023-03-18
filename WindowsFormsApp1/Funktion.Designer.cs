@@ -39,8 +39,12 @@
             this.tBoxFBez = new System.Windows.Forms.TextBox();
             this.herfFLöschen = new System.Windows.Forms.LinkLabel();
             this.lBoxF = new System.Windows.Forms.ListBox();
+            this.fBestätigungLöschen = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.butRbestätigen = new System.Windows.Forms.Button();
             this.FDetail.SuspendLayout();
             this.FMitProAbt.SuspendLayout();
+            this.fBestätigungLöschen.SuspendLayout();
             this.SuspendLayout();
             // 
             // herfFNeue
@@ -61,9 +65,9 @@
             this.FDetail.Controls.Add(this.FMitProAbt);
             this.FDetail.Controls.Add(this.label1);
             this.FDetail.Controls.Add(this.tBoxFBez);
-            this.FDetail.Location = new System.Drawing.Point(138, 7);
+            this.FDetail.Location = new System.Drawing.Point(162, 9);
             this.FDetail.Name = "FDetail";
-            this.FDetail.Size = new System.Drawing.Size(413, 329);
+            this.FDetail.Size = new System.Drawing.Size(365, 244);
             this.FDetail.TabIndex = 18;
             this.FDetail.Visible = false;
             // 
@@ -144,6 +148,7 @@
             this.herfFLöschen.TabIndex = 17;
             this.herfFLöschen.TabStop = true;
             this.herfFLöschen.Text = "Funktion Löschen...";
+            this.herfFLöschen.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.herfFLöschen_LinkClicked);
             // 
             // lBoxF
             // 
@@ -157,11 +162,43 @@
             this.lBoxF.TabIndex = 16;
             this.lBoxF.SelectedIndexChanged += new System.EventHandler(this.lBoxF_SelectedIndexChanged);
             // 
+            // fBestätigungLöschen
+            // 
+            this.fBestätigungLöschen.BackColor = System.Drawing.Color.Gray;
+            this.fBestätigungLöschen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.fBestätigungLöschen.Controls.Add(this.label2);
+            this.fBestätigungLöschen.Controls.Add(this.butRbestätigen);
+            this.fBestätigungLöschen.Location = new System.Drawing.Point(138, 136);
+            this.fBestätigungLöschen.Name = "fBestätigungLöschen";
+            this.fBestätigungLöschen.Size = new System.Drawing.Size(200, 100);
+            this.fBestätigungLöschen.TabIndex = 20;
+            this.fBestätigungLöschen.Visible = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(15, 18);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(182, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Die Ausgewählte Rolle wird gelösche";
+            // 
+            // butRbestätigen
+            // 
+            this.butRbestätigen.Location = new System.Drawing.Point(59, 47);
+            this.butRbestätigen.Name = "butRbestätigen";
+            this.butRbestätigen.Size = new System.Drawing.Size(75, 23);
+            this.butRbestätigen.TabIndex = 0;
+            this.butRbestätigen.Text = "Bestätigen";
+            this.butRbestätigen.UseVisualStyleBackColor = true;
+            this.butRbestätigen.Click += new System.EventHandler(this.butRbestätigen_Click);
+            // 
             // Funktion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(623, 380);
+            this.Controls.Add(this.fBestätigungLöschen);
             this.Controls.Add(this.herfFNeue);
             this.Controls.Add(this.FDetail);
             this.Controls.Add(this.herfFLöschen);
@@ -173,6 +210,8 @@
             this.FDetail.PerformLayout();
             this.FMitProAbt.ResumeLayout(false);
             this.FMitProAbt.PerformLayout();
+            this.fBestätigungLöschen.ResumeLayout(false);
+            this.fBestätigungLöschen.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -191,5 +230,8 @@
         private System.Windows.Forms.TextBox tBoxFBez;
         private System.Windows.Forms.LinkLabel herfFLöschen;
         private System.Windows.Forms.ListBox lBoxF;
+        private System.Windows.Forms.Panel fBestätigungLöschen;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button butRbestätigen;
     }
 }
