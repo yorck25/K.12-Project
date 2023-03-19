@@ -65,6 +65,29 @@ namespace WindowsFormsApp1
             return;
         }
 
+        public void EinheitLöschen()
+        {
+            MySqlConnection conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["localsql"].ConnectionString);
+
+            conn.Open();
+
+            try
+            {
+                string sql = "DELETE FROM einheit WHERE Ein_ID = @Ein_ID";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                this.EinheitWerteSpeichern(cmd);
+                cmd.ExecuteNonQuery();
+                Console.WriteLine("Einheit wird Gelöscht");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+
+            conn.Close();
+            return;
+        }
+
         public void EinheitWerteSpeichern(MySqlCommand cmd)
         {
             cmd.Parameters.AddWithValue("@Ein_Bez", this.Ein_Bez);

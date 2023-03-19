@@ -23,7 +23,7 @@ namespace WindowsFormsApp1
 
         private void herfLLöschen_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            lBestätigungLöschen.Visible = true;
         }
 
         private void herfLNeu_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -145,6 +145,21 @@ namespace WindowsFormsApp1
         private void Lieferant_Load(object sender, EventArgs e)
         {
             LieferantenListeLaden(true);
+        }
+
+        private void butLbestätigen_Click(object sender, EventArgs e)
+        {
+            l = (cLieferant)lBoxLieferant.SelectedItem;
+            if (l != null)
+            {
+                l.LieferantLöschen();
+                lBestätigungLöschen.Visible = false;
+                LieferantenListeLaden(true);
+            }
+            else
+            {
+                return;
+            }
         }
     }
 }

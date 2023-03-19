@@ -158,5 +158,25 @@ namespace WindowsFormsApp1
         {
 
         }
+
+        private void herfArtLöschen_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            artBestätigungLöschen.Visible = true;
+        }
+
+        private void butArtbestätigen_Click(object sender, EventArgs e)
+        {
+            art = (cArtikel)lBoxArt.SelectedItem;
+            if (art != null)
+            {
+                art.ArtikelLöschen();
+                artBestätigungLöschen.Visible = false;
+                cBoxenLaden(true);
+            }
+            else
+            {
+                return;
+            }
+        }
     }
 }

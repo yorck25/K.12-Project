@@ -52,7 +52,11 @@
             this.label4 = new System.Windows.Forms.Label();
             this.butArtErstellen = new System.Windows.Forms.Button();
             this.herfArtLöschen = new System.Windows.Forms.LinkLabel();
+            this.artBestätigungLöschen = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.butArtbestätigen = new System.Windows.Forms.Button();
             this.AbtneueAbteilung.SuspendLayout();
+            this.artBestätigungLöschen.SuspendLayout();
             this.SuspendLayout();
             // 
             // lBoxArt
@@ -302,21 +306,56 @@
             this.herfArtLöschen.TabIndex = 10;
             this.herfArtLöschen.TabStop = true;
             this.herfArtLöschen.Text = "Artiekl löschen...";
+            this.herfArtLöschen.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.herfArtLöschen_LinkClicked);
+            // 
+            // artBestätigungLöschen
+            // 
+            this.artBestätigungLöschen.BackColor = System.Drawing.Color.Gray;
+            this.artBestätigungLöschen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.artBestätigungLöschen.Controls.Add(this.label9);
+            this.artBestätigungLöschen.Controls.Add(this.butArtbestätigen);
+            this.artBestätigungLöschen.Location = new System.Drawing.Point(161, 78);
+            this.artBestätigungLöschen.Name = "artBestätigungLöschen";
+            this.artBestätigungLöschen.Size = new System.Drawing.Size(200, 100);
+            this.artBestätigungLöschen.TabIndex = 11;
+            this.artBestätigungLöschen.Visible = false;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(15, 18);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(182, 13);
+            this.label9.TabIndex = 1;
+            this.label9.Text = "Die Ausgewählte Rolle wird gelösche";
+            // 
+            // butArtbestätigen
+            // 
+            this.butArtbestätigen.Location = new System.Drawing.Point(59, 47);
+            this.butArtbestätigen.Name = "butArtbestätigen";
+            this.butArtbestätigen.Size = new System.Drawing.Size(75, 23);
+            this.butArtbestätigen.TabIndex = 0;
+            this.butArtbestätigen.Text = "Bestätigen";
+            this.butArtbestätigen.UseVisualStyleBackColor = true;
+            this.butArtbestätigen.Click += new System.EventHandler(this.butArtbestätigen_Click);
             // 
             // Artikel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(525, 354);
+            this.Controls.Add(this.artBestätigungLöschen);
             this.Controls.Add(this.herfArtLöschen);
-            this.Controls.Add(this.AbtneueAbteilung);
             this.Controls.Add(this.herfArtNeu);
             this.Controls.Add(this.lBoxArt);
+            this.Controls.Add(this.AbtneueAbteilung);
             this.Name = "Artikel";
             this.Text = "Artikel";
             this.Load += new System.EventHandler(this.Artikel_Load);
             this.AbtneueAbteilung.ResumeLayout(false);
             this.AbtneueAbteilung.PerformLayout();
+            this.artBestätigungLöschen.ResumeLayout(false);
+            this.artBestätigungLöschen.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -348,5 +387,8 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox cBoxArtLager;
         private System.Windows.Forms.ComboBox cBoxArtL;
+        private System.Windows.Forms.Panel artBestätigungLöschen;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button butArtbestätigen;
     }
 }

@@ -97,5 +97,27 @@ namespace WindowsFormsApp1
             }
 
         }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            einBestätigungLöschen.Visible = true;
+        }
+
+        private void butEinbestätigen_Click(object sender, EventArgs e)
+        {
+
+            ein = (cEinheit)lBoxEinheit.SelectedItem;
+            if (ein != null)
+            {
+                ein.EinheitLöschen();
+                EinheitListeLaden(true);
+                tBoxEinBez.Clear();
+                einBestätigungLöschen.Visible = false;
+            }
+            else
+            {
+                return;
+            }
+        }
     }
 }

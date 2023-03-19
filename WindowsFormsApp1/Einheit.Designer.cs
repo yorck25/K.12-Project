@@ -30,12 +30,16 @@
         {
             this.lBoxEinheit = new System.Windows.Forms.ListBox();
             this.herfEinNeu = new System.Windows.Forms.LinkLabel();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.herfEinLöschen = new System.Windows.Forms.LinkLabel();
             this.tBoxEinBez = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.butEinErstellen = new System.Windows.Forms.Button();
             this.EinDetail = new System.Windows.Forms.Panel();
+            this.einBestätigungLöschen = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.butEinbestätigen = new System.Windows.Forms.Button();
             this.EinDetail.SuspendLayout();
+            this.einBestätigungLöschen.SuspendLayout();
             this.SuspendLayout();
             // 
             // lBoxEinheit
@@ -68,16 +72,17 @@
             this.herfEinNeu.Text = "Neue Einheit...";
             this.herfEinNeu.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.herfEinNeu_LinkClicked);
             // 
-            // linkLabel1
+            // herfEinLöschen
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.LinkColor = System.Drawing.SystemColors.Highlight;
-            this.linkLabel1.Location = new System.Drawing.Point(45, 241);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(88, 13);
-            this.linkLabel1.TabIndex = 2;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Einheit löschen...";
+            this.herfEinLöschen.AutoSize = true;
+            this.herfEinLöschen.LinkColor = System.Drawing.SystemColors.Highlight;
+            this.herfEinLöschen.Location = new System.Drawing.Point(45, 241);
+            this.herfEinLöschen.Name = "herfEinLöschen";
+            this.herfEinLöschen.Size = new System.Drawing.Size(88, 13);
+            this.herfEinLöschen.TabIndex = 2;
+            this.herfEinLöschen.TabStop = true;
+            this.herfEinLöschen.Text = "Einheit löschen...";
+            this.herfEinLöschen.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // tBoxEinBez
             // 
@@ -116,13 +121,45 @@
             this.EinDetail.TabIndex = 7;
             this.EinDetail.Visible = false;
             // 
+            // einBestätigungLöschen
+            // 
+            this.einBestätigungLöschen.BackColor = System.Drawing.Color.Gray;
+            this.einBestätigungLöschen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.einBestätigungLöschen.Controls.Add(this.label2);
+            this.einBestätigungLöschen.Controls.Add(this.butEinbestätigen);
+            this.einBestätigungLöschen.Location = new System.Drawing.Point(139, 121);
+            this.einBestätigungLöschen.Name = "einBestätigungLöschen";
+            this.einBestätigungLöschen.Size = new System.Drawing.Size(200, 100);
+            this.einBestätigungLöschen.TabIndex = 11;
+            this.einBestätigungLöschen.Visible = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(15, 18);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(182, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Die Ausgewählte Rolle wird gelösche";
+            // 
+            // butEinbestätigen
+            // 
+            this.butEinbestätigen.Location = new System.Drawing.Point(59, 47);
+            this.butEinbestätigen.Name = "butEinbestätigen";
+            this.butEinbestätigen.Size = new System.Drawing.Size(75, 23);
+            this.butEinbestätigen.TabIndex = 0;
+            this.butEinbestätigen.Text = "Bestätigen";
+            this.butEinbestätigen.UseVisualStyleBackColor = true;
+            this.butEinbestätigen.Click += new System.EventHandler(this.butEinbestätigen_Click);
+            // 
             // Einheit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(414, 263);
+            this.Controls.Add(this.einBestätigungLöschen);
             this.Controls.Add(this.EinDetail);
-            this.Controls.Add(this.linkLabel1);
+            this.Controls.Add(this.herfEinLöschen);
             this.Controls.Add(this.herfEinNeu);
             this.Controls.Add(this.lBoxEinheit);
             this.Name = "Einheit";
@@ -130,6 +167,8 @@
             this.Load += new System.EventHandler(this.Einheit_Load);
             this.EinDetail.ResumeLayout(false);
             this.EinDetail.PerformLayout();
+            this.einBestätigungLöschen.ResumeLayout(false);
+            this.einBestätigungLöschen.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -139,10 +178,13 @@
 
         private System.Windows.Forms.ListBox lBoxEinheit;
         private System.Windows.Forms.LinkLabel herfEinNeu;
-        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.LinkLabel herfEinLöschen;
         private System.Windows.Forms.TextBox tBoxEinBez;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button butEinErstellen;
         internal System.Windows.Forms.Panel EinDetail;
+        private System.Windows.Forms.Panel einBestätigungLöschen;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button butEinbestätigen;
     }
 }

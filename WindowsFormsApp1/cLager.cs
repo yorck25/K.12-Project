@@ -71,6 +71,29 @@ namespace WindowsFormsApp1
             return;
         }
 
+        public void LagerLöschen()
+        {
+            MySqlConnection conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["localsql"].ConnectionString);
+
+            conn.Open();
+
+            try
+            {
+                string sql = "DELETE FROM lagerverwaltung WHERE LVW_ID = @LVW_ID";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                this.LagerWerteSpeichern(cmd);
+                cmd.ExecuteNonQuery();
+                Console.WriteLine("Lager wird Gelöscht");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+
+            conn.Close();
+            return;
+        }
+
         public void LagerWerteSpeichern(MySqlCommand cmd)
         {
             cmd.Parameters.AddWithValue("@LVW_Bez", this.LVW_Bez);

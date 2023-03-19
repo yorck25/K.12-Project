@@ -38,10 +38,14 @@
             this.tBoxLVWOrt = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tBoxLVWBez = new System.Windows.Forms.TextBox();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.herfLvwLöschen = new System.Windows.Forms.LinkLabel();
             this.herfLVWNeu = new System.Windows.Forms.LinkLabel();
             this.lBoxLagerort = new System.Windows.Forms.ListBox();
+            this.lvwBestätigungLöschen = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.butLvwbestätigen = new System.Windows.Forms.Button();
             this.LVWDetail.SuspendLayout();
+            this.lvwBestätigungLöschen.SuspendLayout();
             this.SuspendLayout();
             // 
             // LVWDetail
@@ -55,9 +59,9 @@
             this.LVWDetail.Controls.Add(this.tBoxLVWOrt);
             this.LVWDetail.Controls.Add(this.label1);
             this.LVWDetail.Controls.Add(this.tBoxLVWBez);
-            this.LVWDetail.Location = new System.Drawing.Point(138, 28);
+            this.LVWDetail.Location = new System.Drawing.Point(360, 29);
             this.LVWDetail.Name = "LVWDetail";
-            this.LVWDetail.Size = new System.Drawing.Size(247, 213);
+            this.LVWDetail.Size = new System.Drawing.Size(136, 213);
             this.LVWDetail.TabIndex = 11;
             this.LVWDetail.Visible = false;
             // 
@@ -135,16 +139,17 @@
             this.tBoxLVWBez.Size = new System.Drawing.Size(116, 20);
             this.tBoxLVWBez.TabIndex = 3;
             // 
-            // linkLabel1
+            // herfLvwLöschen
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.LinkColor = System.Drawing.SystemColors.Highlight;
-            this.linkLabel1.Location = new System.Drawing.Point(33, 244);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(99, 13);
-            this.linkLabel1.TabIndex = 10;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Lagerort Löschen...";
+            this.herfLvwLöschen.AutoSize = true;
+            this.herfLvwLöschen.LinkColor = System.Drawing.SystemColors.Highlight;
+            this.herfLvwLöschen.Location = new System.Drawing.Point(33, 244);
+            this.herfLvwLöschen.Name = "herfLvwLöschen";
+            this.herfLvwLöschen.Size = new System.Drawing.Size(99, 13);
+            this.herfLvwLöschen.TabIndex = 10;
+            this.herfLvwLöschen.TabStop = true;
+            this.herfLvwLöschen.Text = "Lagerort Löschen...";
+            this.herfLvwLöschen.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.herfLvwLöschen_LinkClicked);
             // 
             // herfLVWNeu
             // 
@@ -176,13 +181,45 @@
             this.lBoxLagerort.TabIndex = 8;
             this.lBoxLagerort.SelectedIndexChanged += new System.EventHandler(this.lBoxLagerort_SelectedIndexChanged);
             // 
+            // lvwBestätigungLöschen
+            // 
+            this.lvwBestätigungLöschen.BackColor = System.Drawing.Color.Gray;
+            this.lvwBestätigungLöschen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lvwBestätigungLöschen.Controls.Add(this.label5);
+            this.lvwBestätigungLöschen.Controls.Add(this.butLvwbestätigen);
+            this.lvwBestätigungLöschen.Location = new System.Drawing.Point(138, 81);
+            this.lvwBestätigungLöschen.Name = "lvwBestätigungLöschen";
+            this.lvwBestätigungLöschen.Size = new System.Drawing.Size(200, 100);
+            this.lvwBestätigungLöschen.TabIndex = 11;
+            this.lvwBestätigungLöschen.Visible = false;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(15, 18);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(182, 13);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "Die Ausgewählte Rolle wird gelösche";
+            // 
+            // butLvwbestätigen
+            // 
+            this.butLvwbestätigen.Location = new System.Drawing.Point(59, 47);
+            this.butLvwbestätigen.Name = "butLvwbestätigen";
+            this.butLvwbestätigen.Size = new System.Drawing.Size(75, 23);
+            this.butLvwbestätigen.TabIndex = 0;
+            this.butLvwbestätigen.Text = "Bestätigen";
+            this.butLvwbestätigen.UseVisualStyleBackColor = true;
+            this.butLvwbestätigen.Click += new System.EventHandler(this.butLvwbestätigen_Click);
+            // 
             // Lager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(658, 396);
+            this.Controls.Add(this.lvwBestätigungLöschen);
             this.Controls.Add(this.LVWDetail);
-            this.Controls.Add(this.linkLabel1);
+            this.Controls.Add(this.herfLvwLöschen);
             this.Controls.Add(this.herfLVWNeu);
             this.Controls.Add(this.lBoxLagerort);
             this.Name = "Lager";
@@ -190,6 +227,8 @@
             this.Load += new System.EventHandler(this.Lager_Load);
             this.LVWDetail.ResumeLayout(false);
             this.LVWDetail.PerformLayout();
+            this.lvwBestätigungLöschen.ResumeLayout(false);
+            this.lvwBestätigungLöschen.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -207,8 +246,11 @@
         private System.Windows.Forms.TextBox tBoxLVWOrt;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tBoxLVWBez;
-        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.LinkLabel herfLvwLöschen;
         private System.Windows.Forms.LinkLabel herfLVWNeu;
         private System.Windows.Forms.ListBox lBoxLagerort;
+        private System.Windows.Forms.Panel lvwBestätigungLöschen;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button butLvwbestätigen;
     }
 }

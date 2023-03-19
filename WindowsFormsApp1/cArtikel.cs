@@ -83,6 +83,29 @@ namespace WindowsFormsApp1
             return;
         }
 
+        public void ArtikelLöschen()
+        {
+            MySqlConnection conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["localsql"].ConnectionString);
+
+            conn.Open();
+
+            try
+            {
+                string sql = "DELETE FROM artikel WHERE Art_ID = @Art_ID";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                this.ArtikelWerteSpeichern(cmd);
+                cmd.ExecuteNonQuery();
+                Console.WriteLine("Artikel wird Gelöscht");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+
+            conn.Close();
+            return;
+        }
+
         public void ArtikelWerteSpeichern(MySqlCommand cmd)
         {
             cmd.Parameters.AddWithValue("@Art_ID", this.Art_ID);

@@ -91,8 +91,29 @@ namespace WindowsFormsApp1
                 conn.Close();
                 return;               
             }
+        }
 
+        public void LieferantLöschen()
+        {
+            MySqlConnection conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["localsql"].ConnectionString);
 
+            conn.Open();
+
+            try
+            {
+                string sql = "DELETE FROM lieferanten WHERE L_ID = @L_ID";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                this.LieferantWerteSpeichern(cmd);
+                cmd.ExecuteNonQuery();
+                Console.WriteLine("Lieferant wird Gelöscht");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+
+            conn.Close();
+            return;
         }
 
         public void LieferantWerteSpeichern(MySqlCommand cmd)

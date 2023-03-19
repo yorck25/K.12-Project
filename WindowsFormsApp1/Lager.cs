@@ -105,5 +105,26 @@ namespace WindowsFormsApp1
                 return;
             }
         }
+
+        private void herfLvwLöschen_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            lvwBestätigungLöschen.Visible = true;
+        }
+
+        private void butLvwbestätigen_Click(object sender, EventArgs e)
+        {
+            lvw = (cLager)lBoxLagerort.SelectedItem;
+            if (lvw != null)
+            {
+
+                lvw.LagerLöschen();
+                lvwBestätigungLöschen.Visible = false;
+                LagerListeLaden(true);
+            }
+            else
+            {
+                return;
+            }
+        }
     }
 }
