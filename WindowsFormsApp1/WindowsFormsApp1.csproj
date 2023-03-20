@@ -328,5 +328,12 @@
   <ItemGroup>
     <None Include="Resources\info.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\benutzer %281%29.png" />
+    <None Include="Resources\umschlag-offener-text.png" />
+    <None Include="Resources\menu-burger %281%29.png" />
+    <None Include="Resources\benutzer %282%29.png" />
+    <None Include="Resources\benutzer %281%291.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

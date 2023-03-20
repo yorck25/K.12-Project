@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.lDetail = new System.Windows.Forms.Panel();
+            this.tBoxLiban = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
             this.butLErstellen = new System.Windows.Forms.Button();
             this.tBoxLNotiz = new System.Windows.Forms.RichTextBox();
             this.tBoxLPartner = new System.Windows.Forms.TextBox();
@@ -65,8 +67,7 @@
             this.lBestätigungLöschen = new System.Windows.Forms.Panel();
             this.label16 = new System.Windows.Forms.Label();
             this.butLbestätigen = new System.Windows.Forms.Button();
-            this.label17 = new System.Windows.Forms.Label();
-            this.tBoxLiban = new System.Windows.Forms.TextBox();
+            this.lBoxArtproL = new System.Windows.Forms.ListBox();
             this.lDetail.SuspendLayout();
             this.lBestätigungLöschen.SuspendLayout();
             this.SuspendLayout();
@@ -110,6 +111,22 @@
             this.lDetail.Size = new System.Drawing.Size(324, 438);
             this.lDetail.TabIndex = 3;
             this.lDetail.Visible = false;
+            // 
+            // tBoxLiban
+            // 
+            this.tBoxLiban.Location = new System.Drawing.Point(174, 282);
+            this.tBoxLiban.Name = "tBoxLiban";
+            this.tBoxLiban.Size = new System.Drawing.Size(125, 20);
+            this.tBoxLiban.TabIndex = 104;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(171, 263);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(35, 13);
+            this.label17.TabIndex = 103;
+            this.label17.Text = "IBAN:";
             // 
             // butLErstellen
             // 
@@ -422,27 +439,20 @@
             this.butLbestätigen.UseVisualStyleBackColor = true;
             this.butLbestätigen.Click += new System.EventHandler(this.butLbestätigen_Click);
             // 
-            // label17
+            // lBoxArtproL
             // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(171, 263);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(35, 13);
-            this.label17.TabIndex = 103;
-            this.label17.Text = "IBAN:";
-            // 
-            // tBoxLiban
-            // 
-            this.tBoxLiban.Location = new System.Drawing.Point(174, 282);
-            this.tBoxLiban.Name = "tBoxLiban";
-            this.tBoxLiban.Size = new System.Drawing.Size(125, 20);
-            this.tBoxLiban.TabIndex = 104;
+            this.lBoxArtproL.FormattingEnabled = true;
+            this.lBoxArtproL.Location = new System.Drawing.Point(512, 52);
+            this.lBoxArtproL.Name = "lBoxArtproL";
+            this.lBoxArtproL.Size = new System.Drawing.Size(120, 95);
+            this.lBoxArtproL.TabIndex = 12;
             // 
             // Lieferant
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(667, 501);
+            this.ClientSize = new System.Drawing.Size(701, 501);
+            this.Controls.Add(this.lBoxArtproL);
             this.Controls.Add(this.lBestätigungLöschen);
             this.Controls.Add(this.herfLLöschen);
             this.Controls.Add(this.herfLNeu);
@@ -501,5 +511,6 @@
         private System.Windows.Forms.Button butLbestätigen;
         private System.Windows.Forms.TextBox tBoxLiban;
         private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.ListBox lBoxArtproL;
     }
 }

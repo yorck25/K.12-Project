@@ -30,6 +30,7 @@
         {
             this.lBoxMverMitarbeiter = new System.Windows.Forms.ListBox();
             this.MverDetailMitarbeiter = new System.Windows.Forms.Panel();
+            this.herfMitLöschen = new System.Windows.Forms.LinkLabel();
             this.herfMitPwÄndern = new System.Windows.Forms.LinkLabel();
             this.butMitPwAnzeigen = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
@@ -41,8 +42,6 @@
             this.label13 = new System.Windows.Forms.Label();
             this.tBoxMitStraße = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.cBoxMitAbr = new System.Windows.Forms.ComboBox();
             this.cBoxMitFunk = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.cBoxMitRolle = new System.Windows.Forms.ComboBox();
@@ -64,7 +63,6 @@
             this.butMitAbt = new System.Windows.Forms.Button();
             this.butMitRolle = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.herfMitLöschen = new System.Windows.Forms.LinkLabel();
             this.mitBestätigungLöschen = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.butMitbestätigen = new System.Windows.Forms.Button();
@@ -99,8 +97,6 @@
             this.MverDetailMitarbeiter.Controls.Add(this.label13);
             this.MverDetailMitarbeiter.Controls.Add(this.tBoxMitStraße);
             this.MverDetailMitarbeiter.Controls.Add(this.label12);
-            this.MverDetailMitarbeiter.Controls.Add(this.label11);
-            this.MverDetailMitarbeiter.Controls.Add(this.cBoxMitAbr);
             this.MverDetailMitarbeiter.Controls.Add(this.cBoxMitFunk);
             this.MverDetailMitarbeiter.Controls.Add(this.label9);
             this.MverDetailMitarbeiter.Controls.Add(this.cBoxMitRolle);
@@ -125,6 +121,18 @@
             this.MverDetailMitarbeiter.TabIndex = 1;
             this.MverDetailMitarbeiter.Visible = false;
             this.MverDetailMitarbeiter.Paint += new System.Windows.Forms.PaintEventHandler(this.MverDetailMitarbeiter_Paint);
+            // 
+            // herfMitLöschen
+            // 
+            this.herfMitLöschen.AutoSize = true;
+            this.herfMitLöschen.LinkColor = System.Drawing.SystemColors.Highlight;
+            this.herfMitLöschen.Location = new System.Drawing.Point(11, 304);
+            this.herfMitLöschen.Name = "herfMitLöschen";
+            this.herfMitLöschen.Size = new System.Drawing.Size(100, 13);
+            this.herfMitLöschen.TabIndex = 5;
+            this.herfMitLöschen.TabStop = true;
+            this.herfMitLöschen.Text = "Mitarbeiter Löschen";
+            this.herfMitLöschen.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.herfMitLöschen_LinkClicked);
             // 
             // herfMitPwÄndern
             // 
@@ -218,23 +226,6 @@
             this.label12.Size = new System.Drawing.Size(41, 13);
             this.label12.TabIndex = 68;
             this.label12.Text = "Straße:";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(124, 264);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(110, 13);
-            this.label11.TabIndex = 67;
-            this.label11.Text = "Abrechnungsnummer:";
-            // 
-            // cBoxMitAbr
-            // 
-            this.cBoxMitAbr.FormattingEnabled = true;
-            this.cBoxMitAbr.Location = new System.Drawing.Point(127, 281);
-            this.cBoxMitAbr.Name = "cBoxMitAbr";
-            this.cBoxMitAbr.Size = new System.Drawing.Size(100, 21);
-            this.cBoxMitAbr.TabIndex = 66;
             // 
             // cBoxMitFunk
             // 
@@ -419,18 +410,6 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // herfMitLöschen
-            // 
-            this.herfMitLöschen.AutoSize = true;
-            this.herfMitLöschen.LinkColor = System.Drawing.SystemColors.Highlight;
-            this.herfMitLöschen.Location = new System.Drawing.Point(11, 304);
-            this.herfMitLöschen.Name = "herfMitLöschen";
-            this.herfMitLöschen.Size = new System.Drawing.Size(100, 13);
-            this.herfMitLöschen.TabIndex = 5;
-            this.herfMitLöschen.TabStop = true;
-            this.herfMitLöschen.Text = "Mitarbeiter Löschen";
-            this.herfMitLöschen.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.herfMitLöschen_LinkClicked);
-            // 
             // mitBestätigungLöschen
             // 
             this.mitBestätigungLöschen.BackColor = System.Drawing.Color.Gray;
@@ -499,8 +478,6 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox tBoxMitStraße;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.ComboBox cBoxMitAbr;
         private System.Windows.Forms.ComboBox cBoxMitFunk;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox cBoxMitRolle;

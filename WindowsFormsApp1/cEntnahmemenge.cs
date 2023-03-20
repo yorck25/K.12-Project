@@ -19,7 +19,7 @@ namespace WindowsFormsApp1
 
         public void EntnahmeMengeLaden()
         {
-            string sql = "SELECT * FROM entnahmemenge WHERE EM_ES_ID = @EM_ES_ID";
+            string sql = "SELECT * FROM entnahmemenge";
             MySqlConnection conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["localsql"].ConnectionString);
 
             conn.Open();
@@ -37,7 +37,31 @@ namespace WindowsFormsApp1
                 cEntnahmemenge em = new cEntnahmemenge();
                 em.EM_ID = rdr.GetInt16("EM_ID");
                 em.EM_ART_ID = rdr.GetInt16("EM_ART_ID");
-                em.EM_ART_ID = rdr.GetInt16("EM_ART_ID");
+                em.EM_Menge = rdr.GetInt16("EM_Menge");
+                cEntnahmemenge.EmListe.Add(em);
+            }
+            rdr.Close();
+        }
+
+        public void EntnahmeMengeProScheinLaden()
+        {
+            string sql = "SELECT * FROM entnahmemenge WHERE ";
+            MySqlConnection conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["localsql"].ConnectionString);
+
+            conn.Open();
+
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+            this.EntnahmemengeWerteSpeichern(cmd);
+            cmd.ExecuteNonQuery();
+            MySqlDataReader rdr = cmd.ExecuteReader();
+
+            cEntnahmemenge.EmListe = new List<cEntnahmemenge>();
+            cArtikel.ArtListe = new List<cArtikel>();
+
+            while (rdr.Read())
+            {
+                cEntnahmemenge em = new cEntnahmemenge();
+                em.EM_ID = rdr.GetInt16("EM_ID");
                 em.EM_ART_ID = rdr.GetInt16("EM_ART_ID");
                 em.EM_Menge = rdr.GetInt16("EM_Menge");
                 cEntnahmemenge.EmListe.Add(em);

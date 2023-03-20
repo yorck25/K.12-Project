@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.hauptmenuÖffnenSidebar = new System.Windows.Forms.Button();
             this.kryptonPalette1 = new ComponentFactory.Krypton.Toolkit.KryptonPalette(this.components);
             this.hmenuNavElemente = new System.Windows.Forms.Panel();
             this.butHmenuArtikel = new System.Windows.Forms.Button();
@@ -42,8 +41,6 @@
             this.hmenuAccElemente = new System.Windows.Forms.Panel();
             this.butHmenuÄndern = new System.Windows.Forms.Button();
             this.butHmenuAbmelden = new System.Windows.Forms.Button();
-            this.butHauptmenuÖffnenAcc = new System.Windows.Forms.Button();
-            this.butHauptmenuÖffnenNachrichten = new System.Windows.Forms.Button();
             this.hmenuBenachrichtigungList = new System.Windows.Forms.Panel();
             this.herfAlleNachrichtenLöschen = new System.Windows.Forms.LinkLabel();
             this.lBoxHmenuNachricht = new System.Windows.Forms.ListBox();
@@ -72,6 +69,9 @@
             this.label9 = new System.Windows.Forms.Label();
             this.butHmenuLöschenbestätigen = new System.Windows.Forms.Button();
             this.Bestandsmeldung = new System.Windows.Forms.Label();
+            this.butHauptmenuÖffnenNachrichten = new System.Windows.Forms.Button();
+            this.butHauptmenuÖffnenAcc = new System.Windows.Forms.Button();
+            this.hauptmenuÖffnenSidebar = new System.Windows.Forms.Button();
             this.hmenuNavElemente.SuspendLayout();
             this.hmenuAccElemente.SuspendLayout();
             this.hmenuBenachrichtigungList.SuspendLayout();
@@ -80,16 +80,6 @@
             this.panel1.SuspendLayout();
             this.HmenuBestätigungLöschen.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // hauptmenuÖffnenSidebar
-            // 
-            this.hauptmenuÖffnenSidebar.Location = new System.Drawing.Point(12, 7);
-            this.hauptmenuÖffnenSidebar.Name = "hauptmenuÖffnenSidebar";
-            this.hauptmenuÖffnenSidebar.Size = new System.Drawing.Size(71, 37);
-            this.hauptmenuÖffnenSidebar.TabIndex = 0;
-            this.hauptmenuÖffnenSidebar.Text = "---------";
-            this.hauptmenuÖffnenSidebar.UseVisualStyleBackColor = true;
-            this.hauptmenuÖffnenSidebar.Click += new System.EventHandler(this.hauptmenuÖffnenSidebar_Click);
             // 
             // hmenuNavElemente
             // 
@@ -201,26 +191,6 @@
             this.butHmenuAbmelden.Text = "Abmelden";
             this.butHmenuAbmelden.UseVisualStyleBackColor = true;
             this.butHmenuAbmelden.Click += new System.EventHandler(this.butHmenuAbmelden_Click);
-            // 
-            // butHauptmenuÖffnenAcc
-            // 
-            this.butHauptmenuÖffnenAcc.Location = new System.Drawing.Point(767, 5);
-            this.butHauptmenuÖffnenAcc.Name = "butHauptmenuÖffnenAcc";
-            this.butHauptmenuÖffnenAcc.Size = new System.Drawing.Size(57, 37);
-            this.butHauptmenuÖffnenAcc.TabIndex = 3;
-            this.butHauptmenuÖffnenAcc.Text = "ACC";
-            this.butHauptmenuÖffnenAcc.UseVisualStyleBackColor = true;
-            this.butHauptmenuÖffnenAcc.Click += new System.EventHandler(this.button1hauptmenuÖffnenAcc_Click);
-            // 
-            // butHauptmenuÖffnenNachrichten
-            // 
-            this.butHauptmenuÖffnenNachrichten.Location = new System.Drawing.Point(523, 4);
-            this.butHauptmenuÖffnenNachrichten.Name = "butHauptmenuÖffnenNachrichten";
-            this.butHauptmenuÖffnenNachrichten.Size = new System.Drawing.Size(65, 37);
-            this.butHauptmenuÖffnenNachrichten.TabIndex = 4;
-            this.butHauptmenuÖffnenNachrichten.Text = "Benachrichtigungen";
-            this.butHauptmenuÖffnenNachrichten.UseVisualStyleBackColor = true;
-            this.butHauptmenuÖffnenNachrichten.Click += new System.EventHandler(this.butHauptmenuÖffnenNachrichten_Click);
             // 
             // hmenuBenachrichtigungList
             // 
@@ -348,6 +318,7 @@
             this.hmenuDetailABestand.Name = "hmenuDetailABestand";
             this.hmenuDetailABestand.Size = new System.Drawing.Size(175, 355);
             this.hmenuDetailABestand.TabIndex = 8;
+            this.hmenuDetailABestand.Paint += new System.Windows.Forms.PaintEventHandler(this.hmenuDetailABestand_Paint);
             // 
             // butHmenuBestätigen
             // 
@@ -461,7 +432,7 @@
             this.HmenuBestätigungLöschen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.HmenuBestätigungLöschen.Controls.Add(this.label9);
             this.HmenuBestätigungLöschen.Controls.Add(this.butHmenuLöschenbestätigen);
-            this.HmenuBestätigungLöschen.Location = new System.Drawing.Point(512, 181);
+            this.HmenuBestätigungLöschen.Location = new System.Drawing.Point(512, 129);
             this.HmenuBestätigungLöschen.Name = "HmenuBestätigungLöschen";
             this.HmenuBestätigungLöschen.Size = new System.Drawing.Size(200, 100);
             this.HmenuBestätigungLöschen.TabIndex = 12;
@@ -494,6 +465,40 @@
             this.Bestandsmeldung.TabIndex = 13;
             this.Bestandsmeldung.Text = "Bestandsmeldung:";
             // 
+            // butHauptmenuÖffnenNachrichten
+            // 
+            this.butHauptmenuÖffnenNachrichten.Image = global::WindowsFormsApp1.Properties.Resources.umschlag_offener_text;
+            this.butHauptmenuÖffnenNachrichten.Location = new System.Drawing.Point(616, 7);
+            this.butHauptmenuÖffnenNachrichten.Name = "butHauptmenuÖffnenNachrichten";
+            this.butHauptmenuÖffnenNachrichten.Size = new System.Drawing.Size(40, 40);
+            this.butHauptmenuÖffnenNachrichten.TabIndex = 4;
+            this.butHauptmenuÖffnenNachrichten.UseVisualStyleBackColor = true;
+            this.butHauptmenuÖffnenNachrichten.Click += new System.EventHandler(this.butHauptmenuÖffnenNachrichten_Click);
+            // 
+            // butHauptmenuÖffnenAcc
+            // 
+            this.butHauptmenuÖffnenAcc.BackColor = System.Drawing.Color.Transparent;
+            this.butHauptmenuÖffnenAcc.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.benutzer__1_;
+            this.butHauptmenuÖffnenAcc.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.butHauptmenuÖffnenAcc.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.butHauptmenuÖffnenAcc.Location = new System.Drawing.Point(783, 7);
+            this.butHauptmenuÖffnenAcc.Name = "butHauptmenuÖffnenAcc";
+            this.butHauptmenuÖffnenAcc.Size = new System.Drawing.Size(40, 40);
+            this.butHauptmenuÖffnenAcc.TabIndex = 3;
+            this.butHauptmenuÖffnenAcc.UseVisualStyleBackColor = false;
+            this.butHauptmenuÖffnenAcc.Click += new System.EventHandler(this.butHauptmenuÖffnenAcc_Click_1);
+            // 
+            // hauptmenuÖffnenSidebar
+            // 
+            this.hauptmenuÖffnenSidebar.Image = global::WindowsFormsApp1.Properties.Resources.menu_burger__1_;
+            this.hauptmenuÖffnenSidebar.Location = new System.Drawing.Point(12, 4);
+            this.hauptmenuÖffnenSidebar.Name = "hauptmenuÖffnenSidebar";
+            this.hauptmenuÖffnenSidebar.Size = new System.Drawing.Size(56, 41);
+            this.hauptmenuÖffnenSidebar.TabIndex = 0;
+            this.hauptmenuÖffnenSidebar.Text = "---------";
+            this.hauptmenuÖffnenSidebar.UseVisualStyleBackColor = true;
+            this.hauptmenuÖffnenSidebar.Click += new System.EventHandler(this.hauptmenuÖffnenSidebar_Click);
+            // 
             // Hauptmenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -512,6 +517,7 @@
             this.Controls.Add(this.hmenuAccElemente);
             this.Controls.Add(this.hmenuNavElemente);
             this.Controls.Add(this.hauptmenuÖffnenSidebar);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Hauptmenu";
             this.Text = "Hauptmenu";
             this.Load += new System.EventHandler(this.Hauptmenu_Load);

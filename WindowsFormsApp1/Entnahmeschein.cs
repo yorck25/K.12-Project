@@ -84,6 +84,7 @@ namespace WindowsFormsApp1
             lBoxEs.ClearSelected();
             cBoxEsFürMit.ResetText();
             cBoxEsVonMit.ResetText();
+            EsDetail.Enabled = true;
         }
 
         private void lBoxEs_SelectedIndexChanged(object sender, EventArgs e)

@@ -74,9 +74,9 @@ namespace WindowsFormsApp1
             Mit.Mit_Mail = tBoxRegEmail.Text;
             Mit.Mit_Benutzer = tBoxRegUname.Text;
             Mit.Mit_Pw = tBoxRegPw.Text;
-            Mit.Mit_Abt_ID = Convert.ToInt32(cBoxRegAbt.SelectedIndex);
-            Mit.Mit_R_ID = Convert.ToInt32(cBoxRegRolle.SelectedIndex);
-            Mit.Mit_F_ID = Convert.ToInt32(cBoxRegFunk.SelectedIndex);
+            Mit.Mit_Abt_ID = Convert.ToInt32(cBoxRegAbt.SelectedIndex +1);
+            Mit.Mit_R_ID = Convert.ToInt32(cBoxRegRolle.SelectedIndex +1);
+            Mit.Mit_F_ID = Convert.ToInt32(cBoxRegFunk.SelectedIndex + 1);
 
             if (string.IsNullOrEmpty(tBoxRegName.Text))
             {

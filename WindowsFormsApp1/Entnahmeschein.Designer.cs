@@ -72,6 +72,7 @@
             this.EsDetail.Controls.Add(this.cBoxEsVonMit);
             this.EsDetail.Controls.Add(this.label2);
             this.EsDetail.Controls.Add(this.label1);
+            this.EsDetail.Enabled = false;
             this.EsDetail.Location = new System.Drawing.Point(166, 37);
             this.EsDetail.Name = "EsDetail";
             this.EsDetail.Size = new System.Drawing.Size(166, 288);

@@ -44,7 +44,6 @@ namespace WindowsFormsApp1
             {
                 try
                 {
-                    cEntnahmeschein.AlleEntnahmescheinLaden();
                     cArtikel.ArtikelLaden();
                 }
                 catch (MySqlException ex)
@@ -57,8 +56,24 @@ namespace WindowsFormsApp1
             foreach (cArtikel art in cArtikel.ArtListe)
             {
                 cBoxEmArt.Items.Add(art);
-            }
 
+            }
+        }
+
+        public void CBoxESLadenm(bool ESLaden)
+        {
+            if (ESLaden)
+            {
+                try
+                {
+                    cEntnahmeschein.AlleEntnahmescheinLaden();
+                }
+                catch (MySqlException ex)
+                {
+
+                    Console.WriteLine("Fehler beim Laden: " + ex.Message);
+                }
+            }
             cBoxEmEschein.Items.Clear();
             foreach (cEntnahmeschein es in cEntnahmeschein.Emliste)
             {
@@ -68,7 +83,12 @@ namespace WindowsFormsApp1
 
         private void Entnahmemenge_Load(object sender, EventArgs e)
         {
-            Cboxaufbauen(true);
+            //CBoxESLadenm(true);
+        }
+
+        private void cBoxEmEschein_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

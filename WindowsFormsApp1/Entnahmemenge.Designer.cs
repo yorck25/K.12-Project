@@ -32,21 +32,21 @@
             this.butEmHinzu = new System.Windows.Forms.Button();
             this.cBoxEmArt = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.cBoxEmEschein = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.tBoxEmMenge = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.lBoxEmArt = new System.Windows.Forms.ListBox();
+            this.cBoxEmEschein = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.cBoxEmEschein);
             this.panel1.Controls.Add(this.butEmHinzu);
             this.panel1.Controls.Add(this.cBoxEmArt);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.cBoxEmEschein);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.tBoxEmMenge);
@@ -84,15 +84,6 @@
             this.label1.Size = new System.Drawing.Size(89, 13);
             this.label1.TabIndex = 10;
             this.label1.Text = "Entnahmeschein:";
-            // 
-            // cBoxEmEschein
-            // 
-            this.cBoxEmEschein.DisplayMember = "EntnahmeschinListe";
-            this.cBoxEmEschein.FormattingEnabled = true;
-            this.cBoxEmEschein.Location = new System.Drawing.Point(17, 20);
-            this.cBoxEmEschein.Name = "cBoxEmEschein";
-            this.cBoxEmEschein.Size = new System.Drawing.Size(121, 21);
-            this.cBoxEmEschein.TabIndex = 9;
             // 
             // label5
             // 
@@ -137,6 +128,15 @@
             this.lBoxEmArt.Size = new System.Drawing.Size(131, 147);
             this.lBoxEmArt.TabIndex = 2;
             // 
+            // cBoxEmEschein
+            // 
+            this.cBoxEmEschein.DisplayMember = "EntnahmeschinListe";
+            this.cBoxEmEschein.FormattingEnabled = true;
+            this.cBoxEmEschein.Location = new System.Drawing.Point(17, 21);
+            this.cBoxEmEschein.Name = "cBoxEmEschein";
+            this.cBoxEmEschein.Size = new System.Drawing.Size(121, 21);
+            this.cBoxEmEschein.TabIndex = 13;
+            // 
             // Entnahmemenge
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -158,11 +158,11 @@
         private System.Windows.Forms.Button butEmHinzu;
         private System.Windows.Forms.ComboBox cBoxEmArt;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cBoxEmEschein;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox tBoxEmMenge;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ListBox lBoxEmArt;
+        private System.Windows.Forms.ComboBox cBoxEmEschein;
     }
 }

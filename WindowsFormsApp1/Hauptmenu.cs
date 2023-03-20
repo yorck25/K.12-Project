@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using Org.BouncyCastle.Asn1.Crmf;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -26,7 +27,7 @@ namespace WindowsFormsApp1
             hmenuNavElemente.Visible =! hmenuNavElemente.Visible; 
         }
 
-        private void button1hauptmenuÖffnenAcc_Click(object sender, EventArgs e)
+        private void butHauptmenuÖffnenAcc_Click(object sender, EventArgs e)
         {
             hmenuAccElemente.Visible = ! hmenuAccElemente.Visible;
         }
@@ -228,6 +229,15 @@ namespace WindowsFormsApp1
             hmenuDetailBenachrichtigung.Visible = false;
             HmenuBestätigungLöschen.Visible = false;
 
+        }
+
+        private void butHauptmenuÖffnenAcc_Click_1(object sender, EventArgs e)
+        {
+            hmenuAccElemente.Visible = !hmenuAccElemente.Visible;    
+        }
+
+        private void hmenuDetailABestand_Paint(object sender, PaintEventArgs e)
+        {
         }
     }
 }
