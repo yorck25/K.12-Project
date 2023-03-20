@@ -6,6 +6,7 @@ using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
@@ -22,12 +23,13 @@ namespace WindowsFormsApp1
         public int Art_MinBst { get; set; }
         public int Art_Lager { get; set; }
         public int Art_Lieferant { get; set; }
+        public string Art_Unterschreitung { get; set; }
         public bool Art_Geloescht { get; set; }
-
 
         public string ArtikelListe => Art_ID + ": " + Art_Bez;
 
         public string ArtHmenuBst => Art_Bez + " - " + Art_Bst;
+        public string ArtBstMeldung => Art_Unterschreitung;
 
         public static void ArtikelLaden()
         {
@@ -53,6 +55,14 @@ namespace WindowsFormsApp1
                 art.Art_Lager = rdr.GetInt32("Art_LVW_ID");
                 art.Art_Lieferant = rdr.GetInt32("Art_L_ID");
                 art.Art_Geloescht = rdr.GetBoolean("Art_Geloescht");
+                if(art.Art_Bst < art.Art_MinBst)
+                {
+                    Console.WriteLine("Bestand Unterschritten" + art.Art_Bez);
+                    art.Art_Unterschreitung = "Bestand Unterschritten: " + art.Art_Bez + " || Aktueller Bestand: " + art.Art_Bst;
+                    cNachricht cNachricht = new cNachricht();
+                    cNachricht.NachrichtSystemSpeichern();
+                }
+
                 cArtikel.ArtListe.Add(art);
             }
             rdr.Close();

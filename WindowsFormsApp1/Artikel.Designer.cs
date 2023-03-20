@@ -55,6 +55,7 @@
             this.artBestätigungLöschen = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
             this.butArtbestätigen = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
             this.AbtneueAbteilung.SuspendLayout();
             this.artBestätigungLöschen.SuspendLayout();
             this.SuspendLayout();
@@ -339,11 +340,21 @@
             this.butArtbestätigen.UseVisualStyleBackColor = true;
             this.butArtbestätigen.Click += new System.EventHandler(this.butArtbestätigen_Click);
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Image = global::WindowsFormsApp1.Properties.Resources.info;
+            this.label10.Location = new System.Drawing.Point(433, 319);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(0, 13);
+            this.label10.TabIndex = 12;
+            // 
             // Artikel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(525, 354);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.artBestätigungLöschen);
             this.Controls.Add(this.herfArtLöschen);
             this.Controls.Add(this.herfArtNeu);
@@ -390,5 +401,6 @@
         private System.Windows.Forms.Panel artBestätigungLöschen;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button butArtbestätigen;
+        private System.Windows.Forms.Label label10;
     }
 }

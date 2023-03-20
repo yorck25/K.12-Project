@@ -156,6 +156,7 @@
     <Compile Include="cLieferschein.cs" />
     <Compile Include="cLogin.cs" />
     <Compile Include="cMitarbeiter.cs" />
+    <Compile Include="cNachricht.cs" />
     <Compile Include="cRolle.cs" />
     <Compile Include="Einheit.cs">
       <SubType>Form</SubType>
@@ -299,6 +300,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Registrieren.resx">
       <DependentUpon>Registrieren.cs</DependentUpon>
@@ -319,6 +321,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\infoIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

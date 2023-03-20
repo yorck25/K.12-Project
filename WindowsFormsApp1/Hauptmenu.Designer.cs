@@ -32,21 +32,24 @@
             this.hauptmenuÖffnenSidebar = new System.Windows.Forms.Button();
             this.kryptonPalette1 = new ComponentFactory.Krypton.Toolkit.KryptonPalette(this.components);
             this.hmenuNavElemente = new System.Windows.Forms.Panel();
-            this.butHmenuBestellung = new System.Windows.Forms.Button();
-            this.butHmenuLieferschein = new System.Windows.Forms.Button();
-            this.butHmenuMaterial = new System.Windows.Forms.Button();
+            this.butHmenuArtikel = new System.Windows.Forms.Button();
             this.butHmenuMitarbeiter = new System.Windows.Forms.Button();
             this.butHmenuLieferant = new System.Windows.Forms.Button();
             this.butHmenuLager = new System.Windows.Forms.Button();
-            this.butHmenuArtikel = new System.Windows.Forms.Button();
+            this.butHmenuBestellung = new System.Windows.Forms.Button();
+            this.butHmenuLieferschein = new System.Windows.Forms.Button();
+            this.butHmenuMaterial = new System.Windows.Forms.Button();
             this.hmenuAccElemente = new System.Windows.Forms.Panel();
             this.butHmenuÄndern = new System.Windows.Forms.Button();
             this.butHmenuAbmelden = new System.Windows.Forms.Button();
             this.butHauptmenuÖffnenAcc = new System.Windows.Forms.Button();
             this.butHauptmenuÖffnenNachrichten = new System.Windows.Forms.Button();
             this.hmenuBenachrichtigungList = new System.Windows.Forms.Panel();
-            this.lBoxBenachrichtigung = new System.Windows.Forms.ListBox();
+            this.herfAlleNachrichtenLöschen = new System.Windows.Forms.LinkLabel();
+            this.lBoxHmenuNachricht = new System.Windows.Forms.ListBox();
             this.hmenuDetailBenachrichtigung = new System.Windows.Forms.Panel();
+            this.tBoxHmenuBetreff = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.tBoxSender = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.butHmenuNachrichtLöschen = new System.Windows.Forms.Button();
@@ -64,12 +67,18 @@
             this.tBoxHmenuAName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lBoxHmenuMeldung = new System.Windows.Forms.ListBox();
+            this.HmenuBestätigungLöschen = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.butHmenuLöschenbestätigen = new System.Windows.Forms.Button();
+            this.Bestandsmeldung = new System.Windows.Forms.Label();
             this.hmenuNavElemente.SuspendLayout();
             this.hmenuAccElemente.SuspendLayout();
             this.hmenuBenachrichtigungList.SuspendLayout();
             this.hmenuDetailBenachrichtigung.SuspendLayout();
             this.hmenuDetailABestand.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.HmenuBestätigungLöschen.SuspendLayout();
             this.SuspendLayout();
             // 
             // hauptmenuÖffnenSidebar
@@ -93,35 +102,15 @@
             this.hmenuNavElemente.Size = new System.Drawing.Size(140, 250);
             this.hmenuNavElemente.TabIndex = 1;
             // 
-            // butHmenuBestellung
+            // butHmenuArtikel
             // 
-            this.butHmenuBestellung.Location = new System.Drawing.Point(12, 2);
-            this.butHmenuBestellung.Name = "butHmenuBestellung";
-            this.butHmenuBestellung.Size = new System.Drawing.Size(125, 41);
-            this.butHmenuBestellung.TabIndex = 6;
-            this.butHmenuBestellung.Text = "Bestellverwaltung";
-            this.butHmenuBestellung.UseVisualStyleBackColor = true;
-            this.butHmenuBestellung.Click += new System.EventHandler(this.butHmenuBestellung_Click);
-            // 
-            // butHmenuLieferschein
-            // 
-            this.butHmenuLieferschein.Location = new System.Drawing.Point(143, 2);
-            this.butHmenuLieferschein.Name = "butHmenuLieferschein";
-            this.butHmenuLieferschein.Size = new System.Drawing.Size(125, 41);
-            this.butHmenuLieferschein.TabIndex = 5;
-            this.butHmenuLieferschein.Text = "Lieferscheinverwaltung";
-            this.butHmenuLieferschein.UseVisualStyleBackColor = true;
-            this.butHmenuLieferschein.Click += new System.EventHandler(this.butHmenuLieferschein_Click);
-            // 
-            // butHmenuMaterial
-            // 
-            this.butHmenuMaterial.Location = new System.Drawing.Point(274, 2);
-            this.butHmenuMaterial.Name = "butHmenuMaterial";
-            this.butHmenuMaterial.Size = new System.Drawing.Size(125, 41);
-            this.butHmenuMaterial.TabIndex = 4;
-            this.butHmenuMaterial.Text = "Materialentnahmescheinverwaltung";
-            this.butHmenuMaterial.UseVisualStyleBackColor = true;
-            this.butHmenuMaterial.Click += new System.EventHandler(this.butHmenuMaterial_Click);
+            this.butHmenuArtikel.Location = new System.Drawing.Point(3, 22);
+            this.butHmenuArtikel.Name = "butHmenuArtikel";
+            this.butHmenuArtikel.Size = new System.Drawing.Size(125, 41);
+            this.butHmenuArtikel.TabIndex = 0;
+            this.butHmenuArtikel.Text = "Artikelverwaltung";
+            this.butHmenuArtikel.UseVisualStyleBackColor = true;
+            this.butHmenuArtikel.Click += new System.EventHandler(this.butHmenuArtikel_Click);
             // 
             // butHmenuMitarbeiter
             // 
@@ -153,15 +142,35 @@
             this.butHmenuLager.UseVisualStyleBackColor = true;
             this.butHmenuLager.Click += new System.EventHandler(this.butHmenuLager_Click);
             // 
-            // butHmenuArtikel
+            // butHmenuBestellung
             // 
-            this.butHmenuArtikel.Location = new System.Drawing.Point(3, 22);
-            this.butHmenuArtikel.Name = "butHmenuArtikel";
-            this.butHmenuArtikel.Size = new System.Drawing.Size(125, 41);
-            this.butHmenuArtikel.TabIndex = 0;
-            this.butHmenuArtikel.Text = "Artikelverwaltung";
-            this.butHmenuArtikel.UseVisualStyleBackColor = true;
-            this.butHmenuArtikel.Click += new System.EventHandler(this.butHmenuArtikel_Click);
+            this.butHmenuBestellung.Location = new System.Drawing.Point(12, 2);
+            this.butHmenuBestellung.Name = "butHmenuBestellung";
+            this.butHmenuBestellung.Size = new System.Drawing.Size(125, 41);
+            this.butHmenuBestellung.TabIndex = 6;
+            this.butHmenuBestellung.Text = "Bestellverwaltung";
+            this.butHmenuBestellung.UseVisualStyleBackColor = true;
+            this.butHmenuBestellung.Click += new System.EventHandler(this.butHmenuBestellung_Click);
+            // 
+            // butHmenuLieferschein
+            // 
+            this.butHmenuLieferschein.Location = new System.Drawing.Point(143, 2);
+            this.butHmenuLieferschein.Name = "butHmenuLieferschein";
+            this.butHmenuLieferschein.Size = new System.Drawing.Size(125, 41);
+            this.butHmenuLieferschein.TabIndex = 5;
+            this.butHmenuLieferschein.Text = "Lieferscheinverwaltung";
+            this.butHmenuLieferschein.UseVisualStyleBackColor = true;
+            this.butHmenuLieferschein.Click += new System.EventHandler(this.butHmenuLieferschein_Click);
+            // 
+            // butHmenuMaterial
+            // 
+            this.butHmenuMaterial.Location = new System.Drawing.Point(274, 2);
+            this.butHmenuMaterial.Name = "butHmenuMaterial";
+            this.butHmenuMaterial.Size = new System.Drawing.Size(125, 41);
+            this.butHmenuMaterial.TabIndex = 4;
+            this.butHmenuMaterial.Text = "Materialentnahmescheinverwaltung";
+            this.butHmenuMaterial.UseVisualStyleBackColor = true;
+            this.butHmenuMaterial.Click += new System.EventHandler(this.butHmenuMaterial_Click);
             // 
             // hmenuAccElemente
             // 
@@ -215,28 +224,39 @@
             // 
             // hmenuBenachrichtigungList
             // 
-            this.hmenuBenachrichtigungList.Controls.Add(this.lBoxBenachrichtigung);
+            this.hmenuBenachrichtigungList.Controls.Add(this.herfAlleNachrichtenLöschen);
+            this.hmenuBenachrichtigungList.Controls.Add(this.lBoxHmenuNachricht);
             this.hmenuBenachrichtigungList.Location = new System.Drawing.Point(523, 62);
             this.hmenuBenachrichtigungList.Name = "hmenuBenachrichtigungList";
             this.hmenuBenachrichtigungList.Size = new System.Drawing.Size(136, 113);
             this.hmenuBenachrichtigungList.TabIndex = 5;
             this.hmenuBenachrichtigungList.Visible = false;
             // 
-            // lBoxBenachrichtigung
+            // herfAlleNachrichtenLöschen
             // 
-            this.lBoxBenachrichtigung.FormattingEnabled = true;
-            this.lBoxBenachrichtigung.Items.AddRange(new object[] {
-            "Test 1",
-            "Test2",
-            "Test3"});
-            this.lBoxBenachrichtigung.Location = new System.Drawing.Point(9, 9);
-            this.lBoxBenachrichtigung.Name = "lBoxBenachrichtigung";
-            this.lBoxBenachrichtigung.Size = new System.Drawing.Size(120, 95);
-            this.lBoxBenachrichtigung.TabIndex = 0;
-            this.lBoxBenachrichtigung.SelectedIndexChanged += new System.EventHandler(this.lBoxBenachrichtigung_SelectedIndexChanged);
+            this.herfAlleNachrichtenLöschen.AutoSize = true;
+            this.herfAlleNachrichtenLöschen.LinkColor = System.Drawing.SystemColors.Highlight;
+            this.herfAlleNachrichtenLöschen.Location = new System.Drawing.Point(56, 100);
+            this.herfAlleNachrichtenLöschen.Name = "herfAlleNachrichtenLöschen";
+            this.herfAlleNachrichtenLöschen.Size = new System.Drawing.Size(77, 13);
+            this.herfAlleNachrichtenLöschen.TabIndex = 1;
+            this.herfAlleNachrichtenLöschen.TabStop = true;
+            this.herfAlleNachrichtenLöschen.Text = "Alle Löschen...";
+            this.herfAlleNachrichtenLöschen.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.herfAlleNachrichtenLöschen_LinkClicked);
+            // 
+            // lBoxHmenuNachricht
+            // 
+            this.lBoxHmenuNachricht.FormattingEnabled = true;
+            this.lBoxHmenuNachricht.Location = new System.Drawing.Point(9, 3);
+            this.lBoxHmenuNachricht.Name = "lBoxHmenuNachricht";
+            this.lBoxHmenuNachricht.Size = new System.Drawing.Size(120, 95);
+            this.lBoxHmenuNachricht.TabIndex = 0;
+            this.lBoxHmenuNachricht.SelectedIndexChanged += new System.EventHandler(this.lBoxHmenuNachricht_SelectedIndexChanged_1);
             // 
             // hmenuDetailBenachrichtigung
             // 
+            this.hmenuDetailBenachrichtigung.Controls.Add(this.tBoxHmenuBetreff);
+            this.hmenuDetailBenachrichtigung.Controls.Add(this.label6);
             this.hmenuDetailBenachrichtigung.Controls.Add(this.tBoxSender);
             this.hmenuDetailBenachrichtigung.Controls.Add(this.label1);
             this.hmenuDetailBenachrichtigung.Controls.Add(this.butHmenuNachrichtLöschen);
@@ -247,9 +267,25 @@
             this.hmenuDetailBenachrichtigung.TabIndex = 6;
             this.hmenuDetailBenachrichtigung.Visible = false;
             // 
+            // tBoxHmenuBetreff
+            // 
+            this.tBoxHmenuBetreff.Location = new System.Drawing.Point(152, 25);
+            this.tBoxHmenuBetreff.Name = "tBoxHmenuBetreff";
+            this.tBoxHmenuBetreff.Size = new System.Drawing.Size(97, 20);
+            this.tBoxHmenuBetreff.TabIndex = 6;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(149, 8);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(41, 13);
+            this.label6.TabIndex = 5;
+            this.label6.Text = "Betreff:";
+            // 
             // tBoxSender
             // 
-            this.tBoxSender.Location = new System.Drawing.Point(149, 34);
+            this.tBoxSender.Location = new System.Drawing.Point(149, 73);
             this.tBoxSender.Name = "tBoxSender";
             this.tBoxSender.Size = new System.Drawing.Size(100, 20);
             this.tBoxSender.TabIndex = 4;
@@ -257,7 +293,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(146, 17);
+            this.label1.Location = new System.Drawing.Point(146, 57);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(77, 13);
             this.label1.TabIndex = 3;
@@ -271,6 +307,7 @@
             this.butHmenuNachrichtLöschen.TabIndex = 2;
             this.butHmenuNachrichtLöschen.Text = "Löschen";
             this.butHmenuNachrichtLöschen.UseVisualStyleBackColor = true;
+            this.butHmenuNachrichtLöschen.Click += new System.EventHandler(this.butHmenuNachrichtLöschen_Click);
             // 
             // tBoxNachricht
             // 
@@ -406,11 +443,65 @@
             this.panel1.Size = new System.Drawing.Size(405, 48);
             this.panel1.TabIndex = 9;
             // 
+            // lBoxHmenuMeldung
+            // 
+            this.lBoxHmenuMeldung.DisplayMember = "ArtBstMeldung";
+            this.lBoxHmenuMeldung.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.lBoxHmenuMeldung.FormattingEnabled = true;
+            this.lBoxHmenuMeldung.ItemHeight = 15;
+            this.lBoxHmenuMeldung.Location = new System.Drawing.Point(512, 361);
+            this.lBoxHmenuMeldung.Name = "lBoxHmenuMeldung";
+            this.lBoxHmenuMeldung.Size = new System.Drawing.Size(322, 49);
+            this.lBoxHmenuMeldung.TabIndex = 10;
+            this.lBoxHmenuMeldung.SelectedIndexChanged += new System.EventHandler(this.lBoxHmenuBestandsmeldung_SelectedIndexChanged);
+            // 
+            // HmenuBestätigungLöschen
+            // 
+            this.HmenuBestätigungLöschen.BackColor = System.Drawing.Color.Gray;
+            this.HmenuBestätigungLöschen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.HmenuBestätigungLöschen.Controls.Add(this.label9);
+            this.HmenuBestätigungLöschen.Controls.Add(this.butHmenuLöschenbestätigen);
+            this.HmenuBestätigungLöschen.Location = new System.Drawing.Point(512, 181);
+            this.HmenuBestätigungLöschen.Name = "HmenuBestätigungLöschen";
+            this.HmenuBestätigungLöschen.Size = new System.Drawing.Size(200, 100);
+            this.HmenuBestätigungLöschen.TabIndex = 12;
+            this.HmenuBestätigungLöschen.Visible = false;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(15, 18);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(169, 13);
+            this.label9.TabIndex = 1;
+            this.label9.Text = "Alle Nachrichten werden gelöscht:";
+            // 
+            // butHmenuLöschenbestätigen
+            // 
+            this.butHmenuLöschenbestätigen.Location = new System.Drawing.Point(59, 47);
+            this.butHmenuLöschenbestätigen.Name = "butHmenuLöschenbestätigen";
+            this.butHmenuLöschenbestätigen.Size = new System.Drawing.Size(75, 23);
+            this.butHmenuLöschenbestätigen.TabIndex = 0;
+            this.butHmenuLöschenbestätigen.Text = "Bestätigen";
+            this.butHmenuLöschenbestätigen.UseVisualStyleBackColor = true;
+            // 
+            // Bestandsmeldung
+            // 
+            this.Bestandsmeldung.AutoSize = true;
+            this.Bestandsmeldung.Location = new System.Drawing.Point(512, 345);
+            this.Bestandsmeldung.Name = "Bestandsmeldung";
+            this.Bestandsmeldung.Size = new System.Drawing.Size(94, 13);
+            this.Bestandsmeldung.TabIndex = 13;
+            this.Bestandsmeldung.Text = "Bestandsmeldung:";
+            // 
             // Hauptmenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(837, 422);
+            this.Controls.Add(this.Bestandsmeldung);
+            this.Controls.Add(this.HmenuBestätigungLöschen);
+            this.Controls.Add(this.lBoxHmenuMeldung);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.hmenuDetailABestand);
             this.Controls.Add(this.lBoxHmenuBestand);
@@ -427,12 +518,16 @@
             this.hmenuNavElemente.ResumeLayout(false);
             this.hmenuAccElemente.ResumeLayout(false);
             this.hmenuBenachrichtigungList.ResumeLayout(false);
+            this.hmenuBenachrichtigungList.PerformLayout();
             this.hmenuDetailBenachrichtigung.ResumeLayout(false);
             this.hmenuDetailBenachrichtigung.PerformLayout();
             this.hmenuDetailABestand.ResumeLayout(false);
             this.hmenuDetailABestand.PerformLayout();
             this.panel1.ResumeLayout(false);
+            this.HmenuBestätigungLöschen.ResumeLayout(false);
+            this.HmenuBestätigungLöschen.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -453,7 +548,6 @@
         private System.Windows.Forms.Button butHauptmenuÖffnenAcc;
         private System.Windows.Forms.Button butHauptmenuÖffnenNachrichten;
         private System.Windows.Forms.Panel hmenuBenachrichtigungList;
-        private System.Windows.Forms.ListBox lBoxBenachrichtigung;
         private System.Windows.Forms.Panel hmenuDetailBenachrichtigung;
         private System.Windows.Forms.TextBox tBoxSender;
         private System.Windows.Forms.Label label1;
@@ -473,5 +567,14 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button butHmenuBestellung;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ListBox lBoxHmenuMeldung;
+        private System.Windows.Forms.ListBox lBoxHmenuNachricht;
+        private System.Windows.Forms.TextBox tBoxHmenuBetreff;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.LinkLabel herfAlleNachrichtenLöschen;
+        private System.Windows.Forms.Panel HmenuBestätigungLöschen;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button butHmenuLöschenbestätigen;
+        private System.Windows.Forms.Label Bestandsmeldung;
     }
 }

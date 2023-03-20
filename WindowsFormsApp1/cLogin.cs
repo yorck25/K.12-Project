@@ -27,7 +27,7 @@ namespace WindowsFormsApp1
                 int result = Convert.ToInt32(cmd.ExecuteScalar());
                 if (result > 0)
                 {
-                    Hauptmenu hauptmenu = new Hauptmenu(); // Create your window here
+                    Hauptmenu hauptmenu = new Hauptmenu(new cNachricht()); // Create your window here
                     hauptmenu.Show(); // Open the window
                     return true;
                 }

@@ -14,9 +14,11 @@ namespace WindowsFormsApp1
     public partial class Hauptmenu : Form
     {
         cArtikel art;
-        public Hauptmenu()
+        cNachricht nach;
+        public Hauptmenu(cNachricht nach)
         {
             InitializeComponent();
+            this.nach = nach;
         }
 
         private void hauptmenuÖffnenSidebar_Click(object sender, EventArgs e)
@@ -112,6 +114,9 @@ namespace WindowsFormsApp1
         private void Hauptmenu_Load(object sender, EventArgs e)
         {
             BstHmenuLaden(true);
+            NachrichtenLaden(true);
+            cNachricht.NachrichtenLaden();
+            lBoxHmenuNachricht.DisplayMember = "Nachricht";
         }
 
         public void BstHmenuLaden(bool HMenuArtNeuLaden)
@@ -121,6 +126,7 @@ namespace WindowsFormsApp1
                 try
                 {
                     cArtikel.ArtikelLaden();
+                    cNachricht.NachrichtenLaden();
                 }
                 catch (MySqlException exc)
                 {
@@ -129,13 +135,36 @@ namespace WindowsFormsApp1
             }
             //Alle Boxen leeren
             lBoxHmenuBestand.Items.Clear();
-
+            lBoxHmenuMeldung.Items.Clear();
 
             //ListBox Artikel neu Aufbauen
             foreach (cArtikel art in cArtikel.ArtListe)
             {
                 lBoxHmenuBestand.Items.Add(art);
+                lBoxHmenuMeldung.Items.Add(art);
             }
+        }
+
+        public void NachrichtenLaden(bool NachLaden)
+        {
+            if (NachLaden)
+            {
+                try
+                {
+                    cNachricht.NachrichtenLaden();
+                }
+                catch (MySqlException exc)
+                {
+                    Console.WriteLine("Fehler beim Laden: " + exc.Message);
+                }
+            }
+            lBoxHmenuNachricht.Items.Clear();
+            foreach (cNachricht nach in cNachricht.NachListe)
+            {
+                lBoxHmenuNachricht.Items.Add(nach);
+            }
+
+
         }
 
         private void butHmenuNeuBestellen_Click(object sender, EventArgs e)
@@ -148,6 +177,57 @@ namespace WindowsFormsApp1
         {
             Entnahmeschein entnahmeschein = new Entnahmeschein(new cEntnahmeschein());
             entnahmeschein.Show();
+        }
+
+        private void lBoxHmenuBestandsmeldung_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void lBoxHmenuNachricht_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            nach = (cNachricht)lBoxHmenuNachricht.SelectedItem;
+            if (nach != null)
+            {
+                tBoxNachricht.Text = nach.Nach_Text;
+                tBoxHmenuBetreff.Text = nach.Nach_Betreff;
+                tBoxSender.Text = Convert.ToString(nach.Nach_GesVon);
+                hmenuDetailBenachrichtigung.Visible = true;   
+            }
+            else
+            {
+                return;
+            }
+
+        }
+
+        private void butHmenuNachrichtLöschen_Click(object sender, EventArgs e)
+        {
+            nach = (cNachricht)lBoxHmenuNachricht.SelectedItem;
+            if (nach != null)
+            {
+                nach.NachrichtLöschen();
+                hmenuDetailBenachrichtigung.Visible = false;
+                NachrichtenLaden(true);
+            }
+            else
+            {
+                return;
+            }
+        }
+
+        private void herfAlleNachrichtenLöschen_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            //foreach(var lBoxHmenuNachricht in lBoxHmenuNachricht.Items)
+            //{
+            //    nach.AlleNachrichtLöschen();
+            //    NachrichtenLaden(true);
+            //}
+            nach.AlleNachrichtLöschen();
+            NachrichtenLaden(true);
+            hmenuDetailBenachrichtigung.Visible = false;
+            HmenuBestätigungLöschen.Visible = false;
+
         }
     }
 }

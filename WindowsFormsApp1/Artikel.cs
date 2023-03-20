@@ -46,7 +46,7 @@ namespace WindowsFormsApp1
             //ListBox Artikel neu Aufbauen
             foreach (cArtikel art in cArtikel.ArtListe)
             {
-                lBoxArt.Items.Add(art);
+                lBoxArt.Items.Add(art);   
             };
             //ComoBox für Lager neu Aufbauen
             foreach (cLager lager in  cLager.LVWListe)
@@ -63,6 +63,7 @@ namespace WindowsFormsApp1
             {
                 cBoxAbtEinheit.Items.Add(ein);
             }
+
         }
 
         private void Artikel_Load(object sender, EventArgs e)
