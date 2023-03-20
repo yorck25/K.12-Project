@@ -21,7 +21,7 @@ namespace WindowsFormsApp1
 
         public static void FunktionLaden()
         {
-            string sql = "SELECT * FROM funktion";
+            string sql = "SELECT * FROM funktion WHERE F_Geloescht = false";
             MySqlConnection conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["localsql"].ConnectionString);
 
             conn.Open();
@@ -35,6 +35,7 @@ namespace WindowsFormsApp1
                 cFunktion f= new cFunktion();
                 f.F_ID = rdr.GetInt64("F_ID");
                 f.F_Bez = rdr.GetString("F_Bez");
+                f.F_Geloescht = rdr.GetBoolean("F_Geloescht");
                 cFunktion.FListe.Add(f);
             }
             rdr.Close();
@@ -75,7 +76,7 @@ namespace WindowsFormsApp1
 
             try
             {
-                string sql = "DELETE FROM funktion WHERE F_ID = @F_ID";
+                string sql = "UPDATE funktion SET F_Geloescht = true WHERE F_ID = @F_ID";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 this.FunktionWerteSpeichern(cmd);
                 cmd.ExecuteNonQuery();

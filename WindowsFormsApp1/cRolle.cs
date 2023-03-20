@@ -20,7 +20,7 @@ namespace WindowsFormsApp1
 
         public static void RolleLaden()
         {
-            string sql = "SELECT * FROM rolle";
+            string sql = "SELECT * FROM rolle WHERE R_Geloescht = false";
             MySqlConnection conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["localsql"].ConnectionString);
 
             conn.Open();

@@ -104,7 +104,6 @@ namespace WindowsFormsApp1
 
         private void butRbestätigen_Click(object sender, EventArgs e)
         {
-            fBestätigungLöschen.Visible = false;
             f = (cFunktion)lBoxF.SelectedItem;
             if (f != null)
             {

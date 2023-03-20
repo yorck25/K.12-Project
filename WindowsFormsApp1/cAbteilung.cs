@@ -22,7 +22,7 @@ namespace WindowsFormsApp1
 
         public static void AbteilungLaden()
         {
-            string sql = "SELECT * FROM abteilung";
+            string sql = "SELECT * FROM abteilung WHERE Abt_Geloescht = false";
             MySqlConnection conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["localsql"].ConnectionString);
 
             conn.Open();
@@ -37,27 +37,8 @@ namespace WindowsFormsApp1
                 abt.Abt_ID = rdr.GetInt64("Abt_ID");
                 abt.Abt_Bez = rdr.GetString("Abt_Bez");
                 abt.Abt_Kst_ID = rdr.GetInt16("Abt_Kst_ID");
+                abt.Abt_Geloescht = rdr.GetBoolean("Abt_Geloescht");
                 cAbteilung.Abtliste.Add(abt);
-            }
-            rdr.Close();
-        }
-        public void KostenstelleLaden()
-        {
-            string sql = "SELECT * FROM kostenstelle";
-            MySqlConnection conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["localsql"].ConnectionString);
-
-            conn.Open();
-            MySqlCommand cmd = new MySqlCommand(sql, conn);
-            MySqlDataReader rdr = cmd.ExecuteReader();
-
-            cKostenstelle.liste = new List<cKostenstelle>();
-
-            while (rdr.Read())
-            {
-                cKostenstelle kst = new cKostenstelle();
-                kst.Kst_ID = rdr.GetInt64("Kst_ID");
-                kst.Kst_Bez = rdr.GetString("Kst_Bez");
-                cKostenstelle.liste.Add(kst);
             }
             rdr.Close();
         }
@@ -97,7 +78,7 @@ namespace WindowsFormsApp1
 
             try
             {
-                string sql = "DELETE FROM abteilung WHERE Abt_ID = @Abt_ID";
+                string sql = "UPDATE abteilung SET Abt_Geloescht = true WHERE Abt_ID = @Abt_ID";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 this.AbteilungSpeichern(cmd);
                 cmd.ExecuteNonQuery();

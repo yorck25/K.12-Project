@@ -39,7 +39,7 @@ namespace WindowsFormsApp1
 
             if (Mit_ID.HasValue)
             {
-                string sql = "UPDATE mitarbeiter SET Mit_Name = @Mit_Name," +
+                string sql = "UPDATE mitarbeiter SET Mit_Name = @Mit_Name" +
                     " Mit_VName = @Mit_VName," +
                     " Mit_Strasse = @Mit_Straße," +
                     " Mit_HausNr = @Mit_HausNr, " +
@@ -93,7 +93,7 @@ namespace WindowsFormsApp1
 
         public static void MitarbeiterLaden()
         {
-            string sql = "SELECT * FROM mitarbeiter";
+            string sql = "SELECT * FROM mitarbeiter WHERE Mit_Geloescht = false";
             MySqlConnection conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["localsql"].ConnectionString);
 
             conn.Open();
@@ -131,7 +131,7 @@ namespace WindowsFormsApp1
 
             try
             {
-                string sql = "DELETE FROM mitarbeiter WHERE Mit_ID = @Mit_ID";
+                string sql = "UPDATE mitarbeiter SET Mit_Geloescht = true WHERE Mit_ID = @Mit_ID";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 this.MitarbeiterWerte(cmd);
                 cmd.ExecuteNonQuery();

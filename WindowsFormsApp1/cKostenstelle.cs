@@ -20,7 +20,7 @@ namespace WindowsFormsApp1
 
         public static void AlleLaden()
         {
-            string sql = "SELECT * FROM kostenstelle";
+            string sql = "SELECT * FROM kostenstelle WHERE Kst_Geloescht = false";
             MySqlConnection conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["localsql"].ConnectionString);
 
             conn.Open();
@@ -34,6 +34,7 @@ namespace WindowsFormsApp1
                 cKostenstelle kst = new cKostenstelle();
                 kst.Kst_ID = rdr.GetInt64("Kst_ID");
                 kst.Kst_Bez = rdr.GetString("Kst_Bez");
+                kst.Kst_Geloescht = rdr.GetBoolean("Kst_Geloescht");
                 cKostenstelle.liste.Add(kst);
             }
             rdr.Close();
@@ -74,7 +75,7 @@ namespace WindowsFormsApp1
 
             try
             {
-                string sql = "DELETE FROM kostenstelle WHERE Kst_ID = @Kst_ID";
+                string sql = "UPDATE kostenstelle SET Kst_Geloescht = true WHERE Kst_ID = @Kst_ID";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 this.WerteSpeichern(cmd);
                 cmd.ExecuteNonQuery();

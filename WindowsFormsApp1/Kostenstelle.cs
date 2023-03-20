@@ -130,7 +130,6 @@ namespace WindowsFormsApp1
             kst = (cKostenstelle)lBoxKst.SelectedItem;
             if (kst != null)
             {
-                kst.Kst_Geloescht = true;
                 kst.KostenstelleLöschen();
                 KstBestätigungLöschen.Visible = false;
                 Listaufbauen(true);

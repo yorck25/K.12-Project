@@ -180,7 +180,6 @@ namespace WindowsFormsApp1
             Mit = (cMitarbeiter)lBoxMverMitarbeiter.SelectedItem;
             if (Mit != null)
             {
-                Mit.Mit_Geloescht = true;
                 Mit.MItarbeiterLöschen();
                 mitBestätigungLöschen.Visible = false;
                 ListenMitNeuladen(true);

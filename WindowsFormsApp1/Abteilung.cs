@@ -151,7 +151,6 @@ namespace WindowsFormsApp1
             abt = (cAbteilung)lBoxAbt.SelectedItem;
             if (abt != null)
             {
-                abt.Abt_Geloescht = true;
                 abt.AbteilungLöschen();
                 abtBestätigungLöschen.Visible = false;
                 lBoxAbtNeuLaden(true);
