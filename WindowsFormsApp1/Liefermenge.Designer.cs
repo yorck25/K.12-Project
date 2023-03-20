@@ -38,7 +38,6 @@
             this.tBoxLsmMenge = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.lBoxLsmArt = new System.Windows.Forms.ListBox();
-            this.butLsmBestandAktuell = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,7 +52,6 @@
             this.panel1.Controls.Add(this.tBoxLsmMenge);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.lBoxLsmArt);
-            this.panel1.Controls.Add(this.butLsmBestandAktuell);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(296, 344);
@@ -139,16 +137,6 @@
             this.lBoxLsmArt.Size = new System.Drawing.Size(131, 147);
             this.lBoxLsmArt.TabIndex = 2;
             // 
-            // butLsmBestandAktuell
-            // 
-            this.butLsmBestandAktuell.Location = new System.Drawing.Point(17, 211);
-            this.butLsmBestandAktuell.Name = "butLsmBestandAktuell";
-            this.butLsmBestandAktuell.Size = new System.Drawing.Size(131, 34);
-            this.butLsmBestandAktuell.TabIndex = 0;
-            this.butLsmBestandAktuell.Text = "Lagerbestand aktualisierun...";
-            this.butLsmBestandAktuell.UseVisualStyleBackColor = true;
-            this.butLsmBestandAktuell.Click += new System.EventHandler(this.butLsmBestandAktuell_Click);
-            // 
             // Liefermenge
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -172,7 +160,6 @@
         private System.Windows.Forms.TextBox tBoxLsmMenge;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ListBox lBoxLsmArt;
-        private System.Windows.Forms.Button butLsmBestandAktuell;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cBoxLsmScheine;
         private System.Windows.Forms.ComboBox cBoxLsmArt;
