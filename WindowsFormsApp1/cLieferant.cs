@@ -27,11 +27,14 @@ namespace WindowsFormsApp1
         public string L_Mail { get; set; }
         public int L_Durchwahl { get; set; }
         public string L_Ntz { get; set; }
+        public string L_IBAN { get; set; }
+        public bool L_Geloescht { get; set; }
+
         public string LiferantenListe => L_ID + ": " + L_Name;
 
         public static void LieferantLaden()
         {
-            string sql = "SELECT * FROM lieferanten";
+            string sql = "SELECT * FROM lieferanten WHERE L_Geloescht = false";
             MySqlConnection conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["localsql"].ConnectionString);
 
             conn.Open();
@@ -58,6 +61,7 @@ namespace WindowsFormsApp1
                 l.L_Mail = rdr.GetString("L_Mail");
                 l.L_Durchwahl = rdr.GetInt16("L_Durchwahl");
                 l.L_Ntz = rdr.GetString("L_Ntz");
+                l.L_Geloescht = rdr.GetBoolean("L_Geloescht");
                 LListe.Add(l);
             }
             rdr.Close();
@@ -72,8 +76,8 @@ namespace WindowsFormsApp1
             if(L_ID.HasValue)
             {
                 string sql = "UPDATE lieferanten SET L_Name = @L_Name, L_Strasse = @L_Strasse, L_HausNr = @L_HausNr," +
-                    " L_PLZ = @L_PLZ, L_Ort = @L_Ort, L_Postfach = @L_Postfach, L_Tel = @L_Tel, L_Fax = @L_Fax, L_BLZ = @L_BLZ, L_Anspr = @L_Anspr, L_Mail = @L_Mail, L_Durchwahl = @L_Durchwahl," +
-                    " L_Ntz = @L_Ntz WHERE L_ID = @L_ID";
+                    " L_PLZ = @L_PLZ, L_Ort = @L_Ort, L_Postfach = @L_Postfach, L_Tel = @L_Tel, L_Fax = @L_Fax, L_BLZ = @L_BLZ, L_Anspr = @L_Anspr, L_Mail = @L_Mail, L_Durchwahl = @L_Durchwahl, L_Ntz = @L_Ntz, L_IBAN = @L_IBAN" +
+                    " WHERE L_ID = @L_ID";
                 Console.WriteLine("ID:" + this.L_ID);
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 this.LieferantWerteSpeichern(cmd);
@@ -81,8 +85,8 @@ namespace WindowsFormsApp1
             }
             else
             {
-                string sql = "INSERT INTO lieferanten (L_Anrede, L_Name, L_Strasse, L_HausNr, L_PLZ, L_Ort, L_Postfach, L_Tel, L_Fax, L_BLZ, L_Anspr, L_Mail, L_Durchwahl, L_Ntz) " +
-                    "VALUES (@L_Anrede, @L_Name, @L_Strasse,  @L_HausNr, @L_PLZ, @L_Ort, @L_Postfach, @L_Tel, @L_Fax, @L_BLZ, @L_Anspr, @L_Mail, @L_Durchwahl, @L_Ntz)";
+                string sql = "INSERT INTO lieferanten (L_Anrede, L_Name, L_Strasse, L_HausNr, L_PLZ, L_Ort, L_Postfach, L_Tel, L_Fax, L_BLZ, L_Anspr, L_Mail, L_Durchwahl, L_Ntz, L_IBAN, L_Geloescht) " +
+                    " VALUES (@L_Anrede, @L_Name, @L_Strasse,  @L_HausNr, @L_PLZ, @L_Ort, @L_Postfach, @L_Tel, @L_Fax, @L_BLZ, @L_Anspr, @L_Mail, @L_Durchwahl, @L_Ntz, @L_IBAN, @L_Geloescht)";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 this.LieferantWerteSpeichern(cmd);
                 cmd.ExecuteNonQuery();
@@ -101,7 +105,7 @@ namespace WindowsFormsApp1
 
             try
             {
-                string sql = "DELETE FROM lieferanten WHERE L_ID = @L_ID";
+                string sql = "UPDATE lieferanten SET L_Geloescht = true WHERE L_ID = @L_ID";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 this.LieferantWerteSpeichern(cmd);
                 cmd.ExecuteNonQuery();
@@ -133,6 +137,8 @@ namespace WindowsFormsApp1
             cmd.Parameters.AddWithValue("@L_Mail", this.L_Mail);
             cmd.Parameters.AddWithValue("@L_Durchwahl", this.L_Durchwahl);
             cmd.Parameters.AddWithValue("@L_Ntz", this.L_Ntz);
+            cmd.Parameters.AddWithValue("@L_IBAN", this.L_IBAN);
+            cmd.Parameters.AddWithValue("@L_Geloescht", this.L_Geloescht);
 
         }
     }

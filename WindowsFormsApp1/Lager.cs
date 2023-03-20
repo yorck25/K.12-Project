@@ -116,7 +116,6 @@ namespace WindowsFormsApp1
             lvw = (cLager)lBoxLagerort.SelectedItem;
             if (lvw != null)
             {
-
                 lvw.LagerLöschen();
                 lvwBestätigungLöschen.Visible = false;
                 LagerListeLaden(true);

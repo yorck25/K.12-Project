@@ -74,7 +74,7 @@ namespace WindowsFormsApp1
 
             try
             {
-                string sql = "DELETE FROM rolle WHERE R_ID = @R_ID";
+                string sql = "UPDATE rolle SET R_Geloescht = true WHERE R_ID = @R_ID";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 this.RolleWerteSpeichern(cmd);
                 cmd.ExecuteNonQuery();

@@ -59,7 +59,7 @@
             this.LVWDetail.Controls.Add(this.tBoxLVWOrt);
             this.LVWDetail.Controls.Add(this.label1);
             this.LVWDetail.Controls.Add(this.tBoxLVWBez);
-            this.LVWDetail.Location = new System.Drawing.Point(360, 29);
+            this.LVWDetail.Location = new System.Drawing.Point(180, 29);
             this.LVWDetail.Name = "LVWDetail";
             this.LVWDetail.Size = new System.Drawing.Size(136, 213);
             this.LVWDetail.TabIndex = 11;
@@ -187,7 +187,7 @@
             this.lvwBestätigungLöschen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lvwBestätigungLöschen.Controls.Add(this.label5);
             this.lvwBestätigungLöschen.Controls.Add(this.butLvwbestätigen);
-            this.lvwBestätigungLöschen.Location = new System.Drawing.Point(138, 81);
+            this.lvwBestätigungLöschen.Location = new System.Drawing.Point(99, 62);
             this.lvwBestätigungLöschen.Name = "lvwBestätigungLöschen";
             this.lvwBestätigungLöschen.Size = new System.Drawing.Size(200, 100);
             this.lvwBestätigungLöschen.TabIndex = 11;
@@ -218,10 +218,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(658, 396);
             this.Controls.Add(this.lvwBestätigungLöschen);
-            this.Controls.Add(this.LVWDetail);
             this.Controls.Add(this.herfLvwLöschen);
             this.Controls.Add(this.herfLVWNeu);
             this.Controls.Add(this.lBoxLagerort);
+            this.Controls.Add(this.LVWDetail);
             this.Name = "Lager";
             this.Text = "Lager";
             this.Load += new System.EventHandler(this.Lager_Load);

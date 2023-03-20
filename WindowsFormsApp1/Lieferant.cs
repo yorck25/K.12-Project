@@ -89,6 +89,8 @@ namespace WindowsFormsApp1
             l.L_Mail = tBoxLMail.Text;
             l.L_Durchwahl = Convert.ToInt32(tBoxLDurch.Text);
             l.L_Ntz = tBoxLNotiz.Text;
+            l.L_IBAN = tBoxLiban.Text;
+            l.L_Geloescht = false;
 
             if (string.IsNullOrEmpty(tBoxLName.Text))
             {
@@ -112,6 +114,7 @@ namespace WindowsFormsApp1
                 tBoxLPLZ.Clear();
                 tBoxLNotiz.Clear();
                 tBoxLBlz.Clear();
+                tBoxLiban.Clear();
 
                 lBoxLieferant.Items.Clear();
                 foreach (cLieferant l in cLieferant.LListe)

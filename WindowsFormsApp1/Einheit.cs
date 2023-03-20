@@ -76,6 +76,7 @@ namespace WindowsFormsApp1
         private void butEinErstellen_Click(object sender, EventArgs e)
         {
             ein.Ein_Bez = tBoxEinBez.Text;
+            ein.Ein_Geloescht = false;
 
             if (string.IsNullOrEmpty(tBoxEinBez.Text))
             {

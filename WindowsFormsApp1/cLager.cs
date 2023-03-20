@@ -15,14 +15,17 @@ namespace WindowsFormsApp1
         public long? LVW_ID { get; set; } = null;
         public string LVW_Bez { get; set; }
         public string LVW_Ort { get; set; }
-        public string LVW_PLZ { get; set; } //In der Datenbank auf INT ändern
+        public string LVW_PLZ { get; set; }
         public string LVW_Str { get; set; }
+        public bool LVW_Geloescht { get; set; }
+
+
 
         public string LagerortListe => LVW_ID + ": " + LVW_Bez;
 
         public static void LagerLaden()
         {
-            string sql = "SELECT * FROM lagerverwaltung";
+            string sql = "SELECT * FROM lagerverwaltung WHERE LVW_Geloescht = false";
             MySqlConnection conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["localsql"].ConnectionString);
 
             conn.Open();
@@ -39,6 +42,7 @@ namespace WindowsFormsApp1
                 lvw.LVW_Ort = rdr.GetString("LVW_Ort");
                 lvw.LVW_PLZ = rdr.GetString("LVW_PLZ");
                 lvw.LVW_Str = rdr.GetString("LVW_Str");
+                lvw.LVW_Geloescht = rdr.GetBoolean("LVW_Geloescht");
                 LVWListe.Add(lvw);
             }
             rdr.Close();
@@ -60,7 +64,7 @@ namespace WindowsFormsApp1
             }
             else
             {
-                string sql = "INSERT INTO lagerverwaltung (LVW_Bez, LVW_Ort, LVW_PLZ, LVW_Str) VALUES (@LVW_Bez, @LVW_Ort, @LVW_PLZ, @LVW_Str)";
+                string sql = "INSERT INTO lagerverwaltung (LVW_Bez, LVW_Ort, LVW_PLZ, LVW_Str, LVW_Geloescht) VALUES (@LVW_Bez, @LVW_Ort, @LVW_PLZ, @LVW_Str, @LVW_Geloescht)";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 this.LagerWerteSpeichern(cmd);
                 cmd.ExecuteNonQuery();
@@ -79,7 +83,7 @@ namespace WindowsFormsApp1
 
             try
             {
-                string sql = "DELETE FROM lagerverwaltung WHERE LVW_ID = @LVW_ID";
+                string sql = "UPDATE lagerverwaltung SET LVW_Geloescht = true WHERE LVW_ID = @LVW_ID";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 this.LagerWerteSpeichern(cmd);
                 cmd.ExecuteNonQuery();
@@ -101,6 +105,7 @@ namespace WindowsFormsApp1
             cmd.Parameters.AddWithValue("@LVW_PLZ", this.LVW_PLZ);
             cmd.Parameters.AddWithValue("@LVW_Str", this.LVW_Str);
             cmd.Parameters.AddWithValue("@LVW_ID", this.LVW_ID);
+            cmd.Parameters.AddWithValue("@LVW_Geloescht", this.LVW_Geloescht);
         }
     }
 }

@@ -127,7 +127,7 @@
             this.einBestätigungLöschen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.einBestätigungLöschen.Controls.Add(this.label2);
             this.einBestätigungLöschen.Controls.Add(this.butEinbestätigen);
-            this.einBestätigungLöschen.Location = new System.Drawing.Point(139, 121);
+            this.einBestätigungLöschen.Location = new System.Drawing.Point(142, 121);
             this.einBestätigungLöschen.Name = "einBestätigungLöschen";
             this.einBestätigungLöschen.Size = new System.Drawing.Size(200, 100);
             this.einBestätigungLöschen.TabIndex = 11;
