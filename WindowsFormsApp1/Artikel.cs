@@ -124,7 +124,9 @@ namespace WindowsFormsApp1
                 art.Art_Einheit = Convert.ToInt32(cBoxAbtEinheit.SelectedIndex + 1);
                 art.Art_Lager = Convert.ToInt16(cBoxArtLager.SelectedIndex +1);
                 art.Art_Lieferant = Convert.ToInt32(cBoxArtL.SelectedIndex +1);
-                
+                art.Art_Geloescht = false;
+
+
                 art.ArtikelSpeichern();
                 cBoxenLaden(true);
                 Console.WriteLine("Artikel wird gespeichert");
@@ -172,6 +174,7 @@ namespace WindowsFormsApp1
                 art.ArtikelLöschen();
                 artBestätigungLöschen.Visible = false;
                 cBoxenLaden(true);
+                art.Art_Geloescht = true;
             }
             else
             {

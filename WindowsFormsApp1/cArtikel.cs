@@ -22,6 +22,8 @@ namespace WindowsFormsApp1
         public int Art_MinBst { get; set; }
         public int Art_Lager { get; set; }
         public int Art_Lieferant { get; set; }
+        public bool Art_Geloescht { get; set; }
+
 
         public string ArtikelListe => Art_ID + ": " + Art_Bez;
 
@@ -29,7 +31,7 @@ namespace WindowsFormsApp1
 
         public static void ArtikelLaden()
         {
-            string sql = "SELECT * FROM artikel";
+            string sql = "SELECT * FROM artikel WHERE Art_Geloescht = false";
             MySqlConnection conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["localsql"].ConnectionString);
 
             conn.Open();
@@ -50,6 +52,7 @@ namespace WindowsFormsApp1
                 art.Art_MinBst = rdr.GetInt32("Art_MinBst");
                 art.Art_Lager = rdr.GetInt32("Art_LVW_ID");
                 art.Art_Lieferant = rdr.GetInt32("Art_L_ID");
+                art.Art_Geloescht = rdr.GetBoolean("Art_Geloescht");
                 cArtikel.ArtListe.Add(art);
             }
             rdr.Close();
@@ -71,8 +74,8 @@ namespace WindowsFormsApp1
             }
             else
             {
-                string sql = "INSERT INTO artikel (Art_Bez, Art_Einheit, Art_Preis, Art_Bst, Art_MaxBst, Art_MinBst, Art_LVW_ID, Art_L_ID) " +
-                    "VALUES (@Art_Bez, @Art_Einheit, @Art_Preis, @Art_Bst, @Art_MaxBst, @Art_MinBst, @Art_LVW_ID, @Art_L_ID)";
+                string sql = "INSERT INTO artikel (Art_Bez, Art_Einheit, Art_Preis, Art_Bst, Art_MaxBst, Art_MinBst, Art_LVW_ID, Art_L_ID, Art_Geloescht) " +
+                    "VALUES (@Art_Bez, @Art_Einheit, @Art_Preis, @Art_Bst, @Art_MaxBst, @Art_MinBst, @Art_LVW_ID, @Art_L_ID, @Art_Geloescht)";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 this.ArtikelWerteSpeichern(cmd);
                 cmd.ExecuteNonQuery();
@@ -91,7 +94,7 @@ namespace WindowsFormsApp1
 
             try
             {
-                string sql = "DELETE FROM artikel WHERE Art_ID = @Art_ID";
+                string sql = "UPDATE artikel SET Art_Geloescht = true WHERE Art_ID = @Art_ID";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 this.ArtikelWerteSpeichern(cmd);
                 cmd.ExecuteNonQuery();
@@ -117,6 +120,7 @@ namespace WindowsFormsApp1
             cmd.Parameters.AddWithValue("@Art_MinBst", this.Art_MinBst);
             cmd.Parameters.AddWithValue("@Art_LVW_ID", this.Art_Lager);
             cmd.Parameters.AddWithValue("@Art_L_ID", this.Art_Lieferant);
+            cmd.Parameters.AddWithValue("@Art_Geloescht", this.Art_Geloescht);
         }
     }
 }
