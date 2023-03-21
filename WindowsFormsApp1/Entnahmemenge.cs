@@ -60,9 +60,14 @@ namespace WindowsFormsApp1
             }
         }
 
-        public void CBoxESLadenm(bool ESLaden)
+        private void Entnahmemenge_Load(object sender, EventArgs e)
         {
-            if (ESLaden)
+            ListenNeuladen(true);
+        }
+
+        public void ListenNeuladen(bool NeuLaden)
+        {
+            if (NeuLaden)
             {
                 try
                 {
@@ -74,19 +79,19 @@ namespace WindowsFormsApp1
                     Console.WriteLine("Fehler beim Laden: " + ex.Message);
                 }
             }
-            cBoxEmEschein.Items.Clear();
             foreach (cEntnahmeschein es in cEntnahmeschein.Emliste)
             {
                 cBoxEmEschein.Items.Add(es);
             }
-        }
 
-        private void Entnahmemenge_Load(object sender, EventArgs e)
-        {
-            //CBoxESLadenm(true);
         }
 
         private void cBoxEmEschein_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cBoxEmEschein_SelectedIndexChanged_1(object sender, EventArgs e)
         {
 
         }

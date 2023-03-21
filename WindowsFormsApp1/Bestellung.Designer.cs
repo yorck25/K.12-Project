@@ -33,9 +33,8 @@
             this.BestellungDetail = new System.Windows.Forms.Panel();
             this.butBArtikel = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.cBoxBMit = new System.Windows.Forms.ComboBox();
-            this.cBoxBLager = new System.Windows.Forms.ComboBox();
+            this.butBsMehrArt = new System.Windows.Forms.Button();
             this.BestellungDetail.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,18 +64,16 @@
             // 
             this.BestellungDetail.Controls.Add(this.butBArtikel);
             this.BestellungDetail.Controls.Add(this.label2);
-            this.BestellungDetail.Controls.Add(this.label1);
             this.BestellungDetail.Controls.Add(this.cBoxBMit);
-            this.BestellungDetail.Controls.Add(this.cBoxBLager);
             this.BestellungDetail.Location = new System.Drawing.Point(154, 29);
             this.BestellungDetail.Name = "BestellungDetail";
-            this.BestellungDetail.Size = new System.Drawing.Size(142, 218);
+            this.BestellungDetail.Size = new System.Drawing.Size(142, 93);
             this.BestellungDetail.TabIndex = 3;
             this.BestellungDetail.Visible = false;
             // 
             // butBArtikel
             // 
-            this.butBArtikel.Location = new System.Drawing.Point(6, 112);
+            this.butBArtikel.Location = new System.Drawing.Point(3, 49);
             this.butBArtikel.Name = "butBArtikel";
             this.butBArtikel.Size = new System.Drawing.Size(121, 35);
             this.butBArtikel.TabIndex = 7;
@@ -87,44 +84,38 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 56);
+            this.label2.Location = new System.Drawing.Point(0, 6);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(59, 13);
             this.label2.TabIndex = 6;
             this.label2.Text = "Mitarbeiter:";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 4);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 13);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Lagerort:";
-            // 
             // cBoxBMit
             // 
             this.cBoxBMit.DisplayMember = "MitarbeiterListe";
             this.cBoxBMit.FormattingEnabled = true;
-            this.cBoxBMit.Location = new System.Drawing.Point(6, 72);
+            this.cBoxBMit.Location = new System.Drawing.Point(3, 22);
             this.cBoxBMit.Name = "cBoxBMit";
             this.cBoxBMit.Size = new System.Drawing.Size(121, 21);
             this.cBoxBMit.TabIndex = 4;
             // 
-            // cBoxBLager
+            // butBsMehrArt
             // 
-            this.cBoxBLager.DisplayMember = "LagerortListe";
-            this.cBoxBLager.FormattingEnabled = true;
-            this.cBoxBLager.Location = new System.Drawing.Point(3, 20);
-            this.cBoxBLager.Name = "cBoxBLager";
-            this.cBoxBLager.Size = new System.Drawing.Size(121, 21);
-            this.cBoxBLager.TabIndex = 3;
+            this.butBsMehrArt.Location = new System.Drawing.Point(157, 128);
+            this.butBsMehrArt.Name = "butBsMehrArt";
+            this.butBsMehrArt.Size = new System.Drawing.Size(121, 35);
+            this.butBsMehrArt.TabIndex = 8;
+            this.butBsMehrArt.Text = "Weitern Artikel zu Bestellung hinzufügen...";
+            this.butBsMehrArt.UseVisualStyleBackColor = true;
+            this.butBsMehrArt.Visible = false;
+            this.butBsMehrArt.Click += new System.EventHandler(this.butBsMehrArt_Click);
             // 
             // Bestellung
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(663, 394);
+            this.Controls.Add(this.butBsMehrArt);
             this.Controls.Add(this.BestellungDetail);
             this.Controls.Add(this.herfBNeu);
             this.Controls.Add(this.lBoxBestellung);
@@ -145,8 +136,7 @@
         private System.Windows.Forms.Panel BestellungDetail;
         private System.Windows.Forms.Button butBArtikel;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cBoxBMit;
-        private System.Windows.Forms.ComboBox cBoxBLager;
+        private System.Windows.Forms.Button butBsMehrArt;
     }
 }

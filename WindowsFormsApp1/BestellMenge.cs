@@ -97,7 +97,6 @@ namespace WindowsFormsApp1
                 BM.BM_BST_ID = Convert.ToInt32(lBoxBestellungen.SelectedIndex +1);
                 Console.WriteLine("Bestellmenge wird gespeichert");
                 BM.BestellmengeSpeichern();
-                BM.BestellmengeLadenFürBestellung();
                 ListBoxMengeLaden(true);
 
             }
@@ -111,7 +110,7 @@ namespace WindowsFormsApp1
             {
                 try
                 {
-                    BM.BestellmengeLadenFürBestellung();
+                    
                 }
                 catch (Exception ex) 
                 {
@@ -136,6 +135,12 @@ namespace WindowsFormsApp1
         {
             BM.BM_BST_ID = Convert.ToInt32(lBoxBestellungen.SelectedIndex + 1);
             BMDetail.Visible = true;
+        }
+
+        private void butEmBestellt_Click(object sender, EventArgs e)
+        {
+            BM.BEstellungStatusNeu();
+            Console.WriteLine("Bestellung auf dem Weg");
         }
     }
 }

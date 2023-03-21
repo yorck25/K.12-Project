@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cBoxEmEschein = new System.Windows.Forms.ComboBox();
             this.butEmHinzu = new System.Windows.Forms.Button();
             this.cBoxEmArt = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -37,7 +38,6 @@
             this.tBoxEmMenge = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.lBoxEmArt = new System.Windows.Forms.ListBox();
-            this.cBoxEmEschein = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,6 +56,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(296, 249);
             this.panel1.TabIndex = 3;
+            // 
+            // cBoxEmEschein
+            // 
+            this.cBoxEmEschein.DisplayMember = "EntnahmeschinListe";
+            this.cBoxEmEschein.FormattingEnabled = true;
+            this.cBoxEmEschein.Location = new System.Drawing.Point(17, 21);
+            this.cBoxEmEschein.Name = "cBoxEmEschein";
+            this.cBoxEmEschein.Size = new System.Drawing.Size(121, 21);
+            this.cBoxEmEschein.TabIndex = 13;
+            this.cBoxEmEschein.SelectedIndexChanged += new System.EventHandler(this.cBoxEmEschein_SelectedIndexChanged_1);
             // 
             // butEmHinzu
             // 
@@ -127,15 +137,6 @@
             this.lBoxEmArt.Name = "lBoxEmArt";
             this.lBoxEmArt.Size = new System.Drawing.Size(131, 147);
             this.lBoxEmArt.TabIndex = 2;
-            // 
-            // cBoxEmEschein
-            // 
-            this.cBoxEmEschein.DisplayMember = "EntnahmeschinListe";
-            this.cBoxEmEschein.FormattingEnabled = true;
-            this.cBoxEmEschein.Location = new System.Drawing.Point(17, 21);
-            this.cBoxEmEschein.Name = "cBoxEmEschein";
-            this.cBoxEmEschein.Size = new System.Drawing.Size(121, 21);
-            this.cBoxEmEschein.TabIndex = 13;
             // 
             // Entnahmemenge
             // 

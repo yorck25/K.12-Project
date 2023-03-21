@@ -37,6 +37,8 @@
             this.cBoxBMArt = new System.Windows.Forms.ComboBox();
             this.lBoxBMliste = new System.Windows.Forms.ListBox();
             this.lBoxBestellungen = new System.Windows.Forms.ListBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.butEmBestellt = new System.Windows.Forms.Button();
             this.BMDetail.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -129,11 +131,32 @@
             this.lBoxBestellungen.TabIndex = 6;
             this.lBoxBestellungen.SelectedIndexChanged += new System.EventHandler(this.lBoxBestellungen_SelectedIndexChanged);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(0, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(35, 13);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "label4";
+            // 
+            // butEmBestellt
+            // 
+            this.butEmBestellt.Location = new System.Drawing.Point(139, 281);
+            this.butEmBestellt.Name = "butEmBestellt";
+            this.butEmBestellt.Size = new System.Drawing.Size(138, 23);
+            this.butEmBestellt.TabIndex = 8;
+            this.butEmBestellt.Text = "Bestellung Abschiken";
+            this.butEmBestellt.UseVisualStyleBackColor = true;
+            this.butEmBestellt.Click += new System.EventHandler(this.butEmBestellt_Click);
+            // 
             // BestellMenge
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(468, 450);
+            this.Controls.Add(this.butEmBestellt);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.lBoxBestellungen);
             this.Controls.Add(this.BMDetail);
             this.Controls.Add(this.label2);
@@ -158,5 +181,7 @@
         private System.Windows.Forms.ComboBox cBoxBMArt;
         private System.Windows.Forms.ListBox lBoxBMliste;
         private System.Windows.Forms.ListBox lBoxBestellungen;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button butEmBestellt;
     }
 }

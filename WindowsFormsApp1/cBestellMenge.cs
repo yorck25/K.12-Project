@@ -19,31 +19,7 @@ namespace WindowsFormsApp1
         public int BM_ART_ID { get; set; }
 
         public string BestemMengeListe => BM_ID + ": " + BM_ART_ID + ":"+ BM_Menge;
-        public void BestellmengeLadenFürBestellung()
-        {
 
-            string sql = "SELECT BM_BST_ID FROM bestellmenge WHERE BM_BST_ID = @BM_BST_ID";
-            MySqlConnection conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["localsql"].ConnectionString);
-
-            conn.Open();
-            MySqlCommand cmd = new MySqlCommand(sql, conn);
-            MySqlDataReader rdr = cmd.ExecuteReader();
-            cmd.Parameters.AddWithValue("@BM_BST_ID", this.BM_BST_ID);
-            Console.WriteLine(BM_BST_ID);
-
-            cBestellMenge.BMListe = new List<cBestellMenge>();
-
-            while (rdr.Read())
-            {
-                cBestellMenge bm = new cBestellMenge();
-                bm.BM_ID = rdr.GetInt16("BM_ID");
-                bm.BM_BST_ID = rdr.GetInt16("BM_BST_ID");
-                bm.BM_ART_ID = rdr.GetInt16("BM_ART_ID");
-                bm.BM_Menge = rdr.GetInt16("BM_Menge");
-                cBestellMenge.BMListe.Add(bm);
-            }
-            rdr.Close();
-        }
         public void BestellmengeSpeichern()
         {
             MySqlConnection conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["localsql"].ConnectionString);
@@ -57,6 +33,22 @@ namespace WindowsFormsApp1
             this.BM_ID = cmd.LastInsertedId;
             cBestellMenge.BMListe.Add(this);
             
+            conn.Close();
+            return;
+        }
+        
+        public void BEstellungStatusNeu()
+        {
+            MySqlConnection conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["localsql"].ConnectionString);
+
+            conn.Open();
+
+            string sql = "UPDATE bestellung SET B_S_ID = true WHERE B_ID = @BM_BST_ID";
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+            this.BestellmengeWerteSpeichern(cmd);
+            cmd.ExecuteNonQuery();
+            this.BM_ID = cmd.LastInsertedId;
+            cBestellMenge.BMListe.Add(this);
             conn.Close();
             return;
         }

@@ -32,7 +32,6 @@ namespace WindowsFormsApp1
             {
                 try
                 {
-                    cLager.LagerLaden();
                     cBestellung.BestellungLaden();
                     cMitarbeiter.MitarbeiterLaden();
                 }
@@ -45,13 +44,6 @@ namespace WindowsFormsApp1
             //Alle Boxen leeren
 
             cBoxBMit.Items.Clear();
-            cBoxBLager.Items.Clear();
-
-            //ComoBox für Lager neu Aufbauen
-            foreach (cLager lager in cLager.LVWListe)
-            {
-                cBoxBLager.Items.Add(lager);
-            };
             //ComoBox für Mitarbeiter neu Aufbauen
             foreach (cMitarbeiter mit in cMitarbeiter.MitListe)
             {
@@ -83,20 +75,18 @@ namespace WindowsFormsApp1
         public void butBArtikel_Click(object sender, EventArgs e)
         {
 
-            if(cBoxBLager.SelectedItem == null && cBoxBMit.SelectedItem == null){
+            if(cBoxBMit.SelectedItem == null){
                 Console.WriteLine("Error");
             }
             else
             {
                 b.B_Mitarbeiter = Convert.ToInt32(cBoxBMit.SelectedIndex + 1);
-                b.B_Lager = Convert.ToInt32(cBoxBLager.SelectedIndex + 1);
                 DateTime CurrentDate;
                 CurrentDate = DateTime.Now;
                 b.B_Datum = Convert.ToString(CurrentDate);
                 Console.WriteLine(b.B_Datum);
                 b.BestellungSpeichern();
 
-                cBoxBLager.SelectedIndex = 0 -1;
                 cBoxBMit.SelectedIndex = 0 -1;
                 BestellungDetail.Visible = false;
                 BestellMenge bestellMenge = new BestellMenge(new cBestellMenge());
@@ -107,12 +97,18 @@ namespace WindowsFormsApp1
 
         private void lBoxBestellung_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            butBsMehrArt.Visible = true;
         }
 
         private void herfBNeu_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             BestellungDetail.Show();
+        }
+
+        private void butBsMehrArt_Click(object sender, EventArgs e)
+        {
+            BestellMenge bestellMenge = new BestellMenge(new cBestellMenge());
+            bestellMenge.ShowDialog();
         }
     }
 }

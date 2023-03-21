@@ -29,17 +29,19 @@ namespace WindowsFormsApp1
             MySqlCommand cmd = new MySqlCommand(sql, conn);
             MySqlDataReader rdr = cmd.ExecuteReader();
 
-            cKostenstelle.liste = new List<cKostenstelle>();
+            Emliste.Clear();
+            cEntnahmemenge.EmListe = new List<cEntnahmemenge>();
 
             while (rdr.Read())
             {
-                cEntnahmeschein em = new cEntnahmeschein();
-                em.ES_ID = rdr.GetInt64("ES_ID");
-                em.ES_Datum = rdr.GetString("ES_Datum");
-                em.ES_Ntz = rdr.GetString("ES_Ntz");
-                em.ES_VonMit = rdr.GetInt16("ES_VonMit_ID");
-                em.ES_FuerMit = rdr.GetInt16("ES_FuerMit_ID");
-                cEntnahmeschein.Emliste.Add(em);
+
+                //cEntnahmeschein em = new cEntnahmeschein();
+                //em.ES_ID = rdr.GetInt64("ES_ID");
+                //em.ES_Datum = rdr.GetString("ES_Datum");
+                //em.ES_Ntz = rdr.GetString("ES_Ntz");
+                //em.ES_VonMit = rdr.GetInt16("ES_VonMit_ID");
+                //em.ES_FuerMit = rdr.GetInt16("ES_FuerMit_ID");
+                //cEntnahmeschein.Emliste.Add(em);
             }
             rdr.Close();
         }

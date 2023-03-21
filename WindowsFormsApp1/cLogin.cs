@@ -26,8 +26,8 @@ namespace WindowsFormsApp1
                 int result = Convert.ToInt32(cmd.ExecuteScalar());
                 if (result > 0)
                 {
-                    Hauptmenu hauptmenu = new Hauptmenu(new cNachricht()); // Create your window here
-                    hauptmenu.Show(); // Open the window
+                    Hauptmenu hauptmenu = new Hauptmenu(new cNachricht());
+                    hauptmenu.Show();
                     return true;
                 }
                 else
@@ -37,12 +37,5 @@ namespace WindowsFormsApp1
 
             }
         }
-       /* public void LoginWerte(MySqlCommand cmd)
-        { 
-            cmd.Parameters.AddWithValue("@Login_Email", this.Login_Email);
-            cmd.Parameters.AddWithValue("@Login_Pw", this.Login_Passwort);
-
-            cmd.Parameters.AddWithValue("@Mit_Name", "test");
-        }*/
     }
 }
