@@ -87,7 +87,9 @@ namespace WindowsFormsApp1
                 Mit.MitarbeiterSpeichern();
                 Console.WriteLine("Mitarbeiter wird gespeichert");
                 tBoxRegName.Clear();
-
+                this.Close();
+                Login login = new Login(new cLogin());
+                login.Show();
             }
         }
     }

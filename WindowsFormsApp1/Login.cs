@@ -67,6 +67,7 @@ namespace WindowsFormsApp1
                 try
                 {
                     l.Anmelden(tBoxLoginEmail.Text, tBoxLoginPas.Text);
+                    this.Hide();
 
                 }
                 catch (MySqlException ex)

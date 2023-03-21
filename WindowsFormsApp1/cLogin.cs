@@ -22,7 +22,6 @@ namespace WindowsFormsApp1
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@Benutzername", Login_Email);
                 cmd.Parameters.AddWithValue("@Passwort", Login_Passwort);
-                Console.WriteLine(Login_Email + "---" + Login_Passwort);
                 conn.Open();
                 int result = Convert.ToInt32(cmd.ExecuteScalar());
                 if (result > 0)

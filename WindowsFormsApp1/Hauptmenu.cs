@@ -68,6 +68,7 @@ namespace WindowsFormsApp1
         {
             Login login = new Login(new cLogin());
             login.Show();
+            this.Close();
         }
 
         private void butHmenuMitarbeiter_Click(object sender, EventArgs e)
@@ -207,7 +208,6 @@ namespace WindowsFormsApp1
             {
                 nach.NachrichtLöschen();
                 hmenuDetailBenachrichtigung.Visible = false;
-                //hmenuBenachrichtigungList.Visible = false;
                 NachrichtenLaden(true);
             }
             else
