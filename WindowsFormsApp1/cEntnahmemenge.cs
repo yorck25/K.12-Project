@@ -16,6 +16,7 @@ namespace WindowsFormsApp1
         public int EM_ART_ID { get; set; }
         public int EM_ES_ID { get; set; }
         public int EM_Menge { get; set; }
+        public string EmArtProEmListe => "Artikelnummer: " + EM_ART_ID + " || Menge im Entnahmeschein: " + EM_Menge;
 
         public void EntnahmeMengeLaden()
         {
@@ -98,6 +99,46 @@ namespace WindowsFormsApp1
             cmd.ExecuteNonQuery();
             this.EM_ID = cmd.LastInsertedId;
             cEntnahmemenge.EmListe.Add(this);
+            conn.Close();
+            return;
+        }
+
+        public void AusgewählteEntnahmemengeLaden()
+        {
+            string sql = "SELECT * FROM entnahmemenge WHERE EM_ES_ID = @EM_ES_ID";
+            MySqlConnection conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["localsql"].ConnectionString);
+
+            conn.Open();
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+            cmd.Parameters.AddWithValue("@EM_ES_ID", this.EM_ES_ID);
+            MySqlDataReader rdr = cmd.ExecuteReader();
+
+            cEntnahmemenge.EmListe = new List<cEntnahmemenge>();
+
+            while (rdr.Read())
+            {
+                cEntnahmemenge em = new cEntnahmemenge();
+                em.EM_ART_ID = rdr.GetInt16("EM_ART_ID");
+                em.EM_ID = rdr.GetInt16("EM_ID");
+                em.EM_ES_ID = rdr.GetInt16("EM_ES_ID");
+                em.EM_Menge = rdr.GetInt16("EM_Menge");
+                cEntnahmemenge.EmListe.Add(em);
+            }
+            rdr.Close();
+            conn.Close();
+            return;
+        }
+
+        public void EntnahmescheinStatusnNeu()
+        {
+            MySqlConnection conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["localsql"].ConnectionString);
+
+            conn.Open();
+
+            string sql = "UPDATE entnahmeschein SET ES_Status = true WHERE ES_ID = @EM_ES_ID";
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+            this.EntnahmemengeWerteSpeichern(cmd);
+            cmd.ExecuteNonQuery();
             conn.Close();
             return;
         }

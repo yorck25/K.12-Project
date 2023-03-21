@@ -38,6 +38,7 @@
             this.cBoxEsVonMit = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.butEsMehrArt = new System.Windows.Forms.Button();
             this.EsDetail.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,7 +48,7 @@
             this.lBoxEs.FormattingEnabled = true;
             this.lBoxEs.Location = new System.Drawing.Point(12, 37);
             this.lBoxEs.Name = "lBoxEs";
-            this.lBoxEs.Size = new System.Drawing.Size(126, 329);
+            this.lBoxEs.Size = new System.Drawing.Size(126, 251);
             this.lBoxEs.TabIndex = 0;
             this.lBoxEs.SelectedIndexChanged += new System.EventHandler(this.lBoxEs_SelectedIndexChanged);
             // 
@@ -73,9 +74,9 @@
             this.EsDetail.Controls.Add(this.label2);
             this.EsDetail.Controls.Add(this.label1);
             this.EsDetail.Enabled = false;
-            this.EsDetail.Location = new System.Drawing.Point(166, 37);
+            this.EsDetail.Location = new System.Drawing.Point(144, 37);
             this.EsDetail.Name = "EsDetail";
-            this.EsDetail.Size = new System.Drawing.Size(166, 288);
+            this.EsDetail.Size = new System.Drawing.Size(158, 251);
             this.EsDetail.TabIndex = 2;
             // 
             // label3
@@ -139,11 +140,22 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Bearbeitet von:";
             // 
+            // butEsMehrArt
+            // 
+            this.butEsMehrArt.Location = new System.Drawing.Point(12, 294);
+            this.butEsMehrArt.Name = "butEsMehrArt";
+            this.butEsMehrArt.Size = new System.Drawing.Size(121, 35);
+            this.butEsMehrArt.TabIndex = 10;
+            this.butEsMehrArt.Text = "Weitern Artikel zum Entnahmeschein hinzufühgen...\r\n";
+            this.butEsMehrArt.UseVisualStyleBackColor = true;
+            this.butEsMehrArt.Click += new System.EventHandler(this.butEsMehrArt_Click);
+            // 
             // Entnahmeschein
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(570, 397);
+            this.Controls.Add(this.butEsMehrArt);
             this.Controls.Add(this.EsDetail);
             this.Controls.Add(this.herfEsNeu);
             this.Controls.Add(this.lBoxEs);
@@ -169,5 +181,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.RichTextBox tBoxEsNtz;
+        private System.Windows.Forms.Button butEsMehrArt;
     }
 }

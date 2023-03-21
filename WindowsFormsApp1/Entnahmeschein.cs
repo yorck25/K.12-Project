@@ -62,13 +62,12 @@ namespace WindowsFormsApp1
 
         public void butEsErstellen_Click(object sender, EventArgs e)
         {
-            Es.ES_VonMit = Convert.ToInt16(cBoxEsVonMit.SelectedIndex + 1);
-            Es.ES_FuerMit = Convert.ToInt16(cBoxEsFürMit.SelectedIndex + 1);
+            Es.ES_VonMit = Convert.ToInt16(((cMitarbeiter)cBoxEsVonMit.SelectedItem).Mit_ID);
+            Es.ES_FuerMit = Convert.ToInt16(((cMitarbeiter)cBoxEsFürMit.SelectedItem).Mit_ID);
             Es.ES_Ntz = tBoxEsNtz.Text;
             DateTime EsDate;
             EsDate = DateTime.Now;
             Es.ES_Datum = Convert.ToString(EsDate);
-            //Es.Es_Bearbeitet = false;
             Es.EntnahmescheinSpiechern();
             Entnahmemenge entnahmemenge = new Entnahmemenge(new cEntnahmemenge());
             entnahmemenge.Show();
@@ -103,6 +102,12 @@ namespace WindowsFormsApp1
             {
                 return;
             }
+        }
+
+        private void butEsMehrArt_Click(object sender, EventArgs e)
+        {
+            Entnahmemenge entnahmemenge = new Entnahmemenge(new cEntnahmemenge());
+            entnahmemenge.ShowDialog();
         }
     }
 }

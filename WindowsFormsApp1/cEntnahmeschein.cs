@@ -17,6 +17,7 @@ namespace WindowsFormsApp1
         public string ES_Ntz { get; set; }
         public int ES_VonMit { get; set; }
         public int ES_FuerMit { get; set; }
+        public bool ES_Status { get; set; }
 
         public string EntnahmeschinListe => ES_ID + ": " + ES_Datum;
 
@@ -35,13 +36,37 @@ namespace WindowsFormsApp1
             while (rdr.Read())
             {
 
-                //cEntnahmeschein em = new cEntnahmeschein();
-                //em.ES_ID = rdr.GetInt64("ES_ID");
-                //em.ES_Datum = rdr.GetString("ES_Datum");
-                //em.ES_Ntz = rdr.GetString("ES_Ntz");
-                //em.ES_VonMit = rdr.GetInt16("ES_VonMit_ID");
-                //em.ES_FuerMit = rdr.GetInt16("ES_FuerMit_ID");
-                //cEntnahmeschein.Emliste.Add(em);
+                cEntnahmeschein em = new cEntnahmeschein();
+                em.ES_ID = rdr.GetInt64("ES_ID");
+                em.ES_Datum = rdr.GetString("ES_Datum");
+                em.ES_Ntz = rdr.GetString("ES_Ntz");
+                em.ES_VonMit = rdr.GetInt16("ES_VonMit_ID");
+                em.ES_FuerMit = rdr.GetInt16("ES_FuerMit_ID");
+                cEntnahmeschein.Emliste.Add(em);
+            }
+            rdr.Close();
+        }
+
+        public static void NurUnbearbeiteteEntScheineLaden()
+        {
+            string sql = "SELECT * FROM entnahmeschein WHERE ES_Status = false";
+            MySqlConnection conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["localsql"].ConnectionString);
+
+            conn.Open();
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+            MySqlDataReader rdr = cmd.ExecuteReader();
+
+            cEntnahmemenge.EmListe = new List<cEntnahmemenge>();
+
+            while (rdr.Read())
+            {
+                cEntnahmeschein em = new cEntnahmeschein();
+                em.ES_ID = rdr.GetInt64("ES_ID");
+                em.ES_Datum = rdr.GetString("ES_Datum");
+                em.ES_Ntz = rdr.GetString("ES_Ntz");
+                em.ES_VonMit = rdr.GetInt16("ES_VonMit_ID");
+                em.ES_FuerMit = rdr.GetInt16("ES_FuerMit_ID");
+                cEntnahmeschein.Emliste.Add(em);
             }
             rdr.Close();
         }
@@ -52,7 +77,7 @@ namespace WindowsFormsApp1
 
             conn.Open();
 
-            string sql = "INSERT INTO entnahmeschein (ES_ID, ES_Datum, ES_Ntz, ES_VonMit_ID, ES_FuerMit_ID) VALUES (@ES_ID, @ES_Datum, @ES_Ntz, @ES_VonMit, @Es_FeurMit)";
+            string sql = "INSERT INTO entnahmeschein (ES_ID, ES_Datum, ES_Ntz, ES_VonMit_ID, ES_FuerMit_ID, ES_Status) VALUES (@ES_ID, @ES_Datum, @ES_Ntz, @ES_VonMit, @Es_FeurMit, false)";
             MySqlCommand cmd = new MySqlCommand(sql, conn);
             this.EntnahmescheinWerteSpeichern(cmd);
             cmd.ExecuteNonQuery();

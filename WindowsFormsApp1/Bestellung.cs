@@ -80,7 +80,7 @@ namespace WindowsFormsApp1
             }
             else
             {
-                b.B_Mitarbeiter = Convert.ToInt32(cBoxBMit.SelectedIndex + 1);
+                b.B_Mitarbeiter = Convert.ToInt32(((cMitarbeiter)cBoxBMit.SelectedItem).Mit_ID);
                 DateTime CurrentDate;
                 CurrentDate = DateTime.Now;
                 b.B_Datum = Convert.ToString(CurrentDate);
