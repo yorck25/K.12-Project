@@ -70,7 +70,7 @@ namespace WindowsFormsApp1
             Lms.LM_ART_ID = Convert.ToInt16(cBoxLsmArt.SelectedIndex + 1);
             Lms.LM_Menge = Convert.ToInt16(tBoxLsmMenge.Text);
             //Lms.LM_LS_ID = Convert.ToInt16(cBoxLsmScheine.SelectedIndex + 1);
-            Lms.LM_LS_ID = ((cLieferschein)cBoxLsmScheine.SelectedItem).LS_ID;
+            Lms.LM_LS_ID = Convert.ToInt16(((cLieferschein)cBoxLsmScheine.SelectedItem).LS_ID);
             Lms.ArtikelEinFürLieferschein();
             ArtikelProLSchein(true);
             Console.WriteLine("Liefermenge wird hinzugefügt");
@@ -89,6 +89,11 @@ namespace WindowsFormsApp1
         {
             Lms.LieferscheinStatusnNeu();
             this.Close();
+        }
+
+        private void cBoxLsmScheine_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

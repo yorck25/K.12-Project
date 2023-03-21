@@ -17,6 +17,7 @@ namespace WindowsFormsApp1
         public string LS_Datum { get; set; }
         public bool LS_Bearbeitet { get; set; } 
         public int  LS_BearbeitetVon_ID { get; set; }
+        public bool LS_Status { get; set; }
 
         public string LieferscheinListe => LS_ID + ": " + LS_Datum;
         
@@ -46,14 +47,14 @@ namespace WindowsFormsApp1
 
         public static void NurBearbeiteteScheineLaden()
         {
-            string sql = "SELECT * FROM Lieferschein WHERE LS_Status = true";
+            string sql = "SELECT * FROM lieferschein WHERE LS_Status = true";
             MySqlConnection conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["localsql"].ConnectionString);
 
             conn.Open();
             MySqlCommand cmd = new MySqlCommand(sql, conn);
             MySqlDataReader rdr = cmd.ExecuteReader();
 
-            cBestellMenge.BMListe = new List<cBestellMenge>();
+            cLieferschein.LsListe = new List<cLieferschein>();
 
             while (rdr.Read())
             {
@@ -70,14 +71,14 @@ namespace WindowsFormsApp1
 
         public static void NurUnbearbeiteteScheineLaden()
         {
-            string sql = "SELECT * FROM Lieferschein WHERE LS_Status = flase";
+            string sql = "SELECT * FROM lieferschein WHERE LS_Status = false";
             MySqlConnection conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["localsql"].ConnectionString);
 
             conn.Open();
             MySqlCommand cmd = new MySqlCommand(sql, conn);
             MySqlDataReader rdr = cmd.ExecuteReader();
 
-            cBestellMenge.BMListe = new List<cBestellMenge>();
+            cLieferschein.LsListe = new List<cLieferschein>();
 
             while (rdr.Read())
             {

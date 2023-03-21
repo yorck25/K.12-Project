@@ -94,6 +94,7 @@
             this.cBoxLsmScheine.Name = "cBoxLsmScheine";
             this.cBoxLsmScheine.Size = new System.Drawing.Size(121, 21);
             this.cBoxLsmScheine.TabIndex = 9;
+            this.cBoxLsmScheine.SelectedIndexChanged += new System.EventHandler(this.cBoxLsmScheine_SelectedIndexChanged);
             // 
             // label5
             // 
