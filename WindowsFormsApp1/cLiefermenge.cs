@@ -103,6 +103,20 @@ namespace WindowsFormsApp1
             return;
         }
 
+        public void LieferscheinStatusnNeu()
+        {
+            MySqlConnection conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["localsql"].ConnectionString);
+
+            conn.Open();
+
+            string sql = "UPDATE lieferschein SET LS_Status = true WHERE LS_ID = @LM_LS_ID";
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+            this.LiefermengeWerteSpeichern(cmd);
+            cmd.ExecuteNonQuery();
+            conn.Close();
+            return;
+        }
+
         public void LiefermengeWerteSpeichern(MySqlCommand cmd)
         {
             cmd.Parameters.AddWithValue("@LM_LS_ID", this.LM_LS_ID);

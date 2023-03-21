@@ -31,13 +31,14 @@
             this.lBoxLsBgeliefert = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.LsNeuLsanlegen = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.cBoxLsBearbeitetVon = new System.Windows.Forms.ComboBox();
             this.tBoxLsBId = new System.Windows.Forms.TextBox();
             this.butLsNeu = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.tBoxLsbDatum = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.cBoxLsBearbeitetVon = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.butLsMehrArt = new System.Windows.Forms.Button();
             this.LsNeuLsanlegen.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,6 +74,24 @@
             this.LsNeuLsanlegen.Name = "LsNeuLsanlegen";
             this.LsNeuLsanlegen.Size = new System.Drawing.Size(181, 218);
             this.LsNeuLsanlegen.TabIndex = 4;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 109);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(80, 13);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "Bearbeitet Von:";
+            // 
+            // cBoxLsBearbeitetVon
+            // 
+            this.cBoxLsBearbeitetVon.DisplayMember = "MitarbeiterListe";
+            this.cBoxLsBearbeitetVon.FormattingEnabled = true;
+            this.cBoxLsBearbeitetVon.Location = new System.Drawing.Point(6, 125);
+            this.cBoxLsBearbeitetVon.Name = "cBoxLsBearbeitetVon";
+            this.cBoxLsBearbeitetVon.Size = new System.Drawing.Size(121, 21);
+            this.cBoxLsBearbeitetVon.TabIndex = 9;
             // 
             // tBoxLsBId
             // 
@@ -116,29 +135,23 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "Bestellung die geliefert sind:";
             // 
-            // cBoxLsBearbeitetVon
+            // butLsMehrArt
             // 
-            this.cBoxLsBearbeitetVon.DisplayMember = "MitarbeiterListe";
-            this.cBoxLsBearbeitetVon.FormattingEnabled = true;
-            this.cBoxLsBearbeitetVon.Location = new System.Drawing.Point(6, 125);
-            this.cBoxLsBearbeitetVon.Name = "cBoxLsBearbeitetVon";
-            this.cBoxLsBearbeitetVon.Size = new System.Drawing.Size(121, 21);
-            this.cBoxLsBearbeitetVon.TabIndex = 9;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 109);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(80, 13);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "Bearbeitet Von:";
+            this.butLsMehrArt.Location = new System.Drawing.Point(169, 286);
+            this.butLsMehrArt.Name = "butLsMehrArt";
+            this.butLsMehrArt.Size = new System.Drawing.Size(121, 35);
+            this.butLsMehrArt.TabIndex = 9;
+            this.butLsMehrArt.Text = "Lieferschein weiter Bearbeiten..";
+            this.butLsMehrArt.UseVisualStyleBackColor = true;
+            this.butLsMehrArt.Visible = false;
+            this.butLsMehrArt.Click += new System.EventHandler(this.butLsMehrArt_Click);
             // 
             // Lieferschein
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.butLsMehrArt);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.LsNeuLsanlegen);
             this.Controls.Add(this.lBoxLsBgeliefert);
@@ -164,5 +177,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cBoxLsBearbeitetVon;
+        private System.Windows.Forms.Button butLsMehrArt;
     }
 }

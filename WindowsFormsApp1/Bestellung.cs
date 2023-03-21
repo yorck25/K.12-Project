@@ -32,7 +32,7 @@ namespace WindowsFormsApp1
             {
                 try
                 {
-                    cBestellung.BestellungLaden();
+                    cBestellung.AlleBestellungLaden();
                     cMitarbeiter.MitarbeiterLaden();
                 }
                 catch (MySqlException ex)
@@ -57,7 +57,7 @@ namespace WindowsFormsApp1
             {
                 try
                 {
-                    cBestellung.BestellungLaden();
+                    cBestellung.AlleBestellungLaden();
                 }
                 catch
                 {

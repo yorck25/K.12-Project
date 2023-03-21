@@ -23,7 +23,7 @@ namespace WindowsFormsApp1
         private void butLsNeu_Click(object sender, EventArgs e)
         {
             Ls.LS_B_ID = Convert.ToInt16(tBoxLsBId.Text);
-            Ls.LS_BearbeitetVon_ID = Convert.ToInt32(cBoxLsBearbeitetVon.SelectedIndex);
+            Ls.LS_BearbeitetVon_ID = Convert.ToInt32(cBoxLsBearbeitetVon.SelectedIndex + 1);
             DateTime LsDate;
             LsDate = DateTime.Now;
             Ls.LS_Datum = Convert.ToString(LsDate);
@@ -46,7 +46,7 @@ namespace WindowsFormsApp1
             {
                 try
                 {
-                    cBestellung.BestellungLaden();
+                    cBestellung.NurGeliefertBestellungLaden();
                     cMitarbeiter.MitarbeiterLaden();
                 }
                 catch (MySqlException ex)
@@ -79,11 +79,18 @@ namespace WindowsFormsApp1
             {
                 tBoxLsBId.Text = Convert.ToString(bst.B_ID);
                 tBoxLsbDatum.Text = Convert.ToString(bst.B_Datum);
+                butLsMehrArt.Visible = true;
             }
             else
             {
                 return;
             }
+        }
+
+        private void butLsMehrArt_Click(object sender, EventArgs e)
+        {
+            Liefermenge liefermenge = new Liefermenge(new cLiefermenge());
+            liefermenge.Show();
         }
 
         //public void lBoxLsBgeliefert_SelectedIndexChanged(object sender, EventArgs e)

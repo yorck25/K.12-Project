@@ -21,9 +21,53 @@ namespace WindowsFormsApp1
 
         public string BestellungListe => B_ID + ": " + B_Datum;
 
-        public static void BestellungLaden()
+        public static void AlleBestellungLaden()
         {
             string sql = "SELECT * FROM bestellung";
+            MySqlConnection conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["localsql"].ConnectionString);
+
+            conn.Open();
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+            MySqlDataReader rdr = cmd.ExecuteReader();
+
+            cBestellung.BstListe = new List<cBestellung>();
+
+            while (rdr.Read())
+            {
+                cBestellung bst = new cBestellung();
+                bst.B_ID = rdr.GetInt16("B_ID");
+                bst.B_Mitarbeiter = rdr.GetInt16("B_MIT_ID");
+                bst.B_Datum = rdr.GetString("B_Datum");
+                cBestellung.BstListe.Add(bst);
+            }
+            rdr.Close();
+        }
+
+        public static void NurUngeliefertBestellungLaden()
+        {
+            string sql = "SELECT * FROM bestellung WHERE B_S_ID = false ";
+            MySqlConnection conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["localsql"].ConnectionString);
+
+            conn.Open();
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+            MySqlDataReader rdr = cmd.ExecuteReader();
+
+            cBestellung.BstListe = new List<cBestellung>();
+
+            while (rdr.Read())
+            {
+                cBestellung bst = new cBestellung();
+                bst.B_ID = rdr.GetInt16("B_ID");
+                bst.B_Mitarbeiter = rdr.GetInt16("B_MIT_ID");
+                bst.B_Datum = rdr.GetString("B_Datum");
+                cBestellung.BstListe.Add(bst);
+            }
+            rdr.Close();
+        }
+
+        public static void NurGeliefertBestellungLaden()
+        {
+            string sql = "SELECT * FROM bestellung WHERE B_S_ID = true";
             MySqlConnection conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["localsql"].ConnectionString);
 
             conn.Open();

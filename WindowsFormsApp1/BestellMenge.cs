@@ -24,22 +24,6 @@ namespace WindowsFormsApp1
         {
         }
 
-        private void cBoxBMBestellung_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (0 == 0)
-            {
-                try
-                {
-                    cBestellung.BestellungLaden();
-                }
-                catch (MySqlException ex)
-                {
-                    Console.WriteLine("Fehler" + ex);
-                }
-            }
-            BMDetail.Visible = true;
-        }
-
         private void BestellMenge_Load(object sender, EventArgs e)
         {
             Cboxaufbauen(true);
@@ -51,7 +35,7 @@ namespace WindowsFormsApp1
             {
                 try
                 {
-                    cBestellung.BestellungLaden();
+                    cBestellung.NurUngeliefertBestellungLaden();
                     cArtikel.ArtikelLaden();
                 }
                 catch (MySqlException ex)

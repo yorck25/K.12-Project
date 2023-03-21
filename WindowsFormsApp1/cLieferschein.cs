@@ -20,7 +20,7 @@ namespace WindowsFormsApp1
 
         public string LieferscheinListe => LS_ID + ": " + LS_Datum;
         
-        public static void LieferscheinLaden()
+        public static void AlleLieferscheinLaden()
         {
             string sql = "SELECT * FROM Lieferschein";
             MySqlConnection conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["localsql"].ConnectionString);
@@ -43,14 +43,63 @@ namespace WindowsFormsApp1
             }
             rdr.Close();
         }
+
+        public static void NurBearbeiteteScheineLaden()
+        {
+            string sql = "SELECT * FROM Lieferschein WHERE LS_Status = true";
+            MySqlConnection conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["localsql"].ConnectionString);
+
+            conn.Open();
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+            MySqlDataReader rdr = cmd.ExecuteReader();
+
+            cBestellMenge.BMListe = new List<cBestellMenge>();
+
+            while (rdr.Read())
+            {
+                cLieferschein Ls = new cLieferschein();
+                Ls.LS_ID = rdr.GetInt16("LS_ID");
+                Ls.LS_B_ID = rdr.GetInt16("Ls_B_ID");
+                Ls.LS_Datum = rdr.GetString("LS_Datum");
+                Ls.LS_BearbeitetVon_ID = rdr.GetInt16("LS_BearbeitetVon_ID");
+                Ls.LS_Bearbeitet = rdr.GetBoolean("LS_Bearbeitet");
+                cLieferschein.LsListe.Add(Ls);
+            }
+            rdr.Close();
+        }
+
+        public static void NurUnbearbeiteteScheineLaden()
+        {
+            string sql = "SELECT * FROM Lieferschein WHERE LS_Status = flase";
+            MySqlConnection conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["localsql"].ConnectionString);
+
+            conn.Open();
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+            MySqlDataReader rdr = cmd.ExecuteReader();
+
+            cBestellMenge.BMListe = new List<cBestellMenge>();
+
+            while (rdr.Read())
+            {
+                cLieferschein Ls = new cLieferschein();
+                Ls.LS_ID = rdr.GetInt16("LS_ID");
+                Ls.LS_B_ID = rdr.GetInt16("Ls_B_ID");
+                Ls.LS_Datum = rdr.GetString("LS_Datum");
+                Ls.LS_BearbeitetVon_ID = rdr.GetInt16("LS_BearbeitetVon_ID");
+                Ls.LS_Bearbeitet = rdr.GetBoolean("LS_Bearbeitet");
+                cLieferschein.LsListe.Add(Ls);
+            }
+            rdr.Close();
+        }
+
         public void LieferscheinSpeichern()
         {
             MySqlConnection conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["localsql"].ConnectionString);
 
             conn.Open();
 
-            string sql = "INSERT INTO lieferschein (LS_ID,Ls_B_ID, LS_Datum, LS_Bearbeitet, LS_BearbeitetVon_ID) " +
-                " VALUES (@Ls_ID, @Ls_B_ID, @Ls_Datum, @Ls_Bearbeitet, @Ls_BearbeitetVon_ID)";
+            string sql = "INSERT INTO lieferschein (LS_ID,Ls_B_ID, LS_Datum, LS_Bearbeitet, LS_BearbeitetVon_ID, LS_Status) " +
+                " VALUES (@Ls_ID, @Ls_B_ID, @Ls_Datum, @Ls_Bearbeitet, @Ls_BearbeitetVon_ID, false)";
             MySqlCommand cmd = new MySqlCommand(sql, conn);
             this.LieferscheinWerteSpeichern(cmd);
             cmd.ExecuteNonQuery();

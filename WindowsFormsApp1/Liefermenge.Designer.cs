@@ -38,6 +38,7 @@
             this.tBoxLsmMenge = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.lBoxLsmArt = new System.Windows.Forms.ListBox();
+            this.butLmLsFertig = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,7 +55,7 @@
             this.panel1.Controls.Add(this.lBoxLsmArt);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(296, 344);
+            this.panel1.Size = new System.Drawing.Size(287, 221);
             this.panel1.TabIndex = 2;
             // 
             // butLsmHinzu
@@ -137,11 +138,22 @@
             this.lBoxLsmArt.Size = new System.Drawing.Size(131, 147);
             this.lBoxLsmArt.TabIndex = 2;
             // 
+            // butLmLsFertig
+            // 
+            this.butLmLsFertig.Location = new System.Drawing.Point(169, 240);
+            this.butLmLsFertig.Name = "butLmLsFertig";
+            this.butLmLsFertig.Size = new System.Drawing.Size(130, 37);
+            this.butLmLsFertig.TabIndex = 3;
+            this.butLmLsFertig.Text = "Lieferschein Fertig eingetragen";
+            this.butLmLsFertig.UseVisualStyleBackColor = true;
+            this.butLmLsFertig.Click += new System.EventHandler(this.butLmLsFertig_Click);
+            // 
             // Liefermenge
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(379, 311);
+            this.Controls.Add(this.butLmLsFertig);
             this.Controls.Add(this.panel1);
             this.Name = "Liefermenge";
             this.Text = "Liefermenge";
@@ -164,5 +176,6 @@
         private System.Windows.Forms.ComboBox cBoxLsmScheine;
         private System.Windows.Forms.ComboBox cBoxLsmArt;
         private System.Windows.Forms.Button butLsmHinzu;
+        private System.Windows.Forms.Button butLmLsFertig;
     }
 }
