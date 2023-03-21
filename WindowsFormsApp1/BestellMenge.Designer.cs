@@ -33,19 +33,22 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.BMDetail = new System.Windows.Forms.Panel();
+            this.bmrBestätigungEinfügen = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.butBmbestätigen = new System.Windows.Forms.Button();
             this.butBMHinzu = new System.Windows.Forms.Button();
             this.cBoxBMArt = new System.Windows.Forms.ComboBox();
             this.lBoxBMliste = new System.Windows.Forms.ListBox();
             this.lBoxBestellungen = new System.Windows.Forms.ListBox();
             this.butEmBestellt = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.BMDetail.SuspendLayout();
+            this.bmrBestätigungEinfügen.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(154, 64);
+            this.label1.Location = new System.Drawing.Point(239, 63);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(73, 13);
             this.label1.TabIndex = 0;
@@ -53,7 +56,7 @@
             // 
             // tBoxBMmenge
             // 
-            this.tBoxBMmenge.Location = new System.Drawing.Point(157, 84);
+            this.tBoxBMmenge.Location = new System.Drawing.Point(242, 83);
             this.tBoxBMmenge.Name = "tBoxBMmenge";
             this.tBoxBMmenge.Size = new System.Drawing.Size(121, 20);
             this.tBoxBMmenge.TabIndex = 1;
@@ -71,7 +74,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(154, 8);
+            this.label3.Location = new System.Drawing.Point(239, 7);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(39, 13);
             this.label3.TabIndex = 4;
@@ -79,6 +82,7 @@
             // 
             // BMDetail
             // 
+            this.BMDetail.Controls.Add(this.bmrBestätigungEinfügen);
             this.BMDetail.Controls.Add(this.butBMHinzu);
             this.BMDetail.Controls.Add(this.cBoxBMArt);
             this.BMDetail.Controls.Add(this.label3);
@@ -87,14 +91,46 @@
             this.BMDetail.Controls.Add(this.label1);
             this.BMDetail.Location = new System.Drawing.Point(137, 63);
             this.BMDetail.Name = "BMDetail";
-            this.BMDetail.Size = new System.Drawing.Size(319, 197);
+            this.BMDetail.Size = new System.Drawing.Size(366, 197);
             this.BMDetail.TabIndex = 5;
             this.BMDetail.Visible = false;
             this.BMDetail.Paint += new System.Windows.Forms.PaintEventHandler(this.BMDetail_Paint);
             // 
+            // bmrBestätigungEinfügen
+            // 
+            this.bmrBestätigungEinfügen.BackColor = System.Drawing.Color.Gray;
+            this.bmrBestätigungEinfügen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.bmrBestätigungEinfügen.Controls.Add(this.label4);
+            this.bmrBestätigungEinfügen.Controls.Add(this.butBmbestätigen);
+            this.bmrBestätigungEinfügen.Location = new System.Drawing.Point(7, 23);
+            this.bmrBestätigungEinfügen.Name = "bmrBestätigungEinfügen";
+            this.bmrBestätigungEinfügen.Size = new System.Drawing.Size(229, 100);
+            this.bmrBestätigungEinfügen.TabIndex = 11;
+            this.bmrBestätigungEinfügen.Visible = false;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.Red;
+            this.label4.Location = new System.Drawing.Point(5, 14);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(223, 26);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Der Artikelund die Menge werdengespeichert \r\nund können nicht geändert werden";
+            // 
+            // butBmbestätigen
+            // 
+            this.butBmbestätigen.Location = new System.Drawing.Point(65, 43);
+            this.butBmbestätigen.Name = "butBmbestätigen";
+            this.butBmbestätigen.Size = new System.Drawing.Size(75, 23);
+            this.butBmbestätigen.TabIndex = 0;
+            this.butBmbestätigen.Text = "Bestätigen";
+            this.butBmbestätigen.UseVisualStyleBackColor = true;
+            this.butBmbestätigen.Click += new System.EventHandler(this.butBmbestätigen_Click);
+            // 
             // butBMHinzu
             // 
-            this.butBMHinzu.Location = new System.Drawing.Point(157, 127);
+            this.butBMHinzu.Location = new System.Drawing.Point(242, 126);
             this.butBMHinzu.Name = "butBMHinzu";
             this.butBMHinzu.Size = new System.Drawing.Size(75, 23);
             this.butBMHinzu.TabIndex = 5;
@@ -106,7 +142,7 @@
             // 
             this.cBoxBMArt.DisplayMember = "ArtikelListe";
             this.cBoxBMArt.FormattingEnabled = true;
-            this.cBoxBMArt.Location = new System.Drawing.Point(157, 24);
+            this.cBoxBMArt.Location = new System.Drawing.Point(242, 23);
             this.cBoxBMArt.Name = "cBoxBMArt";
             this.cBoxBMArt.Size = new System.Drawing.Size(121, 21);
             this.cBoxBMArt.TabIndex = 2;
@@ -116,9 +152,9 @@
             // 
             this.lBoxBMliste.DisplayMember = "BestemMengeListe";
             this.lBoxBMliste.FormattingEnabled = true;
-            this.lBoxBMliste.Location = new System.Drawing.Point(20, 8);
+            this.lBoxBMliste.Location = new System.Drawing.Point(3, 8);
             this.lBoxBMliste.Name = "lBoxBMliste";
-            this.lBoxBMliste.Size = new System.Drawing.Size(120, 147);
+            this.lBoxBMliste.Size = new System.Drawing.Size(230, 147);
             this.lBoxBMliste.TabIndex = 0;
             this.lBoxBMliste.SelectedIndexChanged += new System.EventHandler(this.lBoxBMliste_SelectedIndexChanged);
             // 
@@ -142,22 +178,11 @@
             this.butEmBestellt.UseVisualStyleBackColor = true;
             this.butEmBestellt.Click += new System.EventHandler(this.butEmBestellt_Click);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(13, 316);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // BestellMenge
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(468, 450);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(606, 344);
             this.Controls.Add(this.butEmBestellt);
             this.Controls.Add(this.lBoxBestellungen);
             this.Controls.Add(this.BMDetail);
@@ -167,6 +192,8 @@
             this.Load += new System.EventHandler(this.BestellMenge_Load);
             this.BMDetail.ResumeLayout(false);
             this.BMDetail.PerformLayout();
+            this.bmrBestätigungEinfügen.ResumeLayout(false);
+            this.bmrBestätigungEinfügen.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -184,6 +211,8 @@
         private System.Windows.Forms.ListBox lBoxBMliste;
         private System.Windows.Forms.ListBox lBoxBestellungen;
         private System.Windows.Forms.Button butEmBestellt;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel bmrBestätigungEinfügen;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button butBmbestätigen;
     }
 }

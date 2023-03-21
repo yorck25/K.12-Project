@@ -114,7 +114,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(663, 394);
+            this.ClientSize = new System.Drawing.Size(393, 369);
             this.Controls.Add(this.butBsMehrArt);
             this.Controls.Add(this.BestellungDetail);
             this.Controls.Add(this.herfBNeu);

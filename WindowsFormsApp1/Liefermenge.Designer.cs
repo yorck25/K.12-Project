@@ -39,11 +39,16 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lBoxLsmArt = new System.Windows.Forms.ListBox();
             this.butLmLsFertig = new System.Windows.Forms.Button();
+            this.lmBestätigungEinfügen = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.butLmbestätigen = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
+            this.lmBestätigungEinfügen.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.lmBestätigungEinfügen);
             this.panel1.Controls.Add(this.butLsmHinzu);
             this.panel1.Controls.Add(this.cBoxLsmArt);
             this.panel1.Controls.Add(this.label1);
@@ -55,12 +60,12 @@
             this.panel1.Controls.Add(this.lBoxLsmArt);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(287, 221);
+            this.panel1.Size = new System.Drawing.Size(489, 221);
             this.panel1.TabIndex = 2;
             // 
             // butLsmHinzu
             // 
-            this.butLsmHinzu.Location = new System.Drawing.Point(154, 165);
+            this.butLsmHinzu.Location = new System.Drawing.Point(229, 180);
             this.butLsmHinzu.Name = "butLsmHinzu";
             this.butLsmHinzu.Size = new System.Drawing.Size(75, 23);
             this.butLsmHinzu.TabIndex = 12;
@@ -72,7 +77,7 @@
             // 
             this.cBoxLsmArt.DisplayMember = "ArtikelListe";
             this.cBoxLsmArt.FormattingEnabled = true;
-            this.cBoxLsmArt.Location = new System.Drawing.Point(154, 87);
+            this.cBoxLsmArt.Location = new System.Drawing.Point(229, 102);
             this.cBoxLsmArt.Name = "cBoxLsmArt";
             this.cBoxLsmArt.Size = new System.Drawing.Size(121, 21);
             this.cBoxLsmArt.TabIndex = 11;
@@ -99,7 +104,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(154, 111);
+            this.label5.Location = new System.Drawing.Point(229, 126);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(43, 13);
             this.label5.TabIndex = 8;
@@ -108,7 +113,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(154, 70);
+            this.label4.Location = new System.Drawing.Point(229, 85);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(39, 13);
             this.label4.TabIndex = 7;
@@ -116,7 +121,7 @@
             // 
             // tBoxLsmMenge
             // 
-            this.tBoxLsmMenge.Location = new System.Drawing.Point(154, 127);
+            this.tBoxLsmMenge.Location = new System.Drawing.Point(229, 142);
             this.tBoxLsmMenge.Name = "tBoxLsmMenge";
             this.tBoxLsmMenge.Size = new System.Drawing.Size(121, 20);
             this.tBoxLsmMenge.TabIndex = 6;
@@ -141,7 +146,7 @@
             // 
             // butLmLsFertig
             // 
-            this.butLmLsFertig.Location = new System.Drawing.Point(169, 240);
+            this.butLmLsFertig.Location = new System.Drawing.Point(12, 239);
             this.butLmLsFertig.Name = "butLmLsFertig";
             this.butLmLsFertig.Size = new System.Drawing.Size(130, 37);
             this.butLmLsFertig.TabIndex = 3;
@@ -149,11 +154,43 @@
             this.butLmLsFertig.UseVisualStyleBackColor = true;
             this.butLmLsFertig.Click += new System.EventHandler(this.butLmLsFertig_Click);
             // 
+            // lmBestätigungEinfügen
+            // 
+            this.lmBestätigungEinfügen.BackColor = System.Drawing.Color.Gray;
+            this.lmBestätigungEinfügen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lmBestätigungEinfügen.Controls.Add(this.label3);
+            this.lmBestätigungEinfügen.Controls.Add(this.butLmbestätigen);
+            this.lmBestätigungEinfügen.Location = new System.Drawing.Point(154, 85);
+            this.lmBestätigungEinfügen.Name = "lmBestätigungEinfügen";
+            this.lmBestätigungEinfügen.Size = new System.Drawing.Size(229, 100);
+            this.lmBestätigungEinfügen.TabIndex = 12;
+            this.lmBestätigungEinfügen.Visible = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.Red;
+            this.label3.Location = new System.Drawing.Point(5, 14);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(223, 26);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Der Artikelund die Menge werdengespeichert \r\nund können nicht geändert werden";
+            // 
+            // butLmbestätigen
+            // 
+            this.butLmbestätigen.Location = new System.Drawing.Point(65, 43);
+            this.butLmbestätigen.Name = "butLmbestätigen";
+            this.butLmbestätigen.Size = new System.Drawing.Size(75, 23);
+            this.butLmbestätigen.TabIndex = 0;
+            this.butLmbestätigen.Text = "Bestätigen";
+            this.butLmbestätigen.UseVisualStyleBackColor = true;
+            this.butLmbestätigen.Click += new System.EventHandler(this.butLmbestätigen_Click);
+            // 
             // Liefermenge
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(379, 311);
+            this.ClientSize = new System.Drawing.Size(704, 350);
             this.Controls.Add(this.butLmLsFertig);
             this.Controls.Add(this.panel1);
             this.Name = "Liefermenge";
@@ -161,6 +198,8 @@
             this.Load += new System.EventHandler(this.Liefermenge_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.lmBestätigungEinfügen.ResumeLayout(false);
+            this.lmBestätigungEinfügen.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -178,5 +217,8 @@
         private System.Windows.Forms.ComboBox cBoxLsmArt;
         private System.Windows.Forms.Button butLsmHinzu;
         private System.Windows.Forms.Button butLmLsFertig;
+        private System.Windows.Forms.Panel lmBestätigungEinfügen;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button butLmbestätigen;
     }
 }

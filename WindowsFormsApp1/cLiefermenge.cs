@@ -20,7 +20,7 @@ namespace WindowsFormsApp1
         public int LM_ART_ID { get; set; }
         public int LM_Menge { get; set; }
 
-        public string LmArtProBstListe => LM_ID +"-- "+ LM_ART_ID + ": " + LM_Menge;
+        public string LmArtProBstListe => "Artikelnummer: "+ LM_ART_ID + " || Menge im Lieferschein: " + LM_Menge;
 
         public void LiefermengeLaden()
         {
@@ -113,6 +113,32 @@ namespace WindowsFormsApp1
             MySqlCommand cmd = new MySqlCommand(sql, conn);
             this.LiefermengeWerteSpeichern(cmd);
             cmd.ExecuteNonQuery();
+            conn.Close();
+            return;
+        }
+
+        public void AusgewählteLiefermengeLaden()
+        {
+            string sql = "SELECT * FROM liefermenge WHERE LM_LS_ID = @LM_LS_ID";
+            MySqlConnection conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["localsql"].ConnectionString);
+
+            conn.Open();
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+            cmd.Parameters.AddWithValue("@LM_LS_ID", this.LM_LS_ID);
+            MySqlDataReader rdr = cmd.ExecuteReader();
+
+            cLiefermenge.LmListe = new List<cLiefermenge>();
+
+            while (rdr.Read())
+            {
+                cLiefermenge lm = new cLiefermenge();
+                lm.LM_ART_ID = rdr.GetInt16("LM_ART_ID");
+                lm.LM_ID = rdr.GetInt16("LM_ID");
+                lm.LM_LS_ID = rdr.GetInt16("LM_LS_ID");
+                lm.LM_Menge = rdr.GetInt16("LM_Menge");
+                cLiefermenge.LmListe.Add(lm);
+            }
+            rdr.Close();
             conn.Close();
             return;
         }

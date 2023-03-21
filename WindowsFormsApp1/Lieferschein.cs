@@ -31,6 +31,7 @@ namespace WindowsFormsApp1
             Ls.LieferscheinSpeichern();
             Console.WriteLine("Lieferschein wird gespeichert");
 
+            LsNeuLsanlegen.Enabled = false;
             Liefermenge liefermenge = new Liefermenge(new cLiefermenge());
             liefermenge.ShowDialog();
         }
@@ -91,6 +92,11 @@ namespace WindowsFormsApp1
         {
             Liefermenge liefermenge = new Liefermenge(new cLiefermenge());
             liefermenge.Show();
+        }
+
+        private void herfLsNeu_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            LsNeuLsanlegen.Enabled = true;
         }
 
         //public void lBoxLsBgeliefert_SelectedIndexChanged(object sender, EventArgs e)

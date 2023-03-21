@@ -70,21 +70,7 @@ namespace WindowsFormsApp1
         private void butBMHinzu_Click(object sender, EventArgs e)
         {
 
-            if(string.IsNullOrEmpty(Convert.ToString(cBoxBMArt.SelectedIndex == -1)) || string.IsNullOrEmpty(tBoxBMmenge.Text))
-            {
-                Console.WriteLine("Error");
-            }
-            else
-            {
-                BM.BM_ART_ID = Convert.ToInt16(((cArtikel)cBoxBMArt.SelectedItem).Art_ID);
-                BM.BM_Menge = Convert.ToInt32(tBoxBMmenge.Text);
-                BM.BM_BST_ID = Convert.ToInt16(((cBestellung)lBoxBestellungen.SelectedItem).B_ID);
-                Console.WriteLine("Bestellmenge wird gespeichert");
-                BM.BestellmengeSpeichern();
-                ListBoxMengeLaden(true);
-            }
-
-            
+            bmrBestätigungEinfügen.Visible = true;
         }
 
         public void ListBoxMengeLaden(bool ListeLaden)
@@ -116,7 +102,7 @@ namespace WindowsFormsApp1
 
         private void lBoxBestellungen_SelectedIndexChanged(object sender, EventArgs e)
         {
-            BM.BM_BST_ID = Convert.ToInt32(lBoxBestellungen.SelectedIndex + 1);
+            BM.BM_BST_ID = Convert.ToInt32(((cBestellung)lBoxBestellungen.SelectedItem).B_ID);
             BMDetail.Visible = true;
             ListBoxMengeLaden(true);
         }
@@ -131,6 +117,25 @@ namespace WindowsFormsApp1
         {
             BM.BM_BST_ID = Convert.ToInt16(((cBestellung)lBoxBestellungen.SelectedItem).B_ID);
             BM.AusgewählteBestellmengeLaden();
+        }
+
+        private void butBmbestätigen_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(Convert.ToString(cBoxBMArt.SelectedIndex == -1)) || string.IsNullOrEmpty(tBoxBMmenge.Text))
+            {
+                Console.WriteLine("Error");
+            }
+            else
+            {
+                BM.BM_ART_ID = Convert.ToInt16(((cArtikel)cBoxBMArt.SelectedItem).Art_ID);
+                BM.BM_Menge = Convert.ToInt32(tBoxBMmenge.Text);
+                BM.BM_BST_ID = Convert.ToInt16(((cBestellung)lBoxBestellungen.SelectedItem).B_ID);
+                Console.WriteLine("Bestellmenge wird gespeichert");
+                BM.BestellmengeSpeichern();
+                ListBoxMengeLaden(true);
+                bmrBestätigungEinfügen.Visible = false;
+                tBoxBMmenge.Clear();
+            }
         }
     }
 }

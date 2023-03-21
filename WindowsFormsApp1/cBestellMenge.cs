@@ -18,7 +18,7 @@ namespace WindowsFormsApp1
         public int BM_Menge { get; set; }
         public int BM_ART_ID { get; set; }
 
-        public string BestemMengeListe => BM_ID + ": " + BM_ART_ID + ":"+ BM_Menge;
+        public string BestemMengeListe => "Artieklnummer: " + BM_ART_ID + " || Bestellmenge: " + BM_Menge;
 
 
         public void BestellmengeSpeichern()
@@ -63,7 +63,6 @@ namespace WindowsFormsApp1
 
             while (rdr.Read())
             {
-                cArtikel art = new cArtikel();
                 cBestellMenge bm = new cBestellMenge();
                 bm.BM_ART_ID = rdr.GetInt16("BM_ART_ID");
                 bm.BM_ID = rdr.GetInt16("BM_ID");
