@@ -68,7 +68,7 @@ namespace WindowsFormsApp1
             //ListBox für Bestellung neu Aufbauen
             foreach (cBestellung bst in cBestellung.BstListe)
             {
-                lBoxBestellung.Items.Insert(0, bst);
+                lBoxBestellung.Items.Add(bst);
             }
         }
 

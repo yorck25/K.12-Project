@@ -76,13 +76,12 @@ namespace WindowsFormsApp1
             }
             else
             {
-                BM.BM_ART_ID = Convert.ToInt32(cBoxBMArt.SelectedIndex + 1);
+                BM.BM_ART_ID = Convert.ToInt16(((cArtikel)cBoxBMArt.SelectedItem).Art_ID);
                 BM.BM_Menge = Convert.ToInt32(tBoxBMmenge.Text);
-                BM.BM_BST_ID = Convert.ToInt32(lBoxBestellungen.SelectedIndex +1);
+                BM.BM_BST_ID = Convert.ToInt16(((cBestellung)lBoxBestellungen.SelectedItem).B_ID);
                 Console.WriteLine("Bestellmenge wird gespeichert");
                 BM.BestellmengeSpeichern();
                 ListBoxMengeLaden(true);
-
             }
 
             
@@ -94,7 +93,7 @@ namespace WindowsFormsApp1
             {
                 try
                 {
-                    
+                    BM.AusgewählteBestellmengeLaden();
                 }
                 catch (Exception ex) 
                 {
@@ -104,7 +103,7 @@ namespace WindowsFormsApp1
                 lBoxBMliste.Items.Clear();
                 foreach(cBestellMenge bm in cBestellMenge.BMListe)
                 {
-                    lBoxBMliste.Items.Add( bm);
+                    lBoxBMliste.Items.Add(bm);
                 }
             }
 
@@ -119,12 +118,19 @@ namespace WindowsFormsApp1
         {
             BM.BM_BST_ID = Convert.ToInt32(lBoxBestellungen.SelectedIndex + 1);
             BMDetail.Visible = true;
+            ListBoxMengeLaden(true);
         }
 
         private void butEmBestellt_Click(object sender, EventArgs e)
         {
-            BM.BEstellungStatusNeu();
+            BM.BestellungStatusNeu();
             Console.WriteLine("Bestellung auf dem Weg");
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            BM.BM_BST_ID = Convert.ToInt16(((cBestellung)lBoxBestellungen.SelectedItem).B_ID);
+            BM.AusgewählteBestellmengeLaden();
         }
     }
 }

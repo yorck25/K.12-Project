@@ -107,7 +107,7 @@ namespace WindowsFormsApp1
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 this.BestellungWerteSpeichern(cmd);
                 cmd.ExecuteNonQuery();
-                this.B_ID = cmd.LastInsertedId;
+                this.B_ID = cmd.LastInsertedId +1;
                 cBestellung.BstListe.Add(this);
             }
             conn.Close();
