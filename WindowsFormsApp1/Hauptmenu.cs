@@ -127,7 +127,6 @@ namespace WindowsFormsApp1
                 try
                 {
                     cArtikel.ArtikelLaden();
-                    cNachricht.NachrichtenLaden();
                 }
                 catch (MySqlException exc)
                 {
@@ -136,7 +135,6 @@ namespace WindowsFormsApp1
             }
             //Alle Boxen leeren
             lBoxHmenuBestand.Items.Clear();
-            lBoxHmenuMeldung.Items.Clear();
 
             //ListBox Artikel neu Aufbauen
             foreach (cArtikel art in cArtikel.ArtListe)
@@ -209,6 +207,7 @@ namespace WindowsFormsApp1
             {
                 nach.NachrichtLöschen();
                 hmenuDetailBenachrichtigung.Visible = false;
+                //hmenuBenachrichtigungList.Visible = false;
                 NachrichtenLaden(true);
             }
             else

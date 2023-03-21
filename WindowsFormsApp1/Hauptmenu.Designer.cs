@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.kryptonPalette1 = new ComponentFactory.Krypton.Toolkit.KryptonPalette(this.components);
             this.hmenuNavElemente = new System.Windows.Forms.Panel();
             this.butHmenuArtikel = new System.Windows.Forms.Button();
             this.butHmenuMitarbeiter = new System.Windows.Forms.Button();
@@ -216,6 +214,7 @@
             // 
             // lBoxHmenuNachricht
             // 
+            this.lBoxHmenuNachricht.DisplayMember = "Nachricht";
             this.lBoxHmenuNachricht.FormattingEnabled = true;
             this.lBoxHmenuNachricht.Location = new System.Drawing.Point(9, 3);
             this.lBoxHmenuNachricht.Name = "lBoxHmenuNachricht";
@@ -540,7 +539,6 @@
         #endregion
 
         private System.Windows.Forms.Button hauptmenuÖffnenSidebar;
-        private ComponentFactory.Krypton.Toolkit.KryptonPalette kryptonPalette1;
         private System.Windows.Forms.Panel hmenuNavElemente;
         private System.Windows.Forms.Button butHmenuLieferschein;
         private System.Windows.Forms.Button butHmenuMaterial;

@@ -55,8 +55,8 @@ namespace WindowsFormsApp1
 
             conn.Open();
 
-            string sql = "INSERT INTO nachricht (Nach_ID, Nach_Betreff, Nach_Text) " +
-            " VALUES (@Nach_ID, @Nach_Betreff , @Nach_Text)";
+            string sql = "INSERT INTO nachricht (Nach_ID, Nach_Betreff, Nach_Text, Nach_Gelesen) " +
+            " VALUES (@Nach_ID, @Nach_Betreff , @Nach_Text, @Nach_Gelesen)";
             MySqlCommand cmd = new MySqlCommand(sql, conn);
             this.NachrichtenAutomatischWerte(cmd);
             cmd.ExecuteNonQuery();
@@ -116,8 +116,6 @@ namespace WindowsFormsApp1
         {
             Nach_Betreff = "Bestand Unterschreitung";
             Nach_Text = "Der MIndestbestnad bei einem Artikel wurde unterschritten!!!";
-            Nach_GesVon = 999;
-            Nach_Mit_Id = 999;
             Nach_Gelesen = false;
 
             cmd.Parameters.AddWithValue("@Nach_ID",this.Nach_ID);
