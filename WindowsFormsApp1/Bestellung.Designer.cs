@@ -42,9 +42,9 @@
             // 
             this.lBoxBestellung.DisplayMember = "BestellungListe";
             this.lBoxBestellung.FormattingEnabled = true;
-            this.lBoxBestellung.Location = new System.Drawing.Point(12, 29);
+            this.lBoxBestellung.Location = new System.Drawing.Point(3, 3);
             this.lBoxBestellung.Name = "lBoxBestellung";
-            this.lBoxBestellung.Size = new System.Drawing.Size(120, 329);
+            this.lBoxBestellung.Size = new System.Drawing.Size(154, 238);
             this.lBoxBestellung.TabIndex = 0;
             this.lBoxBestellung.SelectedIndexChanged += new System.EventHandler(this.lBoxBestellung_SelectedIndexChanged);
             // 
@@ -52,7 +52,7 @@
             // 
             this.herfBNeu.AutoSize = true;
             this.herfBNeu.LinkColor = System.Drawing.SystemColors.Highlight;
-            this.herfBNeu.Location = new System.Drawing.Point(38, 13);
+            this.herfBNeu.Location = new System.Drawing.Point(12, 13);
             this.herfBNeu.Name = "herfBNeu";
             this.herfBNeu.Size = new System.Drawing.Size(94, 13);
             this.herfBNeu.TabIndex = 1;
@@ -65,15 +65,16 @@
             this.BestellungDetail.Controls.Add(this.butBArtikel);
             this.BestellungDetail.Controls.Add(this.label2);
             this.BestellungDetail.Controls.Add(this.cBoxBMit);
-            this.BestellungDetail.Location = new System.Drawing.Point(154, 29);
+            this.BestellungDetail.Controls.Add(this.lBoxBestellung);
+            this.BestellungDetail.Enabled = false;
+            this.BestellungDetail.Location = new System.Drawing.Point(12, 29);
             this.BestellungDetail.Name = "BestellungDetail";
-            this.BestellungDetail.Size = new System.Drawing.Size(142, 93);
+            this.BestellungDetail.Size = new System.Drawing.Size(332, 257);
             this.BestellungDetail.TabIndex = 3;
-            this.BestellungDetail.Visible = false;
             // 
             // butBArtikel
             // 
-            this.butBArtikel.Location = new System.Drawing.Point(3, 49);
+            this.butBArtikel.Location = new System.Drawing.Point(166, 46);
             this.butBArtikel.Name = "butBArtikel";
             this.butBArtikel.Size = new System.Drawing.Size(121, 35);
             this.butBArtikel.TabIndex = 7;
@@ -84,7 +85,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(0, 6);
+            this.label2.Location = new System.Drawing.Point(163, 3);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(59, 13);
             this.label2.TabIndex = 6;
@@ -94,20 +95,19 @@
             // 
             this.cBoxBMit.DisplayMember = "MitarbeiterListe";
             this.cBoxBMit.FormattingEnabled = true;
-            this.cBoxBMit.Location = new System.Drawing.Point(3, 22);
+            this.cBoxBMit.Location = new System.Drawing.Point(166, 19);
             this.cBoxBMit.Name = "cBoxBMit";
             this.cBoxBMit.Size = new System.Drawing.Size(121, 21);
             this.cBoxBMit.TabIndex = 4;
             // 
             // butBsMehrArt
             // 
-            this.butBsMehrArt.Location = new System.Drawing.Point(157, 128);
+            this.butBsMehrArt.Location = new System.Drawing.Point(11, 292);
             this.butBsMehrArt.Name = "butBsMehrArt";
             this.butBsMehrArt.Size = new System.Drawing.Size(121, 35);
             this.butBsMehrArt.TabIndex = 8;
             this.butBsMehrArt.Text = "Weitern Artikel zu Bestellung hinzufügen...";
             this.butBsMehrArt.UseVisualStyleBackColor = true;
-            this.butBsMehrArt.Visible = false;
             this.butBsMehrArt.Click += new System.EventHandler(this.butBsMehrArt_Click);
             // 
             // Bestellung
@@ -118,7 +118,6 @@
             this.Controls.Add(this.butBsMehrArt);
             this.Controls.Add(this.BestellungDetail);
             this.Controls.Add(this.herfBNeu);
-            this.Controls.Add(this.lBoxBestellung);
             this.Name = "Bestellung";
             this.Text = "Bestellung";
             this.Load += new System.EventHandler(this.Bestellung_Load);

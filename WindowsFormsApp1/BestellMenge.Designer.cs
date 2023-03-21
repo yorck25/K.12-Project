@@ -65,7 +65,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 29);
+            this.label2.Location = new System.Drawing.Point(9, 11);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(59, 13);
             this.label2.TabIndex = 3;
@@ -89,7 +89,7 @@
             this.BMDetail.Controls.Add(this.lBoxBMliste);
             this.BMDetail.Controls.Add(this.tBoxBMmenge);
             this.BMDetail.Controls.Add(this.label1);
-            this.BMDetail.Location = new System.Drawing.Point(137, 63);
+            this.BMDetail.Location = new System.Drawing.Point(137, 45);
             this.BMDetail.Name = "BMDetail";
             this.BMDetail.Size = new System.Drawing.Size(366, 197);
             this.BMDetail.TabIndex = 5;
@@ -162,7 +162,7 @@
             // 
             this.lBoxBestellungen.DisplayMember = "BestellungListe";
             this.lBoxBestellungen.FormattingEnabled = true;
-            this.lBoxBestellungen.Location = new System.Drawing.Point(12, 45);
+            this.lBoxBestellungen.Location = new System.Drawing.Point(12, 27);
             this.lBoxBestellungen.Name = "lBoxBestellungen";
             this.lBoxBestellungen.Size = new System.Drawing.Size(120, 264);
             this.lBoxBestellungen.TabIndex = 6;
@@ -170,7 +170,7 @@
             // 
             // butEmBestellt
             // 
-            this.butEmBestellt.Location = new System.Drawing.Point(139, 281);
+            this.butEmBestellt.Location = new System.Drawing.Point(139, 263);
             this.butEmBestellt.Name = "butEmBestellt";
             this.butEmBestellt.Size = new System.Drawing.Size(138, 23);
             this.butEmBestellt.TabIndex = 8;
@@ -182,7 +182,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(606, 344);
+            this.ClientSize = new System.Drawing.Size(559, 322);
             this.Controls.Add(this.butEmBestellt);
             this.Controls.Add(this.lBoxBestellungen);
             this.Controls.Add(this.BMDetail);

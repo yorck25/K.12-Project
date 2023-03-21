@@ -48,7 +48,7 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.butEmBestellt);
+            this.panel1.Controls.Add(this.bmrBestätigungEinfügen);
             this.panel1.Controls.Add(this.cBoxEmEschein);
             this.panel1.Controls.Add(this.butEmHinzu);
             this.panel1.Controls.Add(this.cBoxEmArt);
@@ -60,12 +60,12 @@
             this.panel1.Controls.Add(this.lBoxEmArt);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(431, 242);
+            this.panel1.Size = new System.Drawing.Size(442, 242);
             this.panel1.TabIndex = 3;
             // 
             // butEmBestellt
             // 
-            this.butEmBestellt.Location = new System.Drawing.Point(17, 211);
+            this.butEmBestellt.Location = new System.Drawing.Point(15, 260);
             this.butEmBestellt.Name = "butEmBestellt";
             this.butEmBestellt.Size = new System.Drawing.Size(138, 23);
             this.butEmBestellt.TabIndex = 14;
@@ -85,7 +85,7 @@
             // 
             // butEmHinzu
             // 
-            this.butEmHinzu.Location = new System.Drawing.Point(286, 165);
+            this.butEmHinzu.Location = new System.Drawing.Point(269, 165);
             this.butEmHinzu.Name = "butEmHinzu";
             this.butEmHinzu.Size = new System.Drawing.Size(75, 23);
             this.butEmHinzu.TabIndex = 12;
@@ -97,7 +97,7 @@
             // 
             this.cBoxEmArt.DisplayMember = "ArtikelListe";
             this.cBoxEmArt.FormattingEnabled = true;
-            this.cBoxEmArt.Location = new System.Drawing.Point(286, 87);
+            this.cBoxEmArt.Location = new System.Drawing.Point(269, 87);
             this.cBoxEmArt.Name = "cBoxEmArt";
             this.cBoxEmArt.Size = new System.Drawing.Size(121, 21);
             this.cBoxEmArt.TabIndex = 11;
@@ -114,7 +114,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(286, 111);
+            this.label5.Location = new System.Drawing.Point(269, 111);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(43, 13);
             this.label5.TabIndex = 8;
@@ -123,7 +123,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(286, 70);
+            this.label4.Location = new System.Drawing.Point(269, 70);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(39, 13);
             this.label4.TabIndex = 7;
@@ -131,7 +131,7 @@
             // 
             // tBoxEmMenge
             // 
-            this.tBoxEmMenge.Location = new System.Drawing.Point(286, 127);
+            this.tBoxEmMenge.Location = new System.Drawing.Point(269, 127);
             this.tBoxEmMenge.Name = "tBoxEmMenge";
             this.tBoxEmMenge.Size = new System.Drawing.Size(121, 20);
             this.tBoxEmMenge.TabIndex = 6;
@@ -149,7 +149,7 @@
             // 
             this.lBoxEmArt.DisplayMember = "EmArtProEmListe";
             this.lBoxEmArt.FormattingEnabled = true;
-            this.lBoxEmArt.Location = new System.Drawing.Point(17, 58);
+            this.lBoxEmArt.Location = new System.Drawing.Point(17, 60);
             this.lBoxEmArt.Name = "lBoxEmArt";
             this.lBoxEmArt.Size = new System.Drawing.Size(234, 147);
             this.lBoxEmArt.TabIndex = 2;
@@ -160,7 +160,7 @@
             this.bmrBestätigungEinfügen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.bmrBestätigungEinfügen.Controls.Add(this.label3);
             this.bmrBestätigungEinfügen.Controls.Add(this.butEmbestätigen);
-            this.bmrBestätigungEinfügen.Location = new System.Drawing.Point(501, 100);
+            this.bmrBestätigungEinfügen.Location = new System.Drawing.Point(174, 47);
             this.bmrBestätigungEinfügen.Name = "bmrBestätigungEinfügen";
             this.bmrBestätigungEinfügen.Size = new System.Drawing.Size(229, 100);
             this.bmrBestätigungEinfügen.TabIndex = 12;
@@ -190,9 +190,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(742, 281);
-            this.Controls.Add(this.bmrBestätigungEinfügen);
+            this.ClientSize = new System.Drawing.Size(489, 295);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.butEmBestellt);
             this.Name = "Entnahmemenge";
             this.Text = "Entnahmemenge";
             this.Load += new System.EventHandler(this.Entnahmemenge_Load);

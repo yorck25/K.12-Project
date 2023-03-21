@@ -92,6 +92,7 @@ namespace WindowsFormsApp1
                 BestellMenge bestellMenge = new BestellMenge(new cBestellMenge());
                 bestellMenge.ShowDialog();
                 ListBoxNeuLAden(true);
+                BestellungDetail.Enabled = true;
             }
         }
 
@@ -102,7 +103,7 @@ namespace WindowsFormsApp1
 
         private void herfBNeu_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            BestellungDetail.Show();
+            BestellungDetail.Enabled = true;
         }
 
         private void butBsMehrArt_Click(object sender, EventArgs e)
