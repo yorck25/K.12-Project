@@ -106,19 +106,23 @@ namespace WindowsFormsApp1
 
         private void butEinbestätigen_Click(object sender, EventArgs e)
         {
+            try
+            {
+                ein = (cEinheit)lBoxEinheit.SelectedItem;
+                if (ein != null)
+                {
+                    ein.EinheitLöschen();
+                    EinheitListeLaden(true);
+                    tBoxEinBez.Clear();
+                    einBestätigungLöschen.Visible = false;
+                }
+            }
+            catch { EinFehler.Visible = true; }
+        }
 
-            ein = (cEinheit)lBoxEinheit.SelectedItem;
-            if (ein != null)
-            {
-                ein.EinheitLöschen();
-                EinheitListeLaden(true);
-                tBoxEinBez.Clear();
-                einBestätigungLöschen.Visible = false;
-            }
-            else
-            {
-                return;
-            }
+        private void butEinFehler_Click(object sender, EventArgs e)
+        {
+            EinFehler.Visible = false;
         }
     }
 }

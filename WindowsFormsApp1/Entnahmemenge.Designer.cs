@@ -29,7 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.butEmBestellt = new System.Windows.Forms.Button();
+            this.bmrBestätigungEinfügen = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.butEmbestätigen = new System.Windows.Forms.Button();
             this.cBoxEmEschein = new System.Windows.Forms.ComboBox();
             this.butEmHinzu = new System.Windows.Forms.Button();
             this.cBoxEmArt = new System.Windows.Forms.ComboBox();
@@ -39,15 +41,18 @@
             this.tBoxEmMenge = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.lBoxEmArt = new System.Windows.Forms.ListBox();
-            this.bmrBestätigungEinfügen = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.butEmbestätigen = new System.Windows.Forms.Button();
+            this.butEmBestellt = new System.Windows.Forms.Button();
+            this.EmFehler = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.butEmFehler = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.bmrBestätigungEinfügen.SuspendLayout();
+            this.EmFehler.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.EmFehler);
             this.panel1.Controls.Add(this.bmrBestätigungEinfügen);
             this.panel1.Controls.Add(this.cBoxEmEschein);
             this.panel1.Controls.Add(this.butEmHinzu);
@@ -63,15 +68,37 @@
             this.panel1.Size = new System.Drawing.Size(442, 242);
             this.panel1.TabIndex = 3;
             // 
-            // butEmBestellt
+            // bmrBestätigungEinfügen
             // 
-            this.butEmBestellt.Location = new System.Drawing.Point(15, 260);
-            this.butEmBestellt.Name = "butEmBestellt";
-            this.butEmBestellt.Size = new System.Drawing.Size(138, 23);
-            this.butEmBestellt.TabIndex = 14;
-            this.butEmBestellt.Text = "Bestellung Abschiken";
-            this.butEmBestellt.UseVisualStyleBackColor = true;
-            this.butEmBestellt.Click += new System.EventHandler(this.butEmBestellt_Click);
+            this.bmrBestätigungEinfügen.BackColor = System.Drawing.Color.Gray;
+            this.bmrBestätigungEinfügen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.bmrBestätigungEinfügen.Controls.Add(this.label3);
+            this.bmrBestätigungEinfügen.Controls.Add(this.butEmbestätigen);
+            this.bmrBestätigungEinfügen.Location = new System.Drawing.Point(174, 47);
+            this.bmrBestätigungEinfügen.Name = "bmrBestätigungEinfügen";
+            this.bmrBestätigungEinfügen.Size = new System.Drawing.Size(229, 100);
+            this.bmrBestätigungEinfügen.TabIndex = 12;
+            this.bmrBestätigungEinfügen.Visible = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.Red;
+            this.label3.Location = new System.Drawing.Point(5, 14);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(223, 26);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Der Artikelund die Menge werdengespeichert \r\nund können nicht geändert werden";
+            // 
+            // butEmbestätigen
+            // 
+            this.butEmbestätigen.Location = new System.Drawing.Point(65, 43);
+            this.butEmbestätigen.Name = "butEmbestätigen";
+            this.butEmbestätigen.Size = new System.Drawing.Size(75, 23);
+            this.butEmbestätigen.TabIndex = 0;
+            this.butEmbestätigen.Text = "Bestätigen";
+            this.butEmbestätigen.UseVisualStyleBackColor = true;
+            this.butEmbestätigen.Click += new System.EventHandler(this.butEmbestätigen_Click);
             // 
             // cBoxEmEschein
             // 
@@ -154,37 +181,47 @@
             this.lBoxEmArt.Size = new System.Drawing.Size(234, 147);
             this.lBoxEmArt.TabIndex = 2;
             // 
-            // bmrBestätigungEinfügen
+            // butEmBestellt
             // 
-            this.bmrBestätigungEinfügen.BackColor = System.Drawing.Color.Gray;
-            this.bmrBestätigungEinfügen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.bmrBestätigungEinfügen.Controls.Add(this.label3);
-            this.bmrBestätigungEinfügen.Controls.Add(this.butEmbestätigen);
-            this.bmrBestätigungEinfügen.Location = new System.Drawing.Point(174, 47);
-            this.bmrBestätigungEinfügen.Name = "bmrBestätigungEinfügen";
-            this.bmrBestätigungEinfügen.Size = new System.Drawing.Size(229, 100);
-            this.bmrBestätigungEinfügen.TabIndex = 12;
-            this.bmrBestätigungEinfügen.Visible = false;
+            this.butEmBestellt.Location = new System.Drawing.Point(15, 260);
+            this.butEmBestellt.Name = "butEmBestellt";
+            this.butEmBestellt.Size = new System.Drawing.Size(138, 23);
+            this.butEmBestellt.TabIndex = 14;
+            this.butEmBestellt.Text = "Bestellung Abschiken";
+            this.butEmBestellt.UseVisualStyleBackColor = true;
+            this.butEmBestellt.Click += new System.EventHandler(this.butEmBestellt_Click);
             // 
-            // label3
+            // EmFehler
             // 
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(5, 14);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(223, 26);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Der Artikelund die Menge werdengespeichert \r\nund können nicht geändert werden";
+            this.EmFehler.BackColor = System.Drawing.Color.Gray;
+            this.EmFehler.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.EmFehler.Controls.Add(this.label6);
+            this.EmFehler.Controls.Add(this.butEmFehler);
+            this.EmFehler.Location = new System.Drawing.Point(44, 47);
+            this.EmFehler.Name = "EmFehler";
+            this.EmFehler.Size = new System.Drawing.Size(219, 100);
+            this.EmFehler.TabIndex = 18;
+            this.EmFehler.Visible = false;
             // 
-            // butEmbestätigen
+            // label6
             // 
-            this.butEmbestätigen.Location = new System.Drawing.Point(65, 43);
-            this.butEmbestätigen.Name = "butEmbestätigen";
-            this.butEmbestätigen.Size = new System.Drawing.Size(75, 23);
-            this.butEmbestätigen.TabIndex = 0;
-            this.butEmbestätigen.Text = "Bestätigen";
-            this.butEmbestätigen.UseVisualStyleBackColor = true;
-            this.butEmbestätigen.Click += new System.EventHandler(this.butEmbestätigen_Click);
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(8, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(210, 52);
+            this.label6.TabIndex = 1;
+            this.label6.Text = "Es liegt ein Fehler vor.\r\nKontrolieren Sie ihre eingetragenen Werte. \r\nFalls der " +
+    "Fehler weiterhin besteht\r\n starten Sie das Program neu.";
+            // 
+            // butEmFehler
+            // 
+            this.butEmFehler.Location = new System.Drawing.Point(59, 60);
+            this.butEmFehler.Name = "butEmFehler";
+            this.butEmFehler.Size = new System.Drawing.Size(75, 23);
+            this.butEmFehler.TabIndex = 0;
+            this.butEmFehler.Text = "Bestätigen";
+            this.butEmFehler.UseVisualStyleBackColor = true;
+            this.butEmFehler.Click += new System.EventHandler(this.butEmFehler_Click);
             // 
             // Entnahmemenge
             // 
@@ -200,6 +237,8 @@
             this.panel1.PerformLayout();
             this.bmrBestätigungEinfügen.ResumeLayout(false);
             this.bmrBestätigungEinfügen.PerformLayout();
+            this.EmFehler.ResumeLayout(false);
+            this.EmFehler.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -220,5 +259,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button butEmbestätigen;
         private System.Windows.Forms.Button butEmBestellt;
+        private System.Windows.Forms.Panel EmFehler;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button butEmFehler;
     }
 }

@@ -56,8 +56,12 @@
             this.label9 = new System.Windows.Forms.Label();
             this.butArtbestätigen = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
+            this.ArtFehler = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.butArtFehler = new System.Windows.Forms.Button();
             this.AbtneueAbteilung.SuspendLayout();
             this.artBestätigungLöschen.SuspendLayout();
+            this.ArtFehler.SuspendLayout();
             this.SuspendLayout();
             // 
             // lBoxArt
@@ -315,7 +319,7 @@
             this.artBestätigungLöschen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.artBestätigungLöschen.Controls.Add(this.label9);
             this.artBestätigungLöschen.Controls.Add(this.butArtbestätigen);
-            this.artBestätigungLöschen.Location = new System.Drawing.Point(161, 78);
+            this.artBestätigungLöschen.Location = new System.Drawing.Point(161, 59);
             this.artBestätigungLöschen.Name = "artBestätigungLöschen";
             this.artBestätigungLöschen.Size = new System.Drawing.Size(200, 100);
             this.artBestätigungLöschen.TabIndex = 11;
@@ -349,11 +353,44 @@
             this.label10.Size = new System.Drawing.Size(0, 13);
             this.label10.TabIndex = 12;
             // 
+            // ArtFehler
+            // 
+            this.ArtFehler.BackColor = System.Drawing.Color.Gray;
+            this.ArtFehler.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ArtFehler.Controls.Add(this.label11);
+            this.ArtFehler.Controls.Add(this.butArtFehler);
+            this.ArtFehler.Location = new System.Drawing.Point(161, 22);
+            this.ArtFehler.Name = "ArtFehler";
+            this.ArtFehler.Size = new System.Drawing.Size(219, 100);
+            this.ArtFehler.TabIndex = 17;
+            this.ArtFehler.Visible = false;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(8, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(210, 52);
+            this.label11.TabIndex = 1;
+            this.label11.Text = "Es liegt ein Fehler vor.\r\nKontrolieren Sie ihre eingetragenen Werte. \r\nFalls der " +
+    "Fehler weiterhin besteht\r\n starten Sie das Program neu.";
+            // 
+            // butArtFehler
+            // 
+            this.butArtFehler.Location = new System.Drawing.Point(59, 60);
+            this.butArtFehler.Name = "butArtFehler";
+            this.butArtFehler.Size = new System.Drawing.Size(75, 23);
+            this.butArtFehler.TabIndex = 0;
+            this.butArtFehler.Text = "Bestätigen";
+            this.butArtFehler.UseVisualStyleBackColor = true;
+            this.butArtFehler.Click += new System.EventHandler(this.butArtFehler_Click);
+            // 
             // Artikel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(525, 354);
+            this.Controls.Add(this.ArtFehler);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.artBestätigungLöschen);
             this.Controls.Add(this.herfArtLöschen);
@@ -367,6 +404,8 @@
             this.AbtneueAbteilung.PerformLayout();
             this.artBestätigungLöschen.ResumeLayout(false);
             this.artBestätigungLöschen.PerformLayout();
+            this.ArtFehler.ResumeLayout(false);
+            this.ArtFehler.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -402,5 +441,8 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button butArtbestätigen;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Panel ArtFehler;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button butArtFehler;
     }
 }

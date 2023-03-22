@@ -95,6 +95,7 @@ namespace WindowsFormsApp1
             catch (MySqlException ex)
             {
                 Console.WriteLine("Fehler beim erstellen" + ex);
+                EmFehler.Visible = true;
             }
         }
 
@@ -106,9 +107,18 @@ namespace WindowsFormsApp1
 
         private void butEmBestellt_Click(object sender, EventArgs e)
         {
-            em.EM_ES_ID = Convert.ToInt32(((cEntnahmeschein)cBoxEmEschein.SelectedItem).ES_ID);
-            em.EntnahmescheinStatusnNeu();
-            Console.WriteLine("Entnahmeschein eingefügt");
+            try
+            {
+                em.EM_ES_ID = Convert.ToInt32(((cEntnahmeschein)cBoxEmEschein.SelectedItem).ES_ID);
+                em.EntnahmescheinStatusnNeu();
+                Console.WriteLine("Entnahmeschein eingefügt");
+            }
+            catch { EmFehler.Visible = true; }
+        }
+
+        private void butEmFehler_Click(object sender, EventArgs e)
+        {
+            EmFehler.Visible = false;
         }
     }
 }   

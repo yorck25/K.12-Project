@@ -105,12 +105,7 @@ namespace WindowsFormsApp1
 
         public void butAbtBearbeiten_Click(object sender, EventArgs e)
         {
-
-            if(tBoxAbtBez.Text == null)
-            {
-                Console.WriteLine("Kein Wert");
-            }
-            else
+            try
             {
                 abt.Abt_Geloescht = false;
                 abt.Abt_Bez = tBoxAbtBez.Text;
@@ -121,10 +116,14 @@ namespace WindowsFormsApp1
                 lBoxAbtNeuLaden(true);
                 tBoxAbtBez.Clear();
                 cBoxAbtKst.SelectedIndex = 0 -1;
-                
             }
-
+            catch 
+            {
+                AbtFehler.Visible = true;
+            }
+                
         }
+        
 
         private void cBoxAbtKst_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -147,18 +146,23 @@ namespace WindowsFormsApp1
 
         private void butAbtbestätigen_Click(object sender, EventArgs e)
         {
-            abtBestätigungLöschen.Visible = false;
-            abt = (cAbteilung)lBoxAbt.SelectedItem;
-            if (abt != null)
-            {
-                abt.AbteilungLöschen();
+            try 
+            { 
                 abtBestätigungLöschen.Visible = false;
-                lBoxAbtNeuLaden(true);
+                abt = (cAbteilung)lBoxAbt.SelectedItem;
+                if (abt != null)
+                {
+                    abt.AbteilungLöschen();
+                    abtBestätigungLöschen.Visible = false;
+                    lBoxAbtNeuLaden(true);
+                }
             }
-            else
-            {
-                return;
-            }
+            catch { AbtFehler.Visible = true; }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AbtFehler.Visible = false;
         }
     }
 }

@@ -56,6 +56,7 @@ namespace WindowsFormsApp1
 
                 if (string.IsNullOrEmpty(tBoxRBez.Text))
                 {
+                    rFehler.Visible = true;
                     Console.WriteLine("Keine Eingabe");
 
                 }
@@ -118,8 +119,14 @@ namespace WindowsFormsApp1
             }
             else
             {
+                rFehler.Visible = true;
                 return;
             }
+        }
+
+        private void butRFehler_Click(object sender, EventArgs e)
+        {
+            rFehler.Visible = false;
         }
     }
 }

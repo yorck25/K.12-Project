@@ -79,6 +79,7 @@ namespace WindowsFormsApp1
             if (string.IsNullOrEmpty(tBoxFBez.Text))
             {
                 Console.WriteLine("Keine Eingabe");
+                fFehler.Visible = true;
             }
             else
             {
@@ -104,17 +105,22 @@ namespace WindowsFormsApp1
 
         private void butRbestätigen_Click(object sender, EventArgs e)
         {
-            f = (cFunktion)lBoxF.SelectedItem;
-            if (f != null)
+            try
             {
-                f.FunktionLöschen();
-                fBestätigungLöschen.Visible = false;
-                FunktionListeLaden(true);
+                f = (cFunktion)lBoxF.SelectedItem;
+                if (f != null)
+                {
+                    f.FunktionLöschen();
+                    fBestätigungLöschen.Visible = false;
+                    FunktionListeLaden(true);
+                }
             }
-            else
-            {
-                return;
-            }
+            catch { fFehler.Visible = true; }
+        }
+
+        private void butFFehler_Click(object sender, EventArgs e)
+        {
+            fFehler.Visible = false;
         }
     }
 }

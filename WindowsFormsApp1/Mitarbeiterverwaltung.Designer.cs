@@ -66,8 +66,12 @@
             this.mitBestätigungLöschen = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.butMitbestätigen = new System.Windows.Forms.Button();
+            this.mitFehler = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.butmitFehler = new System.Windows.Forms.Button();
             this.MverDetailMitarbeiter.SuspendLayout();
             this.mitBestätigungLöschen.SuspendLayout();
+            this.mitFehler.SuspendLayout();
             this.SuspendLayout();
             // 
             // lBoxMverMitarbeiter
@@ -441,11 +445,44 @@
             this.butMitbestätigen.UseVisualStyleBackColor = true;
             this.butMitbestätigen.Click += new System.EventHandler(this.butMitbestätigen_Click);
             // 
+            // mitFehler
+            // 
+            this.mitFehler.BackColor = System.Drawing.Color.Gray;
+            this.mitFehler.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.mitFehler.Controls.Add(this.label11);
+            this.mitFehler.Controls.Add(this.butmitFehler);
+            this.mitFehler.Location = new System.Drawing.Point(158, 36);
+            this.mitFehler.Name = "mitFehler";
+            this.mitFehler.Size = new System.Drawing.Size(219, 100);
+            this.mitFehler.TabIndex = 20;
+            this.mitFehler.Visible = false;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(8, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(210, 52);
+            this.label11.TabIndex = 1;
+            this.label11.Text = "Es liegt ein Fehler vor.\r\nKontrolieren Sie ihre eingetragenen Werte. \r\nFalls der " +
+    "Fehler weiterhin besteht\r\n starten Sie das Program neu.";
+            // 
+            // butmitFehler
+            // 
+            this.butmitFehler.Location = new System.Drawing.Point(59, 60);
+            this.butmitFehler.Name = "butmitFehler";
+            this.butmitFehler.Size = new System.Drawing.Size(75, 23);
+            this.butmitFehler.TabIndex = 0;
+            this.butmitFehler.Text = "Bestätigen";
+            this.butmitFehler.UseVisualStyleBackColor = true;
+            this.butmitFehler.Click += new System.EventHandler(this.butmitFehler_Click);
+            // 
             // Mitarbeiterverwaltung
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(768, 413);
+            this.Controls.Add(this.mitFehler);
             this.Controls.Add(this.mitBestätigungLöschen);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.butMitRolle);
@@ -459,6 +496,8 @@
             this.MverDetailMitarbeiter.PerformLayout();
             this.mitBestätigungLöschen.ResumeLayout(false);
             this.mitBestätigungLöschen.PerformLayout();
+            this.mitFehler.ResumeLayout(false);
+            this.mitFehler.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -503,5 +542,8 @@
         private System.Windows.Forms.Panel mitBestätigungLöschen;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button butMitbestätigen;
+        private System.Windows.Forms.Panel mitFehler;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button butmitFehler;
     }
 }

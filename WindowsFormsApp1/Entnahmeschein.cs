@@ -62,16 +62,20 @@ namespace WindowsFormsApp1
 
         public void butEsErstellen_Click(object sender, EventArgs e)
         {
-            Es.ES_VonMit = Convert.ToInt16(((cMitarbeiter)cBoxEsVonMit.SelectedItem).Mit_ID);
-            Es.ES_FuerMit = Convert.ToInt16(((cMitarbeiter)cBoxEsFürMit.SelectedItem).Mit_ID);
-            Es.ES_Ntz = tBoxEsNtz.Text;
-            DateTime EsDate;
-            EsDate = DateTime.Now;
-            Es.ES_Datum = Convert.ToString(EsDate);
-            Es.EntnahmescheinSpiechern();
-            Entnahmemenge entnahmemenge = new Entnahmemenge(new cEntnahmemenge());
-            entnahmemenge.Show();
-            Console.WriteLine("Entnahmeschein wird gespeichert");
+            try
+            {
+                Es.ES_VonMit = Convert.ToInt16(((cMitarbeiter)cBoxEsVonMit.SelectedItem).Mit_ID);
+                Es.ES_FuerMit = Convert.ToInt16(((cMitarbeiter)cBoxEsFürMit.SelectedItem).Mit_ID);
+                Es.ES_Ntz = tBoxEsNtz.Text;
+                DateTime EsDate;
+                EsDate = DateTime.Now;
+                Es.ES_Datum = Convert.ToString(EsDate);
+                Es.EntnahmescheinSpiechern();
+                Entnahmemenge entnahmemenge = new Entnahmemenge(new cEntnahmemenge());
+                entnahmemenge.Show();
+                Console.WriteLine("Entnahmeschein wird gespeichert");
+            }
+            catch { EsFehler.Visible = true; }
             
         }
 
@@ -108,6 +112,11 @@ namespace WindowsFormsApp1
         {
             Entnahmemenge entnahmemenge = new Entnahmemenge(new cEntnahmemenge());
             entnahmemenge.ShowDialog();
+        }
+
+        private void butEsFehler_Click(object sender, EventArgs e)
+        {
+            EsFehler.Visible = false;
         }
     }
 }

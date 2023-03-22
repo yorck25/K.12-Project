@@ -22,19 +22,23 @@ namespace WindowsFormsApp1
 
         private void butLsNeu_Click(object sender, EventArgs e)
         {
-            Ls.LS_B_ID = Convert.ToInt16(tBoxLsBId.Text);
-            Ls.LS_BearbeitetVon_ID = Convert.ToInt32(((cMitarbeiter)cBoxLsBearbeitetVon.SelectedItem).Mit_ID);
-            DateTime LsDate;
-            LsDate = DateTime.Now;
-            Ls.LS_Datum = Convert.ToString(LsDate);
-            Ls.LS_Bearbeitet = false;
-            Ls.LieferscheinSpeichern();
-            Ls.BestellungStatusLieferscheinNeu();
-            Console.WriteLine("Lieferschein wird gespeichert");
+            try
+            {
+                Ls.LS_B_ID = Convert.ToInt16(tBoxLsBId.Text);
+                Ls.LS_BearbeitetVon_ID = Convert.ToInt32(((cMitarbeiter)cBoxLsBearbeitetVon.SelectedItem).Mit_ID);
+                DateTime LsDate;
+                LsDate = DateTime.Now;
+                Ls.LS_Datum = Convert.ToString(LsDate);
+                Ls.LS_Bearbeitet = false;
+                Ls.LieferscheinSpeichern();
+                Ls.BestellungStatusLieferscheinNeu();
+                Console.WriteLine("Lieferschein wird gespeichert");
 
-            LsNeuLsanlegen.Enabled = false;
-            Liefermenge liefermenge = new Liefermenge(new cLiefermenge());
-            liefermenge.ShowDialog();
+                LsNeuLsanlegen.Enabled = false;
+                Liefermenge liefermenge = new Liefermenge(new cLiefermenge());
+                liefermenge.ShowDialog();
+            }
+            catch { LsFehler.Visible = true; }
         }
 
         private void Lieferschein_Load(object sender, EventArgs e)
@@ -98,6 +102,11 @@ namespace WindowsFormsApp1
         private void herfLsNeu_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             LsNeuLsanlegen.Enabled = true;
+        }
+
+        private void butLsFehler_Click(object sender, EventArgs e)
+        {
+            LsFehler.Visible = false;
         }
 
         //public void lBoxLsBgeliefert_SelectedIndexChanged(object sender, EventArgs e)

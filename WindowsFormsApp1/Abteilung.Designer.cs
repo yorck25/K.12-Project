@@ -45,9 +45,13 @@
             this.abtBestätigungLöschen = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.butAbtbestätigen = new System.Windows.Forms.Button();
+            this.AbtFehler = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.AbtMitProAbt.SuspendLayout();
             this.AbtDetail.SuspendLayout();
             this.abtBestätigungLöschen.SuspendLayout();
+            this.AbtFehler.SuspendLayout();
             this.SuspendLayout();
             // 
             // lBoxAbt
@@ -207,7 +211,7 @@
             this.abtBestätigungLöschen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.abtBestätigungLöschen.Controls.Add(this.label4);
             this.abtBestätigungLöschen.Controls.Add(this.butAbtbestätigen);
-            this.abtBestätigungLöschen.Location = new System.Drawing.Point(151, 123);
+            this.abtBestätigungLöschen.Location = new System.Drawing.Point(151, 190);
             this.abtBestätigungLöschen.Name = "abtBestätigungLöschen";
             this.abtBestätigungLöschen.Size = new System.Drawing.Size(200, 100);
             this.abtBestätigungLöschen.TabIndex = 11;
@@ -232,11 +236,44 @@
             this.butAbtbestätigen.UseVisualStyleBackColor = true;
             this.butAbtbestätigen.Click += new System.EventHandler(this.butAbtbestätigen_Click);
             // 
+            // AbtFehler
+            // 
+            this.AbtFehler.BackColor = System.Drawing.Color.Gray;
+            this.AbtFehler.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.AbtFehler.Controls.Add(this.label5);
+            this.AbtFehler.Controls.Add(this.button1);
+            this.AbtFehler.Location = new System.Drawing.Point(151, 76);
+            this.AbtFehler.Name = "AbtFehler";
+            this.AbtFehler.Size = new System.Drawing.Size(219, 100);
+            this.AbtFehler.TabIndex = 16;
+            this.AbtFehler.Visible = false;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(8, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(210, 52);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "Es liegt ein Fehler vor.\r\nKontrolieren Sie ihre eingetragenen Werte. \r\nFalls der " +
+    "Fehler weiterhin besteht\r\n starten Sie das Program neu.";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(59, 60);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Bestätigen";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Abteilung
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(560, 363);
+            this.Controls.Add(this.AbtFehler);
             this.Controls.Add(this.abtBestätigungLöschen);
             this.Controls.Add(this.herfAbtNeu);
             this.Controls.Add(this.AbtDetail);
@@ -251,6 +288,8 @@
             this.AbtDetail.PerformLayout();
             this.abtBestätigungLöschen.ResumeLayout(false);
             this.abtBestätigungLöschen.PerformLayout();
+            this.AbtFehler.ResumeLayout(false);
+            this.AbtFehler.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -275,5 +314,8 @@
         private System.Windows.Forms.Panel abtBestätigungLöschen;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button butAbtbestätigen;
+        private System.Windows.Forms.Panel AbtFehler;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button button1;
     }
 }

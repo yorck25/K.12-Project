@@ -91,12 +91,7 @@ namespace WindowsFormsApp1
             l.L_Ntz = tBoxLNotiz.Text;
             l.L_IBAN = tBoxLiban.Text;
             l.L_Geloescht = false;
-
-            if (string.IsNullOrEmpty(tBoxLName.Text))
-            {
-                Console.WriteLine("Keine Eingabe");
-            }
-            else
+            try
             {
                 l.LieferantSpeichern();
                 Console.WriteLine("Lager wird gespeichert");
@@ -122,47 +117,54 @@ namespace WindowsFormsApp1
                     lBoxLieferant.Items.Add(l);
                 }
             }
-        }
+            catch { lvwFehler.Visible = true; }
+        }   
 
-        public void LieferantenListeLaden(bool LiefNeuLaden)
+    public void LieferantenListeLaden(bool LiefNeuLaden)
+    {
+        if (LiefNeuLaden)
         {
-            if (LiefNeuLaden)
+            try
             {
-                try
-                {
-                    cLieferant.LieferantLaden();
-                }
-                catch (MySqlException ex)
-                {
-
-                    Console.WriteLine("Fehler beim Laden: " + ex.Message);
-                }
+                cLieferant.LieferantLaden();
             }
-            lBoxLieferant.Items.Clear();
-            foreach (cLieferant l in cLieferant.LListe)
+            catch (MySqlException ex)
             {
-                lBoxLieferant.Items.Add(l);
+
+                Console.WriteLine("Fehler beim Laden: " + ex.Message);
             }
         }
-
-        private void Lieferant_Load(object sender, EventArgs e)
+        lBoxLieferant.Items.Clear();
+        foreach (cLieferant l in cLieferant.LListe)
         {
+            lBoxLieferant.Items.Add(l);
+        }
+    }
+
+    private void Lieferant_Load(object sender, EventArgs e)
+    {
+        LieferantenListeLaden(true);
+    }
+
+    private void butLbestätigen_Click(object sender, EventArgs e)
+    {
+        l = (cLieferant)lBoxLieferant.SelectedItem;
+        if (l != null)
+        {
+            l.LieferantLöschen();
+            lBestätigungLöschen.Visible = false;
             LieferantenListeLaden(true);
         }
-
-        private void butLbestätigen_Click(object sender, EventArgs e)
+        else
         {
-            l = (cLieferant)lBoxLieferant.SelectedItem;
-            if (l != null)
-            {
-                l.LieferantLöschen();
-                lBestätigungLöschen.Visible = false;
-                LieferantenListeLaden(true);
-            }
-            else
-            {
-                return;
-            }
+            lvwFehler.Visible = true;
+            return;
+        }
+    }
+
+        private void butLvwFehler_Click(object sender, EventArgs e)
+        {
+            lvwFehler.Visible = false;
         }
     }
 }

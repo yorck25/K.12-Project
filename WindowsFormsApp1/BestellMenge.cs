@@ -109,8 +109,12 @@ namespace WindowsFormsApp1
 
         private void butEmBestellt_Click(object sender, EventArgs e)
         {
-            BM.BestellungStatusNeu();
-            Console.WriteLine("Bestellung auf dem Weg");
+            try
+            {
+                BM.BestellungStatusNeu();
+                Console.WriteLine("Bestellung auf dem Weg");
+            }
+            catch { BmFehler.Visible = true; }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -124,6 +128,7 @@ namespace WindowsFormsApp1
             if (string.IsNullOrEmpty(Convert.ToString(cBoxBMArt.SelectedIndex == -1)) || string.IsNullOrEmpty(tBoxBMmenge.Text))
             {
                 Console.WriteLine("Error");
+                BmFehler.Visible = true;
             }
             else
             {
@@ -136,6 +141,11 @@ namespace WindowsFormsApp1
                 bmrBestätigungEinfügen.Visible = false;
                 tBoxBMmenge.Clear();
             }
+        }
+
+        private void butBmFehler_Click(object sender, EventArgs e)
+        {
+            BmFehler.Visible = false;
         }
     }
 }

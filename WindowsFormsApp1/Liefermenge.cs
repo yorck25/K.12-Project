@@ -58,8 +58,12 @@ namespace WindowsFormsApp1
 
         private void butLmLsFertig_Click(object sender, EventArgs e)
         {
-            Lms.LieferscheinStatusnNeu();
-            this.Close();
+            try
+            {
+                Lms.LieferscheinStatusnNeu();
+                this.Close();
+            }
+            catch { LmFehler.Visible = true; }
         }
 
         private void cBoxLsmScheine_SelectedIndexChanged(object sender, EventArgs e)
@@ -113,6 +117,7 @@ namespace WindowsFormsApp1
             }
             catch (MySqlException ex)
             {
+                LmFehler.Visible = true;
                 Console.WriteLine("Fehler beim erstellen" + ex);
             }
         }

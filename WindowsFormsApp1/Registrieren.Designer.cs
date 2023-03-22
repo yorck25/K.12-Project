@@ -57,6 +57,10 @@
             this.DateReg = new System.Windows.Forms.DateTimePicker();
             this.tBoxRegPw = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
+            this.regFehler = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.butRegFehler = new System.Windows.Forms.Button();
+            this.regFehler.SuspendLayout();
             this.SuspendLayout();
             // 
             // butRegErstellen
@@ -304,12 +308,45 @@
             this.label15.TabIndex = 50;
             this.label15.Text = "Passwort";
             // 
+            // regFehler
+            // 
+            this.regFehler.BackColor = System.Drawing.Color.Gray;
+            this.regFehler.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.regFehler.Controls.Add(this.label11);
+            this.regFehler.Controls.Add(this.butRegFehler);
+            this.regFehler.Location = new System.Drawing.Point(11, 90);
+            this.regFehler.Name = "regFehler";
+            this.regFehler.Size = new System.Drawing.Size(219, 100);
+            this.regFehler.TabIndex = 51;
+            this.regFehler.Visible = false;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(8, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(210, 52);
+            this.label11.TabIndex = 1;
+            this.label11.Text = "Es liegt ein Fehler vor.\r\nKontrolieren Sie ihre eingetragenen Werte. \r\nFalls der " +
+    "Fehler weiterhin besteht\r\n starten Sie das Program neu.";
+            // 
+            // butRegFehler
+            // 
+            this.butRegFehler.Location = new System.Drawing.Point(59, 60);
+            this.butRegFehler.Name = "butRegFehler";
+            this.butRegFehler.Size = new System.Drawing.Size(75, 23);
+            this.butRegFehler.TabIndex = 0;
+            this.butRegFehler.Text = "Bestätigen";
+            this.butRegFehler.UseVisualStyleBackColor = true;
+            this.butRegFehler.Click += new System.EventHandler(this.butRegFehler_Click);
+            // 
             // Registrieren
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.ClientSize = new System.Drawing.Size(373, 415);
+            this.Controls.Add(this.regFehler);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.tBoxRegPw);
             this.Controls.Add(this.DateReg);
@@ -342,6 +379,8 @@
             this.Name = "Registrieren";
             this.Text = "Registrieren";
             this.Load += new System.EventHandler(this.Registrieren_Load);
+            this.regFehler.ResumeLayout(false);
+            this.regFehler.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -377,5 +416,8 @@
         private System.Windows.Forms.DateTimePicker DateReg;
         private System.Windows.Forms.TextBox tBoxRegPw;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Panel regFehler;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button butRegFehler;
     }
 }

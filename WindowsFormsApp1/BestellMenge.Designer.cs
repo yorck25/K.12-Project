@@ -41,8 +41,12 @@
             this.lBoxBMliste = new System.Windows.Forms.ListBox();
             this.lBoxBestellungen = new System.Windows.Forms.ListBox();
             this.butEmBestellt = new System.Windows.Forms.Button();
+            this.BmFehler = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.butBmFehler = new System.Windows.Forms.Button();
             this.BMDetail.SuspendLayout();
             this.bmrBestätigungEinfügen.SuspendLayout();
+            this.BmFehler.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -178,11 +182,44 @@
             this.butEmBestellt.UseVisualStyleBackColor = true;
             this.butEmBestellt.Click += new System.EventHandler(this.butEmBestellt_Click);
             // 
+            // BmFehler
+            // 
+            this.BmFehler.BackColor = System.Drawing.Color.Gray;
+            this.BmFehler.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.BmFehler.Controls.Add(this.label11);
+            this.BmFehler.Controls.Add(this.butBmFehler);
+            this.BmFehler.Location = new System.Drawing.Point(139, 12);
+            this.BmFehler.Name = "BmFehler";
+            this.BmFehler.Size = new System.Drawing.Size(219, 100);
+            this.BmFehler.TabIndex = 18;
+            this.BmFehler.Visible = false;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(8, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(210, 52);
+            this.label11.TabIndex = 1;
+            this.label11.Text = "Es liegt ein Fehler vor.\r\nKontrolieren Sie ihre eingetragenen Werte. \r\nFalls der " +
+    "Fehler weiterhin besteht\r\n starten Sie das Program neu.";
+            // 
+            // butBmFehler
+            // 
+            this.butBmFehler.Location = new System.Drawing.Point(59, 60);
+            this.butBmFehler.Name = "butBmFehler";
+            this.butBmFehler.Size = new System.Drawing.Size(75, 23);
+            this.butBmFehler.TabIndex = 0;
+            this.butBmFehler.Text = "Bestätigen";
+            this.butBmFehler.UseVisualStyleBackColor = true;
+            this.butBmFehler.Click += new System.EventHandler(this.butBmFehler_Click);
+            // 
             // BestellMenge
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(559, 322);
+            this.Controls.Add(this.BmFehler);
             this.Controls.Add(this.butEmBestellt);
             this.Controls.Add(this.lBoxBestellungen);
             this.Controls.Add(this.BMDetail);
@@ -194,6 +231,8 @@
             this.BMDetail.PerformLayout();
             this.bmrBestätigungEinfügen.ResumeLayout(false);
             this.bmrBestätigungEinfügen.PerformLayout();
+            this.BmFehler.ResumeLayout(false);
+            this.BmFehler.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -214,5 +253,8 @@
         private System.Windows.Forms.Panel bmrBestätigungEinfügen;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button butBmbestätigen;
+        private System.Windows.Forms.Panel BmFehler;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button butBmFehler;
     }
 }

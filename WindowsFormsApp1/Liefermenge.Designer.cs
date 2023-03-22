@@ -44,12 +44,17 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lBoxLsmArt = new System.Windows.Forms.ListBox();
             this.butLmLsFertig = new System.Windows.Forms.Button();
+            this.LmFehler = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.butLmFehler = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.lmBestätigungEinfügen.SuspendLayout();
+            this.LmFehler.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.LmFehler);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.lBoxLmArtProBst);
             this.panel1.Controls.Add(this.lmBestätigungEinfügen);
@@ -208,6 +213,37 @@
             this.butLmLsFertig.UseVisualStyleBackColor = true;
             this.butLmLsFertig.Click += new System.EventHandler(this.butLmLsFertig_Click);
             // 
+            // LmFehler
+            // 
+            this.LmFehler.BackColor = System.Drawing.Color.Gray;
+            this.LmFehler.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LmFehler.Controls.Add(this.label11);
+            this.LmFehler.Controls.Add(this.butLmFehler);
+            this.LmFehler.Location = new System.Drawing.Point(411, 44);
+            this.LmFehler.Name = "LmFehler";
+            this.LmFehler.Size = new System.Drawing.Size(219, 100);
+            this.LmFehler.TabIndex = 18;
+            this.LmFehler.Visible = false;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(8, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(210, 52);
+            this.label11.TabIndex = 1;
+            this.label11.Text = "Es liegt ein Fehler vor.\r\nKontrolieren Sie ihre eingetragenen Werte. \r\nFalls der " +
+    "Fehler weiterhin besteht\r\n starten Sie das Program neu.";
+            // 
+            // butLmFehler
+            // 
+            this.butLmFehler.Location = new System.Drawing.Point(59, 60);
+            this.butLmFehler.Name = "butLmFehler";
+            this.butLmFehler.Size = new System.Drawing.Size(75, 23);
+            this.butLmFehler.TabIndex = 0;
+            this.butLmFehler.Text = "Bestätigen";
+            this.butLmFehler.UseVisualStyleBackColor = true;
+            // 
             // Liefermenge
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -222,6 +258,8 @@
             this.panel1.PerformLayout();
             this.lmBestätigungEinfügen.ResumeLayout(false);
             this.lmBestätigungEinfügen.PerformLayout();
+            this.LmFehler.ResumeLayout(false);
+            this.LmFehler.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -244,5 +282,8 @@
         private System.Windows.Forms.Button butLmbestätigen;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ListBox lBoxLmArtProBst;
+        private System.Windows.Forms.Panel LmFehler;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button butLmFehler;
     }
 }

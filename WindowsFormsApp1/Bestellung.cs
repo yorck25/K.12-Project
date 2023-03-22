@@ -77,6 +77,7 @@ namespace WindowsFormsApp1
 
             if(cBoxBMit.SelectedItem == null){
                 Console.WriteLine("Error");
+                BsFehler.Visible = true;
             }
             else
             {
@@ -110,6 +111,11 @@ namespace WindowsFormsApp1
         {
             BestellMenge bestellMenge = new BestellMenge(new cBestellMenge());
             bestellMenge.ShowDialog();
+        }
+
+        private void butBsFehler_Click(object sender, EventArgs e)
+        {
+            BsFehler.Visible = false;
         }
     }
 }

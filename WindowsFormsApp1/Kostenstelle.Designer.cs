@@ -43,9 +43,13 @@
             this.KstBestätigungLöschen = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.butKstbestätigen = new System.Windows.Forms.Button();
+            this.KstFehler = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.butKstFehler = new System.Windows.Forms.Button();
             this.KstDetail.SuspendLayout();
             this.AbtMitProAbt.SuspendLayout();
             this.KstBestätigungLöschen.SuspendLayout();
+            this.KstFehler.SuspendLayout();
             this.SuspendLayout();
             // 
             // KstDetail
@@ -212,11 +216,44 @@
             this.butKstbestätigen.UseVisualStyleBackColor = true;
             this.butKstbestätigen.Click += new System.EventHandler(this.butKstbestätigen_Click);
             // 
+            // KstFehler
+            // 
+            this.KstFehler.BackColor = System.Drawing.Color.Gray;
+            this.KstFehler.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.KstFehler.Controls.Add(this.label11);
+            this.KstFehler.Controls.Add(this.butKstFehler);
+            this.KstFehler.Location = new System.Drawing.Point(127, 213);
+            this.KstFehler.Name = "KstFehler";
+            this.KstFehler.Size = new System.Drawing.Size(219, 100);
+            this.KstFehler.TabIndex = 18;
+            this.KstFehler.Visible = false;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(8, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(210, 52);
+            this.label11.TabIndex = 1;
+            this.label11.Text = "Es liegt ein Fehler vor.\r\nKontrolieren Sie ihre eingetragenen Werte. \r\nFalls der " +
+    "Fehler weiterhin besteht\r\n starten Sie das Program neu.";
+            // 
+            // butKstFehler
+            // 
+            this.butKstFehler.Location = new System.Drawing.Point(59, 60);
+            this.butKstFehler.Name = "butKstFehler";
+            this.butKstFehler.Size = new System.Drawing.Size(75, 23);
+            this.butKstFehler.TabIndex = 0;
+            this.butKstFehler.Text = "Bestätigen";
+            this.butKstFehler.UseVisualStyleBackColor = true;
+            this.butKstFehler.Click += new System.EventHandler(this.butKstFehler_Click);
+            // 
             // Kostenstelle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(596, 367);
+            this.Controls.Add(this.KstFehler);
             this.Controls.Add(this.KstBestätigungLöschen);
             this.Controls.Add(this.herfKstNew);
             this.Controls.Add(this.KstDetail);
@@ -232,6 +269,8 @@
             this.AbtMitProAbt.PerformLayout();
             this.KstBestätigungLöschen.ResumeLayout(false);
             this.KstBestätigungLöschen.PerformLayout();
+            this.KstFehler.ResumeLayout(false);
+            this.KstFehler.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -254,5 +293,8 @@
         private System.Windows.Forms.Panel KstBestätigungLöschen;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button butKstbestätigen;
+        private System.Windows.Forms.Panel KstFehler;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button butKstFehler;
     }
 }

@@ -87,6 +87,7 @@ namespace WindowsFormsApp1
             }
             catch(MySqlException ex)
             {
+                KstFehler.Visible = true;
                 Console.WriteLine("fehler" + ex);
             }
               
@@ -136,8 +137,14 @@ namespace WindowsFormsApp1
             }
             else
             {
+                KstFehler.Visible = true;
                 return;
             }
+        }
+
+        private void butKstFehler_Click(object sender, EventArgs e)
+        {
+            KstFehler.Visible = false;
         }
     }
 }

@@ -68,8 +68,12 @@
             this.label16 = new System.Windows.Forms.Label();
             this.butLbestätigen = new System.Windows.Forms.Button();
             this.lBoxArtproL = new System.Windows.Forms.ListBox();
+            this.lvwFehler = new System.Windows.Forms.Panel();
+            this.label18 = new System.Windows.Forms.Label();
+            this.butLvwFehler = new System.Windows.Forms.Button();
             this.lDetail.SuspendLayout();
             this.lBestätigungLöschen.SuspendLayout();
+            this.lvwFehler.SuspendLayout();
             this.SuspendLayout();
             // 
             // lDetail
@@ -447,11 +451,44 @@
             this.lBoxArtproL.Size = new System.Drawing.Size(120, 95);
             this.lBoxArtproL.TabIndex = 12;
             // 
+            // lvwFehler
+            // 
+            this.lvwFehler.BackColor = System.Drawing.Color.Gray;
+            this.lvwFehler.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lvwFehler.Controls.Add(this.label18);
+            this.lvwFehler.Controls.Add(this.butLvwFehler);
+            this.lvwFehler.Location = new System.Drawing.Point(138, 227);
+            this.lvwFehler.Name = "lvwFehler";
+            this.lvwFehler.Size = new System.Drawing.Size(219, 100);
+            this.lvwFehler.TabIndex = 20;
+            this.lvwFehler.Visible = false;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(8, 0);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(210, 52);
+            this.label18.TabIndex = 1;
+            this.label18.Text = "Es liegt ein Fehler vor.\r\nKontrolieren Sie ihre eingetragenen Werte. \r\nFalls der " +
+    "Fehler weiterhin besteht\r\n starten Sie das Program neu.";
+            // 
+            // butLvwFehler
+            // 
+            this.butLvwFehler.Location = new System.Drawing.Point(59, 60);
+            this.butLvwFehler.Name = "butLvwFehler";
+            this.butLvwFehler.Size = new System.Drawing.Size(75, 23);
+            this.butLvwFehler.TabIndex = 0;
+            this.butLvwFehler.Text = "Bestätigen";
+            this.butLvwFehler.UseVisualStyleBackColor = true;
+            this.butLvwFehler.Click += new System.EventHandler(this.butLvwFehler_Click);
+            // 
             // Lieferant
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(701, 501);
+            this.Controls.Add(this.lvwFehler);
             this.Controls.Add(this.lBoxArtproL);
             this.Controls.Add(this.lBestätigungLöschen);
             this.Controls.Add(this.herfLLöschen);
@@ -459,12 +496,14 @@
             this.Controls.Add(this.lBoxLieferant);
             this.Controls.Add(this.lDetail);
             this.Name = "Lieferant";
-            this.Text = "Lager";
+            this.Text = "Lieferant";
             this.Load += new System.EventHandler(this.Lieferant_Load);
             this.lDetail.ResumeLayout(false);
             this.lDetail.PerformLayout();
             this.lBestätigungLöschen.ResumeLayout(false);
             this.lBestätigungLöschen.PerformLayout();
+            this.lvwFehler.ResumeLayout(false);
+            this.lvwFehler.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -512,5 +551,8 @@
         private System.Windows.Forms.TextBox tBoxLiban;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.ListBox lBoxArtproL;
+        private System.Windows.Forms.Panel lvwFehler;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Button butLvwFehler;
     }
 }

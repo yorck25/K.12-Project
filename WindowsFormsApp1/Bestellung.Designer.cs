@@ -35,7 +35,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.cBoxBMit = new System.Windows.Forms.ComboBox();
             this.butBsMehrArt = new System.Windows.Forms.Button();
+            this.BsFehler = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.butBsFehler = new System.Windows.Forms.Button();
             this.BestellungDetail.SuspendLayout();
+            this.BsFehler.SuspendLayout();
             this.SuspendLayout();
             // 
             // lBoxBestellung
@@ -62,6 +66,7 @@
             // 
             // BestellungDetail
             // 
+            this.BestellungDetail.Controls.Add(this.BsFehler);
             this.BestellungDetail.Controls.Add(this.butBArtikel);
             this.BestellungDetail.Controls.Add(this.label2);
             this.BestellungDetail.Controls.Add(this.cBoxBMit);
@@ -110,6 +115,38 @@
             this.butBsMehrArt.UseVisualStyleBackColor = true;
             this.butBsMehrArt.Click += new System.EventHandler(this.butBsMehrArt_Click);
             // 
+            // BsFehler
+            // 
+            this.BsFehler.BackColor = System.Drawing.Color.Gray;
+            this.BsFehler.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.BsFehler.Controls.Add(this.label11);
+            this.BsFehler.Controls.Add(this.butBsFehler);
+            this.BsFehler.Location = new System.Drawing.Point(50, 87);
+            this.BsFehler.Name = "BsFehler";
+            this.BsFehler.Size = new System.Drawing.Size(219, 100);
+            this.BsFehler.TabIndex = 19;
+            this.BsFehler.Visible = false;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(8, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(210, 52);
+            this.label11.TabIndex = 1;
+            this.label11.Text = "Es liegt ein Fehler vor.\r\nKontrolieren Sie ihre eingetragenen Werte. \r\nFalls der " +
+    "Fehler weiterhin besteht\r\n starten Sie das Program neu.";
+            // 
+            // butBsFehler
+            // 
+            this.butBsFehler.Location = new System.Drawing.Point(59, 60);
+            this.butBsFehler.Name = "butBsFehler";
+            this.butBsFehler.Size = new System.Drawing.Size(75, 23);
+            this.butBsFehler.TabIndex = 0;
+            this.butBsFehler.Text = "Bestätigen";
+            this.butBsFehler.UseVisualStyleBackColor = true;
+            this.butBsFehler.Click += new System.EventHandler(this.butBsFehler_Click);
+            // 
             // Bestellung
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -123,6 +160,8 @@
             this.Load += new System.EventHandler(this.Bestellung_Load);
             this.BestellungDetail.ResumeLayout(false);
             this.BestellungDetail.PerformLayout();
+            this.BsFehler.ResumeLayout(false);
+            this.BsFehler.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -137,5 +176,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cBoxBMit;
         private System.Windows.Forms.Button butBsMehrArt;
+        private System.Windows.Forms.Panel BsFehler;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button butBsFehler;
     }
 }

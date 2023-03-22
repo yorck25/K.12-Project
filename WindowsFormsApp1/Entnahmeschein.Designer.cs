@@ -39,7 +39,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.butEsMehrArt = new System.Windows.Forms.Button();
+            this.EsFehler = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.butEsFehler = new System.Windows.Forms.Button();
             this.EsDetail.SuspendLayout();
+            this.EsFehler.SuspendLayout();
             this.SuspendLayout();
             // 
             // lBoxEs
@@ -150,11 +154,44 @@
             this.butEsMehrArt.UseVisualStyleBackColor = true;
             this.butEsMehrArt.Click += new System.EventHandler(this.butEsMehrArt_Click);
             // 
+            // EsFehler
+            // 
+            this.EsFehler.BackColor = System.Drawing.Color.Gray;
+            this.EsFehler.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.EsFehler.Controls.Add(this.label6);
+            this.EsFehler.Controls.Add(this.butEsFehler);
+            this.EsFehler.Location = new System.Drawing.Point(116, 29);
+            this.EsFehler.Name = "EsFehler";
+            this.EsFehler.Size = new System.Drawing.Size(219, 100);
+            this.EsFehler.TabIndex = 19;
+            this.EsFehler.Visible = false;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(8, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(210, 52);
+            this.label6.TabIndex = 1;
+            this.label6.Text = "Es liegt ein Fehler vor.\r\nKontrolieren Sie ihre eingetragenen Werte. \r\nFalls der " +
+    "Fehler weiterhin besteht\r\n starten Sie das Program neu.";
+            // 
+            // butEsFehler
+            // 
+            this.butEsFehler.Location = new System.Drawing.Point(59, 60);
+            this.butEsFehler.Name = "butEsFehler";
+            this.butEsFehler.Size = new System.Drawing.Size(75, 23);
+            this.butEsFehler.TabIndex = 0;
+            this.butEsFehler.Text = "Bestätigen";
+            this.butEsFehler.UseVisualStyleBackColor = true;
+            this.butEsFehler.Click += new System.EventHandler(this.butEsFehler_Click);
+            // 
             // Entnahmeschein
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(570, 397);
+            this.Controls.Add(this.EsFehler);
             this.Controls.Add(this.butEsMehrArt);
             this.Controls.Add(this.EsDetail);
             this.Controls.Add(this.herfEsNeu);
@@ -164,6 +201,8 @@
             this.Load += new System.EventHandler(this.Entnahmeschein_Load);
             this.EsDetail.ResumeLayout(false);
             this.EsDetail.PerformLayout();
+            this.EsFehler.ResumeLayout(false);
+            this.EsFehler.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -182,5 +221,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.RichTextBox tBoxEsNtz;
         private System.Windows.Forms.Button butEsMehrArt;
+        private System.Windows.Forms.Panel EsFehler;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button butEsFehler;
     }
 }

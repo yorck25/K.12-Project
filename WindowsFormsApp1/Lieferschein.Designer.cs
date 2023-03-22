@@ -33,14 +33,18 @@
             this.LsNeuLsanlegen = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.cBoxLsBearbeitetVon = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.tBoxLsBId = new System.Windows.Forms.TextBox();
             this.butLsNeu = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.tBoxLsbDatum = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.butLsMehrArt = new System.Windows.Forms.Button();
             this.herfLsNeu = new System.Windows.Forms.LinkLabel();
+            this.LsFehler = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.butLsFehler = new System.Windows.Forms.Button();
             this.LsNeuLsanlegen.SuspendLayout();
+            this.LsFehler.SuspendLayout();
             this.SuspendLayout();
             // 
             // lBoxLsBgeliefert
@@ -97,6 +101,15 @@
             this.cBoxLsBearbeitetVon.Size = new System.Drawing.Size(121, 21);
             this.cBoxLsBearbeitetVon.TabIndex = 9;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(3, 3);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(138, 13);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Bestellung die geliefert sind:";
+            // 
             // tBoxLsBId
             // 
             this.tBoxLsBId.Location = new System.Drawing.Point(160, 29);
@@ -130,15 +143,6 @@
             this.tBoxLsbDatum.Size = new System.Drawing.Size(123, 20);
             this.tBoxLsbDatum.TabIndex = 5;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 3);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(138, 13);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Bestellung die geliefert sind:";
-            // 
             // butLsMehrArt
             // 
             this.butLsMehrArt.Location = new System.Drawing.Point(8, 274);
@@ -161,11 +165,44 @@
             this.herfLsNeu.Text = "Neuen Lieferschein hinzufügen...";
             this.herfLsNeu.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.herfLsNeu_LinkClicked);
             // 
+            // LsFehler
+            // 
+            this.LsFehler.BackColor = System.Drawing.Color.Gray;
+            this.LsFehler.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LsFehler.Controls.Add(this.label11);
+            this.LsFehler.Controls.Add(this.butLsFehler);
+            this.LsFehler.Location = new System.Drawing.Point(196, 12);
+            this.LsFehler.Name = "LsFehler";
+            this.LsFehler.Size = new System.Drawing.Size(219, 100);
+            this.LsFehler.TabIndex = 19;
+            this.LsFehler.Visible = false;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(8, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(210, 52);
+            this.label11.TabIndex = 1;
+            this.label11.Text = "Es liegt ein Fehler vor.\r\nKontrolieren Sie ihre eingetragenen Werte. \r\nFalls der " +
+    "Fehler weiterhin besteht\r\n starten Sie das Program neu.";
+            // 
+            // butLsFehler
+            // 
+            this.butLsFehler.Location = new System.Drawing.Point(59, 60);
+            this.butLsFehler.Name = "butLsFehler";
+            this.butLsFehler.Size = new System.Drawing.Size(75, 23);
+            this.butLsFehler.TabIndex = 0;
+            this.butLsFehler.Text = "Bestätigen";
+            this.butLsFehler.UseVisualStyleBackColor = true;
+            this.butLsFehler.Click += new System.EventHandler(this.butLsFehler_Click);
+            // 
             // Lieferschein
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(441, 361);
+            this.Controls.Add(this.LsFehler);
             this.Controls.Add(this.herfLsNeu);
             this.Controls.Add(this.butLsMehrArt);
             this.Controls.Add(this.LsNeuLsanlegen);
@@ -174,6 +211,8 @@
             this.Load += new System.EventHandler(this.Lieferschein_Load);
             this.LsNeuLsanlegen.ResumeLayout(false);
             this.LsNeuLsanlegen.PerformLayout();
+            this.LsFehler.ResumeLayout(false);
+            this.LsFehler.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -193,5 +232,8 @@
         private System.Windows.Forms.ComboBox cBoxLsBearbeitetVon;
         private System.Windows.Forms.Button butLsMehrArt;
         private System.Windows.Forms.LinkLabel herfLsNeu;
+        private System.Windows.Forms.Panel LsFehler;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button butLsFehler;
     }
 }

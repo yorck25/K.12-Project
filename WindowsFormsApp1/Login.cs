@@ -66,6 +66,8 @@ namespace WindowsFormsApp1
             {
                 try
                 {
+                    Hauptmenu hauptmenu = new Hauptmenu(new cNachricht());
+                    hauptmenu.Show();
                     l.Anmelden(tBoxLoginEmail.Text, tBoxLoginPas.Text);
                     this.Hide();
 

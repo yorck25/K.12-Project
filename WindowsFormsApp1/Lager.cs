@@ -49,31 +49,29 @@ namespace WindowsFormsApp1
 
         public void butLVWErstellen_Click(object sender, EventArgs e)
         {
-            lvw.LVW_Bez = tBoxLVWBez.Text;
-            lvw.LVW_Ort = tBoxLVWOrt.Text;
-            lvw.LVW_PLZ = tBoxLVWPLZ.Text;
-            lvw.LVW_Str = tBoxLVWStr.Text;
-
-            if (string.IsNullOrEmpty(tBoxLVWBez.Text))
+            try
             {
-                Console.WriteLine("Keine Eingabe");
-            }
-            else
-            {
-                lvw.LagerSpeichern();
-                Console.WriteLine("Lager wird gespeichert");
-                tBoxLVWBez.Clear();
-                tBoxLVWOrt.Clear();
-                tBoxLVWStr.Clear();
-                tBoxLVWPLZ.Clear();
-                LVWDetail.Visible = false;
+                lvw.LVW_Bez = tBoxLVWBez.Text;
+                lvw.LVW_Ort = tBoxLVWOrt.Text;
+                lvw.LVW_PLZ = tBoxLVWPLZ.Text;
+                lvw.LVW_Str = tBoxLVWStr.Text;
 
-                lBoxLagerort.Items.Clear();
-                foreach (cLager lvw in cLager.LVWListe)
-                {
-                    lBoxLagerort.Items.Add(lvw);
-                }
+                    lvw.LagerSpeichern();
+                    Console.WriteLine("Lager wird gespeichert");
+                    tBoxLVWBez.Clear();
+                    tBoxLVWOrt.Clear();
+                    tBoxLVWStr.Clear();
+                    tBoxLVWPLZ.Clear();
+                    LVWDetail.Visible = false;
+
+                    lBoxLagerort.Items.Clear();
+                    foreach (cLager lvw in cLager.LVWListe)
+                    {
+                        lBoxLagerort.Items.Add(lvw);
+                    }
             }
+            catch { lFehler.Visible = true; }
+            
         }
 
         private void herfLVWNeu_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -122,8 +120,14 @@ namespace WindowsFormsApp1
             }
             else
             {
+                lFehler.Visible = true;
                 return;
             }
+        }
+
+        private void butLFehler_Click(object sender, EventArgs e)
+        {
+            lFehler.Visible = false;
         }
     }
 }

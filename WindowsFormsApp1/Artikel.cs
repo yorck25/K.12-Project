@@ -109,14 +109,10 @@ namespace WindowsFormsApp1
 
         private void butArtErstellen_Click(object sender, EventArgs e)
         {
-            AbtneueAbteilung.Visible= false;
+            try
+            {
+                AbtneueAbteilung.Visible= false;
 
-            if (tBoxAbtBez.Text == null)
-            {
-                Console.WriteLine("Kein Wert");
-            }
-            else
-            {
                 art.Art_Bez = tBoxAbtBez.Text;
                 art.Art_Preis = Convert.ToInt32(tBoxArtPreis.Text);
                 art.Art_Bst = Convert.ToInt16(tBoxArtBst.Text);
@@ -126,12 +122,11 @@ namespace WindowsFormsApp1
                 art.Art_Lager = Convert.ToInt16(cBoxArtLager.SelectedIndex +1);
                 art.Art_Lieferant = Convert.ToInt32(cBoxArtL.SelectedIndex +1);
                 art.Art_Geloescht = false;
-
-
                 art.ArtikelSpeichern();
                 cBoxenLaden(true);
                 Console.WriteLine("Artikel wird gespeichert");
             }
+            catch { ArtFehler.Visible = true; }
         }
 
         private void butArtSpeichern_Click(object sender, EventArgs e)
@@ -169,18 +164,23 @@ namespace WindowsFormsApp1
 
         private void butArtbestätigen_Click(object sender, EventArgs e)
         {
-            art = (cArtikel)lBoxArt.SelectedItem;
-            if (art != null)
+            try
             {
-                art.ArtikelLöschen();
-                artBestätigungLöschen.Visible = false;
-                cBoxenLaden(true);
-                art.Art_Geloescht = true;
+                art = (cArtikel)lBoxArt.SelectedItem;
+                if (art != null)
+                {
+                    art.ArtikelLöschen();
+                    artBestätigungLöschen.Visible = false;
+                    cBoxenLaden(true);
+                    art.Art_Geloescht = true;
+                }
             }
-            else
-            {
-                return;
-            }
+            catch { ArtFehler.Visible = true; }
+        }
+
+        private void butArtFehler_Click(object sender, EventArgs e)
+        {
+            ArtFehler.Visible = false;
         }
     }
 }

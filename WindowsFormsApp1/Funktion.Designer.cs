@@ -42,9 +42,13 @@
             this.fBestätigungLöschen = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.butRbestätigen = new System.Windows.Forms.Button();
+            this.fFehler = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.butFFehler = new System.Windows.Forms.Button();
             this.FDetail.SuspendLayout();
             this.FMitProAbt.SuspendLayout();
             this.fBestätigungLöschen.SuspendLayout();
+            this.fFehler.SuspendLayout();
             this.SuspendLayout();
             // 
             // herfFNeue
@@ -193,11 +197,44 @@
             this.butRbestätigen.UseVisualStyleBackColor = true;
             this.butRbestätigen.Click += new System.EventHandler(this.butRbestätigen_Click);
             // 
+            // fFehler
+            // 
+            this.fFehler.BackColor = System.Drawing.Color.Gray;
+            this.fFehler.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.fFehler.Controls.Add(this.label6);
+            this.fFehler.Controls.Add(this.butFFehler);
+            this.fFehler.Location = new System.Drawing.Point(138, 89);
+            this.fFehler.Name = "fFehler";
+            this.fFehler.Size = new System.Drawing.Size(219, 100);
+            this.fFehler.TabIndex = 21;
+            this.fFehler.Visible = false;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(8, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(210, 52);
+            this.label6.TabIndex = 1;
+            this.label6.Text = "Es liegt ein Fehler vor.\r\nKontrolieren Sie ihre eingetragenen Werte. \r\nFalls der " +
+    "Fehler weiterhin besteht\r\n starten Sie das Program neu.";
+            // 
+            // butFFehler
+            // 
+            this.butFFehler.Location = new System.Drawing.Point(59, 60);
+            this.butFFehler.Name = "butFFehler";
+            this.butFFehler.Size = new System.Drawing.Size(75, 23);
+            this.butFFehler.TabIndex = 0;
+            this.butFFehler.Text = "Bestätigen";
+            this.butFFehler.UseVisualStyleBackColor = true;
+            this.butFFehler.Click += new System.EventHandler(this.butFFehler_Click);
+            // 
             // Funktion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(623, 380);
+            this.Controls.Add(this.fFehler);
             this.Controls.Add(this.fBestätigungLöschen);
             this.Controls.Add(this.herfFNeue);
             this.Controls.Add(this.FDetail);
@@ -212,6 +249,8 @@
             this.FMitProAbt.PerformLayout();
             this.fBestätigungLöschen.ResumeLayout(false);
             this.fBestätigungLöschen.PerformLayout();
+            this.fFehler.ResumeLayout(false);
+            this.fFehler.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -233,5 +272,8 @@
         private System.Windows.Forms.Panel fBestätigungLöschen;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button butRbestätigen;
+        private System.Windows.Forms.Panel fFehler;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button butFFehler;
     }
 }

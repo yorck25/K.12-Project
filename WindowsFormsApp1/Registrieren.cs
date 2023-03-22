@@ -58,6 +58,7 @@ namespace WindowsFormsApp1
         {
             Login login = new Login(new cLogin());
             login.Show();
+            this.Close();
         }
 
         private void butRegErstellen_Click(object sender, EventArgs e)
@@ -78,19 +79,21 @@ namespace WindowsFormsApp1
             Mit.Mit_R_ID = Convert.ToInt32(cBoxRegRolle.SelectedIndex +1);
             Mit.Mit_F_ID = Convert.ToInt32(cBoxRegFunk.SelectedIndex + 1);
 
-            if (string.IsNullOrEmpty(tBoxRegName.Text))
-            {
-                Console.WriteLine("Keine Eingabe");
-            }
-            else
+            try
             {
                 Mit.MitarbeiterSpeichern();
                 Console.WriteLine("Mitarbeiter wird gespeichert");
                 tBoxRegName.Clear();
                 this.Close();
                 Login login = new Login(new cLogin());
-                login.Show();
             }
+            catch { regFehler.Visible = true; }
+
+        }
+
+        private void butRegFehler_Click(object sender, EventArgs e)
+        {
+            regFehler.Visible = false;
         }
     }
 }

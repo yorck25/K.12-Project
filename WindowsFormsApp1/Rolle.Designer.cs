@@ -42,9 +42,13 @@
             this.tBoxRBez = new System.Windows.Forms.TextBox();
             this.herfRLöschen = new System.Windows.Forms.LinkLabel();
             this.lBoxR = new System.Windows.Forms.ListBox();
+            this.rFehler = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.butRFehler = new System.Windows.Forms.Button();
             this.RDetail.SuspendLayout();
             this.rBestätigungLöschen.SuspendLayout();
             this.RMitProAbt.SuspendLayout();
+            this.rFehler.SuspendLayout();
             this.SuspendLayout();
             // 
             // herfRNeue
@@ -66,7 +70,7 @@
             this.RDetail.Controls.Add(this.RMitProAbt);
             this.RDetail.Controls.Add(this.label1);
             this.RDetail.Controls.Add(this.tBoxRBez);
-            this.RDetail.Location = new System.Drawing.Point(138, 4);
+            this.RDetail.Location = new System.Drawing.Point(149, 4);
             this.RDetail.Name = "RDetail";
             this.RDetail.Size = new System.Drawing.Size(413, 329);
             this.RDetail.TabIndex = 22;
@@ -194,11 +198,44 @@
             this.lBoxR.TabIndex = 20;
             this.lBoxR.SelectedIndexChanged += new System.EventHandler(this.lBoxR_SelectedIndexChanged);
             // 
+            // rFehler
+            // 
+            this.rFehler.BackColor = System.Drawing.Color.Gray;
+            this.rFehler.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.rFehler.Controls.Add(this.label11);
+            this.rFehler.Controls.Add(this.butRFehler);
+            this.rFehler.Location = new System.Drawing.Point(138, 91);
+            this.rFehler.Name = "rFehler";
+            this.rFehler.Size = new System.Drawing.Size(219, 100);
+            this.rFehler.TabIndex = 52;
+            this.rFehler.Visible = false;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(8, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(210, 52);
+            this.label11.TabIndex = 1;
+            this.label11.Text = "Es liegt ein Fehler vor.\r\nKontrolieren Sie ihre eingetragenen Werte. \r\nFalls der " +
+    "Fehler weiterhin besteht\r\n starten Sie das Program neu.";
+            // 
+            // butRFehler
+            // 
+            this.butRFehler.Location = new System.Drawing.Point(59, 60);
+            this.butRFehler.Name = "butRFehler";
+            this.butRFehler.Size = new System.Drawing.Size(75, 23);
+            this.butRFehler.TabIndex = 0;
+            this.butRFehler.Text = "Bestätigen";
+            this.butRFehler.UseVisualStyleBackColor = true;
+            this.butRFehler.Click += new System.EventHandler(this.butRFehler_Click);
+            // 
             // Rolle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(614, 346);
+            this.Controls.Add(this.rFehler);
             this.Controls.Add(this.herfRNeue);
             this.Controls.Add(this.RDetail);
             this.Controls.Add(this.herfRLöschen);
@@ -212,6 +249,8 @@
             this.rBestätigungLöschen.PerformLayout();
             this.RMitProAbt.ResumeLayout(false);
             this.RMitProAbt.PerformLayout();
+            this.rFehler.ResumeLayout(false);
+            this.rFehler.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -233,5 +272,8 @@
         private System.Windows.Forms.Panel rBestätigungLöschen;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button butRbestätigen;
+        private System.Windows.Forms.Panel rFehler;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button butRFehler;
     }
 }

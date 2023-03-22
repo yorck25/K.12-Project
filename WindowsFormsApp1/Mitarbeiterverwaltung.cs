@@ -72,6 +72,7 @@ namespace WindowsFormsApp1
             }
             catch
             {
+                mitFehler.Visible = true;
                 return;
             }
         }
@@ -184,8 +185,14 @@ namespace WindowsFormsApp1
             }
             else
             {
+                mitFehler.Visible = true;
                 return;
             }
+        }
+
+        private void butmitFehler_Click(object sender, EventArgs e)
+        {
+            mitFehler.Visible = false;
         }
     }
 }
