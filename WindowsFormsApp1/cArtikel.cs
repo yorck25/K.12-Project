@@ -24,12 +24,14 @@ namespace WindowsFormsApp1
         public int Art_Lager { get; set; }
         public int Art_Lieferant { get; set; }
         public string Art_Unterschreitung { get; set; }
+        public string Art_Überschreitung { get; set; }
         public bool Art_Geloescht { get; set; }
 
         public string ArtikelListe => Art_ID + ": " + Art_Bez;
 
         public string ArtHmenuBst => Art_Bez + " - " + Art_Bst;
         public string ArtBstMeldung => Art_Unterschreitung;
+        public string ArtÜberMEldung => Art_Überschreitung;
 
         public static void ArtikelLaden()
         {
@@ -62,7 +64,13 @@ namespace WindowsFormsApp1
                     cNachricht cNachricht = new cNachricht();
                     cNachricht.NachrichtSystemSpeichern();
                 }
-
+                if(art.Art_Bst > art.Art_MaxBst)
+                {
+                    Console.WriteLine("Bestand Überschritten" + art.Art_Bez);
+                    art.Art_Unterschreitung = "Bestand Überschritten: " + art.Art_Bez + " || Aktueller Bestand: " + art.Art_Bst;
+                    cNachricht cNachricht = new cNachricht();
+                    cNachricht.NachrichtÜberSystemSpeichern();
+                }
                 cArtikel.ArtListe.Add(art);
             }
             rdr.Close();

@@ -240,7 +240,7 @@
             // 
             this.tBoxHmenuBetreff.Location = new System.Drawing.Point(152, 25);
             this.tBoxHmenuBetreff.Name = "tBoxHmenuBetreff";
-            this.tBoxHmenuBetreff.Size = new System.Drawing.Size(97, 20);
+            this.tBoxHmenuBetreff.Size = new System.Drawing.Size(122, 20);
             this.tBoxHmenuBetreff.TabIndex = 6;
             // 
             // label6
@@ -256,7 +256,7 @@
             // 
             this.tBoxSender.Location = new System.Drawing.Point(149, 73);
             this.tBoxSender.Name = "tBoxSender";
-            this.tBoxSender.Size = new System.Drawing.Size(100, 20);
+            this.tBoxSender.Size = new System.Drawing.Size(125, 20);
             this.tBoxSender.TabIndex = 4;
             // 
             // label1

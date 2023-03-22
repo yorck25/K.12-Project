@@ -66,6 +66,25 @@ namespace WindowsFormsApp1
             return;
         }
 
+        public void NachrichtÜberSystemSpeichern()
+        {
+            this.Nach_Text = "Bestand Überschreitung";
+
+            MySqlConnection conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["localsql"].ConnectionString);
+
+            conn.Open();
+
+            string sql = "INSERT INTO nachricht (Nach_ID, Nach_Betreff, Nach_Text, Nach_Gelesen) " +
+            " VALUES (@Nach_ID, @Nach_Betreff , @Nach_Text, @Nach_Gelesen)";
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+            this.NachrichtenÜberschreitungAutomatischWerte(cmd);
+            cmd.ExecuteNonQuery();
+            this.Nach_ID = cmd.LastInsertedId;
+            cNachricht.NachListe.Add(this);
+            conn.Close();
+            return;
+        }
+
         public void NachrichtLöschen()
         {
             MySqlConnection conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["localsql"].ConnectionString);
@@ -110,6 +129,20 @@ namespace WindowsFormsApp1
 
             conn.Close();
             return;
+        }
+
+        public void NachrichtenÜberschreitungAutomatischWerte(MySqlCommand cmd)
+        {
+            Nach_Betreff = "Bestand Überschreitung";
+            Nach_Text = "Der aximalbestand bei einem Artikel wurde überschritten!!!";
+            Nach_Gelesen = false;
+
+            cmd.Parameters.AddWithValue("@Nach_ID", this.Nach_ID);
+            cmd.Parameters.AddWithValue("@Nach_Betreff", this.Nach_Betreff);
+            cmd.Parameters.AddWithValue("@Nach_Text", this.Nach_Text);
+            cmd.Parameters.AddWithValue("@Nach_Mit_Id", this.Nach_Mit_Id);
+            cmd.Parameters.AddWithValue("@Nach_GesVon", this.Nach_GesVon);
+            cmd.Parameters.AddWithValue("@Nach_Gelesen", this.Nach_Gelesen);
         }
 
         public void NachrichtenAutomatischWerte(MySqlCommand cmd)
