@@ -67,7 +67,7 @@ namespace WindowsFormsApp1
 
         public static void NurGeliefertBestellungLaden()
         {
-            string sql = "SELECT * FROM bestellung WHERE B_S_ID = true";
+            string sql = "SELECT * FROM bestellung WHERE B_S_ID = true and B_LS_Erstellt = false";
             MySqlConnection conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["localsql"].ConnectionString);
 
             conn.Open();
@@ -92,24 +92,13 @@ namespace WindowsFormsApp1
             MySqlConnection conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["localsql"].ConnectionString);
 
             conn.Open();
-
-            if ( 0 != 0)
-            {
-                string sql = "UPDATE bestellung SET" + "B_Bez = @Art_Bez" + "WHERE B_ID = @B_ID";
-                Console.WriteLine("ID:" + this.B_ID);
-                MySqlCommand cmd = new MySqlCommand(sql, conn);
-                this.BestellungWerteSpeichern(cmd);
-                cmd.ExecuteNonQuery();
-            }
-            else
-            {
-                string sql = "INSERT INTO bestellung (B_ID, B_Datum, B_Mit_ID, B_S_ID) VALUES (@B_ID, @B_Datum, @B_Mitarbeiter, false)";
-                MySqlCommand cmd = new MySqlCommand(sql, conn);
-                this.BestellungWerteSpeichern(cmd);
-                cmd.ExecuteNonQuery();
-                this.B_ID = cmd.LastInsertedId +1;
-                cBestellung.BstListe.Add(this);
-            }
+            string sql = "INSERT INTO bestellung (B_ID, B_Datum, B_Mit_ID, B_S_ID, B_LS_Erstellt) VALUES (@B_ID, @B_Datum, @B_Mitarbeiter, false, false)";
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+            this.BestellungWerteSpeichern(cmd);
+            cmd.ExecuteNonQuery();
+            this.B_ID = cmd.LastInsertedId +1;
+            cBestellung.BstListe.Add(this);
+            
             conn.Close();
             return;
         }

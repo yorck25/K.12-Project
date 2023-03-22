@@ -23,12 +23,13 @@ namespace WindowsFormsApp1
         private void butLsNeu_Click(object sender, EventArgs e)
         {
             Ls.LS_B_ID = Convert.ToInt16(tBoxLsBId.Text);
-            Ls.LS_BearbeitetVon_ID = Convert.ToInt32(cBoxLsBearbeitetVon.SelectedIndex + 1);
+            Ls.LS_BearbeitetVon_ID = Convert.ToInt32(((cMitarbeiter)cBoxLsBearbeitetVon.SelectedItem).Mit_ID);
             DateTime LsDate;
             LsDate = DateTime.Now;
             Ls.LS_Datum = Convert.ToString(LsDate);
             Ls.LS_Bearbeitet = false;
             Ls.LieferscheinSpeichern();
+            Ls.BestellungStatusLieferscheinNeu();
             Console.WriteLine("Lieferschein wird gespeichert");
 
             LsNeuLsanlegen.Enabled = false;

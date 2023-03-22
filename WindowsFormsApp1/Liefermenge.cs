@@ -64,6 +64,7 @@ namespace WindowsFormsApp1
 
         private void cBoxLsmScheine_SelectedIndexChanged(object sender, EventArgs e)
         {
+            lBoxLmArtProBst.Items.Clear();
             Lms.LM_LS_ID = Convert.ToInt32(((cLieferschein)cBoxLsmScheine.SelectedItem).LS_B_ID);
             ListBoxMengeLaden(true);
         }

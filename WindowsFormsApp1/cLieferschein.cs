@@ -109,7 +109,18 @@ namespace WindowsFormsApp1
 
             conn.Close();
             return;
-        }  
+        }
+
+        public void BestellungStatusLieferscheinNeu()
+        {
+            string sql = "UPDATE bestellung SET B_LS_Erstellt = true WHERE B_ID = @Ls_B_ID";
+            MySqlConnection conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["localsql"].ConnectionString);
+            conn.Open();
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+            this.LieferscheinWerteSpeichern(cmd);
+            cmd.ExecuteNonQuery();
+
+        }
 
         public void LieferscheinWerteSpeichern(MySqlCommand cmd)
         {
