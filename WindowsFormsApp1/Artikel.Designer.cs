@@ -324,11 +324,11 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(15, 18);
+            this.label9.Location = new System.Drawing.Point(9, 5);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(182, 13);
+            this.label9.Size = new System.Drawing.Size(184, 39);
             this.label9.TabIndex = 1;
-            this.label9.Text = "Die Ausgewählte Rolle wird gelösche";
+            this.label9.Text = "\r\n\r\nDer ausgewählte Artikel wird gelöscht";
             // 
             // butArtbestätigen
             // 

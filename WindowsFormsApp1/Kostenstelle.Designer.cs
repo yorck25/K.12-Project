@@ -189,22 +189,22 @@
             this.KstBestätigungLöschen.Controls.Add(this.butKstbestätigen);
             this.KstBestätigungLöschen.Location = new System.Drawing.Point(194, 132);
             this.KstBestätigungLöschen.Name = "KstBestätigungLöschen";
-            this.KstBestätigungLöschen.Size = new System.Drawing.Size(200, 100);
+            this.KstBestätigungLöschen.Size = new System.Drawing.Size(219, 100);
             this.KstBestätigungLöschen.TabIndex = 15;
             this.KstBestätigungLöschen.Visible = false;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(15, 18);
+            this.label2.Location = new System.Drawing.Point(2, 18);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(182, 13);
+            this.label2.Size = new System.Drawing.Size(212, 13);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Die Ausgewählte Rolle wird gelösche";
+            this.label2.Text = "Der ausgewählte Kostenstelle wird gelöscht";
             // 
             // butKstbestätigen
             // 
-            this.butKstbestätigen.Location = new System.Drawing.Point(59, 47);
+            this.butKstbestätigen.Location = new System.Drawing.Point(71, 44);
             this.butKstbestätigen.Name = "butKstbestätigen";
             this.butKstbestätigen.Size = new System.Drawing.Size(75, 23);
             this.butKstbestätigen.TabIndex = 0;

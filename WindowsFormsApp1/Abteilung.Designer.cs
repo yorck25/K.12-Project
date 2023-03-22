@@ -216,11 +216,11 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(15, 18);
+            this.label4.Location = new System.Drawing.Point(-1, 25);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(182, 13);
+            this.label4.Size = new System.Drawing.Size(198, 13);
             this.label4.TabIndex = 1;
-            this.label4.Text = "Die Ausgewählte Rolle wird gelösche";
+            this.label4.Text = "Die ausgewählte Abteilung wird gelöscht";
             // 
             // butAbtbestätigen
             // 

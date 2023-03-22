@@ -423,11 +423,11 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(15, 18);
+            this.label16.Location = new System.Drawing.Point(7, 26);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(182, 13);
+            this.label16.Size = new System.Drawing.Size(188, 13);
             this.label16.TabIndex = 1;
-            this.label16.Text = "Die Ausgewählte Rolle wird gelösche";
+            this.label16.Text = "Das Ausgewählte Lager wird gelösche";
             // 
             // butLbestätigen
             // 
@@ -459,7 +459,7 @@
             this.Controls.Add(this.lBoxLieferant);
             this.Controls.Add(this.lDetail);
             this.Name = "Lieferant";
-            this.Text = "Lieferant";
+            this.Text = "Lager";
             this.Load += new System.EventHandler(this.Lieferant_Load);
             this.lDetail.ResumeLayout(false);
             this.lDetail.PerformLayout();

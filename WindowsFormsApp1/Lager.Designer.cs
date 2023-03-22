@@ -196,11 +196,11 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(15, 18);
+            this.label5.Location = new System.Drawing.Point(8, 18);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(182, 13);
+            this.label5.Size = new System.Drawing.Size(187, 13);
             this.label5.TabIndex = 1;
-            this.label5.Text = "Die Ausgewählte Rolle wird gelösche";
+            this.label5.Text = "Das ausgewählte Lager wird gelösche";
             // 
             // butLvwbestätigen
             // 
