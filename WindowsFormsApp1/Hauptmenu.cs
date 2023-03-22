@@ -218,11 +218,6 @@ namespace WindowsFormsApp1
 
         private void herfAlleNachrichtenLöschen_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            //foreach(var lBoxHmenuNachricht in lBoxHmenuNachricht.Items)
-            //{
-            //    nach.AlleNachrichtLöschen();
-            //    NachrichtenLaden(true);
-            //}
             nach.AlleNachrichtLöschen();
             NachrichtenLaden(true);
             hmenuDetailBenachrichtigung.Visible = false;
@@ -233,10 +228,6 @@ namespace WindowsFormsApp1
         private void butHauptmenuÖffnenAcc_Click_1(object sender, EventArgs e)
         {
             hmenuAccElemente.Visible = !hmenuAccElemente.Visible;    
-        }
-
-        private void hmenuDetailABestand_Paint(object sender, PaintEventArgs e)
-        {
         }
     }
 }

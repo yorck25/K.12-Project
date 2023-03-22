@@ -75,6 +75,33 @@ namespace WindowsFormsApp1
             return;
         }
 
+        public void AusgewählteLieferscheinBestellmengeLaden()
+        {
+            string sql = "SELECT * FROM bestellmenge WHERE BM_BST_ID = 8";
+            MySqlConnection conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["localsql"].ConnectionString);
+
+            conn.Open();
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+            cmd.Parameters.AddWithValue("@BM_BST_ID", this.BM_BST_ID);
+            MySqlDataReader rdr = cmd.ExecuteReader();
+
+            cBestellMenge.BMListe = new List<cBestellMenge>();
+
+            while (rdr.Read())
+            {
+                cBestellMenge bm = new cBestellMenge();
+                bm.BM_ART_ID = rdr.GetInt16("BM_ART_ID");
+                bm.BM_ID = rdr.GetInt16("BM_ID");
+                bm.BM_BST_ID = rdr.GetInt16("BM_BST_ID");
+                bm.BM_Menge = rdr.GetInt16("BM_Menge");
+                cBestellMenge.BMListe.Add(bm);
+                Console.WriteLine("true");
+            }
+            rdr.Close();
+            conn.Close();
+            return;
+        }
+
         public void BestellmengeWerteSpeichern(MySqlCommand cmd)
         {
             cmd.Parameters.AddWithValue("@BM_ID", this.BM_ID);

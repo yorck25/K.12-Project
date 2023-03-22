@@ -64,7 +64,7 @@ namespace WindowsFormsApp1
 
         private void cBoxLsmScheine_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Lms.LM_LS_ID = Convert.ToInt32(((cLieferschein)cBoxLsmScheine.SelectedItem).LS_ID);
+            Lms.LM_LS_ID = Convert.ToInt32(((cLieferschein)cBoxLsmScheine.SelectedItem).LS_B_ID);
             ListBoxMengeLaden(true);
         }
 
@@ -74,17 +74,24 @@ namespace WindowsFormsApp1
             {
                 try
                 {
+                    cBestellMenge bsm = new cBestellMenge();
                     Lms.AusgewählteLiefermengeLaden();
+                    bsm.BM_BST_ID = Convert.ToInt32(((cLieferschein)cBoxLsmScheine.SelectedItem).LS_ID);
+                    bsm.AusgewählteLieferscheinBestellmengeLaden();
                 }
                 catch (Exception ex)
                 {
                     Console.WriteLine("Fehler bei Laden der ListBox BstMenge" + ex);
                 }
-
+                lBoxLmArtProBst.Items.Clear();
                 lBoxLsmArt.Items.Clear();
                 foreach (cLiefermenge lm in cLiefermenge.LmListe)
                 {
                     lBoxLsmArt.Items.Add(lm);
+                }
+                foreach (cBestellMenge bm in cBestellMenge.BMListe)
+                {
+                    lBoxLmArtProBst.Items.Add(bm);
                 }
             }
 

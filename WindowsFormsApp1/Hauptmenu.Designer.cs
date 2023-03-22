@@ -317,7 +317,6 @@
             this.hmenuDetailABestand.Name = "hmenuDetailABestand";
             this.hmenuDetailABestand.Size = new System.Drawing.Size(175, 355);
             this.hmenuDetailABestand.TabIndex = 8;
-            this.hmenuDetailABestand.Paint += new System.Windows.Forms.PaintEventHandler(this.hmenuDetailABestand_Paint);
             // 
             // butHmenuBestätigen
             // 

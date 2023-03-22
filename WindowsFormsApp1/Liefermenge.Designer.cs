@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lBoxLmArtProBst = new System.Windows.Forms.ListBox();
             this.lmBestätigungEinfügen = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.butLmbestätigen = new System.Windows.Forms.Button();
@@ -48,6 +50,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.lBoxLmArtProBst);
             this.panel1.Controls.Add(this.lmBestätigungEinfügen);
             this.panel1.Controls.Add(this.butLsmHinzu);
             this.panel1.Controls.Add(this.cBoxLsmArt);
@@ -60,8 +64,26 @@
             this.panel1.Controls.Add(this.lBoxLsmArt);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(465, 221);
+            this.panel1.Size = new System.Drawing.Size(655, 221);
             this.panel1.TabIndex = 2;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(456, 23);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(199, 13);
+            this.label6.TabIndex = 14;
+            this.label6.Text = "Artikel in der Bestellung zum Lieferschein";
+            // 
+            // lBoxLmArtProBst
+            // 
+            this.lBoxLmArtProBst.DisplayMember = "BestemMengeListe";
+            this.lBoxLmArtProBst.FormattingEnabled = true;
+            this.lBoxLmArtProBst.Location = new System.Drawing.Point(459, 39);
+            this.lBoxLmArtProBst.Name = "lBoxLmArtProBst";
+            this.lBoxLmArtProBst.Size = new System.Drawing.Size(120, 95);
+            this.lBoxLmArtProBst.TabIndex = 13;
             // 
             // lmBestätigungEinfügen
             // 
@@ -163,9 +185,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(14, 44);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(137, 13);
+            this.label2.Size = new System.Drawing.Size(150, 13);
             this.label2.TabIndex = 4;
-            this.label2.Text = "Alle Artikel in der Bestellung";
+            this.label2.Text = "Alle Artikel in dem Lieferschein\r\n";
             // 
             // lBoxLsmArt
             // 
@@ -190,7 +212,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(530, 296);
+            this.ClientSize = new System.Drawing.Size(727, 296);
             this.Controls.Add(this.butLmLsFertig);
             this.Controls.Add(this.panel1);
             this.Name = "Liefermenge";
@@ -220,5 +242,7 @@
         private System.Windows.Forms.Panel lmBestätigungEinfügen;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button butLmbestätigen;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ListBox lBoxLmArtProBst;
     }
 }
