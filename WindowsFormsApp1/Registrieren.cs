@@ -65,22 +65,22 @@ namespace WindowsFormsApp1
         {
             //cMitarbeiter.MitarbeiterSpeichern();
 
-            Mit.Mit_VName = tBoxRegVname.Text;
-            Mit.Mit_Name = tBoxRegName.Text;
-            Mit.Mit_Straße = tBoxRegStraße.Text;
-            Mit.Mit_HausNr = Convert.ToInt16(tBoxRegHausNr.Text);
-            Mit.Mit_PLZ = Convert.ToInt16(tBoxRegPLZ.Text);
-            Mit.Mit_Ort = tBoxRegOrt.Text;
-            Mit.Mit_GDat = DateReg.Value;
-            Mit.Mit_Mail = tBoxRegEmail.Text;
-            Mit.Mit_Benutzer = tBoxRegUname.Text;
-            Mit.Mit_Pw = tBoxRegPw.Text;
-            Mit.Mit_Abt_ID = Convert.ToInt32(cBoxRegAbt.SelectedIndex +1);
-            Mit.Mit_R_ID = Convert.ToInt32(cBoxRegRolle.SelectedIndex +1);
-            Mit.Mit_F_ID = Convert.ToInt32(cBoxRegFunk.SelectedIndex + 1);
 
             try
             {
+                Mit.Mit_VName = tBoxRegVname.Text;
+                Mit.Mit_Name = tBoxRegName.Text;
+                Mit.Mit_Straße = tBoxRegStraße.Text;
+                Mit.Mit_HausNr = Convert.ToInt16(tBoxRegHausNr.Text);
+                Mit.Mit_PLZ = Convert.ToInt16(tBoxRegPLZ.Text);
+                Mit.Mit_Ort = tBoxRegOrt.Text;
+                Mit.Mit_GDat = DateReg.Value;
+                Mit.Mit_Mail = tBoxRegEmail.Text;
+                Mit.Mit_Benutzer = tBoxRegUname.Text;
+                Mit.Mit_Pw = tBoxRegPw.Text;
+                Mit.Mit_Abt_ID = Convert.ToInt32(cBoxRegAbt.SelectedIndex +1);
+                Mit.Mit_R_ID = Convert.ToInt32(cBoxRegRolle.SelectedIndex +1);
+                Mit.Mit_F_ID = Convert.ToInt32(cBoxRegFunk.SelectedIndex + 1);
                 Mit.MitarbeiterSpeichern();
                 Console.WriteLine("Mitarbeiter wird gespeichert");
                 tBoxRegName.Clear();
