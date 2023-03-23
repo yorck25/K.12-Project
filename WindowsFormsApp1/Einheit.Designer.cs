@@ -162,7 +162,7 @@
             this.EinFehler.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.EinFehler.Controls.Add(this.label5);
             this.EinFehler.Controls.Add(this.butEinFehler);
-            this.EinFehler.Location = new System.Drawing.Point(139, 71);
+            this.EinFehler.Location = new System.Drawing.Point(183, 12);
             this.EinFehler.Name = "EinFehler";
             this.EinFehler.Size = new System.Drawing.Size(219, 100);
             this.EinFehler.TabIndex = 17;

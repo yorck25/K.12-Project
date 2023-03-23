@@ -242,7 +242,7 @@
             this.AbtFehler.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.AbtFehler.Controls.Add(this.label5);
             this.AbtFehler.Controls.Add(this.button1);
-            this.AbtFehler.Location = new System.Drawing.Point(151, 76);
+            this.AbtFehler.Location = new System.Drawing.Point(154, 62);
             this.AbtFehler.Name = "AbtFehler";
             this.AbtFehler.Size = new System.Drawing.Size(219, 100);
             this.AbtFehler.TabIndex = 16;

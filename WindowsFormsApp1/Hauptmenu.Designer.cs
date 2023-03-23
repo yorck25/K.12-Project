@@ -342,6 +342,7 @@
             // 
             this.tBoxHmenuAMAxBestand.Location = new System.Drawing.Point(20, 195);
             this.tBoxHmenuAMAxBestand.Name = "tBoxHmenuAMAxBestand";
+            this.tBoxHmenuAMAxBestand.ReadOnly = true;
             this.tBoxHmenuAMAxBestand.Size = new System.Drawing.Size(100, 20);
             this.tBoxHmenuAMAxBestand.TabIndex = 7;
             // 
@@ -358,6 +359,7 @@
             // 
             this.tBoxHmenuAMinBestand.Location = new System.Drawing.Point(20, 141);
             this.tBoxHmenuAMinBestand.Name = "tBoxHmenuAMinBestand";
+            this.tBoxHmenuAMinBestand.ReadOnly = true;
             this.tBoxHmenuAMinBestand.Size = new System.Drawing.Size(100, 20);
             this.tBoxHmenuAMinBestand.TabIndex = 5;
             // 
@@ -374,6 +376,7 @@
             // 
             this.tBoxHmenuABestand.Location = new System.Drawing.Point(20, 89);
             this.tBoxHmenuABestand.Name = "tBoxHmenuABestand";
+            this.tBoxHmenuABestand.ReadOnly = true;
             this.tBoxHmenuABestand.Size = new System.Drawing.Size(100, 20);
             this.tBoxHmenuABestand.TabIndex = 3;
             // 
@@ -390,6 +393,7 @@
             // 
             this.tBoxHmenuAName.Location = new System.Drawing.Point(20, 33);
             this.tBoxHmenuAName.Name = "tBoxHmenuAName";
+            this.tBoxHmenuAName.ReadOnly = true;
             this.tBoxHmenuAName.Size = new System.Drawing.Size(100, 20);
             this.tBoxHmenuAName.TabIndex = 1;
             // 

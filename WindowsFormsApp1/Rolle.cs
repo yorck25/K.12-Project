@@ -51,6 +51,8 @@ namespace WindowsFormsApp1
 
         private void butRSpeichern_Click(object sender, EventArgs e)
         {
+            try
+            {
             r.R_Bez = tBoxRBez.Text;
             r.R_Geloescht = false;
 
@@ -64,12 +66,15 @@ namespace WindowsFormsApp1
                 {
                     r.RolleSpeichern();
                     Console.WriteLine("Rolle wird gespeichert");
+
                     tBoxRBez.Clear();
                     RDetail.Visible = false;
                     RMitProAbt.Visible = false;
                     RolleListeLaden(true);
                 }
-            //this.Close();
+            }
+            catch
+            { rFehler.Visible = true; }
         }
 
         private void herfRNeue_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

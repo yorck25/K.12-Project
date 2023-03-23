@@ -60,6 +60,7 @@
             this.regFehler = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
             this.butRegFehler = new System.Windows.Forms.Button();
+            this.butLoginPasAnzeigen = new System.Windows.Forms.Button();
             this.regFehler.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -314,7 +315,7 @@
             this.regFehler.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.regFehler.Controls.Add(this.label11);
             this.regFehler.Controls.Add(this.butRegFehler);
-            this.regFehler.Location = new System.Drawing.Point(11, 90);
+            this.regFehler.Location = new System.Drawing.Point(26, 53);
             this.regFehler.Name = "regFehler";
             this.regFehler.Size = new System.Drawing.Size(219, 100);
             this.regFehler.TabIndex = 51;
@@ -340,12 +341,23 @@
             this.butRegFehler.UseVisualStyleBackColor = true;
             this.butRegFehler.Click += new System.EventHandler(this.butRegFehler_Click);
             // 
+            // butLoginPasAnzeigen
+            // 
+            this.butLoginPasAnzeigen.Location = new System.Drawing.Point(234, 184);
+            this.butLoginPasAnzeigen.Name = "butLoginPasAnzeigen";
+            this.butLoginPasAnzeigen.Size = new System.Drawing.Size(21, 20);
+            this.butLoginPasAnzeigen.TabIndex = 52;
+            this.butLoginPasAnzeigen.Text = "Anzeigen";
+            this.butLoginPasAnzeigen.UseVisualStyleBackColor = true;
+            this.butLoginPasAnzeigen.Click += new System.EventHandler(this.butLoginPasAnzeigen_Click);
+            // 
             // Registrieren
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.ClientSize = new System.Drawing.Size(373, 415);
+            this.Controls.Add(this.butLoginPasAnzeigen);
             this.Controls.Add(this.regFehler);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.tBoxRegPw);
@@ -419,5 +431,6 @@
         private System.Windows.Forms.Panel regFehler;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button butRegFehler;
+        private System.Windows.Forms.Button butLoginPasAnzeigen;
     }
 }

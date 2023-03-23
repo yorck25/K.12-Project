@@ -95,5 +95,17 @@ namespace WindowsFormsApp1
         {
             regFehler.Visible = false;
         }
+
+        private void butLoginPasAnzeigen_Click(object sender, EventArgs e)
+        {
+            if (tBoxRegPw.PasswordChar == '*')
+            {
+                tBoxRegPw.PasswordChar = '\0';
+            }
+            else
+            {
+                tBoxRegPw.PasswordChar = '*';
+            }
+        }
     }
 }

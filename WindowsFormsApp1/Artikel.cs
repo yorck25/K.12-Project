@@ -102,9 +102,6 @@ namespace WindowsFormsApp1
             tBoxArtBst.Clear();
             tBoxArtMaxBst.Clear();
             tBoxArtMinBst.Clear();
-            //cBoxArtLager.SelectedIndex = 0;
-            //cBoxAbtEinheit.SelectedIndex = 0;
-            //cBoxArtL.SelectedIndex = 0;
         }
 
         private void butArtErstellen_Click(object sender, EventArgs e)

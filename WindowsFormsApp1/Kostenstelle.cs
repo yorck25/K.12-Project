@@ -72,11 +72,11 @@ namespace WindowsFormsApp1
 
         private void butKstSpeichern_Click(object sender, EventArgs e)
         {
-            kst.Kst_Bez = tBoxKstBez.Text;
-            kst.Kst_Geloescht = false;
 
             try
             {
+                kst.Kst_Bez = tBoxKstBez.Text;
+                kst.Kst_Geloescht = false;
                 kst.Spiechern();
                 Console.WriteLine("Kst wird gespeichert");
                 tBoxKstBez.Clear();

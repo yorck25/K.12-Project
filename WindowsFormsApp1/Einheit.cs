@@ -75,27 +75,31 @@ namespace WindowsFormsApp1
 
         private void butEinErstellen_Click(object sender, EventArgs e)
         {
-            ein.Ein_Bez = tBoxEinBez.Text;
-            ein.Ein_Geloescht = false;
-
-            if (string.IsNullOrEmpty(tBoxEinBez.Text))
+            try
             {
-                Console.WriteLine("Keine Eingabe");
-            }
-            else
-            {
-                ein.EinheitSpiechern();
-                Console.WriteLine("Einheit wird gespeichert");
-                tBoxEinBez.Clear();
-                EinDetail.Visible = false;
+                ein.Ein_Bez = tBoxEinBez.Text;
+                ein.Ein_Geloescht = false;
 
-                lBoxEinheit.Items.Clear();
-                foreach (cEinheit ein in cEinheit.EinListe)
+                if (string.IsNullOrEmpty(tBoxEinBez.Text))
                 {
-                    lBoxEinheit.Items.Add(ein);
+                    Console.WriteLine("Keine Eingabe");
                 }
-                this.Close();
+                else
+                {
+                    ein.EinheitSpiechern();
+                    Console.WriteLine("Einheit wird gespeichert");
+                    tBoxEinBez.Clear();
+                    EinDetail.Visible = false;
+
+                    lBoxEinheit.Items.Clear();
+                    foreach (cEinheit ein in cEinheit.EinListe)
+                    {
+                        lBoxEinheit.Items.Add(ein);
+                    }
+                    this.Close();
+                }
             }
+            catch { EinFehler.Visible = true; }
 
         }
 

@@ -75,24 +75,24 @@ namespace WindowsFormsApp1
 
         public void butLErstellen_Click(object sender, EventArgs e)
         {
-            l.L_Anrede = tBoxLAnrede.Text;
-            l.L_Name = tBoxLName.Text;
-            l.L_Strasse = tBoxLStrasse.Text;
-            l.L_HausNr = Convert.ToInt32(tBoxLHausNr.Text);
-            l.L_PLZ = Convert.ToInt32(tBoxLPLZ.Text);
-            l.L_Ort = tBoxLOrt.Text;
-            l.L_Postfach = tBoxLPost.Text;
-            l.L_Tel = Convert.ToInt32(tBoxLTel.Text);
-            l.L_Fax = Convert.ToInt32(tBoxLFax.Text);
-            l.L_BLZ = Convert.ToInt32(tBoxLBlz.Text);
-            l.L_Anspr = tBoxLPartner.Text;
-            l.L_Mail = tBoxLMail.Text;
-            l.L_Durchwahl = Convert.ToInt32(tBoxLDurch.Text);
-            l.L_Ntz = tBoxLNotiz.Text;
-            l.L_IBAN = tBoxLiban.Text;
-            l.L_Geloescht = false;
             try
             {
+                l.L_Anrede = tBoxLAnrede.Text;
+                l.L_Name = tBoxLName.Text;
+                l.L_Strasse = tBoxLStrasse.Text;
+                l.L_HausNr = Convert.ToInt32(tBoxLHausNr.Text);
+                l.L_PLZ = Convert.ToInt32(tBoxLPLZ.Text);
+                l.L_Ort = tBoxLOrt.Text;
+                l.L_Postfach = tBoxLPost.Text;
+                l.L_Tel = Convert.ToInt32(tBoxLTel.Text);
+                l.L_Fax = Convert.ToInt32(tBoxLFax.Text);
+                l.L_BLZ = Convert.ToInt32(tBoxLBlz.Text);
+                l.L_Anspr = tBoxLPartner.Text;
+                l.L_Mail = tBoxLMail.Text;
+                l.L_Durchwahl = Convert.ToInt32(tBoxLDurch.Text);
+                l.L_Ntz = tBoxLNotiz.Text;
+                l.L_IBAN = tBoxLiban.Text;
+                l.L_Geloescht = false;
                 l.LieferantSpeichern();
                 Console.WriteLine("Lager wird gespeichert");
                 tBoxLAnrede.Clear();
