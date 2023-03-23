@@ -22,7 +22,7 @@ namespace WindowsFormsApp1
             //Application.Run(new Artikel(new cArtikel()));
             //Application.Run(new Abteilung(new cAbteilung()));
             Application.Run(new Login(new cLogin()));
-            //Application.Run(new Hauptmenu(new cNachricht()));
+            Application.Run(new Hauptmenu(new cNachricht()));
             //Application.Run(new Mitarbeiterverwaltung(new cMitarbeiter()));
             //Application.Run(new Funktion(new cFunktion()));
             //Application.Run(new BestellMenge(new cBestellMenge()));

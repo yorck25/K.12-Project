@@ -1,5 +1,4 @@
-﻿using MetroFramework.Controls;
-using MySql.Data.MySqlClient;
+﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -69,7 +68,7 @@ namespace WindowsFormsApp1
                     Hauptmenu hauptmenu = new Hauptmenu(new cNachricht());
                     hauptmenu.Show();
                     l.Anmelden(tBoxLoginEmail.Text, tBoxLoginPas.Text);
-                    this.Hide();
+                    this.Close();
 
                 }
                 catch (MySqlException ex)

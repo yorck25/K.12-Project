@@ -68,7 +68,7 @@ namespace WindowsFormsApp1
         {
             Login login = new Login(new cLogin());
             login.Show();
-            this.Close();
+            this.Hide();
         }
 
         private void butHmenuMitarbeiter_Click(object sender, EventArgs e)
